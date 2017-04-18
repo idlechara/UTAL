@@ -1,0 +1,18 @@
+\select@language {spanish}
+\contentsline {figure}{\numberline {1}{\ignorespaces Rendimiento de QuickSelect para encontrar la mediana de un conjunto desordenado.\relax }}{2}
+\contentsline {figure}{\numberline {2}{\ignorespaces Rendimiento de QuickSelect para encontrar la mediana de un conjunto ordenado.\relax }}{2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Rendimiento de QuickSelect para encontrar la mediana de un conjunto ordenado inversamente.\relax }}{3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Rendimiento de BFPRT no iterado para encontrar la mediana de un conjunto desordenado.\relax }}{3}
+\contentsline {figure}{\numberline {5}{\ignorespaces Rendimiento de BFPRT no iterado para encontrar la mediana de un conjunto ordenado.\relax }}{4}
+\contentsline {figure}{\numberline {6}{\ignorespaces Rendimiento de BFPRT no iterado para encontrar la mediana de un conjunto ordenado inversamente.\relax }}{4}
+\contentsline {figure}{\numberline {7}{\ignorespaces Rendimiento de iBFPRT iterado para encontrar la mediana de un conjunto desordenado.\relax }}{4}
+\contentsline {figure}{\numberline {8}{\ignorespaces Rendimiento de BFPRT iterado para encontrar la mediana de un conjunto ordenado.\relax }}{5}
+\contentsline {figure}{\numberline {9}{\ignorespaces Rendimiento de BFPRT iterado para encontrar la mediana de un conjunto ordenado inversamente.\relax }}{5}
+\contentsline {figure}{\numberline {10}{\ignorespaces Rendimiento de IQM iterado para encontrar la mediana de un conjunto desordenado.\relax }}{5}
+\contentsline {figure}{\numberline {11}{\ignorespaces Rendimiento de IQM iterado para encontrar la mediana de un conjunto ordenado.\relax }}{6}
+\contentsline {figure}{\numberline {12}{\ignorespaces Rendimiento de IQM iterado para encontrar la mediana de un conjunto ordenado inversamente.\relax }}{6}
+\contentsline {figure}{\numberline {13}{\ignorespaces Rendimiento de algoritmos para selecci\'on de mediana para encontrar la mediana de un conjunto desordenado.\relax }}{7}
+\contentsline {figure}{\numberline {14}{\ignorespaces Rendimiento de algoritmos de selecci\'on de medianas para encontrar la mediana de un conjunto ordenado.\relax }}{7}
+\contentsline {figure}{\numberline {15}{\ignorespaces Rendimiento de algoritmos para selecci\'on de medianas para encontrar la mediana de un conjunto ordenado inversamente.\relax }}{8}
+\contentsline {figure}{\numberline {16}{\ignorespaces Precisi\'on de algoritmos para selecci\'on de mediana para encontrar la mediana de un conjunto desordenado.\relax }}{8}
+\contentsline {figure}{\numberline {17}{\ignorespaces Precisi\'on de algoritmos para selecci\'on de mediana para encontrar la mediana de un conjunto ordenado inversamente.\relax }}{9}

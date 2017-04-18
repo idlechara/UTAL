@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+	<version>1.0</version>
+	<configs>
+		<config category="opl" default="true" name="Configuraci&amp;#243;n 1">
+			<ref name="ejercicio_ayudant&amp;#237;a_a.mod" type="model">
+			</ref>
+			<ref name="ejercicio_ayudant&amp;#237;a_a.ops" type="setting">
+			</ref>
+			<ref name="ejercicio_ayudant&amp;#237;a_a.dat" type="data">
+			</ref>
+		</config>
+	</configs>
+	
+</project>

@@ -1,0 +1,23 @@
+20:03:52 **** Incremental Build of configuration Debug for project RemoteHello ****
+make all 
+cd /Debug
+
+cd /Debug
+
+echo $PWD'>'
+make all;exit
+root@beaglebone:~# cd /Debug
+-sh: cd: /Debug: No such file or directory
+root@beaglebone:~# 
+root@beaglebone:~# cd /Debug
+-sh: cd: /Debug: No such file or directory
+root@beaglebone:~# 
+root@beaglebone:~# echo $PWD'>'
+/home/root>
+root@beaglebone:~# make all;exit
+make: *** No rule to make target `all'.  Stop.
+logout
+> Shell Completed (exit code = 0)
+
+20:03:55 Build Finished (took 2s.769ms)
+

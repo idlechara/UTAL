@@ -1,0 +1,45 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{ae}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[stable]{footmisc}
+\input{spanishAlgorithmic}
+
+\title{{\bf Sistemas Operativos}\\Proyecto 1b}
+\author{Erik Regla\\ \texttt{eregla09@alumnos.utalca.cl}\\}
+\date{24 de Septiembre del 2015}
+
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+
+\section{Tablas}
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Parámetro medido                & OSP1                                                                                        & OSP2                                                                                     & OSP3                                                             & OSP4                                                             \\ \hline
+CPU Utilization                 & 89.974\%                                                                                    & 96.994\%                                                                                 & 80.278\%                                                         & 17.29\%                                                          \\ \hline
+Average service time per thread & 19702.97                                                                                    & 3086.6335                                                                                & 15435.1875                                                       & 34413.3                                                          \\ \hline
+Total number of tasks           & 4                                                                                           & 2                                                                                        & 6                                                                & 5                                                                \\ \hline
+Threads summary                 & \begin{tabular}[c]{@{}l@{}}18 alive:\\ 1 running, \\ 12 suspended, \\ 5 ready)\end{tabular} & \begin{tabular}[c]{@{}l@{}}3 alive:\\ 1 running, \\ 0 suspended, \\ 2 ready\end{tabular} & \begin{tabular}[c]{@{}l@{}}20 alive:\\ 20 suspended\end{tabular} & \begin{tabular}[c]{@{}l@{}}14 alive:\\ 14 suspended\end{tabular} \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Comparación}
+La diferencia ente los distintos archivos de configuración es únicamente el parámetro ``ThreadLifeExpectancy'' siendo 5000, 500, y 2500 para params1, params2 y params3 respectivamente. (Autoexplicativo, lo que se espera que posea como tiempo de vida de cada hilo).
+
+\section{params4}
+El cambio más notorio al cambiar el parámetro ``memory events'' y ``resource events'' que ajustan el donde ocurren dichos eventos durante la simulación (se  junto con la frecuencia a la cual los eventos ocurren. La mayor cantidad de eventos generados fueron efectivamente para memoria sin embargo, dado que muchas operaciones eran de asignación de recursos, los hilos estaban mucho tiempo esperando, lo cual llevó a deadlock en algunos casos cuando se desactiva el detector (se puede notar por la cantidad de hilos esperando y por que la cantidad de invocaciones de petición de recursos son mucho más que las de liberación, junto con la tabla de alocación y de espera).
+\end{document}

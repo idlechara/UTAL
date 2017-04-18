@@ -1,0 +1,10 @@
+07:30:20 **** Build of configuration Debug for project HelloWorldRemote ****
+make all 
+Building file: ../src/HelloWorldRemote.cpp
+Invoking: ARM Linux GCC C++ Compiler (GNUARM)
+arm-elf-g++ -O0 -ffunction-sections -fdata-sections -Wall -Wa,-adhlns="src/HelloWorldRemote.o.lst" -fno-exceptions -fno-rtti -c -fmessage-length=0 -MMD -MP -MF"src/HelloWorldRemote.d" -MT"src/HelloWorldRemote.d" -mcpu=cortex-m3 -mthumb -g3 -o "src/HelloWorldRemote.o" "../src/HelloWorldRemote.cpp"
+/bin/sh: arm-elf-g++: command not found
+make: *** [src/HelloWorldRemote.o] Error 127
+
+07:30:20 Build Finished (took 233ms)
+

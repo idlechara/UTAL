@@ -1,0 +1,178 @@
+\documentclass{beamer}
+% Class options include: notes, handout, trans
+%                        
+
+% Theme for beamer presentation 
+% Other themes include: beamerthemebars, beamerthemelined,beamerthemetree, beamerthemeplain
+\usetheme{Copenhagen}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\def\spanishoptions{chile}
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage{amssymb}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{listings}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+backgroundcolor=\color{lbcolor},
+    tabsize=4,    
+%   rulecolor=,
+    language=[GNU]C++,
+        basicstyle=\scriptsize,
+        upquote=true,
+        aboveskip={1.5\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=false,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        numbers=left,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.026,0.112,0.095},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+        numberstyle=\color[rgb]{0.205, 0.142, 0.73},
+%        \lstdefinestyle{C++}{language=C++,style=numbers}?.
+}
+\lstset{
+    backgroundcolor=\color{lbcolor},
+    tabsize=4,
+  language=C++,
+  captionpos=b,
+  tabsize=3,
+  frame=lines,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  breaklines=true,
+  showstringspaces=false,
+  basicstyle=\footnotesize,
+%  identifierstyle=\color{magenta},
+  keywordstyle=\color[rgb]{0,0,1},
+  commentstyle=\color[rgb]{0.026,0.112,0.095},
+  stringstyle=\color{red}
+  }
+
+\usefonttheme{professionalfonts}
+
+
+\title[Introducción a la administración]{Introducción a la administración}
+\subtitle{Tarea final - Análisis de caso de estudio}    % Enter your title between curly braces
+\author[E. Regla]{Erik Regla}                 % Enter your name between curly braces
+\institute[UTalca]{Universidad de Talca}      % Enter your institute name between curly braces
+\date{\today}      % Enter the date or \today between curly braces
+
+\begin{document}
+
+% Creates title page of slide show using above information
+\begin{frame}
+  \titlepage
+\end{frame}
+\note{Talk for 30 minutes} % Add notes to yourself that will be displayed when typeset with the notes class option.
+
+%% Creates table of contents slide incorporating all \section and \subsection commands.
+%\begin{frame}
+%  \tableofcontents
+%\end{frame}
+
+\section{Mision y visión}
+\begin{frame}
+\frametitle{Mision}
+Posicionarse sólidamente como una empresa en la cual el enfoque se el cliente y trabajadores, de modo de no repetir los errores que cometen las otras empresas en las cuales ``el padre'' trabajó.
+\end{frame}
+
+\begin{frame}
+\frametitle{Visión}
+Ser una empresa nueva, innovadora, referente en el rubro del aseo y ornato tanto para trabajadores como clientes, ofreciendo servicios de la mejor calidad y preocupada de sus trabajadores.
+\end{frame}
+
+\section{Análisis FODA}
+\begin{frame}
+\frametitle{Foda- Fortalezas}
+\begin{itemize}
+\item Existe motivación tanto de ``usted'' como de ``su padre'' para poder crear una empresa nueva en el rubro.
+\item ``Su padre'' posee experiencia técnica previa en el área.
+\item Existen intenciones de ``partir haciendo las cosas bien'' no dejando de lado la importancia del trabajador en la organización.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Foda- Debilidades}
+\begin{itemize}
+\item Si bien existe una persona con conocimiento técnico en el rubro, ninguna de las personas que compone la organización posee experiencia previa manejando este tipo de empresas.
+\item Es una empresa nueva, aun se tiene que descubrir cuales son los problemas recurrentes.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Foda- Oportunidades}
+\begin{itemize}
+\item Al ser una empresa con vision de mejorar las condiciones laborales, encontrar gente dispuesta a unirse es una tarea ligeramente más fácil. Permite diferenciar el ambiente y condiciones de trabajo del resto de las empresas, al volverlo grato y agradable.
+\item Es más fácil ``dar en el gusto'' al cliente, dado que al ser empresa nueva es fácil entregar una mayor sensación de ``importancia del cliente'' y satisfacción a este.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Foda- Amenazas}
+\begin{itemize}
+\item Al ser una empresa nueva y pequeña, podría no haber trabajo disponible de manera inmediata, dificultando el arranque.
+\item La lealtad a la marca y la economía de escala presentes en las empresas más grandes puede dificultar la competencia en precios, creando una barrera de entrada importante para ``nosotros'' y una de salida fuerte para los potenciales clientes.
+\end{itemize}
+\end{frame}
+
+\section{Objetivos`}
+\begin{frame}
+\frametitle{Objetivos}
+\begin{itemize}
+	\item Poseer clientes estables en un plazo de tres meses al momento de creación de la empresa. De ser posible tenerlos antes.
+	\item Lograr que los trabajadores se sientan identificados con la empresa.
+	\item Lograr que los clientes se sientan comparativamente más satisfechos con nuestro trabajo realizado que con el de otras empresas.
+	\item Estabilizar los ingresos de la organización de modo de poder contratar mayor cantidad de personal y comenzar la expansión.
+\end{itemize}
+\end{frame}
+
+\section{Estrategias a desarrollar}
+\begin{frame}
+\frametitle{Estrategias a desarrollar}
+\begin{itemize}
+	\item Generar una red de contactos entre los trabajadores como también con ex empleadores del personal de la organización para ver potenciales clientes.
+	\item Realizar evaluaciones del estado de la organización constantemente. Solicitar ayuda a personal especializado (psicólogo) a modo de poder tener una evaluación certera y saber que les preocupa a nuestros trabajadores en su area de trabajo.
+	\item Evaluar y vigilar el estado del arte de las empresas locales y de la competencia latente. Cambiar servicios en función de dicha evaluación de manera incremental. Realizar la evaluación y "mutación" de manera constante.
+	\item Establecer políticas que favorezcan los ingresos y mantener un control de economía de escala para poder incrementar la utilidad al comienzo de la empresa. 
+\end{itemize}
+\end{frame}
+
+
+\section{Descripción de cada uno de los cargos}
+\begin{frame}
+\frametitle{Descripción de cada uno de los cargos}
+\begin{itemize}
+\item \textbf{Gerente general}: Encargado de tomar las decisiones estratégicas de la organización. Encargado de administrar ingresos y costos como también funciones de mercado, ventas y planificación estratégica.
+\item \textbf{Supervisor de terreno}: La persona con mayor experiencia técnica. Encargada de controlar el trabajo realizado por los Maestros en terreno, para poder verificar la calidad del trabajo y el estatus de los trabajadores. Provee de información al gerente para poder tomar decisiones.
+\item \textbf{Maestros}: Los que ejecutan el trabajo realizado por la empresa. Tienen que realizar el trabajo que previamente realizaba ``el padre''. 
+\end{itemize}
+\end{frame}
+
+
+\section{Planificación a un año de trabajo}
+\begin{frame}
+\frametitle{Planificación a un año de trabajo}
+	...pendiente...
+\end{frame}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\end{document}

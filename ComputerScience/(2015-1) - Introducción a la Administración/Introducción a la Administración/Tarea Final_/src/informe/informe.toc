@@ -1,0 +1,14 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Descripci\'on de la situaci\'on}{3}
+\contentsline {section}{\numberline {2}Misi\'on y Visi\'on}{3}
+\contentsline {section}{\numberline {3}An\'alisis FODA}{3}
+\contentsline {subsection}{\numberline {3.1}An\'alisis interno}{3}
+\contentsline {subsubsection}{\numberline {3.1.1}Fortalezas}{3}
+\contentsline {subsubsection}{\numberline {3.1.2}Debilidades}{3}
+\contentsline {subsection}{\numberline {3.2}An\'alisis externo}{3}
+\contentsline {subsubsection}{\numberline {3.2.1}Oportunidades}{3}
+\contentsline {subsubsection}{\numberline {3.2.2}Amenazas}{4}
+\contentsline {section}{\numberline {4}Objetivos}{4}
+\contentsline {section}{\numberline {5}Estrategias a desarrollar}{4}
+\contentsline {section}{\numberline {6}Descripci\'on de cada uno de los cargos}{4}
+\contentsline {section}{\numberline {7}Planificaci\'on a un a\~no de trabajo}{5}

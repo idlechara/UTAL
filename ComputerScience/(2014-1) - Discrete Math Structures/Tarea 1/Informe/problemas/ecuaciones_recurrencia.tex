@@ -1,0 +1,117 @@
+\section{Resolución de ecuaciones de recurrencia}
+
+\subsection{Resolver mediante telescópica y función generatriz}
+	\begin{center}
+		f(x) = f$\left(\frac{x}{2}\right)$ + $\log_{2}(x)$, f(2) = 1.
+	\end{center}
+	\subsubsection{Telescópica:}
+		\begin{center}	
+			Haciendo n = 2$^{k}$, f(k) sería:\\
+			f(2$^k$) = f(2$^{k-1}$) + k.\\
+			Con s(k) = f(2$^{k}$), s(1) = f(2) = 1.
+		\end{center}
+		\begin{eqnarray*}
+			s(k) &=& s(k-1) + k\\
+			s(k-1) &=& s(k-2) + k-1\\
+			&\vdots & \\
+			s(2) &=& s(1) +2
+		\end{eqnarray*}		
+		\begin{center}
+			Al sumar todo lo anterior se obtiene:\\
+		\end{center}					
+		\begin{eqnarray*}
+			s(k) = \sum_{i=1}^{k} i = \frac{k(k+1)}{2} \text{ ; } k = \log_2 x\\
+			f(x) = \frac{\log_2 x (\log_2 x + 1)}{2} \\
+		\end{eqnarray*}
+
+\subsection{Resolver con teorema maestro, polinómio característico y función generatriz}
+	\begin{center}
+		T(n) = 6T$\left(\frac{n}{6}\right)$ + 2n + 3, T(1) = 1.
+	\end{center}
+	\subsubsection{Mediante Teorema Maestro:}
+		\begin{center}
+			T(n) = n $\log{}(n)$
+		\end{center}
+	\subsubsection{Mediante Polinómio Característico:}
+		\begin{center}	
+			Haciendo n = 6$^{k}$, f(k) sería:
+		\end{center}
+		\begin{eqnarray}
+			\label{EQ:PC2_1}f(k) &=& 6 \cdot f(k-1) + 2 \cdot 6^{k} + 3, f(0) = 1\\
+			\label{EQ:PC2_2}\text{Avanzando en 1:}\qquad f(k+1) &=& 6 \cdot f(k) + 12 \cdot 6^{k} + 3\\
+			\label{EQ:PC2_3}\text{De \ref{EQ:PC2_2} - \ref{EQ:PC2_2}}  \qquad f(k+1) &=& 7 \cdot f(k) - 6 \cdot f(k-1) + 10 \cdot 6^{k}\\
+			\label{EQ:PC2_4}\text{\ref{EQ:PC2_3}}+1 \qquad f(k+2) &=& 7 \cdot f(k+1) - 6 \cdot f(k) + 60 \cdot 6^{k}\\
+			\label{EQ:PC2_5}\text{\ref{EQ:PC2_3}}\cdot6 \qquad 6 \cdot f(k+1) &=& 42 \cdot f(k) - 36 \cdot f(k-1) + 60 \cdot 6^{k}\\
+			\label{EQ:PC2_6}\text{\ref{EQ:PC2_4} - \ref{EQ:PC2_5}} \qquad f(k+2) &=& 13 \cdot f(k+1) - 48 \cdot f(k) + 36 \cdot f(k-1)
+		\end{eqnarray}
+		\begin{eqnarray*}
+			f(k+2) - 13 \cdot f(k+1) + 48 \cdot f(k) - 36 \cdot f(k-1) &=& 0\\
+			\lambda^{k+2} - 13 \lambda^{k+1} + 48 \lambda^{k} - 36 \lambda^{k-1} &=& 0\\
+			\lambda^{k-1}(\lambda^3 - 13\lambda^2 + 48\lambda - 36) &=& 0\\
+		\end{eqnarray*}
+		Al simplificar y sacar raíces:
+		\begin{eqnarray*}
+			(\lambda - 6)^2 &\cdot &(\lambda - 1)\\
+			f(n) &=& C_1 \cdot \lambda_{1}^{n} + C_2 \cdot n \cdot \lambda_{1}^{n} + C_3 \cdot \lambda_{3}^{n}\\
+		\end{eqnarray*}
+		Para resolver f(n):
+		\begin{eqnarray*}
+			f_0 = 1 &=& C_1 + C_3\\
+			f_1 = 21 &=& 6C_1 + 6C_2 + C_3\\
+			f_2 = 201 &=& 36C_1 + 72C_2 + C_3
+		\end{eqnarray*}
+		Utilizando una matriz u otro método de resolución, se obtiene que los valores para C$_1$, C$_2$ y C$_3$ son:
+		\begin{equation*}
+			C_1 = \frac{8}{5} \text{ , } \qquad C_2 = 2 \text{ , } \qquad C_3 = - \frac{3}{5}
+		\end{equation*}
+		Así, finalmente :
+		\begin{eqnarray*}
+			f(n) &=& \frac{8}{5} \cdot 6^n + 2 \cdot n \cdot 6^n - \frac{3}{5}\\
+			n = 2^k &-& k = \log_6 n\\
+			T(n) &=& n \left( \frac{8}{5} + 2 \cdot \log_6 n\right) - \frac{3}{5}
+		\end{eqnarray*}
+		
+	\subsubsection{Con Función Generatriz}
+		De \ref{EQ:PC2_1} tenemos:
+		\begin{eqnarray*}
+			f(k) &=& 6 \cdot f(k-1) + 2 \cdot 6^{k} + 3, f(0) = 1\\
+			\text{Avanzando en 1:} \qquad f(k+1) &=& 6 \cdot f(k) + 12 \cdot 6^{k} + 3\\
+		\end{eqnarray*}
+		Y aplicamos $\mathcal{G}$:
+		\begin{eqnarray*}
+			\frac{f(z) - f_0}{z} &=& 6f(z) + \frac{12}{1-6z} + \frac{3}{1-z} / \cdot z / -6zf(z) +1 \\
+			f(z)(1-6z) &=& \frac{12z}{1-6z} + \frac{3z}{1-z} + 1 \\
+			f(z) &=& \frac{12z}{(1-6z)^2} + \frac{3z}{(1-z)(1-6z)} + \frac{1}{1-6z}
+		\end{eqnarray*}
+		Separando fracciones se obtiene:
+		\begin{eqnarray*}
+			f(z) &=& \frac{12z}{1-6z} + \frac{\frac{8}{5}}{1-6z} -  \frac{\frac{3}{5}}{1-z}\\
+			\text{Con } n &=& 6^{k} \qquad k = \log_6 n \text{ y aplicando } \mathcal{G}^{-1}\\
+			T(n) &=& 2 \cdot \log_6 n  + \frac{8}{5} n - \frac{3}{5}
+		\end{eqnarray*}
+
+\subsection{Resolver utilizando polinómio característico y función generatriz}
+	\begin{center}
+		T(n) = T$\left(\frac{n}{2}\right)$ + T$\left(\frac{n}{4}\right)$ + T$\left(\frac{n}{8}\right)$ + n , T(1) = 0, T(2) = 1, T(4) = 2.
+	\end{center}
+	
+	\subsubsection{Función generatriz}
+	
+		\subsubsection{Con Función Generatriz}
+			Con n = 2$^k$, y r(k) = T(2$^k$),
+		\begin{eqnarray*}
+			r(k) &= r(k-1) + r(k-2) + r(k-3) + 2^k\\
+			\text{Avanzando en 3:} \qquad r(k+3) &= r(k+2) + r(k+1) + r(k) + 8 \cdot 2^k\\
+		\end{eqnarray*}
+		Y aplicamos $\mathcal{G}$:
+		\begin{eqnarray*}
+			\frac{r(z) - r_0 - r_1 - r_2}{z} &= \frac{r(z) - r_0 - r_1}{z} + \frac{r(z) - r_0}{z} + r(z) + \frac{8}{1 - 2z}\\
+			r(z) &= -\frac{8}{(1-2z)(1+z)} - \frac{2}{1+z}
+		\end{eqnarray*}
+		Separando fracciones se obtiene:
+		\begin{eqnarray*}
+			r(z) &= - \frac{\frac{8}{3}}{1-2z} + \frac{\frac{2}{3}}{1+z}\\
+			\text{Con } n = 6^{k} \qquad k &= \log_6 n \text{ y aplicando } \mathcal{G}^{-1}\\
+			T(n) &= -\frac{8}{3} n  + \frac{2}{3} (-1)^{\log_2 n}
+		\end{eqnarray*}
+	
