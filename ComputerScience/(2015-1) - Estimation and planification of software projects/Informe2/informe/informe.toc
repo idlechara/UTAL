@@ -1,0 +1,8 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Res\'umen}{3}
+\contentsline {section}{\numberline {2}Problemas}{3}
+\contentsline {subsection}{\numberline {2.1}Generales a las iteraciones}{3}
+\contentsline {subsection}{\numberline {2.2}Espec\IeC {\'\i }ficos a las iteraciones}{3}
+\contentsline {section}{\numberline {3}Soluciones}{3}
+\contentsline {subsection}{\numberline {3.1}Las que funcionaron}{3}
+\contentsline {subsection}{\numberline {3.2}Las que no funcionaron}{4}

@@ -1,0 +1,18 @@
+/*********************************************
+ * OPL 12.3 Data
+ * Author: jvarred
+ * Creation Date: 1 Jun 2015 at 17:00:12
+ *********************************************/
+
+ SheetConnection sheet ("datos_ayudantía.xlsl");
+
+  //traer cada parámetro desda el archivo excel
+CostosTransporte from SheetRead (sheet, "datos!C4:Q43"); 
+CostosOperacionales from SheetRead(sheet, "datos!C44:Q44");
+CostosFijos from SheetRead (sheet, "datos!C45:Q45"); 
+Toneladas from SheetRead (sheet, "datos!R4:R43"); 
+
+ //Copiar datos a Excel
+ x to SheetWrite (sheet, "resultados!C4:Q43");
+ y to SheetWrite (sheet, "resultados!C44:Q44");
+ 

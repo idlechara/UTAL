@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon Nov 22 16:15:27 CET 2010
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=/home/natsuko/asdf.jar
+manifest.mergeall=true
+manifest.mainclass=Renderer
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=
+includes=

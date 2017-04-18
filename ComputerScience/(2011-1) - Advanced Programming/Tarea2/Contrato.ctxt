@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=ejecutivoResponsable\ fechaInicio\ cliente\ correlativo
+comment0.target=Contrato(java.lang.String,\ java.lang.String,\ Cliente,\ int)
+comment1.params=plan
+comment1.target=void\ addServicio(PlanBandaAncha)
+comment10.params=
+comment10.target=int\ getCorrelativo()
+comment11.params=correlativo
+comment11.target=void\ setCorrelativo(int)
+comment2.params=
+comment2.target=java.lang.String\ getEjecutivoResponsable()
+comment3.params=ejecutivoResponsable
+comment3.target=void\ setEjecutivoResponsable(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getFechaInicio()
+comment5.params=fechaInicio
+comment5.target=void\ setFechaInicio(java.lang.String)
+comment6.params=
+comment6.target=java.util.ArrayList\ getServiciosContratados()
+comment7.params=serviciosContratados
+comment7.target=void\ setServiciosContratados(java.util.ArrayList)
+comment8.params=
+comment8.target=Cliente\ getCliente()
+comment9.params=cliente
+comment9.target=void\ setCliente(Cliente)
+numComments=12

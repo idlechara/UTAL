@@ -1,0 +1,21 @@
+/*
+ * Compass.h
+ *
+ *  Created on: Feb 18, 2014
+ *      Author: jvarred
+ */
+
+#ifndef COMPASS_H_
+#define COMPASS_H_
+
+namespace std {
+
+class Compass {
+    public:
+        Compass();
+        virtual ~Compass();
+};
+
+} /* namespace std */
+
+#endif /* COMPASS_H_ */

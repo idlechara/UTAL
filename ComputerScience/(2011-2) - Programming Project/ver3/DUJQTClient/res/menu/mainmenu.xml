@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/opcionFiltro" android:title="Filtros..." />
+	<item android:id="@+id/opcionConfiguracionInicio" android:title="Configuracion Inicio" />
+	<item android:id="@+id/opcionRecargar" android:title="(Re)cargar Inicio" />
+	<item android:id="@+id/opcionSalir" android:title="Salir" />
+</menu>

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=nombre\ apellidoMaterno\ apellidoPaterno\ fechaNacimiento\ nickName\ tallaPolera\ isCoach
+comment0.target=Participante(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ boolean)
+comment0.text=\r\n\ Constructor\ por\ defecto\ de\ la\ clase\ participante\r\n\ \r\n\ @param\ nombre\ nombre\ del\ participante\r\n\ @param\ apelllidoMaterno\ el\ apellido\ materno\ del\ participante\r\n\ @param\ apellidoPaterno\ el\ apellido\ paterno\ del\ participante\r\n\ @param\ fechaNacimiento\ fecha\ de\ nacimiento\ del\ participante\r\n\ @param\ nickName\ apodo\ del\ participante\r\n\ @param\ tallaPolera\ la\ talla\ de\ la\ polera\ que\ usara\r\n\ @param\ isCoach\ indica\ si\ es\ entrenador\ o\ participante\ regular\r\n
+comment1.params=
+comment1.target=boolean\ isCoach()
+comment1.text=\r\n\ Indica\ si\ un\ jugador\ es\ participante\ o\ no.\r\n\ \r\n\ @return\ un\ booleano\ que\ indica\ si\ es\ entrenador\ o\ no\ \r\n
+numComments=2

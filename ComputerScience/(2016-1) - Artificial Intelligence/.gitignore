@@ -1,0 +1,10 @@
+out/production/ChessPlayer/ann/Feature.class
+out/production/ChessPlayer/engine/Board.class
+out/production/ChessPlayer/engine/Coord.class
+out/production/ChessPlayer/engine/Move.class
+out/production/ChessPlayer/main/DeepChiaa.class
+out/production/ChessPlayer/mosquito/ParallelEngine.class
+out/production/ChessPlayer/mosquito/TrainingProcess.class
+out/production/ChessPlayer/trainer/Individual.class
+out/production/ChessPlayer/trainer/Tournament.class
+out/production/ChessPlayer/trainer/Trainer.class

@@ -1,0 +1,21 @@
+/*
+ * DebugServer.cpp
+ *
+ *  Created on: Feb 6, 2014
+ *      Author: jvarred
+ */
+
+#include "DebugServer.h"
+
+namespace std {
+
+DebugServer::DebugServer() {
+    // TODO Auto-generated constructor stub
+
+}
+
+DebugServer::~DebugServer() {
+    // TODO Auto-generated destructor stub
+}
+
+} /* namespace std */

@@ -1,0 +1,15 @@
+Dependencias:
+    GNU G++ >= 4.8
+    GNU Makefile
+
+Modo:
+    Makefile se encarga de la compilación. Para compilar todos los binarios
+    relativos a la tarea, utilize:
+
+        make all
+
+    Si no es eso lo que se busca, refierase al archivo makefile contenido
+    en este mismo directorio.
+
+Ejecucion:
+    Refiérase al enunciado de la "Tarea 2".

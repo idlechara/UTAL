@@ -1,0 +1,41 @@
+
+Executing file commands/01_table_generation.sql:
+	commands/01_table_generation.sql: 4 msecs
+
+Executing file commands/01_table_generation_hash.sql:
+
+Executing file commands/02_roles.sql:
+	commands/02_roles.sql: 69586 msecs
+
+Executing file commands/03_problems.sql:
+	commands/03_problems.sql: 1982939 msecs
+
+Executing file commands/04_countries.sql:
+	commands/04_countries.sql: 65772 msecs
+
+Executing file commands/05_sites.sql:
+	commands/05_sites.sql: 671179 msecs
+
+Executing file commands/06_contests.sql:
+	commands/06_contests.sql: 917848 msecs
+
+Executing file commands/07_contestants.sql:
+	commands/07_contestants.sql: 2077798 msecs
+
+Executing file commands/08_problem_sets.sql:
+	commands/08_problem_sets.sql: 11095732 msecs
+
+Executing file commands/09_contest_sites.sql:
+	commands/09_contest_sites.sql: 651507 msecs
+
+Executing file commands/10_teams.sql:
+	commands/10_teams.sql: 1877973 msecs
+
+Executing file commands/11_scoreboards.sql:
+	commands/11_scoreboards.sql: 3009461 msecs
+
+Executing file commands/12_team_members.sql:
+	commands/12_team_members.sql: 3403136 msecs
+
+Executing file commands/13_queries.sql:
+	commands/13_queries.sql: 498 msecs

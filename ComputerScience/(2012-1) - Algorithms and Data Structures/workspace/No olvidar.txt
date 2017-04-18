@@ -1,0 +1,2 @@
+proyecto3_2w es la implementacion de dos vias, osea mergesort normal
+proyecto3_8w es la implementacion de dos vias, osea mergesort de multiples vias

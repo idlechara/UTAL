@@ -1,0 +1,390 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{subcaption}
+\input{spanishAlgorithmic}
+\graphicspath{ {data/} }
+
+\title{{\bf Diseño y análisis de algoritmos}\\ Cálculo de mediana en tiempo lineal como mejor caso y caso promedio y estabilización del algoritmo de selección por pivotes IQS}
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{20 de Junio del 2015}
+
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+
+\section{Descripción de las pruebas experimentales}
+Para cada uno de los algoritmos desarrollados, se utilizó un conjunto de pruebas sintético por décadas con un tamaño total de $\sim11\text{GB}$. Cada prueba fue realizada con un conjunto de elementos bajo una distribución uniforme con un $5\%$ máximo de elementos repetidos. Originalmente este trabajo incluía el estudio del efecto de estos algoritmos sobre el mecanismo de selección incremental IQS, pero esto ha sido reemplazado por el estudio de una propuesta introspectiva al algoritmo de selección de medianas en tiempo lineal que incremente la precisión junto con su estabilidad en el caso promedio y evaluar sus efectos sobre el peor caso sin afectar su orden.
+
+\subsection{Leyenda en gráficos}
+\begin{itemize}
+	\item Violeta: Algoritmo de selección de mediana en tiempo $O(n)$ en caso promedio (QuickSelect).
+	\item Café: Algoritmo de selección de mediana en tiempo $O(n)$ en peor caso (BFPRT) con una iteración sobre el arreglo y luego mediana de medianas de un nivel.
+	\item Azul:  Algoritmo de selección de mediana en tiempo $O(n)$ en peor caso (iBFPRT) iterado sobre el resultado.
+	\item Rojo: Algoritmo de selección de mediana introspectivo en tiempo $O(n)$ en peor caso (IntrospectiveQuickMedian).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%% QUICKSELECT    %%%%%%%%%%%%%%%%%%
+
+\subsection{QuickSelect}
+
+Como es posible observar, si bien el rendimiento en el caso promedio es bastante prometedor y describe un comportamiento mas menos lineal (Figura \ref{IMG:QUICKSELECT_DESORTED}), en el peor caso (Figuras \ref{IMG:QUICKSELECT_SORTED} y \ref{IMG:QUICKSELECT_DESORTED}) muestra claramente un comportamiento cuadrático. Debido a esto, los experimentos luego de $N=30000$ fueron inviables por tiempo. La precisión de este algoritmo en encontrar la mediana es de $100\%$
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randomqs2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randomqs1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de QuickSelect para encontrar la mediana de un conjunto desordenado.}
+    \label{IMG:QUICKSELECT_RANDOM}
+\end{figure*}
+
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sortedqs2}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de QuickSelect para encontrar la mediana de un conjunto ordenado.}
+    \label{IMG:QUICKSELECT_SORTED}
+\end{figure*}
+
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{desortedqs2}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de QuickSelect para encontrar la mediana de un conjunto ordenado inversamente.}
+    \label{IMG:QUICKSELECT_DESORTED}
+\end{figure*}
+\FloatBarrier
+
+%%%%%%%%%%%%%%%%%%%% BFPRT    %%%%%%%%%%%%%%%%%%
+\subsection{Mediana de medianas no iterada}
+
+Para el caso de la selección utilizando una mediana no iterada, se ve un rendimiento similar a de un algoritmo de orden $n\ lg(n)$, principalmente debido a que dado que la mediana de medianas no es iterada, luego de obtener el primer conjunto de candidatos requiere ordenarlos para poder seleccionar el elemento medio. Utilizar BFPRT de este modo, no es diferente a utilizar el método de \textit{mediana de 3} solo que con $\frac{n}{5}$ elementos. Esto no es apreciable a simple vista, dado que al dividir por $5$ el valor de $lg(n)$ este baja bastante su valor, además de tener una precisión bastante alta, fluctuando entre un $98\%$ y $100\%$ en todos los casos. 
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randombfprt2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randombfprt1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de BFPRT no iterado para encontrar la mediana de un conjunto desordenado.}
+    \label{IMG:BFPRT_RANDOM}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sortedbfprt2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sortedbfprt1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de BFPRT no iterado para encontrar la mediana de un conjunto ordenado.}
+    \label{IMG:BFPRT_SORTED}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{desortedbfprt2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{desortedbfprt1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de BFPRT no iterado para encontrar la mediana de un conjunto ordenado inversamente.}
+    \label{IMG:BFPRT_DESORTED}
+\end{figure*}
+\FloatBarrier
+
+
+%%%%%%%%%%%%%%%%%%%% iBFPRT    %%%%%%%%%%%%%%%%%%
+
+\subsection{Mediana de medianas iterada versus versión no iterada}
+
+Es posible observar un incremento del rendimiento en comparación a su par no iterado, principalmente debido a que la complejidad baja en $\frac{5}{n}$ en cada iteración y la operación de selección de mediana se ejecuta bajo un tiempo constante, asegurando una ejecución en peor caso de tiempo lineal. Existe una significativa pérdida de precisión respecto a su par no iterado, principalmente debido a que pierde información en cada ciclo. Su precisión fluctúa entre el $94\%$ a $99\%$ para el caso promedio y entre $84\%$ a $99\%$ para el peor caso.
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randomibfprt2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randomibfprt1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de iBFPRT iterado para encontrar la mediana de un conjunto desordenado.}
+    \label{IMG:IBFPRT_RANDOM}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sortedibfprt2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sortedibfprt1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de BFPRT iterado para encontrar la mediana de un conjunto ordenado.}
+    \label{IMG:IBFPRT_SORTED}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{desortedibfprt2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{desortedibfprt1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de BFPRT iterado para encontrar la mediana de un conjunto ordenado inversamente.}
+    \label{IMG:IBFPRT_DESORTED}
+\end{figure*}
+\FloatBarrier
+
+%%%%%%%%%%%%%%%%%%%% IQM    %%%%%%%%%%%%%%%%%%
+\subsection{Selección introspectiva de mediana aproximada}
+
+Esta modificación del algoritmo BFPRT utiliza como base la implementación existente de QuickSelect. Dado que en el caso promedio QuickSelect realiza $lg(n)$ recursiones para encontrar el valor buscado, es posible afirmar que si la cantidad de recursiones es superior a este valor, entonces estamos cayendo en el peor caso, y entonces cambia a BFPRT para buscar la mediana aproximada. La ventaja de este algoritmo es que en el caso promedio posee una precisión más alta que el algoritmo de mediana de medianas compitiendo incluso contra QuickSelect y en el peor caso mantiene o mejora la precisión del algoritmo de mediana de medianas. Su precisión fluctúa entre  $99\%$ a $100\%$ para el caso promedio y  $85\%$ a $99\%$ en el peor caso.
+
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\REQUIRE $J$ arreglo de datos desordenados, $k$ el largo de la lista temporal $K$, $i,j$ son los límites del arreglo $J$
+\ENSURE $A_{\frac{|A|}{2}}$ es la mediana aproximada de $J$
+\IF{recursión en peor caso}
+	\STATE $A \leftarrow []$
+	\STATE $i \leftarrow 0$
+	\WHILE{$i+k<|A|$}
+		\STATE $K \leftarrow A_{i...min(i+k,|A|)}$
+		\STATE $K \leftarrow ordenar(K)$
+		\STATE $insertar K_{\frac{|K|}{2} en A}$
+		\STATE $i \leftarrow i+k$
+	\ENDWHILE
+	\STATE $A \leftarrow ordenar(A)$
+	\RETURN $medianaDeMedianas(A)$
+\ELSE
+	\STATE $i \leftarrow 0$
+	\STATE $j \leftarrow |A|$
+	\IF{$p \neq \frac{|A|}{2}$}
+		\STATE $p \leftarrow obtenerPivote(A, i, j)$
+		\STATE $p \leftarrow particionar(A, i, j)$
+		\IF{$p > \frac{|A|}{2}$}
+			\STATE $i \leftarrow p$
+		\ELSE
+			\STATE $j \leftarrow p$
+		\ENDIF
+		\RETURN $IntrospectiveQuickMedian(A,i,j)$
+	\ELSE
+		\RETURN $p$
+	\ENDIF
+\ENDIF
+
+\end{algorithmic}
+\caption{Selección de mediana aproximada utilizando introspección}
+\label{ALG:SELECCION_MEDIANA_INTROSPECTIVA}
+\end{algorithm}
+
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randomiqm2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randomiqm1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de IQM iterado para encontrar la mediana de un conjunto desordenado.}
+    \label{IMG:IQM_RANDOM}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sortediqm2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sortediqm1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de IQM iterado para encontrar la mediana de un conjunto ordenado.}
+    \label{IMG:IQM_SORTED}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{desortediqm2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{desortediqm1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de IQM iterado para encontrar la mediana de un conjunto ordenado inversamente.}
+    \label{IMG:IQM_DESORTED}
+\end{figure*}
+\FloatBarrier
+
+%%%%%%%%%%%%%%%%%%%% RESUMEN    %%%%%%%%%%%%%%%%%%
+\section{Resumen y comparación final}
+
+Finalmente, comparando los algoritmos en estudio, se puede apreciar que el mejor rendimiento y estabilidad para el caso promedio es presentado por el algoritmo BFPRT iterado, seguido de QuickSelect e IntrospectiveQuickMedian, y para el peor caso la mejor estabilidad y rendimiento es evidente por la familia de algoritmos basados en mediana de medianas seguido por IntrospectiveQuickSelect con un orden aparentemente similar, en cambio QuickSelect muestra un comportamiento erratico con un consumo de tiempo excesivo, propio del peor caso esperado.
+
+Respecto a la precisión alcanzada para el caso promedio QuickSelect presenta una precisión absoluta de $100\%$ seguida muy de cerca por IntrospectiveQuickMedian y luego BFPRT en sus versiones no iteradas e iteradas siendo esta última con la menor precisión, y para el peor caso, la mejor precisión es alcanzada por QuickSelect y BFPRT no iterado y luego BFPRT iterado junto con IntrospectiveQuickMedian, sin una pérdida significativa de precisión respecto a BFPRT iterado.
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randomsummary2}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randomsummary1}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de algoritmos para selección de mediana para encontrar la mediana de un conjunto desordenado.}
+    \label{IMG:SUMMARY_RANDOM}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sortedsummary2}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de algoritmos de selección de medianas para encontrar la mediana de un conjunto ordenado.}
+    \label{IMG:SUMMARY_SORTED}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{desortedsummary2}
+        %\caption{}
+    \end{subfigure}
+    \caption{Rendimiento de algoritmos para selección de medianas para encontrar la mediana de un conjunto ordenado inversamente.}
+    \label{IMG:SUMMARY_DESORTED}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randomprecision1}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{randomprecision2}
+        %\caption{}
+    \end{subfigure}
+    \caption{Precisión de algoritmos para selección de mediana para encontrar la mediana de un conjunto desordenado.}
+    \label{IMG:PRECISION_RANDOM}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{desortedprecision1}
+        %\caption{}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{desortedprecision2}
+        %\caption{}
+    \end{subfigure}
+    \caption{Precisión de algoritmos para selección de mediana para encontrar la mediana de un conjunto ordenado inversamente.}
+    \label{IMG:PRECISION_DESORTED}
+\end{figure*}
+\FloatBarrier
+
+
+\section{Trabajo Futuro}
+\begin{itemize}
+	\item Investigar el efecto que produce reducir el espacio muestral utilizando la técnica empleada en BFPRT no iterado
+	\item Investigar el efecto que tiene este algoritmo de selección de medianas en algoritmos de selección basados en pivotes.
+	\item Investigar el efecto que tiene el criterio de selección de espacio muestral sobre la condición de introspección.
+\end{itemize}
+
+\end{document}
