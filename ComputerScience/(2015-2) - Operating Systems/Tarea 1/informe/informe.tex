@@ -1,0 +1,57 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{ae}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[stable]{footmisc}
+\input{spanishAlgorithmic}
+
+\title{{\bf Sistemas Operativos}\\Tarea 1}
+\author{Erik Regla\\ \texttt{eregla09@alumnos.utalca.cl}\\}
+\date{11 de Agosto del 2015}
+
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+
+\section{Investigue sobre los siguientes aspectos de hardware que debe conocer a cabalidad}
+\begin{enumerate}[a)]
+	\item Componentes básicos de un sistema computacional (Arquitectura de Von Neumman)\\
+	\emph{R: } Unidad de procesamiento central dividida en unidad aritmetico-lógica y registros de procesador, unidad de control con registro de instrucciones y contador de programa y memoria principal.
+	
+	\item Ciclo de ejecución de las instrucciones
+	\begin{enumerate}[1.-]
+		\item \emph{Cargar instruccion}: La siguiente instruccion pasa del contador de programa al registro de instrucciones. 
+		\item \emph{Decodificar instruccion}: La instruccion previamente cargada es interpretada.
+		\item \emph{Leer dirección de memoria}: La instruccion a ejecutar tiene un bloque de memoria objetivo, el cual debe ser leido antes de realizar cambios.
+		\item \emph{Ejecutar instruccion}: La instruccion se ejecuta.
+		\item repetir.
+	\end{enumerate}
+	
+	\item Interrupciones, ¿qué son? ¿por qué son útiles, en el contexto de la E/S? ¿Cuales tipos existen?\\
+	\emph{R: } Las interrupciones son señales que indican que ha ocurrido un evento que requiere atención inmediata. Son especialmente útiles en microcontroladores para ejecutar fragmentos cortos de código cuando este se sabe que el evento que lo desencadena es recurrente. Existen interrupciones por hardware que utilizan alertas electrónicas e interrupciones por software que tienden a ser mensajes que el mismo sistema operativo envía usualmente para controlar errores.
+	
+	\item Jerarquía de memoria, principio de localidad de referencia\\
+	\emph{R: } Término utilizado para discutir materias de desempeño en memoria. Esta varía de procesador en procesador. El principio de localidad de referencia indica que si $M$ es un arreglo unidimensional y $\mathbb{P}_i$ la probabilidad de leer un bloque de memoria $i$ en $M$, entonces,  $\mathbb{P}_{i+1} > \mathbb{P}_{i+x}, \forall x \in [0..|M|]-\{i+1\}$
+	
+	\item Acceso directo a memoria (DMA)\\
+	\emph{R: } Característica que permite a dispositivos acceder a direcciones de memoria en RAM directamente sin pasar por el procesador.
+	
+	\item Arquitecturas SMP, solo la organización incluidos los cachés\\
+	\emph{R: } Cada unidad de procesamiento posee un acceso directo a memoria utilizando el bus de sistema, sin embargo, la caché es individual para cada uno de estos. La caché por motivos de coherencia está permamentemente monitoreando la actividad del bus. La entrada y salida junto con la RAM también van directamente conectadas al bus de sistema, siendo este controlado por su propio bus.
+
+	 \item computadores multicore, diferencia con SMP convencional\\
+	 \emph{R: } La organización de la caché es diferente, siendo esta dividida en diferentes niveles de acuerdo a su tamaño y nivel de acceso compartido el cual no existe en SMP.
+	\end{enumerate}
+\end{document}

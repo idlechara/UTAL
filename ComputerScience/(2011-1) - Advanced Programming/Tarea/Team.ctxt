@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=nombre\ coach\ universidad
+comment0.target=Team(java.lang.String,\ Participante,\ java.lang.String)
+comment0.text=\r\n\ constructor\ de\ la\ clase\ team\r\n\ @param\ nombre\ el\ nombre\ del\ equipo\r\n\ @param\ coach\ el\ coach\ del\ equipo\r\n\ @param\ universidad\ la\ universidad\ a\ la\ que\ pertenece\r\n
+comment1.params=miembro
+comment1.target=void\ addMiembro(Participante)
+comment1.text=\r\n\ a\u00F1ade\ un\ miembro\ y\ valida\ el\ equipo\r\n\ @param\ miembro\ el\ miembro\ a\ agregar\r\n
+comment2.params=numero\ nombre\ tiempo
+comment2.target=void\ mostrarProblema(int,\ java.lang.String,\ int)
+comment2.text=\r\n\ le\ ense\u00F1a\ un\ problema\ a\ un\ juez,\ rebiendo\ el\ resultado,\ y\ actualizando\ el\ "marcador"\r\n\ @param\ numero\ numero\ del\ problema\r\n\ @param\ nombre\ nombre\ del\ problema\r\n\ @param\ tiempo\ tiempo\ en\ el\ que\ fue\ enviado\r\n
+comment3.params=
+comment3.target=int\ getResueltos()
+comment3.text=\r\n\ retorna\ el\ numero\ de\ problemas\ resueltos\r\n\ @return\ el\ numero\ de\ problemas\ resueltos\r\n
+comment4.params=
+comment4.target=int\ getTiempo()
+comment4.text=\r\n\ regresa\ el\ tiempo\ de\ resolucion\ total\ de\ los\ problemas\r\n\ @return\ el\ tiempo\ de\ resolucion\ total\r\n
+comment5.params=
+comment5.target=boolean\ isValid()
+comment5.text=\r\n\ indica\ si\ un\ equipo\ es\ valido\ para\ participar\r\n\ @return\ la\ validacion\r\n
+numComments=6

@@ -1,0 +1,44 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{ae}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[stable]{footmisc}
+\input{spanishAlgorithmic}
+
+\title{{\bf Sistemas Operativos}\\Proyecto 1\footnote{El código entregado utiliza la implementación de \textit{pthreads} conforme a la norma ISO/IEC 9945-1:1996 (POSIX.1) y la implementación de semáforos especificada en POSIX Realtime Extension (1003.1b-1993/1003.1i-1995).
+}}
+\author{Erik Regla\\ \texttt{eregla09@alumnos.utalca.cl}\\}
+\date{31 de Agosto del 2015}
+
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+
+\section{Diseño del algoritmo}
+El programa implementa literalmente lo que el enunciado pide (no fue necesario adaptar nada, dado que el mismo enunciado presenta un diseño para la solución del problema).
+
+Para poder sincronizar el trabajo de las abejas se utiliza un semáforo común para las abejas (en vista que no se solicita respetar el orden en que estas llegan) y otro para el oso. 
+
+El oso espera a ser notificado de la presencia de miel en el panal y devora todo el contenido disponible. Luego notifica que ha terminado a la abeja que le indicó la situación.
+
+Por parte de las abejas, estas esperan a que su bloqueo mutuo sea liberado para poder depositar miel en el panal sin competir por este, sin embargo al momento de liberarse este. pueden ocurrir dos casos:
+\begin{itemize}
+\item \textbf{La abeja ha depositado miel en el panal pero no es suficiente como para que el oso coma}, en este caso, el bloqueo de la abeja es liberado para permitir a otra depositar miel.
+\item \textbf{La abeja ha depositado miel en el panal y esta es suficiente como para que el oso coma}, en la cual el bloqueo del oso es liberado (para que pueda comer) y la abeja espera a que su bloqueo sea liberado por parte del oso. Una vez que el oso termina de comer, le indica a la abeja que esta puede seguir su camino tranquila y con esto, el hilo de las abejas vuelve a funcionar normalmente.
+\end{itemize}
+
+Para efectos de pruebas, primero son creados todos los semáforos e hilos y solo una vez que estos están correctamente inicializados el bloqueo para las abejas es liberado. En caso de existir un error en alguna operación de sincronización, el programa termina inmediatamente.
+
+\end{document}

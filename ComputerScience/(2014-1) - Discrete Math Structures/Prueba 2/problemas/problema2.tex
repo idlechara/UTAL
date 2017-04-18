@@ -1,0 +1,32 @@
+\section{Mascotas}
+
+\subsection{Entidades}
+$Jano$\footnote{Es uno de los compañeros de clase del autor.}
+
+\subsection{Solución}
+
+Un compañero tiene un perro un gato y un canario.
+\begin{equation}
+P(Jano) \wedge G(Jano) \wedge C(Jano)
+\end{equation}
+
+Todos sus compañeros tienen un perro, un gato y un canario.
+\begin{equation}
+\forall x,  P(x) \wedge G(x) \wedge C(x)
+\end{equation}
+
+Al menos uno sus compañeros tiene un gato y un canario, pero no un perro.
+\begin{equation}
+\exists x,  \neg P(x) \wedge G(x) \wedge C(x)
+\end{equation}
+
+Al menos uno sus compañeros tiene un gato y un canario, pero no un perro.\footnote{Alternativamente, se puede escribir $\forall x,   \neg P(x) \wedge \neg G(x) \wedge \neg C(x)$.}
+\begin{equation}
+\exists x,  \neg (P(x) \vee G(x) \vee C(x))
+\end{equation}
+
+Para cada uno de los tres animales, hay un compañero de ustedes que tiene al menos uno.\footnote{No se encontró forma alguna de poder escribir esto de manera que se leyese de la misma manera de la que se interpreta.}
+
+\begin{equation}
+\exists x,  (P(x) \vee G(x) \vee C(x))
+\end{equation}

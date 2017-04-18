@@ -1,0 +1,71 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\input{spanishAlgorithmic}
+
+\title{{\bf Algoritmo de resolución de laberintos y circuitos sobre terreno llano}\\Implementación sobre robot \textit{Pololu 3$\pi$}}
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{1 de Mayo del 2014}
+
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+
+\section{Introducción}
+\textit{Pololu 3$\pi$} es un robot multiproósito de pequeña escala, diseñado principalmente para detección de líneas sobre superfices homogéneas, utilizando sensores infrarrojos para medir la reflectancia sobre esta. En el siguiente informe, se detallará la implementación de un controlador \textit{PID} para la resolución del problema de seguir líneas y un algoritmo basado en \textit{Djikstra} para solucionar el problema del laberinto.
+
+
+
+\section{Terreno}
+El terreno a utilizar para pruebas es una superficie de melamina opaca de tono blanco, comúnmente utilizada en los muebles de cocina. Presenta una alta reflectancia ante luz natural y leve difusión de la misma. Bajo situaciones de luz natural o luz artifical halógena, se perciben diferencias al calibrar los sensores a $500~700us$, a luz artificial común es necesario subir el tiempo a $1000~1200us$.
+
+Para las líneas se utilizará una cinta negra de \textit{PVC} de color negro. La reflectancia es muy baja, la que por motivos de calibración se considerará nula.
+
+
+\section{Implementación}
+
+\subsection{Algoritmo de calibración}
+Para asegurarse de obtener una lectura apropiada de la línea a lo largo del circuito se consideran los siguientes factores:
+\begin{itemize}
+\item En el ambiente de la competencia, la luz puede variar durante el transcurso de esta.
+\item Hay múltiples fuentes de luz en el escenario, lo cual puede afectar las lecturas si estas se realizan de manera fija o si se precalcula.
+\item El robot no cuenta con algún sistema de barrera contra luz parásita.
+\item Solo se puede configurar el emisor IR al momento de cargar el programa, una vez activo no se puede volver a apagar.
+\end{itemize}
+
+Por ende, una medida tomada en un momento $t_1$ del día puede no ser válida para un momento $t_2$, las medidas podrían ser muy altas o muy bajas. El Algoritmo \ref{alg:calibración} implementa una calibración realizada en linea.
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\REQUIRE $S_{max}$ un arreglo de tamaño $n$, inicializado en $0$. $S_{min}$  un arreglo de tamaño $n$, inicializado en $\infty$. $t_{total}$ es el tiempo destinado a la calibración.
+\ENSURE $S_{max}$ y $S_{min}$ contienen los valores máximos y respectivos de la calibración.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGIN ALGORITHM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$t_{actual} \leftarrow 0$
+\WHILE{$t_{actual} < \frac{t_{total}}{2}$}
+	\STATE $D \leftarrow$ valor de los sensores en el instante $t_{actual}$
+	\FOR{$0..n \rightarrow i$}
+		\IF{$D_{i} > S_{{max}_{i}}$}
+			\STATE $S_{{max}_{i}} \leftarrow D_{i}$
+		\ENDIF
+		\IF{$D_{i} < S_{{min}_{i}}$}
+			\STATE $S_{{min}_{i}} \leftarrow D_{i}$
+		\ENDIF
+	\ENDFOR
+	\STATE $$
+\ENDWHILE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END ALGORITHM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{algorithmic}
+\caption{Calibración \textit{en línea} para lectura de valores}\label{alg:calibración}
+\end{algorithm}
+
+\end{document}

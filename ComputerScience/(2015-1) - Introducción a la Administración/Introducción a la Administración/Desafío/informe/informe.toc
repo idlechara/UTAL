@@ -1,0 +1,9 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Descripci\'on de la situaci\'on}{3}
+\contentsline {section}{\numberline {2}\IeC {\textquestiondown }Reemplazo en huelga?}{3}
+\contentsline {subsection}{\numberline {2.1}\IeC {\textexclamdown }Si el problema es ese, entonces reemplacemos a todo el mundo!}{3}
+\contentsline {subsection}{\numberline {2.2}Intereses en conflicto}{4}
+\contentsline {section}{\numberline {3}Efectos personales}{4}
+\contentsline {subsection}{\numberline {3.1}Descripci\'on de la situaci\'on personal}{4}
+\contentsline {subsection}{\numberline {3.2}Efectos sobre cambios en la normativa}{4}
+\contentsline {section}{\numberline {4}Conclusiones}{5}

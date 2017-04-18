@@ -1,0 +1,77 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{ae}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{imakeidx}
+\usepackage{algorithmic}
+\usepackage[stable]{footmisc}
+\input{spanishAlgorithmic}
+
+\title{{\bf Planificación y estimación de proyectos de software}\\Informe de evaluación de proceso\\Unidad 2 - Metodologías Ágiles}
+\author{Erik Regla, Daniela Paredes, Gonzalo Rojas, Henry Torres\\ \texttt{\{eregla09, dparedes09, gorojas13, htorres13\}@alumnos.utalca.cl}\\\\}
+\date{10 de Diciembre del 2015}
+
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+
+%\newpage
+%\tableofcontents
+%\newpage
+
+\section{Problemas}
+\subsection{Generales a las iteraciones}
+El principal problema fue la motivación y responsabilidad. Del equipo de cuatro, al comienzo de las iteraciones (y durante prácticamente todo el ciclo) solo dos personas trabajaron activamente en desarrollo y generación de informes. Esto generó problemas al momento de calcular el ``tamaño'' de las tareas al momento de ejecutar las iteraciones dado que se esperaba contar con cuatro personas para desarrollar el producto y no solo dos como fue en la práctica.
+%El uso de un lenguaje que parte del equipo no manejaba afecto a la motivación y el avance.
+
+Al momento de formar el equipo, existía una gran diferencia entre los conocimientos y experiencia programando. Normalmente esto no debiera de ser un problema, dado que el \textit{``agilismo''} permite avanzar a los miembros a su propio ritmo, pero la falta de disciplina y compromiso hizo de la falta de control un problema grave al no estar dispuestos a tomar tareas (en comparación a la etapa tradicional) ni a realizar las que tenían por cuenta propia. Adicionalmente, muchos de los guiones de usuario fueron MUY largos, la ambigüedad de cada una de las tareas subía, lo que dificultaba el poder terminarlas al no tener claridad de qué realmente había que entregar como artefacto.
+
+
+\subsection{Específicos a las iteraciones}
+Para la primera iteración debido a la falta de dos personas al comienzo de la iteración, el resto del equipo que estuvieron no avanzaron según lo planificado, por el  simple hecho que no eran controlados y así atrasando el avance para la segunda iteración, aunque su tarea era la de capacitación ya que se utilizaría Ruby On Rails (el que a futuro causaría un problema con la motivación por el desconocimiento del lenguaje debido a la falta de de disciplina y/o madurez de los miembros). Mucho del trabajo a realizarse de la primera iteración fue realizado casi al terminar esta.
+
+En la segunda iteración, uno de los miembros comunico al equipo que dejaría de participar, ya que este no podía seguir por motivos propios en el ramo, aunque tampoco nunca puso de su parte como para poder avanzar y recuperar lo atrasado. Entonces comenzamos a re-calcular los pesos para las siguientes iteraciones. Luego, el integrante mismo integrante del problema decide continuar. Esta situación de indecisión se repitió una y otra vez hasta el fin del proyecto.
+
+Durante la tercera iteración el profesor nos indicó que debíamos corregir el sistema por la falta de ``interacción de usuario'', así para solucionar este error, cambiamos la meta de iteración y objetivos para la cuarta iteración a uno de los módulos que a largo plazo debía ser implementado originalmente en la plataforma web (y que dependía de las metas anteriores las cuales no pudieron ser completadas a tiempo) en JavaFX, lenguaje en el cual todos tienen conocimiento. Nuevamente acá el trabajo principal lo realizaron dos personas. Una entregó una parte de un módulo crítico, sin embargo, esta ni siquiera fue revisada por el autor y no cumplía con las normas básicas de calidad para ser aceptado o corregido, por lo cual ese módulo contó como inválido.
+
+Para la cuarta iteración el problema fue tiempo, con solo dos personas desarrollando en medio de evaluaciones no se tenía el tiempo disponible necesario como para corregir los errores de la iteración pasada y terminar a cabalidad todas las características del módulo a entregar.
+
+\section{Soluciones}
+\subsection{Las que funcionaron}
+En general, una de las mejores decisiones tomadas por el equipo fue asumir que solo dos personas tenían disponibilidad para trabajar y a estas asignarles las tareas críticas de cada iteración, lo cual funcionó medianamente bien de no haber sido por que el overhead de asumir dichas tareas fue demasiado alto.
+
+Adicionalmente se realizó un experimento al momento de desarrollar la cuarta iteración (la que buscaba entregar de por si un artefacto completo), antes de comenzar la etapa de desarrollo se diseño previamente los modelos y flujos de datos además de aspectos visuales a considerar y requisitos del sistema. Esto permitió que a lo largo de la iteración las personas involucradas no tuviesen que invertir tiempo en informar que cambios se realizaban a la aplicación en relación a la idea inicial, reduciendo el tiempo de desarrollo y especializando las tareas, lo que se tradujo de quemar 1 a 2 puntos de guión por iteración a quemar 13 directamente (ver Figura \ref{fig1}). La introducción de una etapa previa de planificación al comienzo de la iteración de un artefacto resultó ser un éxito.
+
+\subsection{Las que no funcionaron}
+La responsabilidad nunca funcionó. Reducir el tamaño de las tareas fue un fracaso rotundo dado que sin importar el tamaño de la tarea. El planificar quién haría qué cosa tampoco funcionó La re-planificación de las tareas. 
+
+Pese a todo, seguíamos siempre haciendo la planificación con tareas largas. En la última iteración nos comenzaron a funcionar los procedimientos, pero ya era tarde. Las reuniones al término de cada iteración eran solo llevada a cabo por la mitad de los miembros principalmente por la falta de tiempo debido a los finales de semestre, definitivamente eso no funcionó como se esperaba.
+
+\section{Conclusiones}
+Las metodologías ágiles son útiles en equipos con altos niveles de disciplina, siendo este un requerimiento primordial para el correcto funcionamiento de este. Se requiere que los desarrolladores se sientan comprometidos con la tarea y sean independientes al momento de tomar decisiones y conscientes al momento de tomar asignaciones a modo de no sobrecargarse. 
+
+Para equipos con altos niveles de disciplina y compromiso, el tener habilidades diferentes y a distintos niveles no supone un problema, dado que cada persona puede avanzar a su propia velocidad sin entorpecer el trabajo del resto (el caso de la cuarta iteración en donde una persona se enfocó de lleno en el diseño de la aplicación, requisitos e implementación de la lógica de negocio mientras que otra se mantuvo constantemente trabajando en implementación de la interfaz y diseño gráfico). Sin embargo de faltar compromiso al momento de tomar tareas produce un retraso en la planificación y la falta de disciplina se termina transformando en falta de motivación al ver el avance de los demás miembros del equipo.
+
+La etapa de planificación es un momento crucial durante las iteraciones, proceso en que todos deben participar. En nuestro caso solo dos personas se dedicaron a esto, provocando que las tareas y guiones fueran valorados solo por las dos personas más involucradas en el proceso. Esto a su vez junto con la falta de motivación comenzó a asustar a los dos miembros restantes separándolos del proceso.
+
+\section{Anexos}
+
+\begin{figure}[H]
+	\includegraphics[width=.8\textwidth]{burndown.pdf}
+\caption{Burndown chart del proyecto realizado. En la figura es claramente apreciable el incremento en los puntos de guión producido por la sub-división de estos y el cambio de meta antes de la cuarta iteración.}
+\label{fig1}
+\end{figure}
+
+\end{document}

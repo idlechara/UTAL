@@ -1,0 +1,15 @@
+Sistemas Operativos - Proyecto 1 - Erik Regla 
+31 de Agosto de 2015
+
+..
+ |-src
+ |  \- main.cc		Implementacion de Proyecto 1 para Apple LLVM versión 7.0.0 (clang-700.0.72)
+ |
+ \-informe
+    |
+   ...
+    |- informe.pdf	Informe de Proyecto 1
+   ...
+    \- informe.tex	Fuente informe Proyecto 1
+
+

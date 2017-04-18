@@ -1,0 +1,16 @@
+﻿DROP INDEX alumnosidx;
+DROP INDEX beneficiosidx;
+DROP INDEX carrerasidx;
+DROP INDEX documentos__idx;
+DROP INDEX documentos_idx;
+DROP INDEX doc_bene__idx;
+DROP INDEX doc_bene_idx;
+DROP INDEX doc_beneidx;
+DROP INDEX institucionesidx;
+DROP INDEX postulaciones__idx;
+DROP INDEX postulaciones_idx;
+DROP INDEX postulacionesidx;
+DROP INDEX postulaciones__documentosidx;
+DROP INDEX postulaciones_documentosidx;
+DROP INDEX postulacionesdocumentosidx;
+DROP INDEX tiposidx;

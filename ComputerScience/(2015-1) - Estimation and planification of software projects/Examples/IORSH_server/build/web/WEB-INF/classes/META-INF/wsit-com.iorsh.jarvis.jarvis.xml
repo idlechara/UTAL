@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="jarvis" targetNamespace="http://jarvis.iorsh.com/" xmlns:tns="http://jarvis.iorsh.com/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsrm="http://docs.oasis-open.org/ws-rx/wsrmp/200702" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sc="http://schemas.sun.com/2006/03/wss/server" xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" 
+ >
+    <message name="listaBloques"/>
+    <message name="listaBloquesResponse"/>
+    <message name="listaEventos"/>
+    <message name="listaEventosResponse"/>
+    <message name="listaRecursos"/>
+    <message name="listaRecursosResponse"/>
+    <message name="eventosAntesDe"/>
+    <message name="eventosAntesDeResponse"/>
+    <message name="eventosDespu%C3%A9sDe"/>
+    <message name="eventosDespu%C3%A9sDeResponse"/>
+    <message name="eventosConcurrentesA"/>
+    <message name="eventosConcurrentesAResponse"/>
+    <message name="eventosPorRecurso"/>
+    <message name="eventosPorRecursoResponse"/>
+    <message name="eventosEnBloque"/>
+    <message name="eventosEnBloqueResponse"/>
+    <message name="eventosPorResponsable"/>
+    <message name="eventosPorResponsableResponse"/>
+    <portType name="jarvis">
+        <operation name="listaBloques">
+            <input message="tns:listaBloques"/>
+            <output message="tns:listaBloquesResponse"/>
+        </operation>
+        <operation name="listaEventos">
+            <input message="tns:listaEventos"/>
+            <output message="tns:listaEventosResponse"/>
+        </operation>
+        <operation name="listaRecursos">
+            <input message="tns:listaRecursos"/>
+            <output message="tns:listaRecursosResponse"/>
+        </operation>
+        <operation name="eventosAntesDe">
+            <input message="tns:eventosAntesDe"/>
+            <output message="tns:eventosAntesDeResponse"/>
+        </operation>
+        <operation name="eventosDespu%C3%A9sDe">
+            <input message="tns:eventosDespu%C3%A9sDe"/>
+            <output message="tns:eventosDespu%C3%A9sDeResponse"/>
+        </operation>
+        <operation name="eventosConcurrentesA">
+            <input message="tns:eventosConcurrentesA"/>
+            <output message="tns:eventosConcurrentesAResponse"/>
+        </operation>
+        <operation name="eventosPorRecurso">
+            <input message="tns:eventosPorRecurso"/>
+            <output message="tns:eventosPorRecursoResponse"/>
+        </operation>
+        <operation name="eventosEnBloque">
+            <input message="tns:eventosEnBloque"/>
+            <output message="tns:eventosEnBloqueResponse"/>
+        </operation>
+        <operation name="eventosPorResponsable">
+            <input message="tns:eventosPorResponsable"/>
+            <output message="tns:eventosPorResponsableResponse"/>
+        </operation>
+    </portType>
+    <binding name="jarvisPortBinding" type="tns:jarvis">
+        <wsp:PolicyReference URI="#jarvisPortBindingPolicy"/>
+        <operation name="listaBloques">
+            <input>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="listaEventos">
+            <input>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="listaRecursos">
+            <input>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="eventosAntesDe">
+            <input>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="eventosDespu%C3%A9sDe">
+            <input>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="eventosConcurrentesA">
+            <input>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="eventosPorRecurso">
+            <input>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#jarvisPortBinding_listaBloques_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="eventosEnBloque">
+            <input>
+                <wsp:PolicyReference URI="#jarvisPortBinding_eventosEnBloque_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#jarvisPortBinding_eventosEnBloque_Output_Policy"/>
+            </output>
+        </operation>
+        <operation name="eventosPorResponsable">
+            <input>
+                <wsp:PolicyReference URI="#jarvisPortBinding_eventosPorResponsable_Input_Policy"/>
+            </input>
+            <output>
+                <wsp:PolicyReference URI="#jarvisPortBinding_eventosPorResponsable_Output_Policy"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="jarvis">
+        <port name="jarvisPort" binding="tns:jarvisPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="jarvisPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsam:Addressing/>
+                <wsrm:RMAssertion/>
+                <sp:SymmetricBinding>
+                    <wsp:Policy>
+                        <sp:ProtectionToken>
+                            <wsp:Policy>
+                                <sp:SecureConversationToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                                    <wsp:Policy>
+                                        <sp:RequireDerivedKeys/>
+                                        <sp:BootstrapPolicy>
+                                            <wsp:Policy>
+                                                    <sp:AsymmetricBinding>
+                                                            <wsp:Policy>
+                                                                    <sp:InitiatorToken>
+                                                                            <wsp:Policy>
+                                                                                    <sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                                                                                            <wsp:Policy>
+                                                                                                    <sp:WssX509V3Token10/>
+                                                                                                </wsp:Policy>
+                                                                                        </sp:X509Token>
+                                                                                </wsp:Policy>
+                                                                        </sp:InitiatorToken>
+                                                                        <sp:RecipientToken>
+                                                                            <wsp:Policy>
+                                                                                    <sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+                                                                                            <wsp:Policy>
+                                                                                                    <sp:WssX509V3Token10/>
+                                                                                                        <sp:RequireIssuerSerialReference/>
+                                                                                                </wsp:Policy>
+                                                                                        </sp:X509Token>
+                                                                                </wsp:Policy>
+                                                                        </sp:RecipientToken>
+                                                                        <sp:Layout>
+                                                                            <wsp:Policy>
+                                                                                    <sp:Strict/>
+                                                                                </wsp:Policy>
+                                                                        </sp:Layout>
+                                                                        <sp:IncludeTimestamp/>
+                                                                        <sp:OnlySignEntireHeadersAndBody/>
+                                                                        <sp:AlgorithmSuite>
+                                                                            <wsp:Policy>
+                                                                                    <sp:Basic128/>
+                                                                                </wsp:Policy>
+                                                                        </sp:AlgorithmSuite>
+                                                                </wsp:Policy>
+                                                        </sp:AsymmetricBinding>
+                                                <sp:Wss10>
+                                                    <wsp:Policy>
+                                                            <sp:MustSupportRefIssuerSerial/>
+                                                        </wsp:Policy>
+                                                </sp:Wss10>
+                                                <sp:EncryptedParts>
+                                                    <sp:Body/>
+                                                </sp:EncryptedParts>
+                                                <sp:SignedParts>
+                                                    <sp:Body/>
+                                                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                                                    <sp:Header Name="AckRequested" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                                                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                                                    <sp:Header Name="Sequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                                                    <sp:Header Name="CreateSequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                                                </sp:SignedParts>
+                                            </wsp:Policy>
+                                        </sp:BootstrapPolicy>
+                                    </wsp:Policy>
+                                </sp:SecureConversationToken>
+                            </wsp:Policy>
+                        </sp:ProtectionToken>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic128/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:IncludeTimestamp/>
+                        <sp:OnlySignEntireHeadersAndBody/>
+                    </wsp:Policy>
+                </sp:SymmetricBinding>
+                <sp:Wss11>
+                    <wsp:Policy>
+                        <sp:MustSupportRefIssuerSerial/>
+                        <sp:MustSupportRefThumbprint/>
+                        <sp:MustSupportRefEncryptedKey/>
+                    </wsp:Policy>
+                </sp:Wss11>
+                <sp:Trust13>
+                    <wsp:Policy>
+                        <sp:RequireClientEntropy/>
+                        <sp:RequireServerEntropy/>
+                        <sp:MustSupportIssuedTokens/>
+                    </wsp:Policy>
+                </sp:Trust13>
+                <sc:KeyStore wspp:visibility="private" location="/Applications/NetBeans/glassfish-4.1/glassfish/domains/domain1/config/keystore.jks" type="JKS" storepass="changeit" alias="xws-security-server"/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="jarvisPortBinding_listaBloques_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="AckRequested" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="Sequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="CreateSequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="jarvisPortBinding_listaBloques_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="AckRequested" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="Sequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="CreateSequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="jarvisPortBinding_eventosEnBloque_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="AckRequested" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="Sequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="CreateSequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="jarvisPortBinding_eventosEnBloque_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="AckRequested" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="Sequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="CreateSequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="jarvisPortBinding_eventosPorResponsable_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="AckRequested" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="Sequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="CreateSequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="jarvisPortBinding_eventosPorResponsable_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                    <sp:Header Name="AckRequested" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="SequenceAcknowledgement" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="Sequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                    <sp:Header Name="CreateSequence" Namespace="http://docs.oasis-open.org/ws-rx/wsrm/200702"/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>

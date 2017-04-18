@@ -1,0 +1,30 @@
+16:07:04 **** Incremental Build of configuration Debug for project DebugLSM303DLCH ****
+make all 
+Building file: ../src/lib/DebugServer.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabi-g++ -O0 -g3 -Wall -c -fmessage-length=0 -lrt -lpthread -MMD -MP -MF"src/lib/DebugServer.d" -MT"src/lib/DebugServer.d" -o "src/lib/DebugServer.o" "../src/lib/DebugServer.cpp"
+../src/lib/DebugServer.cpp: In member function ‘void DebugServer::server_start()’:
+../src/lib/DebugServer.cpp:96:15: warning: unused variable ‘tid’ [-Wunused-variable]
+Finished building: ../src/lib/DebugServer.cpp
+ 
+Building target: DebugLSM303DLCH
+Invoking: Cross G++ Linker
+arm-linux-gnueabi-g++  -o "DebugLSM303DLCH"  ./src/lib/DebugServer.o ./src/lib/LSM303DLHC.o  ./src/Debug.o   
+/usr/lib/gcc-cross/arm-linux-gnueabi/4.7/../../../../arm-linux-gnueabi/lib/../lib/crt1.o: In function `_start':
+(.text+0x34): undefined reference to `main'
+./src/lib/DebugServer.o: In function `DebugServer::send_data()':
+/media/Gensokyo/Development/Workspaces_2014/BeagleBone/Eclipse/DebugLSM303DLCH/Debug/../src/lib/DebugServer.cpp:31: undefined reference to `sem_wait'
+/media/Gensokyo/Development/Workspaces_2014/BeagleBone/Eclipse/DebugLSM303DLCH/Debug/../src/lib/DebugServer.cpp:33: undefined reference to `sem_wait'
+/media/Gensokyo/Development/Workspaces_2014/BeagleBone/Eclipse/DebugLSM303DLCH/Debug/../src/lib/DebugServer.cpp:41: undefined reference to `sem_post'
+./src/lib/DebugServer.o: In function `DebugServer::try_to_feed_data(void*)':
+/media/Gensokyo/Development/Workspaces_2014/BeagleBone/Eclipse/DebugLSM303DLCH/Debug/../src/lib/DebugServer.cpp:45: undefined reference to `sem_trywait'
+/media/Gensokyo/Development/Workspaces_2014/BeagleBone/Eclipse/DebugLSM303DLCH/Debug/../src/lib/DebugServer.cpp:47: undefined reference to `sem_post'
+/media/Gensokyo/Development/Workspaces_2014/BeagleBone/Eclipse/DebugLSM303DLCH/Debug/../src/lib/DebugServer.cpp:48: undefined reference to `sem_post'
+./src/lib/DebugServer.o: In function `DebugServer::server_start()':
+/media/Gensokyo/Development/Workspaces_2014/BeagleBone/Eclipse/DebugLSM303DLCH/Debug/../src/lib/DebugServer.cpp:93: undefined reference to `sem_init'
+/media/Gensokyo/Development/Workspaces_2014/BeagleBone/Eclipse/DebugLSM303DLCH/Debug/../src/lib/DebugServer.cpp:94: undefined reference to `sem_init'
+collect2: error: ld returned 1 exit status
+make: *** [DebugLSM303DLCH] Error 1
+
+16:07:04 Build Finished (took 364ms)
+

@@ -1,0 +1,73 @@
+\section{Fibonacci recursivo}
+\subsection{Resolución analítica}
+\begin{align}
+	t_n = t_{n-1}t_{n-2}\nonumber\\
+	t_1 = 1 ,\; t_2=2 \nonumber 	
+\end{align}
+
+Aplicando la propiedad aditiva de logaritmo:
+
+\begin{align}
+	&log_2(t_n)=log_2(t_{n-1} \; t_{n-2}) \nonumber\\
+	&log_2(t_n)=log_2(t_{n-1})+log_2(t_{n-2}) \label{EQ:FIBO_RECURSIVO_1}\\
+	&log_2(t_1=0)=1 \;,\; log_2(t_2=1)=2 \nonumber\\
+\end{align}
+
+Aplicando la transformación $f(n) = log(T(n))$ a la Ecuación \ref{EQ:FIBO_RECURSIVO_1}:
+
+\begin{align}
+	f(n) = f(n-1) + f(n-2) \label{EQ:FIBONACCI} \\
+	f(n+2) = f(n+1) + f(n) \label{EQ:FIBONACCI_DESPLAZADO}\\
+	f(0) = 1 \;,\; f(1) = 2 \nonumber
+\end{align}
+
+En donde la Ecuación Recursiva \ref{EQ:FIBONACCI} es posible resolverse usando la tecnica \textit{polinonio característico}.\footnote{Esta recursión es más conocida cómo la \textit{sucesión de fibonacci}} Para esto, se hace avanzar la Ecuación \ref{EQ:FIBONACCI} en dos pasos, lo cual nos deja con la Ecuación \ref{EQ:FIBO_RECURSIVO_1} a la cual, procedemos a extraer el polinomio caracteristico.
+
+\begin{align}
+	\lambda^{n+2} - \lambda^{n+1} - \lambda^{n} &= 0 \nonumber\\
+	\lambda^{n}\;(\lambda^{2} - \lambda - 1) &= 0 \label{EQ:POLINOMIO_FIBONACCI_1}\\	
+	\lambda^{2} - \lambda - 1 &= 0 \label{EQ:POLINOMIO_FIBONACCI_SIMP}\\
+	\nonumber\\
+	\lambda_1 = \frac{1+\sqrt{5}}{2} \nonumber\\
+	\lambda_2 = \frac{1-\sqrt{5}}{2} \nonumber
+\end{align}
+
+De la Ecuación \ref{EQ:POLINOMIO_FIBONACCI_1} se tiene que $\lambda=0$ es solución del polinomio, sin embargo, por esto mismo es despreciado, lo cual nos deja con la Ecuación \ref{EQ:POLINOMIO_FIBONACCI_SIMP} como polinomio característico de la Ecuación \ref{EQ:FIBONACCI}. Entonces, ahora reemplazando en la matriz los casos base de la Ecuación \ref{EQ:FIBO_RECURSIVO_1} los valores obtenidos para $\lambda_1$ y $\lambda_2$ tenemos lo siguiente:
+
+ 
+\begin{align}
+	c_1 + c_2 &= f_0 = 0 \label{EQ:FIBO_MATRIX_1} \\
+	c_1\;\lambda_{1} + c_2\;\lambda_{2} &= f_1 = 1 \label{EQ:FIBO_MATRIX_2}
+\end{align}
+Para la Ecuación \ref{EQ:FIBO_MATRIX_1} tenemos:
+\begin{align}
+	c_1 = -c_2 \label{EQ:FIBO_MATRIX_3}
+\end{align}
+Aplicando la Ecuación \ref{EQ:FIBO_MATRIX_3} en \ref{EQ:FIBO_MATRIX_2}:
+\begin{align}
+	c_1\lambda_1 - c_1\lambda_2&=1 \nonumber\\
+	c_1\;(\lambda_1 +\lambda_2) &= 1\nonumber\\
+	c_1 &= \frac{1}{\sqrt{5}} \nonumber\\
+	c_2 &= -\frac{1}{\sqrt{5}} \nonumber
+\end{align}
+
+Ahora reemplazamos los valores obtenidos para $\lambda_1, \lambda_2, c_1, c_2$ en la fórmula del polinomio característico (\ref{EQ:POLINOMIO_CARACTERISTICO_DEFINICION}), dando lugar a la Ecuación \ref{EQ:VALOR_FIBONACCI}.
+\begin{align}
+	f_n &= c_1 \lambda_{1}^{n} + c_2 \lambda_{2}^{n} + \ldots + c_n \lambda_{n}^{n}\ \label{EQ:POLINOMIO_CARACTERISTICO_DEFINICION}\\	
+	f_n &= c_1 \lambda_{1}^{n} + c_2 \lambda_{2}^{n}\nonumber\\	
+	f_n &= \frac{1}{\sqrt{5}}\;\left(\frac{1+\sqrt{5}}{2}\right)^n -\frac{1}{\sqrt{5}}\;\left(\frac{1-\sqrt{5}}{2}\right)^n \label{EQ:VALOR_FIBONACCI}
+\end{align}
+
+Deshaciendo la transformación $f(n) = log(T(n))$:
+\begin{align}
+log_2(t_n)&= \frac{1}{\sqrt{5}}\;\left(\frac{1+\sqrt{5}}{2}\right)^n -\frac{1}{\sqrt{5}}\;\left(\frac{1-\sqrt{5}}{2}\right)^n \nonumber\\
+t_n &= 2^{\left(\frac{1}{\sqrt{5}}\;\left(\frac{1+\sqrt{5}}{2}\right)^n -\frac{1}{\sqrt{5}}\;\left(\frac{1-\sqrt{5}}{2}\right)^n\right)}\nonumber\\
+t_n&=2^{f(n)} \\
+t_1 = f(0) = 1 \;&,\; t_2 = f(1) = 2
+\end{align}
+
+Donde $f_n$ es el $n$-ésimo término de la sucesión de fibonacci. Para efectos de cálculo, se usará directamente la recursión de fibonacci para obtener el valor a calcular, dado que por motivos de programación entera, el cálculo de la raíces provoca un error de precisión el cual arruina los resultados.
+
+Usando el programa adjunto, se puede comprobar que el $25$-ésimo término de la recursión es aproximadamente $1.4415806\times10^{13951}$.
+
+Para realizar la implementación del programa, se utilizó GNU MP\footnote{https://gmplib.org/manual/}. Esta es una librería escrita en C, orientada principalmente al trabajo con numeros racionales, enteros y flotantes de precisión infinita, enfocandose en el rendimiento independiente del tamaño del número a calcular. Hay actualmente incluso versiones en \textit{Assembler} optimizadas para muchos procesadores. Es software libre licenciado bajo la licencia \textbf{GNU LGPL v3}\footnote{https://www.gnu.org/licenses/lgpl.html} y \textbf{GNU GPL v2.0}\footnote{https://www.gnu.org/licenses/gpl-2.0.html}.

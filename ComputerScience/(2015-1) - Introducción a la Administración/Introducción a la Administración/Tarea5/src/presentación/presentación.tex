@@ -1,0 +1,139 @@
+\documentclass{beamer}
+% Class options include: notes, handout, trans
+%                        
+
+% Theme for beamer presentation 
+% Other themes include: beamerthemebars, beamerthemelined,beamerthemetree, beamerthemeplain
+\usetheme{Copenhagen}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\def\spanishoptions{chile}
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage{amssymb}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{listings}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+backgroundcolor=\color{lbcolor},
+    tabsize=4,    
+%   rulecolor=,
+    language=[GNU]C++,
+        basicstyle=\scriptsize,
+        upquote=true,
+        aboveskip={1.5\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=false,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        numbers=left,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.026,0.112,0.095},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+        numberstyle=\color[rgb]{0.205, 0.142, 0.73},
+%        \lstdefinestyle{C++}{language=C++,style=numbers}?.
+}
+\lstset{
+    backgroundcolor=\color{lbcolor},
+    tabsize=4,
+  language=C++,
+  captionpos=b,
+  tabsize=3,
+  frame=lines,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  breaklines=true,
+  showstringspaces=false,
+  basicstyle=\footnotesize,
+%  identifierstyle=\color{magenta},
+  keywordstyle=\color[rgb]{0,0,1},
+  commentstyle=\color[rgb]{0.026,0.112,0.095},
+  stringstyle=\color{red}
+  }
+
+\usefonttheme{professionalfonts}
+
+
+\title[Introducción a la administración]{Introducción a la administración}
+\subtitle{Tarea 5 - Análisis de caso de estudio}    % Enter your title between curly braces
+\author[E. Regla]{Erik Regla}                 % Enter your name between curly braces
+\institute[UTalca]{Universidad de Talca}      % Enter your institute name between curly braces
+\date{\today}      % Enter the date or \today between curly braces
+
+\begin{document}
+
+% Creates title page of slide show using above information
+\begin{frame}
+  \titlepage
+\end{frame}
+\note{Talk for 30 minutes} % Add notes to yourself that will be displayed when typeset with the notes class option.
+
+%% Creates table of contents slide incorporating all \section and \subsection commands.
+%\begin{frame}
+%  \tableofcontents
+%\end{frame}
+
+\section{Descripción}
+\begin{frame}
+\frametitle{Descripción de la situación}
+\textit{El alcalde Bornes} hace seis semanas ha asumido el mando y no tiene idea de que ocurre en sus departamentos. La situación es peor de lo que imaginaba y necesita saber que tiene que hacer para poder remediar la situación actual.
+\end{frame}
+
+\section{Preguntas}
+\begin{frame}
+\frametitle{Preguntas}
+\begin{itemize}
+\item \textbf{No se conoce el presupuesto gastado este año por departamento. Retraso importante (6 meses) en reportes de gastos.} Motivo por el cual esto se ha producido. ¿Desde cuándo esta situación está así de mal?
+
+\item \textbf{No se conocen las actividades ejecutadas por departamento.} ¿Cada departamento posee vías de comunicación hacia los demás? ¿Entregan información a su unidad superior?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Preguntas}
+\begin{itemize}
+\item \textbf{Desconocimiento de mecanismos de sistema (indicadores) para evaluar situación y desempeño.} ¿Anteriormente hubieron indicadores? ¿Cuáles fueron los resultados de las evaluaciones? ¿Los departamentos controlan el desempeño de manera interna?
+
+\item \textbf{No existe retroalimentación.} ¿Existe retroalimentación por parte de la organización, interna o de departamentos superiores? ¿Que se espera lograr con esta? ¿Está sistematizada y con normas claras y definidas?
+\end{itemize}
+\end{frame}
+
+
+\section{Descripción del tipo de control}
+\begin{frame}
+\frametitle{Descripción del tipo de control - Fomento de avance}
+
+Claramente se puede identificar que es necesario establecer un estándar a seguir para los tiempos de respuesta de cada departamento y mecanismos de retroalimentación para poder tener conocimiento de la situación global. Se deben de implementar normas, fechas límite de termino para actividades las cuales deben estar claramente definidas y con un responsable.\\
+
+\end{frame}
+\begin{frame}
+\frametitle{Descripción del tipo de control - Concurrente}
+Para el control concurrente se consideran las supervisiones de actividades que se desarrollan de manera conforme a las normas establecidas, identificando dificultades que pudiesen afectar el proceso. 
+
+\end{frame}
+\begin{frame}
+\frametitle{Descripción del tipo de control - Retroalimentación}
+Con esto, una vez establecidos los canales de comunicación, cada departamento (y municipio) debe establecer sus métricas e indicadores, los cuales le permiten evaluar el desempeño. A su vez, la retroalimentación debe ser basada en normas y ser sistematizada, basada en hechos enfatizando aspectos que pueden ser cambiados a nivel de la organización.
+
+\end{frame}
+
+\begin{frame}
+\begin{center}
+Fin
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\end{document}

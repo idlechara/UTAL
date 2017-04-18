@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Local Debug Client/src/Local Debug Client.cpp&apos; to &apos;LocalDebugClient.cpp&apos;" description="Rename resource &apos;Local Debug Client.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Local Debug Client.cpp" name="LocalDebugClient.cpp" stamp="1393743094554" updateReferences="true"/>
+</session>

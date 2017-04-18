@@ -1,0 +1,9 @@
+\select@language {spanish}
+\beamer@endinputifotherversion {3.36pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Mision y visi\'on}{2}{0}{1}
+\beamer@sectionintoc {2}{An\'alisis FODA}{4}{0}{2}
+\beamer@sectionintoc {3}{Objetivos`}{8}{0}{3}
+\beamer@sectionintoc {4}{Estrategias a desarrollar}{9}{0}{4}
+\beamer@sectionintoc {5}{Descripci\'on de cada uno de los cargos}{10}{0}{5}
+\beamer@sectionintoc {6}{Planificaci\'on a un a\~no de trabajo}{11}{0}{6}

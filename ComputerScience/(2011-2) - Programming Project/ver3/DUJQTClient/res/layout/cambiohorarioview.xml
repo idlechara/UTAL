@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/descipcion"
+        android:layout_width="fill_parent"
+        android:layout_height="75px"
+        android:text="Cambios de Horarios"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" android:clickable="false">
+
+        <ListView
+            android:id="@+id/listaHorarios"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+        </ListView>
+
+    </ScrollView>
+
+</LinearLayout>
