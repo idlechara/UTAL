@@ -1,0 +1,101 @@
+\section{Mensajeria}
+\begin{requirement}{functional}{PUC\_13}
+	\reqdescription{El sistema notifica al administrador de las nuevas solicitudes de cuentas
+	al momento de ser elevadas al administrador y esta es agregada a la lista de tareas pendientes.}
+	\reqrationale{El administrador debe estar sensibilizado de sus tareas.}
+	\reqsource{I.O.R.S.H.}
+	\reqfitcriterion{Cuando una nueva solicitud es recibida por la plataforma, el usuario
+	recibe una notificación en tiempo real.}
+	\reqsatisfaction{2}{2}
+	\reqdepencies{\reffr{RF:U:ELEVAR_SOLICITUD}}{}
+	\reqdocuments{Entrevista 1}
+	\reqhistory{}
+	\label{RF:M:NOTIF_NUEVA_CUENTA}
+\end{requirement}
+
+\begin{requirement}{functional}{PUC\_13}
+	\reqdescription{El sistema notifica al usuario de la aceptación o rechazo de la cuenta solicitada.}
+	\reqrationale{El usuario necesita saber el estado de las solicitudes.}
+	\reqsource{I.O.R.S.H.}
+	\reqfitcriterion{Cuando una nueva solicitud es aceptada por el administrador, el usuario
+	recibe una notificación en tiempo real.}
+	\reqsatisfaction{2}{2}
+	\reqdepencies{\reffr{RF:U:ADMIN_SOLICITUD}}{}
+	\reqdocuments{Entrevista 3}
+	\reqhistory{}
+	\label{RF:M:NOTIF_CUENTA_ACEPTADA}
+\end{requirement}
+
+\begin{requirement}{functional}{PUC\_12}
+	\reqdescription{El sistema notifica al usuario de la aceptación o rechazo de una revisión de proyectos.}
+	\reqrationale{El usuario necesita saber el estado de las revisiones.}
+	\reqsource{I.O.R.S.H.}
+	\reqfitcriterion{Cuando una nueva solicitud es aceptada o rechazada por el administrador, el usuario
+	recibe una notificación en tiempo real.}
+	\reqsatisfaction{2}{2}
+	\reqdepencies{\reffr{RF:P:REVIEW_REJECT},\reffr{RF:P:REVIEW_ACCEPT}}{}
+	\reqdocuments{Entrevista 6}
+	\reqhistory{}
+	\label{RF:M:NOTIF_REVIEW}
+\end{requirement}
+
+
+\begin{requirement}{functional}{PUC\_12}
+	\reqdescription{El sistema notifica al usuario de la publicación de un proyecto.}
+	\reqrationale{Como un acto de buena fé se le informa a las partes involucradas si es que 
+	uno de los proyectos ha sido aprobado para poder verse privada o públicamente en el sistema.}
+	\reqsource{Ruth Garrido, Rodrigo Bustamante}
+	\reqfitcriterion{Cuando un proyecto perteneciente a un usuario es publicado, este es notificado.}
+	\reqsatisfaction{2}{2}
+	\reqdepencies{\reffr{RF:P:REVIEW_PUBLISH}}{}
+	\reqdocuments{Entrevista 6}
+	\reqhistory{}
+	\label{RF:M:NOTIF_PUBLISH}
+\end{requirement}
+
+
+\begin{requirement}{functional}{PUC\_12}
+	\reqdescription{El sistema notifica al administrador de una nueva solicitud de revisión de proyectos y 
+	la agrega a la lista de tareas pendientes.}
+	\reqrationale{Es necesario sensibilizar al administrador respecto del estado de las tareas
+	que necesita realizar, en este caso, de los proyectos pendientes de revisión.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Cuando un proyecto es enviado a revisión, la lista de tareas pendientes y
+	notificaciones son actualizadas.}
+	\reqsatisfaction{2}{2}
+	\reqdepencies{\reffr{RF:P:ENVIO_REVISION}}{}
+	\reqdocuments{Entrevista 7}
+	\reqhistory{}
+	\label{RF:M:NOTIF_BRINGUP}
+\end{requirement}
+
+
+\begin{requirement}{functional}{PUC\_09}
+	\reqdescription{El sistema notifica al moderador de un nuevo comentario realizado en un proyecto de su área y 
+	la agrega a la lista de tareas pendientes.}
+	\reqrationale{Es necesario sensibilizar al moderador respecto del estado de las tareas
+	que necesita realizar, en este caso, de los proyectos pendientes de revisar comentarios.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Cuando un usuario comenta un proyecto, la lista de tareas pendientes y
+	notificaciones son actualizadas.}
+	\reqsatisfaction{2}{2}
+	\reqdepencies{\reffr{RF:P:NEW_COMMENT}}{}
+	\reqdocuments{Entrevista 7}
+	\reqhistory{}
+	\label{RF:M:NOTIF_COMMENT}
+\end{requirement}
+
+
+
+\begin{requirement}{functional}{PUC\_02}
+	\reqdescription{Los usuarios pueden realizar comentarios sobre un proyecto proveendo su nombre y correo electrónico.}
+	\reqrationale{No es necesario que un usuario esté registrado al moento de comentar, pero el proveer de algúna cosa que
+	permita identificarlo en el caso de producirse una discusión es algo útil de implementar..}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Un usuario puede comentar un proyecto que pueda tener acceso.}
+	\reqsatisfaction{2}{2}
+	\reqdepencies{\reffr{RF:P:REVIEW_PUBLISH}}{}
+	\reqdocuments{Entrevista 7}
+	\reqhistory{}
+	\label{RF:M:NEW_COMMENT}
+\end{requirement}

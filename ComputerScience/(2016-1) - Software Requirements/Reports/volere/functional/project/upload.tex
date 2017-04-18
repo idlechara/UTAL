@@ -1,0 +1,77 @@
+\subsection{Subida}
+\begin{requirement}{functional}{}
+	\reqdescription{Un proyecto puede ser enviado a revisión por parte de el administrador.}
+	\reqrationale{Uno de los roles del administrador es revisar que el proyecto cumpla con las 
+	normativas de estándar impuestas por la organización. Además de verificar que el código fuente
+	no tenga artefactos extraños y el paquete ejecutable pueda efectivamente ser ejecutado.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Al enviar un proyecto se verifica que estén listos los campos requeridos, luego
+	se le envía al administrador y se le notifica a este de la acción realizada.}
+	\reqsatisfaction{3}{4}
+	\reqdepencies{\reffr{RF:P:CATEGORIAS}, \reffr{RF:P:ETIQUETAS}, \reffr{RF:P:TITULO},
+	\reffr{RF:P:PROYECTO_VACIO}, \reffr{RF:P:BLOQUEO}, \reffr{RF:P:DOCUMENTACION},
+	\reffr{RF:P:CODIGO_FUENTE}, \reffr{RF:P:EJECUTABLE}}{}
+	\reqdocuments{Entrevista 1, Entrevista 5}
+	\reqhistory{Entrevista 5: Se elimina la necesidad de incluir todos los campos en el formulario de creación de proyectos antes de la revision.}
+	\label{RF:P:ENVIO_REVISION}
+\end{requirement}
+
+\begin{requirement}{functional}{}
+	\reqdescription{Un proyecto enviado a revision bloquea la edicion por parte de sus usuarios hasta
+	que un administrador dictamine el resultado de su evaluación.}
+	\reqrationale{Uno de los roles del administrador es revisar que el proyecto cumpla con las 
+	normativas de estándar impuestas por la organización. Además de verificar que el código fuente
+	no tenga artefactos extraños y el paquete ejecutable pueda efectivamente ser ejecutado. 
+	Por tanto, editar estos campos durante el proceso puede llevar a problemas en la revisión del mismo.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Al enviar un proyecto se verifica que estén listos los campos requeridos, luego
+	se le envía al administrador y se le notifica a este de la acción realizada.}
+	\reqsatisfaction{4}{4}
+	\reqdepencies{}{}
+	\reqdocuments{Entrevista 1}
+	\reqhistory{}
+	\label{RF:P:BLOQUEO}
+\end{requirement}
+
+\begin{requirement}{functional}{}
+	\reqdescription{Un usuario que tenga permisos de edicion sobre un proyecto puede editar el
+	el paquete que contiene la documentación del proyecto}
+	\reqrationale{Un usuario que está editando el proyecto necesita hacer cambios sobre el estado
+	de este ya sea por errores al subir el paquete, o bien para incluir una versión nueva antes
+	del proceso de revisión}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{}
+	\reqsatisfaction{3}{1}
+	\reqdepencies{\reffr{RF:P:PROYECTO_VACIO}}{}
+	\reqdocuments{Entrevista 1}
+	\reqhistory{}
+	\label{RF:P:DOCUMENTACION}
+\end{requirement}
+\begin{requirement}{functional}{}
+	\reqdescription{Un usuario que tenga permisos de edicion sobre un proyecto puede editar el
+	el paquete que contiene el código fuente del proyecto}
+	\reqrationale{Un usuario que está editando el proyecto necesita hacer cambios sobre el estado
+	de este ya sea por errores al subir el paquete, o bien para incluir una versión nueva antes
+	del proceso de revisión}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{}
+	\reqsatisfaction{3}{1}
+	\reqdepencies{\reffr{RF:P:PROYECTO_VACIO}}{}
+	\reqdocuments{Entrevista 1}
+	\reqhistory{}
+	\label{RF:P:CODIGO_FUENTE}
+\end{requirement}
+\begin{requirement}{functional}{}
+	\reqdescription{Un usuario que tenga permisos de edicion sobre un proyecto puede editar el
+	el paquete que contiene el paquete de ejecución del proyecto}
+	\reqrationale{Un usuario que está editando el proyecto necesita hacer cambios sobre el estado
+	de este ya sea por errores al subir el paquete, o bien para incluir una versión nueva antes
+	del proceso de revisión}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{}
+	\reqsatisfaction{3}{1}
+	\reqdepencies{\reffr{RF:P:PROYECTO_VACIO}}{}
+	\reqdocuments{Entrevista 1}
+	\reqhistory{}
+	\label{RF:P:EJECUTABLE}
+\end{requirement}

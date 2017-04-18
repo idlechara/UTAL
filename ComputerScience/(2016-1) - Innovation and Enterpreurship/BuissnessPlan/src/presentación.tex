@@ -1,0 +1,270 @@
+\documentclass[xcolor=table]{beamer}
+% Class options include: notes, handout, trans
+%                        
+% Theme for beamer presentation 
+% Other themes include: beamerthemebars, beamerthemelined,beamerthemetree, beamerthemeplain
+\usetheme{Hannover}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{listings}
+\usepackage[section]{placeins}
+\graphicspath{ {images/} }
+
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{language=SQL, 
+		basicstyle=\ttfamily\tiny, 
+		showspaces=false, 
+		numbers=left, 
+		breaklines=true,
+		frame=shadowbox
+		}
+
+
+\usefonttheme{professionalfonts}
+
+
+\title[Gestión de la Innovación y Emprendimiento]{Gestión de la Innovación y Emprendimiento}
+\subtitle{WakeUP: Modelo de Negocio}    % Enter your title between curly braces
+\author[A. Angulo, E. Regla]{Alexis Angulo, Erik Regla\\ \{aangulo,eregla09\}@alumnos.utalca.cl}                 % Enter your name between curly braces
+\institute[UTalca]{Universidad de Talca}      % Enter your institute name between curly braces
+\date{\today}      % Enter the date or \today between curly braces
+
+
+
+\defbeamertemplate{section page}{mine}[1][]{%
+  \begin{centering}
+    {\usebeamerfont{section name}\usebeamercolor[fg]{section name}#1}
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=12pt,center]{part title}
+      \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+  \end{centering}
+}
+
+\defbeamertemplate{subsection page}{mine}[1][]{%
+  \begin{centering}
+    {\usebeamerfont{subsection name}\usebeamercolor[fg]{subsection name}\insertsection~\insertsubsectionnumber}
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=4pt,center]{part title}
+      \usebeamerfont{subsection title}\insertsubsection\par
+    \end{beamercolorbox}
+  \end{centering}
+}
+% \AtBeginSection{\frame{\sectionpage}}
+% \AtBeginSubsection{\frame{\subsectionpage}}
+
+\setbeamertemplate{section page}[mine]
+\setbeamertemplate{subsection page}[mine]
+
+\begin{document}
+
+% Creates title page of slide show using above information
+\begin{frame}
+  \titlepage
+\end{frame}
+\note{Talk for 30 minutes} % Add notes to yourself that will be displayed when typeset with the notes class option.
+
+% Creates table of contents slide incorporating all \section and \subsection commands.
+% \begin{frame}
+%   \tableofcontents
+% \end{frame}
+
+
+\begin{frame}[c,fragile, shrink=20]
+	%\frametitle{Nuestra propuesta de valor}
+	\begin{figure}[!ht]
+	\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{maqueta}
+	\caption{WakeUP: Maqueta}
+\end{figure}
+\end{frame}
+
+\section{Segmentos de mercado}
+% \begin{frame}%[c,fragile, shrink=20]
+% 	\frametitle{Nuestros Clientes: Diversificado}
+% 	Usuarios que nos interesan:
+% 	\begin{itemize}
+% 		\item \emph{Personas con problemas del sueño}: Siempre se quedan dormidos o bien tienen problemas al despertarse debido a la baja cantidad de luz solar que reciben durante la mañana. Aunque inviertan en una cantidad importante de alarmas, nada les quita el problema de tener que abrir las cortinas con frio en la mañana.%importante
+% 		\item \emph{Coleccionistas de figuras}: Personas con vitrinas que deben ser protegidas de la luz en exibiciones sin tener que abrir el contenedor de estas
+% 		para evitar contaminarlas.
+% 	\end{itemize}
+% \end{frame}
+\begin{frame}[c]
+	\frametitle{Nuestros Clientes: Diversificado}
+	Usuarios que nos interesan:
+	\begin{itemize}
+		\item \emph{Personas con problemas del sueño}
+		\item \emph{Coleccionistas de figuras que no quieren abrir la vitrina}
+		\item \emph{Cualquier persona que no quiera molestarse abriendo una cortina}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]%[c,fragile, shrink=20]
+	\frametitle{Usuarios que nos interesan:\\ \emph{Personas con problemas del sueño}}
+	Nuestro público objetivo:
+	\begin{itemize}
+	\item Necesitan café para despertar
+	\item Necesitan pastillas para dormir
+	\item Les da flojera ir a abrir las cortinas
+	\end{itemize}
+\end{frame}
+
+
+% \begin{frame}%[c,fragile, shrink=20]
+% 	\frametitle{Nuestros Clientes: Diversificado}
+% 	Usuarios que nos interesan: \emph{Personas con problemas del sueño}
+	
+% 	Ellos son nuestro principal objetivo dado que son los que
+% 	tienen el problema y quienes deciden acabar con el. Dentro de los factores
+% 	descicionales podemos considerar el precio de nuestro producto
+% 	como también la comodidad de no tener que lidiar con un tipo
+% 	extraño de cortina.
+
+% 	Actualmente no tienen forma de solucionar este problema
+% 	que no sea morir de frio al hacerse un café o bien que se lo lleven.
+% \end{frame}
+
+
+\section{Propuesta de valor}
+\begin{frame}[c,fragile, shrink=20]
+	\frametitle{Nuestra propuesta de valor}
+	\begin{figure}[!ht]
+	\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{User}
+	\caption{Nuestra propuesta de valor}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[c,fragile, shrink=20]
+	\frametitle{Nuestra propuesta de valor}
+	\begin{figure}[!ht]
+	\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{User2}
+	\caption{Nuestra propuesta de valor}
+\end{figure}
+\end{frame}
+
+\section{Canales de distribución}
+\begin{frame}[c]
+	\frametitle{Nuestros canales de distribución}
+	\begin{itemize}
+		\item Propio y Directo. Nadie sabe que vendemos, 
+		tenemos que nosotros mismos mostrarselos. \pause 
+		\item Sitio web porque es barato, simple e informativo.\pause 
+		%necesitamos que conozcan el producto, que puedan evaluarlo y
+		%compararlo con la competencia.
+		\item Entrega a domicilio, que la comodidad comience por la compra.\pause 
+		\item Asistencia personalizada post-venta en caso de que la necesiten. %si el producto es simple no es necesario
+	\end{itemize}
+\end{frame}
+
+\section{Relación con los clientes}
+\begin{frame}[c]
+	\frametitle{Nuestra relación con los clientes: La asistencia personalizada}
+	\begin{itemize}
+		\item Asistimos al cliente con su compra y posterior uso\pause
+		%\item Autoservicio al momento de comprar.\pause
+		\item Co-creación con clientes para mejorar y darle nuevos usos. \pause\huge{¡ES UNA CORTINA QUE SE ABRE SOLA!}
+	\end{itemize}
+\end{frame}
+
+\section{Ingresos}
+\begin{frame}[c,fragile]
+	\frametitle{Ingresos: Venta de activos}
+	Los consumidores tendrán el derecho de hacer lo que quieran con esto,
+	no solo hacer que los despierte por la mañana.\\
+	\begin{table}[width=\linewidth,height=\textheight,keepaspectratio]
+		\centering
+		\label{my-label}
+		\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Producto             & \textbf{Control Remoto}                                    & \textbf{Mecanismo automatizado}                            & \textbf{Sensores}                                          \\ \hline
+			\textbf{Básico}      & \cellcolor[HTML]{32CB00}{\color[HTML]{000000} \textbf{Si}} & \cellcolor[HTML]{FD6864}{\color[HTML]{000000} \textbf{No}} & \cellcolor[HTML]{FD6864}{\color[HTML]{000000} \textbf{No}} \\ \hline
+			\textbf{Programado}  & \cellcolor[HTML]{32CB00}{\color[HTML]{000000} \textbf{Si}} & \cellcolor[HTML]{32CB00}{\color[HTML]{000000} \textbf{Si}} & \cellcolor[HTML]{FD6864}{\color[HTML]{000000} \textbf{No}} \\ \hline
+			\textbf{Inteligente} & \cellcolor[HTML]{32CB00}{\color[HTML]{000000} \textbf{Si}} & \cellcolor[HTML]{32CB00}{\color[HTML]{000000} \textbf{Si}} & \cellcolor[HTML]{32CB00}{\color[HTML]{000000} \textbf{Si}} \\ \hline
+		\end{tabular}
+		}
+	\end{table}
+\end{frame}
+
+\section{Recursos Clave}
+\begin{frame}[c,fragile]
+	\frametitle{Recursos Claves}
+	\begin{table}[]
+	\centering
+	\label{my-label}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Físicos}                                                       & \textbf{Intelectuales}                                                                      & \textbf{Humanos}                                                                                                               & \textbf{Financieros}                                                                                   \\ \hline
+			\begin{tabular}[c]{@{}c@{}}Instalaciones\\ de manufactura\end{tabular} & \begin{tabular}[c]{@{}c@{}}Marca\\ \\ Conocimiento propietario\\ \\ Innovación\\ \\ Mecanismo de sensado\\ y reacción\end{tabular} & \begin{tabular}[c]{@{}c@{}}Clientes\\ participativos\\ \\ Desarrolladores\\ \\ Personal encargado\\ de ensamblaje\end{tabular} & \begin{tabular}[c]{@{}c@{}}Préstamos\\ \\ Fondos de\\ innovación\\ \\ Capital Semilla (?)\end{tabular} \\ \hline
+		\end{tabular}%
+	}
+	\end{table}
+\end{frame}
+
+\section{Actividades Clave}
+\begin{frame}[c,fragile]
+	\frametitle{Actividades Claves}
+	\begin{table}[]
+	\centering
+	\label{my-label}
+	\resizebox{\textwidth}{!}{%
+	\begin{tabular}{|l|l|l|l}
+	\cline{1-3}
+	\textbf{Producción}                                                                                                                                                                             & \textbf{\begin{tabular}[c]{@{}l@{}}Solución de\\ problemas\end{tabular}}                                                                                                                                                                                          & \textbf{Redes y plataformas}                                                                                                                                                                                                                                                                                                         &  \\ \cline{1-3}
+	\begin{tabular}[c]{@{}l@{}}Terminar prototipo y\\ comenzar a producir versión\\ para consumidor final\\ \\ Reducir los costos de\\ producción\\ \\ Diseñar un encasing\\ llamativo\end{tabular} & \begin{tabular}[c]{@{}l@{}}Encontrar como ajustar\\ automáticamente las\\ acciones\\ \\ Usar la información del\\ cliente para mejorar el\\ producto\\ \\ Posibles aplicaciones \\ fuera del contexto el \\ trabajo para la tecnología \\ de sensado\end{tabular} & \begin{tabular}[c]{@{}l@{}}Mantener el contacto\\ con los clientes\\ \\ Conocer las ideas\\ que estos pueden tener\\ \\ Conectar con posibles\\ distribuidores e interesados\\ en el desarrollo del producto\\ o bien de la tecnología de \\ sensado empleada\\ \\ Realizar publicidad al producto,\\ volverlo conocido\\ \\Distribuir protipos\\ en sitios\\ estratégicos\end{tabular} &  \\ \cline{1-3}
+	\end{tabular}%
+	}
+	\end{table}
+\end{frame}
+
+\section{Socios}
+\begin{frame}[c,fragile]
+	\frametitle{Socios}
+	\begin{table}[]
+	\centering
+	\label{my-label}
+	\resizebox{\textwidth}{!}{%
+	\begin{tabular}{|l|l|l|l}
+	\cline{1-3}
+	\textbf{Mejora de economía}                                                             & \textbf{\begin{tabular}[c]{@{}l@{}}Mitigación de riesgos\\ y colaboradores\end{tabular}}                                                                           & \textbf{Adquisición}                                                                          &  \\ \cline{1-3}
+	\begin{tabular}[c]{@{}l@{}}Bancos\\ \\ Otros equipos de\\ emprendimiento\end{tabular} & \begin{tabular}[c]{@{}l@{}}Publicistas\\ \\ El equipo que hizo el\\ dispensador de papel higenico\\ inteligente\\ \\ Empresas del área de \\ domotica\end{tabular} & \begin{tabular}[c]{@{}l@{}}Tiendas de microelectrónica\\ \\ Tiendas de plásticos\end{tabular} &  \\ \cline{1-3}
+	\end{tabular}%
+	}
+	\end{table}
+\end{frame}
+
+
+\section{Costos}
+\begin{frame}[c,fragile]
+	\frametitle{Estructura de costos}
+	\begin{itemize}
+		\item Impulsada por el valor
+		\item Costos variables debido al precio del dolar para la importación de piezas.
+	\end{itemize}
+	Se estima que el costo de producción por cada unidad (sin módulo de sensores)
+	es aproximadamente 20.000CLP (prototipo). En caso de añadir módulos de
+	sensores para volverla ``inteligente'' estos subirían a 37.000CLP.
+\end{frame}
+
+
+\begin{frame}
+	\centering
+	Fin
+\end{frame}
+
+
+\end{document}

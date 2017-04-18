@@ -1,0 +1,27 @@
+\frametitle{Modelo final de la base de datos}
+
+  En base a los resultados obtenidos en la etapa anterior se optó por mantener las
+  siguientes desnormalizaciones:
+
+  \begin{enumerate}
+    \item \emph{Relación 1-1:} Separación de columna \texttt{plain_text_content}
+    de \texttt{problems}. Esta resultó en una reducción del tamaño de la tabla de
+    problemas como también en una mejora de la velocidad de consulta.
+
+    \item \emph{Relación 1-N clave:} Columna \texttt{country_id} añadida a tabla
+    \texttt{teams} dado que es muy frecuente consultar el país atribuido a un equipo.
+
+    \item \emph{Relación N-M:} Nueva columna \texttt{team_name} a tabla
+    \texttt{team_members} ya que es frecuente consultar los equipos en los que ha
+    participado un competidor.
+
+    \item \emph{Tabla de búsqueda:} Se separa al malescrito \texttt{ballon_colour}
+    de la tabla \texttt{problems} ya que son 20 colores que se utilizan. Esta
+    resultó en una reducción del tamaño de la tabla de problemas.
+  \end{enumerate}
+
+  La \emph{Relación 1-N no clave:} Nueva columna \texttt{contest_name} en tabla
+\texttt{problems}, no fue exitosa dado que si bien consultar a que competencia
+pertenece un problema dado es bastante frecuente, la cantidad de tuplas en la
+tabla hizo que agregar una nueva columna de texto fuese muy costoso en espacio.
+
