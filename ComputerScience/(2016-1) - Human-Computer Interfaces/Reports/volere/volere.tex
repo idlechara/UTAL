@@ -1,0 +1,119 @@
+\newcommand{\reqdescription}[1]{
+\phantom{line break}
+\par
+\noindent\resizebox{\linewidth}{!}{%
+\begin{tabularx}{\textwidth}{X}
+\textbf{Descripción: } #1
+\end{tabularx}%
+}%
+\par
+}
+
+\newcommand{\reqrationale}[1]{
+\phantom{line break}
+\par
+\noindent\resizebox{\linewidth}{!}{%
+\begin{tabularx}{\textwidth}{X}
+\textbf{Razón/Motivo: } #1
+\end{tabularx}%
+}%
+\par
+}
+
+\newcommand{\reqsource}[1]{
+\phantom{line break}
+\par
+\noindent\resizebox{\linewidth}{!}{%
+\begin{tabularx}{\textwidth}{X}
+\textbf{Fuente: } #1
+\end{tabularx}%
+}%
+\par
+}
+
+\newcommand{\reqfitcriterion}[1]{
+\phantom{line break}
+\par
+\noindent\resizebox{\linewidth}{!}{%
+\begin{tabularx}{\textwidth}{X}
+\textbf{Criterio de ajuste: } #1
+\end{tabularx}%
+}%
+\par
+}
+
+\newcommand{\reqsatisfaction}[2]{
+\phantom{line break}
+\par
+\noindent\resizebox{\linewidth}{!}{%
+\begin{tabularx}{\textwidth}{XX}
+\textbf{Satisfacción del consumidor: } #1 & \textbf{Insatisfacción del consumidor: } #2
+\end{tabularx}%
+}%
+\par
+}
+
+\newcommand{\reqdepencies}[2]{
+\phantom{line break}
+\par
+\noindent\resizebox{\linewidth}{!}{%
+\begin{tabularx}{\textwidth}{XX}
+\textbf{Dependencias: } #1 & \textbf{Conflictos: } #2
+\end{tabularx}%
+}%
+\par
+}
+
+\newcommand{\reqdocuments}[1]{
+\phantom{line break}
+\par
+\noindent\resizebox{\linewidth}{!}{%
+\begin{tabularx}{\textwidth}{X}
+\textbf{Documentos: } #1
+\end{tabularx}%
+}%
+\par
+}
+
+\newcommand{\reqhistory}[1]{
+\phantom{line break}
+\par
+\noindent\resizebox{\linewidth}{!}{%
+\begin{tabularx}{\textwidth}{X}
+\textbf{Historial de cambios: } #1
+\end{tabularx}%
+}%
+\par
+}
+% \newcounter{frcounter}%[section]
+% \newcounter{nfrcounter}%[section]
+\newcounter{rcounter}%[section]
+
+\BeforeBeginEnvironment{requirement}{\vspace{0.5cm}\begin{minipage}{\linewidth}}
+\AfterEndEnvironment{requirement}{\end{minipage}\par\vspace{0.5cm}}
+
+\newenvironment{requirement}[2]{
+\begin{framed}
+\refstepcounter{rcounter}
+\noindent\resizebox{\linewidth}{!}{%
+\begin{tabularx}{\textwidth}{X X X}
+\textbf{Requisito\#:} %
+\thercounter%
+& \textbf{Tipo:} %
+#1%
+& \textbf{Casos de uso: } #2 
+\end{tabularx}%
+\par
+}
+}
+{\FloatBarrier\end{framed}}
+
+\newcommand{\reffr}[1]{
+RF\ref{#1}
+}
+\newcommand{\refnfr}[1]{
+RNF\ref{#1}
+}
+\newcommand{\refur}[1]{
+RSC\ref{#1}
+}

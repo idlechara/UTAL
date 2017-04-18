@@ -1,0 +1,28 @@
+\subsection{Administración}
+\begin{requirement}{functional}{PUC\_19}
+	\reqdescription{Los administradores pueden cambiar las credenciales de acceso de cualquier usuario}
+	\reqrationale{En caso de realizar mantenimiento, o bien en caso de pérdida de contraseña, como 
+	el administrador es quien toma la acción correctiva, es necesario que pueda editar los datos
+	de los demás usuarios.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Un administrador puede cambiar las credenciales de acceso de cualquier usuario por 
+	medio de la plataforma}
+	\reqsatisfaction{2}{1}
+	\reqdepencies{\reffr{RF:U:LOGIN}}{}
+	\reqdocuments{Entrevista 1, Entrevista 2}
+	\reqhistory{}
+	\label{RF:P:EDICION_CREDENCIAL}
+\end{requirement}
+
+
+\begin{requirement}{functional}{}
+	\reqdescription{Un usuario registrado puede cambiar su propia contraseña}
+	\reqrationale{Requerido por seguridad propia de la cuenta.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Los usuarios pueden cambiar sus propias credenciales de acceso.}
+	\reqsatisfaction{2}{1}
+	\reqdepencies{\reffr{RF:U:LOGIN}}{}
+	\reqdocuments{Entrevista 1, Entrevista 2}
+	\reqhistory{}
+	\label{RF:P:EDICION_CREDENCIAL_PROPIA}
+\end{requirement}
