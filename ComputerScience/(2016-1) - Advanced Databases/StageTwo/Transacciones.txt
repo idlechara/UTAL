@@ -1,0 +1,10 @@
+Transacciones:
+
+	Actualización o cambio de problemas:
+		Cuando se efectúa un cambio en un problema, por reglamento, todos los puntajes asociados a ese problema deben ser eliminados. De no ser así, el problema no puede cambiar de estado. En caso de ser interrumpido el proceso requiere de savepoints para poder reanudar o bien abortar la operación al vuelo.
+
+	Creación de set de problemas:
+		Para crear un set de problemas, es necesario incluirlos todos y este problem set debe estar ligado a una competencia. No puede existir un problem set sin competencia ni un problema que no pertenezca a un set. De fallar alguno de estos pasos, es necesario revertir los cambios para evitar lanzar una competencia con datos inválidos.
+
+	Creación de equipos:
+		Para crear correctamente un equipo, se debe crear la instancia y además conectar a los participantes. En caso de fallar uno, todo debe ser deshecho.

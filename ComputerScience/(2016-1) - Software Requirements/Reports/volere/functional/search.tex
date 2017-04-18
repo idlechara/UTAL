@@ -1,0 +1,75 @@
+\section{Búsqueda}
+\begin{requirement}{functional}{PUC\_03}
+	\reqdescription{Las busquedas entregan resultados dependiendo del grado de acceso 
+	que tenga el usuario.}
+	\reqrationale{Las credenciales de acceso son utilizadas para diferenciar entre los
+	diferentes tipos de usuarios existentes. Como no se desea mostrar toda la información a
+	los usuario, algunos proyectos solo son visibles por profesores, otros por alumnos y 
+	profesores y finalmente otros que pueden ser públicos, disponibles para todo el mundo.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Al ejecutarse una búsqueda, se agregan los resultados que contegan 
+	las palabras clave ya sea en alguna de sus categorías, etiquetas, descripción o título.}
+	\reqsatisfaction{5}{3}
+	\reqdepencies{\reffr{RF:U:PRIVILEGIO}}{}
+	\reqdocuments{Entrevista 1}
+	\reqhistory{}
+	\label{RF:S:PRIVILEGES}
+\end{requirement}
+
+\begin{requirement}{functional}{PUC\_03}
+	\reqdescription{Un proyecto puede ser identificado en base a sus palabras clave.}
+	\reqrationale{Debe de ser posible realizar una búsqueda sobre el texto de el 
+	título y la descripción, texto de etiquetas, etc.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Al ejecutarse una búsqueda, se agregan los resultados que contegan 
+	las palabras clave ya sea en alguna de sus categorías, etiquetas, descripción o título.}
+	\reqsatisfaction{3}{3}
+	\reqdepencies{\reffr{RF:P:PRIVILEGES}, \reffr{RF:P:TITULO}, \reffr{RF:P:CATEGORIAS},\reffr{RF:P:ETIQUETAS}}{}
+	\reqdocuments{Entrevista 1}
+	\reqhistory{}
+	\label{RF:S:PALABRA_CLAVE}
+\end{requirement}
+
+\begin{requirement}{functional}{PUC\_03}
+	\reqdescription{Un proyecto puede ser identificado en base a sus categorías.}
+	\reqrationale{Las búsquedas se deben de poder realizar utilizando como base las
+	categorías del proyecto.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Al ejecutarse una búsqueda se agregan a los resultados los
+	proyectos cuyas categorías coincidan con los de la búsqueda}
+	\reqsatisfaction{3}{3}
+	\reqdepencies{\reffr{RF:P:PRIVILEGES},\reffr{RF:P:CATEGORIAS}}{}
+	\reqdocuments{Entrevista 1}
+	\reqhistory{}
+	\label{RF:S:ETIQUETAS}
+\end{requirement}
+
+
+\begin{requirement}{functional}{PUC\_03}
+	\reqdescription{Un proyecto puede ser identificado en base a sus etiquetas.}
+	\reqrationale{Las búsquedas se deben de poder realizar utilizando como base las
+	etiquetas del proyecto.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Al ejecutarse una búsqueda se agregan a los resultados los
+	proyectos cuyas etiquetas coincidan con los de la búsqueda}
+	\reqsatisfaction{3}{3}
+	\reqdepencies{\reffr{RF:P:PRIVILEGES},\reffr{RF:P:ETIQUETAS}}{}
+	\reqdocuments{Entrevista 1}
+	\reqhistory{}
+	\label{RF:S:ETIQUETAS}
+\end{requirement}
+
+
+\begin{requirement}{functional}{PUC\_03}
+	\reqdescription{Los administradores pueden usar como criterio de búsqueda campos eliminados (deshabilitados)}
+	\reqrationale{No todos los proyectos deben ser visibles a todos los usuarios, sin emabrgo, los administradores
+	necesitan estar en control del estado del producto.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{El administrador puede ver una lista de proyectos, categorías, etiquetas eliminadas 
+	junto con una opción en el panel de búsqueda para ellas..}
+	\reqsatisfaction{2}{3}
+	\reqdepencies{\reffr{RF:P:PRIVILEGES},\reffr{RF:U:PRIVILEGIO}}{}
+	\reqdocuments{Entrevista 2}
+	\reqhistory{}
+	\label{RF:S:ELIMINADOS}
+\end{requirement}

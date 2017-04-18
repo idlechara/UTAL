@@ -1,0 +1,40 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{6}{chapter.1}
+\contentsline {chapter}{\numberline {2}Prop\'osito del proyecto}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}El negocio del usuario}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Metas del proyecto}{7}{section.2.2}
+\contentsline {chapter}{\numberline {3}Los actores}{8}{chapter.3}
+\contentsline {section}{\numberline {3.1}Clientes e inversores}{8}{section.3.1}
+\contentsline {section}{\numberline {3.2}Consumidores}{8}{section.3.2}
+\contentsline {section}{\numberline {3.3}Otros inversores}{8}{section.3.3}
+\contentsline {section}{\numberline {3.4}Usuarios finales}{8}{section.3.4}
+\contentsline {section}{\numberline {3.5}Personas}{8}{section.3.5}
+\contentsline {section}{\numberline {3.6}Prioridades asignadas a los usuarios}{8}{section.3.6}
+\contentsline {section}{\numberline {3.7}Participaci\'on de los usuarios}{8}{section.3.7}
+\contentsline {section}{\numberline {3.8}Personal de mantenci\'on y t\'ecnicos}{8}{section.3.8}
+\contentsline {chapter}{\numberline {4}Restricciones del proyecto}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Restricciones de la soluci\'on}{9}{section.4.1}
+\contentsline {section}{\numberline {4.2}Ambiente de implementaci\'on de la soluci\'on}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}Aplicaciones colaboradoras o relacionadas}{9}{section.4.3}
+\contentsline {section}{\numberline {4.4}Software fuera del alcance}{9}{section.4.4}
+\contentsline {section}{\numberline {4.5}Entorno Anticipado de Trabajo}{9}{section.4.5}
+\contentsline {section}{\numberline {4.6}Restricciones de agenda}{9}{section.4.6}
+\contentsline {section}{\numberline {4.7}Restricciones de presupuesto}{9}{section.4.7}
+\contentsline {section}{\numberline {4.8}Restricciones de la organizaci\'on}{9}{section.4.8}
+\contentsline {chapter}{\numberline {5}Convenci\'on de nombres y terminolog\IeC {\'\i }a}{10}{chapter.5}
+\contentsline {chapter}{\numberline {6}Hechos relevantes y supuestos}{11}{chapter.6}
+\contentsline {section}{\numberline {6.1}Hechos relevantes}{11}{section.6.1}
+\contentsline {section}{\numberline {6.2}Reglas del negocio}{11}{section.6.2}
+\contentsline {section}{\numberline {6.3}Supuestos}{11}{section.6.3}
+\contentsline {chapter}{\numberline {7}Alcances del trabajo}{12}{chapter.7}
+\contentsline {section}{\numberline {7.1}Situaci\'on actual}{12}{section.7.1}
+\contentsline {section}{\numberline {7.2}Contexto del trabajo}{12}{section.7.2}
+\contentsline {section}{\numberline {7.3}Divisi\'on de tareas}{12}{section.7.3}
+\contentsline {section}{\numberline {7.4}Especificando un caso de uso en el negocio}{12}{section.7.4}
+\contentsline {chapter}{\numberline {8}Alcances del trabajo}{13}{chapter.8}
+\contentsline {section}{\numberline {8.1}Situaci\'on actual}{13}{section.8.1}
+\contentsline {section}{\numberline {8.2}Contexto del trabajo}{13}{section.8.2}
+\contentsline {section}{\numberline {8.3}Divisi\'on de tareas}{13}{section.8.3}
+\contentsline {section}{\numberline {8.4}Especificando un caso de uso en el negocio}{13}{section.8.4}
+\contentsline {chapter}{\numberline {9}Requerimentos funcionales y de datos}{14}{chapter.9}
+\contentsline {section}{\numberline {9.1}Reqisitos funcionales}{14}{section.9.1}

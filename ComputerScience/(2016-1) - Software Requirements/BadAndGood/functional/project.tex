@@ -1,0 +1,74 @@
+\begin{requirement}{functional}{BUC03}
+	\reqdescription{Proyecto puede tener una o más categorías.}
+	\reqrationale{Los proyectos pueden pertenecer a categorías, por ejemplo "Taller de desarrollo de software", que a su vez pertenece a "Módulos 6to" semestre. Los proyectos pueden tener cualquier número de categorías asociadas.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Existe una lista de categorías la cual agrupa proyectos}
+	\reqsatisfaction{5}{5}
+	\reqdepencies{}{}
+	\reqdocuments{Entrevista 1}
+%	\reqhistory{w}
+	\label{RF:PROYECTO_CATEGORIAS}
+\end{requirement}
+
+\begin{requirement}{functional}{BUC03}
+	\reqdescription{Proyecto puede tener una o más categorías.}
+	\reqrationale{Los proyectos pueden tener etiquetas que representan contenidos, por ejemplo "Programación dinámica", "NodeJS"}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Existe una lista de etiquetas la cual agrupa proyectos que hacen uso de estas}
+	\reqsatisfaction{5}{5}
+	\reqdepencies{}{}
+	\reqdocuments{Entrevista 1}
+%	\reqhistory{w}
+	\label{RF:PROYECTO_ETIQUETAS}
+\end{requirement}
+
+
+\begin{requirement}{functional}{BUC03}
+	\reqdescription{Proyecto debe tener descripción de título y descripción.}
+	\reqrationale{Los proyectos requieren tener un título y descripción incluso si no tienen contenido, para poder ser identificados}
+	\reqsource{Rodrigo Bustamante}
+%	\reqfitcriterion{Existe una lista de etiquetas la cual agrupa proyectos que hacen uso de estas}
+	\reqsatisfaction{5}{5}
+	\reqdepencies{\reffr{RF:PROYECTO_CREAR_VACIO}}{}
+	\reqdocuments{Entrevista 1}
+%	\reqhistory{w}
+	\label{RF:PROYECTO_TITULO}
+\end{requirement}
+
+\begin{requirement}{functional}{BUC03}
+	\reqdescription{Un proyecto puede ser identificado en base a sus palabras clave.}
+	\reqrationale{Debe de ser posible realizar una búsqueda sobre el texto de el título y la descripción, texto de etiquetas, etc.}
+	\reqsource{Rodrigo Bustamante}
+%	\reqfitcriterion{Existe una lista de etiquetas la cual agrupa proyectos que hacen uso de estas}
+	\reqsatisfaction{5}{5}
+	\reqdepencies{\reffr{RF:PROYECTO_TITULO}, \reffr{RF:PROYECTO_CATEGORIAS},\reffr{RF:PROYECTO_ETIQUETAS}}{}
+	\reqdocuments{Entrevista 1}
+%	\reqhistory{w}
+	\label{RF:PROYECTO_BUSQUEDA_POR_PALABRA_CLAVE}
+\end{requirement}
+
+
+\begin{requirement}{functional}{BUC03}
+	\reqdescription{Proyectos tienen nivel de acceso}
+	\reqrationale{No todos los proyectos deben ser visibles a todos los usuarios.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Las operaciones sobre proyectos solo pueden ser realizadas cuando el nivel de acceso del usuario es compatible con el del proyecto}
+	\reqsatisfaction{5}{5}
+	\reqdepencies{}{}
+	\reqdocuments{Entrevista 1}
+%	\reqhistory{w}
+	\label{RF:PROYECTO_PRIVILEGIO}
+\end{requirement}
+
+
+\begin{requirement}{functional}{BUC03}
+	\reqdescription{Usuarios tienen nivel de acceso}
+	\reqrationale{No todos los proyectos deben ser visibles a todos los usuarios.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Las operaciones sobre proyectos solo pueden ser realizadas cuando el nivel de acceso del usuario es compatible con el del proyecto}
+	\reqsatisfaction{5}{5}
+	\reqdepencies{}{}
+	\reqdocuments{Entrevista 1}
+%	\reqhistory{w}
+	\label{RF:USUARIO_PRIVILEGIO}
+\end{requirement}
