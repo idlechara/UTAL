@@ -1,0 +1,48 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files\Java\jdk1.6.0_24\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-source
+1.6
+-noindex
+-notree
+-nohelp
+-nonavbar
+-d
+C:\Users\Razor\Desktop\PROTOTYPE XDS\doc
+-classpath
+C:\BlueJ\lib\bluejcore.jar;C:\BlueJ\lib\junit.jar;C:\Users\Razor\Desktop\PROTOTYPE XDS
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java...
+Constructing Javadoc information...
+Standard Doclet version 1.6.0_24
+Building tree for all the packages and classes...
+Generating C:\Users\Razor\Desktop\PROTOTYPE XDS\doc\Proyector.html...
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:44: warning - Tag @author cannot be used in field documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:28: warning - Tag @author cannot be used in field documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:36: warning - Tag @author cannot be used in field documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:52: warning - Tag @author cannot be used in field documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:61: warning - Tag @author cannot be used in field documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:80: warning - Tag @author cannot be used in constructor documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:80: warning - @param argument "resolucionesPermitidas" is not a parameter name.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:96: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:121: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:150: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:108: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:135: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:162: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+C:\Users\Razor\Desktop\PROTOTYPE XDS\Proyector.java:184: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+Generating C:\Users\Razor\Desktop\PROTOTYPE XDS\doc\package-frame.html...
+Generating C:\Users\Razor\Desktop\PROTOTYPE XDS\doc\package-summary.html...
+Generating C:\Users\Razor\Desktop\PROTOTYPE XDS\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating C:\Users\Razor\Desktop\PROTOTYPE XDS\doc\allclasses-frame.html...
+Generating C:\Users\Razor\Desktop\PROTOTYPE XDS\doc\allclasses-noframe.html...
+Generating C:\Users\Razor\Desktop\PROTOTYPE XDS\doc\index.html...
+Generating C:\Users\Razor\Desktop\PROTOTYPE XDS\doc\stylesheet.css...
+14 warnings

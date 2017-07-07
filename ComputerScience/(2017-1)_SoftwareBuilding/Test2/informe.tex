@@ -1,0 +1,388 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pdflscape}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+% \usepackage{placeins}
+\usepackage[section]{placeins}
+\graphicspath{ {images/} }
+
+\title{{\bf Construcción de Software}\\Prueba práctica II}
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+\newcommand*{\field}[1]{\mathbb{#1}}%
+
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{29 de Junio del 2017}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{black}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{black}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{lightgray}\ttfamily,
+  stringstyle=\color{darkgray}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=JavaScript,
+   basicstyle=\ttfamily\tiny, 
+	showspaces=false, 
+	numbers=left, 
+	breaklines=true,
+	frame=shadowbox
+}
+
+\begin{document}
+\maketitle
+
+\section{Pregunta 5 - Verificación y validación}
+\subsection{Indicar qué patrones de diseño (codificación) podrían ser usados para desarrollar el sistema. Justifique su respuesta}
+Considerando los patrones de diseño vistos en clases (limitando la lista a los presentados), es posible clasificar los diferentes patrones en ``patrones'' y ``antipatrones''.
+
+Patrones de diseño aplicables:
+\begin{itemize}
+\item{\textbf{Strategy: } Se tiene conocimiento de las implementaciones para el cálculo. En este caso en particular las implementaciones pueden no variar mucho, sin embargo en el tiempo de ser reemplazadas o de incluirse nuevos criterios para el cálculo de la tarifa, Strategy puede suponer una ventaja.}
+\item{\textbf{Proxy: } No existe suficiente información para afirmar que el cálculo de la tarifa se realizará dentro del mismo módulo (dado que es solo alquiler), si existe un módulo separado el cual se encarga de tarifar, entonces el uso de proxy supone una ventaja a la hora de integrar estos.}
+\end{itemize}
+
+Antipatrones de diseño observados:
+\begin{itemize}
+\item{\textbf{Patrones creacionales como Abstract Factory, Factory Method, Adapter , Singleton y Composite:} Si bien la portabilidad de elementos de diseño es una característica deseable, el problema se centra en el cálculo de la tarifa, por lo que la aplicación de este tipo de patrones solo incrementaría la complejidad en la mayoría de los casos al ser un conjunto de  patrones creacionales.}
+\item{\textbf{Template:} Se tienden a utilizar en conjunto con patrones creacionales del tipo Factory, sin embargo dado que estas no aplican (por el momento, no hay razón para implementar un sistema de plantillas.}
+\item{\textbf{Observer:} No hay interdependencia de eventos visible dentro de la función.}
+\item{\textbf{Null Object:} No es aplicable.}
+\end{itemize}
+
+\subsection{Realizar una tabla con las clases de equivalencia indicando las clases válidas y no válidas para cada variable de entrada. Enumerar las clases obtenidas.}
+
+\begin{table}[h]
+\centering
+\caption{Tabla de clases de equivalencia}
+\label{TABLE:EQUIVALENCE_CLASSES}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Variable} & \textbf{Clases de equivalencia válidas} & \textbf{Clases de equivalencia inválidas} \\ \hline
+Nombre            & $\in \text{[a-zA-Z]}+            $              & $\notin \text{[a-zA-Z]}+            $             \\ \hline
+Password          & $\in \text{\^{}(?=.*[a-zA-Z])(?=.*[\textbackslash d])[a-zA-Z\textbackslash d]\{8,20\}}  $              & $\notin \text{\^{}(?=.*[a-zA-Z])(?=.*[\textbackslash d])[a-zA-Z\textbackslash d]\{8,20\}}  $             \\ \hline
+Edad             & $\in \field{N}                    $              & $\notin \field{N}                    $             \\ \hline
+Tipo\_de\_socio   & $\in (Gold|Silver|Standard)$              & $\notin (Gold|Silver|Standard)$             \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Obtener un conjunto finito de casos de prueba significativos para dicha tabla, indicando qué clases de equivalencia cubriría cada caso.}
+
+\begin{table}[h]
+\centering
+\caption{Tabla de casos de prueba}
+\label{TABLE:EQUIVALENCE_CLASSES}
+\begin{tabularx}{\textwidth}{|l|X|X|}
+\hline
+\textbf{Variable} & \textbf{Entradas válidas} & \textbf{Entradas inválidas} \\ \hline
+Nombre            & $\{\text{hiss}|\text{purr}\}$              & $\{\text{hiss1}|\epsilon\}$             \\ \hline
+Password          & $\{hisshisspurr666\}  $              & $ \{hisshisspurr|6666666666|a| \newline q1w2e3r4t5y6u7i8o9p0asdf\}  $             \\ \hline
+Edad              & $\{ 1,2,20,99\}$              & $\{ -1,-2,-20,-99, 0\}$     \\ \hline
+Tipo\_de\_socio   & $\{Gold,Silver,Standard\}$              & $\{Extended,Premium,Purr\}$             \\ \hline
+\end{tabularx}
+\end{table}
+
+\section{Pregunta 6 - Verificación y Validación}
+\subsection{Pseudocódigos}
+
+\begin{algorithm}[!ht]
+\caption{Comparación de misma ciudad entre dos tuplas}\label{ALGO:PSEUDO_1}
+\begin{algorithmic}[1]
+\Procedure{misma_edad(u1,u2)}{}
+\State\Return $usuarios[u1][1] = usuarios[u2][1]$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}[!ht]
+\caption{Diferencia de edad entre dos tuplas}\label{ALGO:PSEUDO_2}
+\begin{algorithmic}[1]
+\Procedure{diferencia_edad(u1,u2)}{}
+\State \Return $|usuarios[u1][2][0] - usuarios[u2][2][0]|$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}[!ht]
+\caption{Obtencion de relaciones de amistad para una tupla}\label{ALGO:PSEUDO_3}
+\begin{algorithmic}[1]
+\Procedure{obtener_amigos(u)}{}
+\State $A \gets \emptyset$
+\For{$t \in amistades$}
+	\If {$t[0] = u$}
+		\State $A \gets A \cup \{t[0]\}$
+	\EndIf
+	\If {$t[1] = u$}
+		\State $A \gets A \cup \{t[0]\}$
+	\EndIf
+\EndFor
+\State \Return $A$
+%{ \St}ate $\textit{stringlen} \gets \text{length of }\textit{string}$
+% \State $i \gets \textit{patlen}$
+% \BState \emph{top}:
+% \If {$i > \textit{stringlen}$} \Return false
+% \EndIf
+% \State $j \gets \textit{patlen}$
+% \BState \emph{loop}:
+% \If {$\textit{string}(i) = \textit{path}(j)$}
+% \State $j \gets j-1$.
+% \State $i \gets i-1$.
+% \State \textbf{goto} \emph{loop}.
+% \State \textbf{close};
+% \EndIf
+% \State $i \gets i+\max(\textit{delta}_1(\textit{string}(i)),\textit{delta}_2(j))$.
+% \State \textbf{goto} \emph{top}.
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Recomendacion de amigos para una tupla}
+\label{ALGO:PSEUDO_3}
+\begin{algorithmic}[1]
+\Procedure{recomendar_amigos(u)}{}
+\State $A \gets obtener\_amigos(u)$
+\State $R \gets \emptyset$
+\For{$t \in A$}
+	\For{$p \in obtener\_amigos(t)$}
+			% if (
+            %     (!(a.indexOf(p) >= 0)) && //is not friend - prevent self looping
+            %     (misma_ciudad(u,p)) && //same city
+            %     (diferencia_edad(u,p) < 10) && //different age
+            %     (u!==p) //assumed. Since we can target onself
+            % ) r.push(p);
+		\If {$p \notin A \land misma\_ciudad(u,p) \land diferencia\_edad(u,p) < 10 \land (u \neq p)$}
+			\State $R \gets A \cup \{p\}$
+		\EndIf
+	\EndFor
+\EndFor
+\State \Return $R$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+\FloatBarrier
+
+\subsection{Grafo de flujo}
+\begin{figure}[!ht]
+  \centering
+\includegraphics[scale=.3]{FlowchartDiagram.png} 
+  \caption{Grafo de flujo para la función $recomendar\_amigos(u)$}
+  \label{FIGURE:WEB2}
+\end{figure}
+
+\FloatBarrier
+\subsection{Ejecución simbólica}
+\begin{figure}[!ht]
+
+\begin{equation} \label{eq1}
+\begin{split}
+&[x=X, y=Y, a=A, r=0] \\
+&[x=A[X], y=A[Y]] \\
+&[x=A[X][2], y=A[Y][2]] \\
+&[x=A[X][2][0], y=A[Y][2][0]] \\
+&[r=A[X][2][0]-A[Y][2][0]]]
+\end{split}
+\end{equation}
+Como es posible apreciar, el código falla si es que tanto $X(u1)$ como $Y(u2)$ no poseen la estructura de tupla presentada en el enunciado.
+\label{FIG:CODE}
+\caption{Ejecución simbólica para $diferencia\_edad(u1,u2)$}
+\end{figure}
+
+\subsection{Cobertura de sentencias}
+
+\begin{figure}[!ht]
+\begin{lstlisting}
+usuarios = {
+    522514: ["Jean Dupont", "Marseille", [1989, 11, 21]],
+    587125: ["Perico Los Palotes", "Valparaíso", [1990, 4, 12]],
+    189471: ["Jan Kowalsky", "Krakow", [1994, 4, 22]],
+    914210: ["Antonio Nobel", "Valparaíso", [1983, 7, 1]]
+}
+amistades = [
+    [198471, 289142], [138555, 429900], [349123, 781118], [522514, 587125], [189471, 914210], [587125, 189471]
+];
+u = 587125
+
+\end{lstlisting}
+\label{FIG:CODE}
+\caption{Caso de prueba que cubre la secuencia abcecfbcdccecfg para $recomendar\_amigos(u)$}
+\end{figure}
+
+\FloatBarrier
+\subsection{Cobertura de condición}
+\begin{figure}[!ht]
+\begin{lstlisting}
+usuarios = {
+    522514: ["Jean Dupont", "Marseille", [1989, 11, 21]],
+    587125: ["Perico Los Palotes", "Valparaíso", [1990, 4, 12]],
+    189471: ["Jan Kowalsky", "Krakow", [1994, 4, 22]],
+    914210: ["Antonio Nobel", "Valparaíso", [1983, 7, 1]]
+}
+amistades = [
+    [198471, 289142], [138555, 429900], [349123, 781118], [522514, 587125], [189471, 914210], [587125, 189471]
+];
+u = 587125
+
+\end{lstlisting}
+\label{FIG:CODE}
+\caption{Caso de prueba que cubre la secuencia abcecfbcdccecfg para $recomendar\_amigos(u)$}
+\end{figure}
+
+
+\FloatBarrier
+\subsection{Cobertura de flujo de datos}
+
+
+\begin{figure}[!ht]
+\begin{lstlisting}
+function obtener_amigos(u) {
+    var a, r;
+    a = amistades;
+    r = new Array();
+    var a_idx = 0;
+    while(a_idx < amistades.length){
+        var t = amistades[a_idx];
+        if(t[0] === u){
+            r.push(t[1]);
+        }
+        if(t[1] === u){
+            r.push(t[0]);
+        }
+    }
+    return r;
+}
+\end{lstlisting}
+\label{FIG:CODE}
+\caption{Expansión de la implementación de $obtener\_amigos(u)$}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[scale=.5]{DataFlow.png} 
+  \caption{Grafo de flujo para la función $obtener\_amigos(u)$}
+  \label{FIGURE:WEB2}
+\end{figure}
+
+Variable \textbf{u}:
+\begin{itemize}
+\item{\textbf{Definiciones de u:} 1 }
+\item{\textbf{C-Uso de u:} 0 }
+\item{\textbf{P-uso de u:} 6,8 }
+\item{\textbf{Caminos Libre definición de u:} (0,1,2,3,4,12), (0,1,2,3,4,5,6,7,8,9,10,11), (0,1,2,3,4,5,6,8,9,10,11), (0,1,2,3,4,5,6,7,8,10,11), ... }
+\item{\textbf{Camino-du:} (0,1,2,3,4,5,6) establece una definición-p-uso (1,(6,t),u) y (1,(6,f),u) }
+\end{itemize}
+\FloatBarrier
+
+
+\subsection{Bonus - Código implementación}
+\begin{figure}[!ht]
+\begin{lstlisting}
+'use strict';
+
+var usuarios = {
+    522514: ["Jean Dupont", "Marseille", [1989, 11, 21]],
+    587125: ["Perico Los Palotes", "Valparaíso", [1990, 4, 12]],
+    189471: ["Jan Kowalsky", "Krakow", [1994, 4, 22]],
+    914210: ["Antonio Nobel", "Valparaíso", [1983, 7, 1]]
+}
+
+function misma_ciudad(u1, u2) {
+    return usuarios[u1][1] === usuarios[u2][1];
+}
+
+function diferencia_edad(u1, u2) {
+    return Math.abs(usuarios[u1][2][0] - usuarios[u2][2][0]);
+}
+
+var amistades = [
+    [198471, 289142], [138555, 429900], [349123, 781118]
+    // Extra friends for testing
+    , [522514, 587125], [189471, 914210], [587125, 189471]
+];
+
+function obtener_amigos(u) {
+    let a = amistades.map(t => {
+        if (t[0] === u) return t[1];
+        if (t[1] === u) return t[0];
+    }).filter(t => t);
+
+    return (a)? a : new Array();
+}
+
+function recomendar_amigo(u) {
+    let a = obtener_amigos(u);
+    let r = new Array();
+    a.map(t => {
+        obtener_amigos(t).map(p => {
+            if (
+                (!(a.indexOf(p) >= 0)) && //is not friend - prevent self looping
+                (misma_ciudad(u,p)) && //same city
+                (diferencia_edad(u,p) < 10) && //different age
+                (u!==p) //assumed. Since we can target onself
+            ) r.push(p);
+        });
+    });
+    return r;
+}
+
+//Unit testing?
+if (misma_ciudad(587125, 522514) === false && misma_ciudad(587125, 914210) === true) 
+	console.log("misma_ciudad OK");
+else console.log("misma_ciudad FAIL");
+
+if (misma_ciudad(522514, 587125) === false && misma_ciudad(914210, 587125) === true)
+    console.log("misma_ciudad (reversed) OK");
+else console.log("misma_ciudad (reversed) FAIL");
+
+if (diferencia_edad(914210, 587125) === 7 && diferencia_edad(522514, 587125) === 1)
+    console.log("diferencia_edad OK");
+else console.log("diferencia_edad FAIL");
+
+if (diferencia_edad(587125, 914210) === 7 && diferencia_edad(587125, 522514) === 1)
+    console.log("diferencia_edad (reversed) OK");
+else console.log("diferencia_edad (reversed) FAIL");
+
+if (obtener_amigos(522514).sort().join(',')===[587125].sort().join(','))
+    console.log("obtener_amigos OK");
+else console.log("obtener_amigos FAIL");
+
+if (recomendar_amigo(587125).sort().join(',')===[914210].sort().join(','))
+    console.log("recomendar_amigo OK");
+else console.log("recomendar_amigo FAIL");
+\end{lstlisting}
+\label{FIG:CODE}
+\caption{Código Javascript que implementan las funciones 1, 2, 3, 4 y 5}
+\end{figure}
+\end{document}

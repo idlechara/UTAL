@@ -1,0 +1,37 @@
+\newcounter{algorithmeligne}
+\newcommand{\instr}[1]{%\underline
+                        {\bf #1}}
+\newcommand{\nomproc}[1]{{\rm\bf #1}}
+\newenvironment{algorithme}
+        {
+        \setcounter{algorithmeligne}{0}
+
+        \newcommand{\ITEM}{
+                \stepcounter{algorithmeligne}
+                {\footnotesize \arabic{algorithmeligne}.}\>
+                }
+        \newcommand{\lign}{\ITEM}
+        \begin{tabbing}
+\hskip1cm\=\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=\qquad\\\kill 
+        }
+        {
+        \end{tabbing}
+        }
+
+\newcommand{\For}[1]{{\bf For} #1 {\bf  Do}}
+\newcommand{\Foreach}[1]{{\bf For each} #1 {\bf  Do}}
+\newcommand{\Endfor}{{\bf End of for}}
+\newcommand{\While}[1]{{\bf While} #1 {\bf  Do}}
+\newcommand{\Do}[3]{{\bf Do} #1 #2 {\bf While} #3} % #1 body, #2 ident, #3 cond
+\newcommand{\Endwhile}{{\bf End of while}}
+\newcommand{\If}[1]{{\bf If} #1 {\bf  Then}}
+\newcommand{\Endif}{{\bf End of if}}
+\newcommand{\Else}{{\bf Else }}
+\newcommand{\Return}{{\bf Return }}
+ 
+\newcommand{\OurAnd}{{\sc and }}
+\newcommand{\OurOr}{{\sc or }}
+\newcommand{\OurNot}{{\sc not }}
+\newcommand{\True}{{\sc true }}
+\newcommand{\False}{{\sc false }}
+
