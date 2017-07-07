@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=RunArray()
-comment0.text=\r\n\ constructr\ por\ defecto\ de\ la\ clase\ RunArray,\ inicializa\ los\ valores\ por\ defecto\r\n
-comment1.params=run
-comment1.target=int\ add(Run)
-comment1.text=\r\n\ metodo\ que\ agrega\ un\ \ nuevo\ run\ a\ la\ lista,\ y\ actualiza\ la\ informacion\ correspondiente\r\n\ @param\ run\ el\ run\ a\ agregar\r\n\ @return\ el\ tiempo\ total\ calculado\ de\ las\ resoluciones.\r\n
-numComments=2

@@ -1,0 +1,26 @@
+{
+    "version": "0.1.0",
+    "isShellCommand": true,
+    "suppressTaskName": true,
+    "showOutput": "always",
+    "tasks": [
+        {
+            "taskName": "Build PDF",
+            "command": "pdflatex",
+            "isBuildCommand": true,
+            "args": [
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "informe.tex"
+            ]
+        },
+        {
+            "taskName": "Build BibTex",
+            "command": "bibtex",
+            "isTestCommand": true,
+            "args": [
+                "informe.aux"
+            ]
+        }
+    ]
+}
