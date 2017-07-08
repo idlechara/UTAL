@@ -1,0 +1,26 @@
+00:46:47 **** Incremental Build of configuration Debug for project HelloWorld ****
+make all 
+Building file: ../src/lib/LSM303DLHC.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabi-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lib/LSM303DLHC.d" -MT"src/lib/LSM303DLHC.d" -o "src/lib/LSM303DLHC.o" "../src/lib/LSM303DLHC.cpp"
+In file included from ../src/lib/LSM303DLHC.cpp:40:0:
+../src/lib/LSM303DLHC.h:190:0: warning: "LSM303DLHC_XS" redefined [enabled by default]
+../src/lib/LSM303DLHC.h:189:0: note: this is the location of the previous definition
+Finished building: ../src/lib/LSM303DLHC.cpp
+ 
+Building file: ../src/SensorTesting.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabi-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SensorTesting.d" -MT"src/SensorTesting.d" -o "src/SensorTesting.o" "../src/SensorTesting.cpp"
+In file included from ../src/SensorTesting.cpp:35:0:
+../src/lib/LSM303DLHC.h:190:0: warning: "LSM303DLHC_XS" redefined [enabled by default]
+../src/lib/LSM303DLHC.h:189:0: note: this is the location of the previous definition
+Finished building: ../src/SensorTesting.cpp
+ 
+Building target: HelloWorld
+Invoking: Cross G++ Linker
+arm-linux-gnueabi-g++  -o "HelloWorld"  ./src/lib/LSM303DLHC.o  ./src/SensorTesting.o   
+Finished building target: HelloWorld
+ 
+
+00:46:50 Build Finished (took 2s.842ms)
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="StorageLoginDialogNew">
+		<item value="541" key="DIALOG_WIDTH"/>
+		<item value="22" key="DIALOG_Y_ORIGIN"/>
+		<item value="530" key="DIALOG_X_ORIGIN"/>
+		<item value="281" key="DIALOG_HEIGHT"/>
+		<item value="1|Droid Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="StorageLoginDialogOld">
+		<item value="462" key="DIALOG_WIDTH"/>
+		<item value="79" key="DIALOG_Y_ORIGIN"/>
+		<item value="252" key="DIALOG_HEIGHT"/>
+		<item value="615" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+</section>

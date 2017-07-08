@@ -1,0 +1,259 @@
+\documentclass[11pt]{utalcaDoc}
+
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+
+\usepackage{dirtree}
+
+\title{{\bf Algoritmos y estructuras de datos}\\Tarea 4}
+\author{Profesor: Rodrigo Paredes, Ayudante: Erik Regla}
+\date{Plazo: Martes 9 de Diciembre de 2014. Estricto!!}
+
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+
+\section{Objetivos}
+
+
+Es conocido que un 'arbol de b'usqueda binaria se puede desbalancear mucho.
+En esta tarea vamos a considerar una variante del ABB que llamaremos
+ABB con mediana de tres (ABB-m3), y se espera que el alumno realice la comparaci'on
+entre el ABB-m3 con el ABB est'andar.
+
+
+\section{Descripci'on de la tarea}
+
+En esta tarea vamos a considerar una variante del ABB que llamaremos
+ABB con mediana de tres (ABB-m3). La idea es bastante simple. Los nodos
+internos tienen la misma estructura de un ABB, sin embargo en las hojas tendremos
+nodos que pueden almacenar hasta tres llaves. La idea es que el ABB-m3 resultante
+sea m'as balanceado que un ABB est'andar.
+
+La {\bf b'usqueda} opera de la siguiente forma. En la bajada por el 'arbol, los nodos
+internos permiten calcular la ruta hacia el nodo que debiese contener al elemento buscado,
+y cuando se llega a una hoja, el elemento se compara con las llaves que est'en en el nodo.
+Si durante el recorrido desde la ra'iz a la hoja no se encuentra al objeto se declara
+que la b'usqueda fue infructuosa.
+Considere la firma {\tt nodo* buscar(int x)} en C++ o {\tt nodo buscar(int x)} en Java,
+considerando programaci'on orientada a objetos (OOP) de Java o C++.
+Si prefiere usar programaci'on estructurada/procedural, use la firma
+{\tt nodo* buscar(nodo *raiz, int x)} en C/C++ o {\tt nodo buscar(nodo raiz, int x)} en Java.
+
+Las {\bf inserciones} se hacen en las hojas.
+Si en la hoja hay espacio para una nueva llave, se inserta y las llaves se almacenan en orden.
+Si la hoja est'a llena, primero se divide en tres, un nodo interno (que almacena la
+llave del medio), una hoja izquierda (que almacena la llave menor) y
+una hoja derecha (que almacena la llave mayor); y luego se inserta el nodo en
+la hoja correspondiente.
+Considere la firma {\tt nodo* insertar(int x)} en C++ o {\tt nodo insertar(int x)} en Java,
+considerando OOP.
+Si prefiere usar programaci'on estructurada/procedural, use la firma
+{\tt nodo* insertar(nodo *raiz, int x)} en C/C++ o {\tt nodo insertar(nodo raiz, int x)} en Java.
+
+Para la {\bf eliminaci'on}, es necesario localizar a la llave, una vez localizada se elimina y
+si en el sub'arbol quedan tres o menos llaves se compacta a una hoja.
+Como siempre, si la llave a eliminar es un nodo interno, tienen que hacer los ajustes
+necesarios para poder hacer la eliminaci'on. Esto es, si s'olo hay llaves
+en un subarbol, conectar al padre de la llave a eliminar con el hijo (saltando al
+nodo), o si hay llaves en ambos hijos, buscar al mayor de los hijos menores
+(o alternativamente, el menor de los mayores) para reemplazar al elemento borrado y
+continuar con los ajustes.
+Considere la firma {\tt nodo* borrar(int x)} en C++ o {\tt nodo borrar(int x)} en Java,
+considerando OOP.
+Si prefiere usar programaci'on estructurada/procedural, use la firma
+{\tt nodo* borrar(nodo *raiz, int x)} en C/C++ o {\tt nodo borrar(nodo raiz, int x)} en Java.
+
+Adicionalmente, implementen una funci'on para calcular la altura de un nodo,
+{\tt int altura()} o {\tt int altura(Nodo raiz)}, dependiendo si es OOP o programaci'on
+estructurada.
+
+Noten que las tres operaciones, buscar, insertar y borrar, son muy parecidas a las de
+un ABB est'andar, salvo que las hojas pueden tener hasta tres llaves.
+
+
+\textbf{Experimentaci'on.} 
+
+Para ejecutar el programa deben utilizar la siguiente l'inea:
+
+\verb|tarea4 n|
+
+El programa debe reportar para cada valor de $n$:
+\begin{enumerate}
+\item Tiempo de inserci'on de $n$ llaves.
+\item Altura del 'arbol.
+\item Tiempo de b'usqueda de 500000 llaves que pertenecen al 'arbol.
+\item Tiempo de b'usqueda de 500000 llaves que no pertenecen al 'arbol.
+\item Tiempo de borrado de 500000 llaves que pertenecen al 'arbol.
+\end{enumerate}
+
+Realicen pruebas para $n = 1, 2, \cdots, 10$,
+es decir, 1MB, 2MB, $\ldots$, 1MB = $10^{6}$ enteros,
+graficando el tiempo para cada una de las operaciones, y la altura de los 'arboles
+obtenidos. Comparen los resultados con los que se obtienen de un ABB est'andar.
+
+Para la generaci'on de los datos use el mismo generador de la tarea 3.
+
+
+%\section{Pruebas}
+
+
+\section{Restricciones}
+
+\begin{itemize}
+\item Los programas debe ser escritos en C, C++ o Java.
+\item Plazo de entrega: Martes 9 de Diciembre de 2014. Si pueden venir antes
+a mostrar la tarea mejor. As'i podr'an hacerle correcciones. Estricto!!
+\item Queda prohibido utilizar bibliotecas o clases preconstruidas en el lenguaje
+    que implementen 'arboles.
+    USTED DEBE IMPLEMENTAR TODO.
+\item La tarea es individual o en parejas.
+\item Para la tarea tienen que entregar un informe de resultados junto al c'odigo
+    fuente (el programa que implementa la tarea). No se aceptan c'odigos sin
+    informe ni informes sin c'odigo.
+\item Si la tarea no compila tiene nota 1.0 tanto en el c'odigo como en el informe.
+\item Cualquier falta a las restricciones anteriores invalida irrevocablemente
+la tarea.
+\end{itemize}
+
+
+
+\section{Ponderaci'on}
+
+El informe equivale a un 30\% de la nota de tarea.
+    
+El c'odigo equivale a un 70\% de la nota de tarea.
+
+
+
+\section{Entrega de la tarea}
+
+La entrega de la tarea debe incluir (1) el código del programa que resuelve
+la tarea y (2) un informe escrito donde se describa y documente el programa
+entregado, y se incluyan ejemplos de entradas y salidas. La entrega de la tarea
+se realizará a través de la plataforma {\tt lms.educandus.cl} hasta las 23:55 del día
+del plazo final. Generen un único archivo que contenga tanto el informe como
+los códigos para compilar. También se solicita que se adjunte un archivo
+README que explique cómo compilar la tarea y un archivo EXECUTE el
+cual contiene los comandos a usar para compilación y ejecución de la misma,
+este debe tener permisos de ejecucion a modo de poder ser utilizado.
+Adicionalmente, \emph{debe de entregarse una copia impresa del informe} a
+subir en la plataforma {\tt lms.educandus.cl} a más tardar el día siguiente
+del plazo final. La estructura del archivo a entregar debe tener el formato
+ejemplificado en la Figura \ref{fig_estructura}.
+
+\begin{figure}
+\dirtree{%
+.1 /.
+.2 NombreApellido\textunderscore T4.zip.
+.3 NombreApellido\textunderscore T4.
+.4 fuente.
+.5 EXECUTE.
+.5 README.
+.5 src.
+.6 archivo1.cpp.
+.6 archivo2.cpp.
+.6 foo.bar.
+.4 informe.
+.5 NombreApellido\textunderscore T4.pdf.
+}
+\caption{Estructura de archivo de entrega.}
+\label{fig_estructura}
+\end{figure}
+     
+
+El contenido del informe debe seguir la siguiente pauta común para todas las tareas: 
+
+\begin{itemize}
+\item
+Portada. El formato de la portada se muestra en la Figura \ref{fig1}.
+%Portada. El formato de la portada se muestra a continuación:
+
+\begin{figure}[tbp]
+\epsffile{utalca.eps} %{\epsfxsize16mm \epsffile{utalca.eps}} %
+\rlap{\kern 4mm \lower -9.5mm \hbox to0pt{{\Large \sc Universidad~~de~~Talca}\hfill}}%
+\rlap{\kern 4mm \lower -5mm \hbox to0pt{\Large \sc Facultad~~de~~Ingeniería\hfill}}%
+\rlap{\kern 4mm \lower -1mm \hbox to0pt{%
+  {\large \sc Departamento~~de~~Ciencias~~de~~la~~Computación}\hfill}}%
+
+\vspace{1cm}
+
+\centerline{\huge \bf Informe Tarea X}
+\vspace{0.8cm}
+\centerline{\Large \bf Nombre de la Tarea X}
+
+\vspace{2cm}
+
+\hfill \begin{tabular}{ll}
+Fecha:  & $<$fecha entrega$>$\\
+Autor:  & $<$nombre alumno$>$\\
+e-mail: & $<$correo del alumno$>$
+\end{tabular}
+\caption{Formato para la portada.}
+\label{fig1}
+\end{figure}
+
+\item Introducción: Breve descripción del problema y de su solución.
+
+\item Análisis del problema: Se expone en detalle el problema, los supuestos
+que se van a ocupar, las situaciones de borde y la metodología
+para abordar el problema.
+
+\item Solución del problema:
+  \begin{itemize}
+  \item Algoritmo de solución: Se detallan los pasos a seguir para solucionar
+  el problema. De ser necesario, se recomienda incluir figuras, tablas, etc.,
+  que permitan mejorar la comprensión de la solución propuesta.
+  
+  \item Diagrama de Estados: Muestra en forma global el programa.
+  
+  \item Diseño: Explicitar las Pre y Post condiciones consideradas,
+  mostrar los invariantes empleados.
+
+  \item Implementación: Se debe mostrar el pseudo-código del programa que
+  soluciona el problema, explicando lo que hace. Omita cualquier detalle de
+  implementación que sea irrelevante para entender la solución del problema.
+  Se recomienda usar nombres representativos para las variables.
+  NOTA: El código generado para resolver la tarea debe corresponder al
+  diseño descrito, preocúpese de comentar el código donde sea necesario
+  para facilitar su lectura.
+  
+  \item Modo de uso: Se debe explicar el modo de uso del programa y el modo
+  de compilación. Nota la tarea debe ser compilable en los computadores de la Universidad.
+  \end{itemize}
+
+\item Pruebas: Se debe mostrar las pruebas realizadas y sus resultados.
+%Se debe señalar claramente cual es la llamada al programa y su salida.
+El número de pruebas puede variar dependiendo del problema
+En esta sección debe incluir las tablas y gráficos necesarios solicitados,
+y el análisis de los resultados. En este capítulo adjunten las conclusiones
+obtenidas de los resultados de la tarea.
+%En general tres pruebas es suficiente.
+
+\item Anexos: De ser necesario, cualquier información adicional se debe
+agregar en los anexos y debe ser referenciada en alguna sección del
+informe de la tarea. Dentro de los anexos se puede incluir un listado con
+el programa completo que efectivamente fue compilado.
+
+\end{itemize}
+
+En este y los siguientes informes se va a valorar la ortografía y la
+redacción de acuerdo a las siguientes reglas de penalización.
+
+\begin{description}
+\item[Ortografía]
+Se permiten hasta 10 errores ortográficos en todo el informe.
+Entre 11 y 20 errores descuenten 0.5 puntos al informe.
+Entre 21 y 30 descuentan 1.0 puntos al informe.
+Más de 30 descuenten 2.0 puntos al informe.
+\item[Redacción]
+Se permiten hasta 5 ideas o párrafos mal redactados (es decir que no se entiendan).
+Entre 6 y 10 párrafos con problemas de redacción descuenten 0.5 puntos al informe.
+Entre 11 y 14 párrafos descuentan 1.0 puntos al informe.
+Más de 24 parrafos incomprensibles descuenten 2.0 puntos al informe.
+\end{description}
+
+\end{document}

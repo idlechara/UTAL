@@ -1,0 +1,27 @@
+/*
+ * Client.h
+ *
+ *  Created on: Feb 28, 2014
+ *      Author: jvarred
+ */
+
+#ifndef CLIENT_H_
+#define CLIENT_H_
+
+namespace std {
+
+/*
+ * Client class
+ *
+ * Searches for debug servers on a desired ip, then, gets the data recieved.
+ */
+class Client {
+    public:
+        Client();
+        void waitForClient();
+        virtual ~Client();
+};
+
+} /* namespace std */
+
+#endif /* CLIENT_H_ */
