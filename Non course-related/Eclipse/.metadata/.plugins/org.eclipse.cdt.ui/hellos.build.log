@@ -1,6 +1,0 @@
-07:55:21 **** Build of configuration Debug for project hellos ****
-make all 
-make: *** No rule to make target `all'.  Stop.
-
-07:55:21 Build Finished (took 71ms)
-

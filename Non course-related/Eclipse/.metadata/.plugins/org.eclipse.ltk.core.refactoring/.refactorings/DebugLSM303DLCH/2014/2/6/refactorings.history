@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;DebugLSM303DLCH/src/Debug&apos; to &apos;Debug.cpp&apos;" description="Rename resource &apos;Debug&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Debug" name="Debug.cpp" stamp="1391701198712" updateReferences="true"/>
-</session>
