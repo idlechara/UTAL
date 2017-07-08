@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/DireccionServicioWeb/Demo?wsdl" uri="xml-resources/web-service-references/Demo/wsdl/localhost_8080/DireccionServicioWeb/Demo.wsdl"/>
-    <system systemId="http://localhost:8080/DireccionServicioWeb/Demo?xsd=1" uri="xml-resources/web-service-references/Demo/wsdl/localhost_8080/DireccionServicioWeb/Demo.xsd_1.xsd"/>
-    <system systemId="http://192.168.1.115:8080/DireccionServicioWeb/Demo?wsdl" uri="xml-resources/web-service-references/Demo/wsdl/192.168.1.115_8080/DireccionServicioWeb/Demo.wsdl"/>
-    <system systemId="http://192.168.1.115:8080/DireccionServicioWeb/Demo?xsd=1" uri="xml-resources/web-service-references/Demo/wsdl/192.168.1.115_8080/DireccionServicioWeb/Demo.xsd_1.xsd"/>
-</catalog>
