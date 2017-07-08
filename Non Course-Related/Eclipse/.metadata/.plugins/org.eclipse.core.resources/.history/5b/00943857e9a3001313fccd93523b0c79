@@ -1,0 +1,35 @@
+//============================================================================
+// Name        : Local.cpp
+// Author      : jvarred
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "Client.h"
+using namespace std;
+
+int main() {
+	cout << "!!!Hello World!!! - Server Neko!" << endl; // prints !!!Hello World!!!
+	Client client("localhost", 3555);
+	string data;
+	//client.recieve_from_server(data);
+
+    //cout << "Recieved: " << data << endl;
+    data = "bye~";
+    client.send_to_server(data);
+    data = "bye~";
+    client.send_to_server(data);
+    data = "bye~";
+    client.send_to_server(data);
+    data = "bye~";
+    client.send_to_server(data);
+    data = "bye~";
+    client.send_to_server(data);
+
+    client.close_connection();
+
+    cout << "Excecution terminated." << endl;
+	return 0;
+}
