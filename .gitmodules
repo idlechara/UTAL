@@ -1,21 +1,23 @@
-[submodule "backup/Sistema_Asignacion_Salas"]
-	path = backup/Sistema_Asignacion_Salas
+[submodule "ComputerScience//(2017-1)_SoftwareBuildingSistema_Asignacion_Salas"]
+	path = ComputerScience/(2017-1)_SoftwareBuilding/Sistema_Asignacion_Salas
 	url = git@github.com:KukyNekoi/Sistema_Asignacion_Salas.git
-[submodule "backup/bicicletero"]
-	path = backup/bicicletero
+
+[submodule "Non Course-Related/bicicletero"]
+	path = Non Course-Related/bicicletero
 	url = git@bitbucket.org:eregla/utal-bicicletero.git
-[submodule "backup/libpololu-avr"]
-	path = backup/libpololu-avr
-	url = https://github.com/pololu/libpololu-avr.git
-[submodule "backup/unicornio_furioso"]
-	path = backup/unicornio_furioso
+
+[submodule "ComputerScience/(2017-1)_-_Tech_Project_Management/unicornio_furioso"]
+	path = ComputerScience/(2017-1)_-_Tech_Project_Management/unicornio_furioso
 	url = git@github.com:KukyNekoi/UnicornioFurioso.git
-[submodule "backup/veterinuber-core"]
-	path = backup/veterinuber-core
+
+[submodule "ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-core"]
+	path = ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-core
 	url = git@gitlab.com:UTALCDS-2017-1/veterinuber-core.git
-[submodule "backup/veterinuber-db"]
-	path = backup/veterinuber-db
+
+[submodule "ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-db"]
+	path = ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-db
 	url = git@gitlab.com:UTALCDS-2017-1/veterinuber-db.git
-[submodule "backup/veterinuber-web"]
-	path = backup/veterinuber-web
+
+[submodule "ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-web"]
+	path = ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-web
 	url = git@gitlab.com:UTALCDS-2017-1/veterinuber-web.git
