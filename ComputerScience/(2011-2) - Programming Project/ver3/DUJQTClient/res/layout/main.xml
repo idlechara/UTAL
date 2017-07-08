@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>    
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/simboloTitulo"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/descripcionMenuPpal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/simboloTitulo"
+        android:layout_marginTop="16dp"
+        android:text="Y asi con la cosa.. de weon borre accidentalmente el proyecto anterior asi que ahora tengo que hacer toda esta wea a la rapida... bueh, con mucha imaginacion aca hay como un texto para indicarle a usuario donde cresta esta parado." />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descripcionMenuPpal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/botonAlumnos"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Ir a Alumnos" />
+
+        <Button
+            android:id="@+id/botonExAlumnos"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Ir a Ex-Alumnos" />
+
+        <Button
+            android:id="@+id/botonVistaCalendario"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Ir a vista de calendario" />
+
+        <Button
+            android:id="@+id/botonConfiguracion"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Ir a configuracion" />
+
+        <Button
+            android:id="@+id/botonSalir"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Salir" />
+
+    </LinearLayout>
+
+</RelativeLayout>

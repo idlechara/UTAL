@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4123660588">
+    <data-source source="LOCAL" name="PostgreSQL - icpcdb_non_indexed@10.211.55.11" uuid="9fbb9959-8d72-4444-936d-f66caf51c395">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://10.211.55.11:5432/icpcdb_non_indexed</jdbc-url>
+    </data-source>
+  </component>
+</project>

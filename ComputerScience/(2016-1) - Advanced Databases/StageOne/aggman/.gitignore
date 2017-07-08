@@ -1,0 +1,6 @@
+*.log
+/commands/*
+!/commands/01_table_generation.sql
+!/commands/01_table_generation_btree.sql
+!/commands/01_table_generation_hash.sql
+!/commands/13_queries.sql

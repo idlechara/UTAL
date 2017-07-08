@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_d6RisICREeClteOWAOG2VQ" name="Proyecto Progra Av. II">
+  <packageImport xmi:id="_d68REICREeClteOWAOG2VQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_d-U8QICREeClteOWAOG2VQ" name="Proyecto">
+    <packagedElement xmi:type="uml:Class" xmi:id="_d-c4EICREeClteOWAOG2VQ" name="Arcade">
+      <ownedComment xmi:id="_eEoYkICREeClteOWAOG2VQ">
+        <body>@author  otaku</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_eEi5AICREeClteOWAOG2VQ" name="dimension" visibility="public" type="_eEjgEICREeClteOWAOG2VQ" association="_eEl8UICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eEkHIYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eEkHIICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eEjgEYCREeClteOWAOG2VQ" name="stager" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eElVQYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eElVQICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_eEjgEICREeClteOWAOG2VQ" name="Dimension">
+      <ownedLiteral xmi:id="_eGEjAICREeClteOWAOG2VQ" name="TWO"/>
+      <ownedLiteral xmi:id="_eGFKEICREeClteOWAOG2VQ" name="THREE"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eEl8UICREeClteOWAOG2VQ" memberEnd="_eEi5AICREeClteOWAOG2VQ _eEl8UYCREeClteOWAOG2VQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:id="_eEl8UYCREeClteOWAOG2VQ" name="" type="_d-c4EICREeClteOWAOG2VQ" association="_eEl8UICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eEnxgICREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eEnxgYCREeClteOWAOG2VQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eEqNwICREeClteOWAOG2VQ" name="Evaluation">
+      <ownedComment xmi:id="_eE6FZYCREeClteOWAOG2VQ">
+        <body>Enlosing type class. It's used for storage of the data recieved
+about the ranking of a certain game. It contains some setters to 
+modify the infromation about this, and also some utility methods
+like getProm, to extract some information about the class. 
+@author Erik Andres Regla Torres
+@version 	0.1 
+@since 0.1</body>
+      </ownedComment>
+      <generalization xmi:id="_eEufMICREeClteOWAOG2VQ" general="_eEt4IICREeClteOWAOG2VQ"/>
+      <ownedAttribute xmi:id="_eE0l0ICREeClteOWAOG2VQ" name="votation" visibility="private" type="_eE2bAICREeClteOWAOG2VQ">
+        <ownedComment xmi:id="_eE5eUYCREeClteOWAOG2VQ">
+          <body>Single precision floating integer array. Used to
+save the votation information.
+@author Erik Andres Regla Torres
+@version	0.1 
+@since 0.1</body>
+        </ownedComment>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eE5eU4CREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eE5eUoCREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_eE3pIYCREeClteOWAOG2VQ" name="Evaluation" visibility="public" concurrency="concurrent">
+        <ownedComment xmi:id="_eE6FYICREeClteOWAOG2VQ">
+          <body>Constructor for the class Evaluation.
+@author Erik Andres Regla Torres
+@version 	0.1 
+@since 0.1</body>
+        </ownedComment>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eE4QMICREeClteOWAOG2VQ" name="vote" visibility="public" concurrency="concurrent">
+        <ownedComment xmi:id="_eE6FYYCREeClteOWAOG2VQ">
+          <body>Add a new vote to the votation array.
+@param votation the value of the vote recieved
+@author Erik Andres Regla Torres
+@version 	0.1 
+@since 0.1</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_eE4QMYCREeClteOWAOG2VQ" name="votation">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eE4QMoCREeClteOWAOG2VQ" name="getWorstRank" visibility="public" concurrency="concurrent">
+        <ownedComment xmi:id="_eE6FYoCREeClteOWAOG2VQ">
+          <body>Returns the worst ranking of all votes. It's used some odd criteria
+to get the lowest votation given to a certain game.
+@return the lowest scoring
+@author Erik Andres Regla Torres
+@version 	0.1 
+@since 0.1</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_eE43QICREeClteOWAOG2VQ" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eE43QYCREeClteOWAOG2VQ" name="getAverageRank" visibility="public" concurrency="concurrent">
+        <ownedComment xmi:id="_eE6FY4CREeClteOWAOG2VQ">
+          <body>Gets the average rank of all votes.
+@return the average of all votes
+@author Erik Andres Regla Torres
+@version 	0.1 
+@since 0.1</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_eE43QoCREeClteOWAOG2VQ" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_eE43Q4CREeClteOWAOG2VQ" name="getBestRank" visibility="public" concurrency="concurrent">
+        <ownedComment xmi:id="_eE6FZICREeClteOWAOG2VQ">
+          <body>Returns the best ranking of all votes. It's used some odd criteria
+to get the highest votation given to a certain game
+@return the best scoring
+@author Erik Andres Regla Torres
+@version 	0.1 
+@since 0.1</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_eE5eUICREeClteOWAOG2VQ" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_eE6scICREeClteOWAOG2VQ" name="Type">
+      <ownedComment xmi:id="_eFCoQoCREeClteOWAOG2VQ">
+        <body>@author   otaku</body>
+      </ownedComment>
+      <ownedLiteral xmi:id="_eFCBMICREeClteOWAOG2VQ" name="FULL"/>
+      <ownedLiteral xmi:id="_eFCoQICREeClteOWAOG2VQ" name="MISC"/>
+      <ownedLiteral xmi:id="_eFCoQYCREeClteOWAOG2VQ" name="EXTREME"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eFDPUICREeClteOWAOG2VQ" name="Game" isAbstract="true">
+      <ownedComment xmi:id="_eFabs4CREeClteOWAOG2VQ">
+        <body>@author  otaku</body>
+      </ownedComment>
+      <generalization xmi:id="_eFEdcICREeClteOWAOG2VQ" general="_eEt4IICREeClteOWAOG2VQ"/>
+      <ownedAttribute xmi:id="_eFU8IICREeClteOWAOG2VQ" name="platform" visibility="public" type="_eFWKQICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFYmgYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFYmgICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFWxUICREeClteOWAOG2VQ" name="maxPlayers" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFYmg4CREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFYmgoCREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFWxUYCREeClteOWAOG2VQ" name="description" visibility="public" type="_eFXYYICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFZNkICREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFYmhICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFXYYYCREeClteOWAOG2VQ" name="classification" visibility="public" type="_eFX_cICREeClteOWAOG2VQ" association="_eFZ0oICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFZNkoCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFZNkYCREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFX_cYCREeClteOWAOG2VQ" name="name" visibility="public" type="_eFXYYICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFZNlICREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFZNk4CREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eFX_coCREeClteOWAOG2VQ" name="rating" visibility="public" type="_eEqNwICREeClteOWAOG2VQ" association="_eFZ0pICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFZNloCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFZNlYCREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_eFWKQ4CREeClteOWAOG2VQ" name="Platform">
+      <ownedComment xmi:id="_eGxGkICREeClteOWAOG2VQ">
+        <body>A plattfom enum class, made to mark the corresponding platform of a game.
+@author   Erik Andres Regla Torres
+@version   	0.1 
+@since   0.1</body>
+      </ownedComment>
+      <ownedLiteral xmi:id="_eGvRYICREeClteOWAOG2VQ" name="NDS"/>
+      <ownedLiteral xmi:id="_eGvRYYCREeClteOWAOG2VQ" name="PSX"/>
+      <ownedLiteral xmi:id="_eGvRYoCREeClteOWAOG2VQ" name="WII"/>
+      <ownedLiteral xmi:id="_eGvRY4CREeClteOWAOG2VQ" name="NGBA"/>
+      <ownedLiteral xmi:id="_eGvRZICREeClteOWAOG2VQ" name="XBOX"/>
+      <ownedLiteral xmi:id="_eGv4cICREeClteOWAOG2VQ" name="GENESIS"/>
+      <ownedLiteral xmi:id="_eGv4cYCREeClteOWAOG2VQ" name="ANDROID"/>
+      <ownedLiteral xmi:id="_eGv4coCREeClteOWAOG2VQ" name="VEDA"/>
+      <ownedLiteral xmi:id="_eGv4c4CREeClteOWAOG2VQ" name="XBOX360"/>
+      <ownedLiteral xmi:id="_eGv4dICREeClteOWAOG2VQ" name="NINTENDO64"/>
+      <ownedLiteral xmi:id="_eGv4dYCREeClteOWAOG2VQ" name="PFP"/>
+      <ownedLiteral xmi:id="_eGv4doCREeClteOWAOG2VQ" name="WINDING"/>
+      <ownedLiteral xmi:id="_eGv4d4CREeClteOWAOG2VQ" name="NDS3D"/>
+      <ownedLiteral xmi:id="_eGv4eICREeClteOWAOG2VQ" name="PS2"/>
+      <ownedLiteral xmi:id="_eGwfgICREeClteOWAOG2VQ" name="PSP"/>
+      <ownedLiteral xmi:id="_eGwfgYCREeClteOWAOG2VQ" name="SATURN"/>
+      <ownedLiteral xmi:id="_eGwfgoCREeClteOWAOG2VQ" name="ATARI"/>
+      <ownedLiteral xmi:id="_eGwfg4CREeClteOWAOG2VQ" name="NGB"/>
+      <ownedLiteral xmi:id="_eGwfhICREeClteOWAOG2VQ" name="NDSI"/>
+      <ownedLiteral xmi:id="_eGwfhYCREeClteOWAOG2VQ" name="MAC"/>
+      <ownedLiteral xmi:id="_eGwfhoCREeClteOWAOG2VQ" name="SUPERNINTENDO"/>
+      <ownedLiteral xmi:id="_eGwfh4CREeClteOWAOG2VQ" name="PC"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_eFX_cICREeClteOWAOG2VQ" name="Classification">
+      <ownedComment xmi:id="_eFt9toCREeClteOWAOG2VQ">
+        <body>Enum class Classification, made to mark the classification of some game.
+@author   Erik Andres Regla Torres
+@version   	0.1 
+@since   0.1</body>
+      </ownedComment>
+      <ownedLiteral xmi:id="_eFtWoICREeClteOWAOG2VQ" name="R5"/>
+      <ownedLiteral xmi:id="_eFt9sICREeClteOWAOG2VQ" name="R18"/>
+      <ownedLiteral xmi:id="_eFt9sYCREeClteOWAOG2VQ" name="R3"/>
+      <ownedLiteral xmi:id="_eFt9soCREeClteOWAOG2VQ" name="R15"/>
+      <ownedLiteral xmi:id="_eFt9s4CREeClteOWAOG2VQ" name="RP"/>
+      <ownedLiteral xmi:id="_eFt9tICREeClteOWAOG2VQ" name="ALL"/>
+      <ownedLiteral xmi:id="_eFt9tYCREeClteOWAOG2VQ" name="R10"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eFZ0oICREeClteOWAOG2VQ" memberEnd="_eFXYYYCREeClteOWAOG2VQ _eFZ0oYCREeClteOWAOG2VQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:id="_eFZ0oYCREeClteOWAOG2VQ" name="" type="_eFDPUICREeClteOWAOG2VQ" association="_eFZ0oICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFZ0ooCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFZ0o4CREeClteOWAOG2VQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eFZ0pICREeClteOWAOG2VQ" memberEnd="_eFX_coCREeClteOWAOG2VQ _eFabsICREeClteOWAOG2VQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:id="_eFabsICREeClteOWAOG2VQ" name="" type="_eFDPUICREeClteOWAOG2VQ" association="_eFZ0pICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFabsYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFabsoCREeClteOWAOG2VQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_eFabtICREeClteOWAOG2VQ" name="PlayMode">
+      <ownedComment xmi:id="_eFf7QoCREeClteOWAOG2VQ">
+        <body>@author   otaku</body>
+      </ownedComment>
+      <ownedLiteral xmi:id="_eFf7QICREeClteOWAOG2VQ" name="GROUP"/>
+      <ownedLiteral xmi:id="_eFf7QYCREeClteOWAOG2VQ" name="INDIVIDUAL"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_eFf7Q4CREeClteOWAOG2VQ" name="StrategyMode">
+      <ownedComment xmi:id="_eFla0oCREeClteOWAOG2VQ">
+        <body>@author   otaku</body>
+      </ownedComment>
+      <ownedLiteral xmi:id="_eFla0ICREeClteOWAOG2VQ" name="TURN"/>
+      <ownedLiteral xmi:id="_eFla0YCREeClteOWAOG2VQ" name="REALTIME"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_eFukwICREeClteOWAOG2VQ" name="Persona">
+      <ownedComment xmi:id="_eF15gICREeClteOWAOG2VQ">
+        <body>@author   otaku</body>
+      </ownedComment>
+      <ownedLiteral xmi:id="_eF1ScICREeClteOWAOG2VQ" name="THIRD"/>
+      <ownedLiteral xmi:id="_eF1ScYCREeClteOWAOG2VQ" name="FIRST"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eF15gYCREeClteOWAOG2VQ" name="Sports">
+      <ownedComment xmi:id="_eGA4oICREeClteOWAOG2VQ">
+        <body>@author  otaku</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_eF-cYICREeClteOWAOG2VQ" name="sport" visibility="public" type="_eFXYYICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF_DdICREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eF_Dc4CREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eF-cYYCREeClteOWAOG2VQ" name="categories" visibility="package" type="_eF-cYoCREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF_qgYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eF_qgICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eF_DcoCREeClteOWAOG2VQ" name="type" visibility="public" type="_eE6scICREeClteOWAOG2VQ" association="_eGARkICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eF_qg4CREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eF_qgoCREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eGARkICREeClteOWAOG2VQ" memberEnd="_eF_DcoCREeClteOWAOG2VQ _eGARkYCREeClteOWAOG2VQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:id="_eGARkYCREeClteOWAOG2VQ" name="" type="_eF15gYCREeClteOWAOG2VQ" association="_eGARkICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGARkoCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGARk4CREeClteOWAOG2VQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eGFKEYCREeClteOWAOG2VQ" name="Shooter">
+      <ownedComment xmi:id="_eGLQtYCREeClteOWAOG2VQ">
+        <body>@author  otaku</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_eGJbgICREeClteOWAOG2VQ" name="weapons" visibility="package" type="_eF-cYoCREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGKpoYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGKpoICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eGKCkICREeClteOWAOG2VQ" name="persona" visibility="public" type="_eFukwICREeClteOWAOG2VQ" association="_eGLQsYCREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGLQsICREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGKpooCREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eGLQsYCREeClteOWAOG2VQ" memberEnd="_eGKCkICREeClteOWAOG2VQ _eGLQsoCREeClteOWAOG2VQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:id="_eGLQsoCREeClteOWAOG2VQ" name="" type="_eGFKEYCREeClteOWAOG2VQ" association="_eGLQsYCREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGLQs4CREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGLQtICREeClteOWAOG2VQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eGL3wICREeClteOWAOG2VQ" name="Rol">
+      <ownedComment xmi:id="_eGWP1ICREeClteOWAOG2VQ">
+        <body>@author  otaku</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_eGSlcICREeClteOWAOG2VQ" name="skills" visibility="public" type="_eF-cYoCREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGUaoYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGUaoICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eGTMgICREeClteOWAOG2VQ" name="dimension" visibility="public" type="_eEjgEICREeClteOWAOG2VQ" association="_eGVowICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGVBsYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGVBsICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eGTzkICREeClteOWAOG2VQ" name="characteristics" visibility="public" type="_eGTzkYCREeClteOWAOG2VQ" association="_eGWP0ICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGVBs4CREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGVBsoCREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eGTzkYCREeClteOWAOG2VQ" name="Characteristics">
+      <ownedAttribute xmi:id="_eGahQICREeClteOWAOG2VQ" name="inteligence" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGcWcYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGcWcICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eGbIUICREeClteOWAOG2VQ" name="stranght" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGcWc4CREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGcWcoCREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eGbIUYCREeClteOWAOG2VQ" name="luck" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGcWdYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGcWdICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eGbIUoCREeClteOWAOG2VQ" name="vitaly" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGc9gYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGc9gICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eGbvYICREeClteOWAOG2VQ" name="dextrity" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGc9g4CREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGc9goCREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eGbvYYCREeClteOWAOG2VQ" name="agility" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGc9hYCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGc9hICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eGVowICREeClteOWAOG2VQ" memberEnd="_eGTMgICREeClteOWAOG2VQ _eGVowYCREeClteOWAOG2VQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:id="_eGVowYCREeClteOWAOG2VQ" name="" type="_eGL3wICREeClteOWAOG2VQ" association="_eGVowICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGVowoCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGVow4CREeClteOWAOG2VQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eGWP0ICREeClteOWAOG2VQ" memberEnd="_eGTzkICREeClteOWAOG2VQ _eGWP0YCREeClteOWAOG2VQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:id="_eGWP0YCREeClteOWAOG2VQ" name="" type="_eGL3wICREeClteOWAOG2VQ" association="_eGWP0ICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGWP0oCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGWP04CREeClteOWAOG2VQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eGxGkYCREeClteOWAOG2VQ" name="Strategy">
+      <ownedComment xmi:id="_eG_wEICREeClteOWAOG2VQ">
+        <body>@author  otaku</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_eG8FsICREeClteOWAOG2VQ" name="playMode" visibility="public" type="_eFabtICREeClteOWAOG2VQ" association="_eG-h8ICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eG9T0YCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eG9T0ICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eG8swICREeClteOWAOG2VQ" name="strategy" visibility="public" type="_eGxGkYCREeClteOWAOG2VQ" association="_eG_JAICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eG964YCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eG964ICREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_eG8swYCREeClteOWAOG2VQ" name="plot" visibility="public" type="_eFXYYICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eG9644CREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eG964oCREeClteOWAOG2VQ"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eG-h8ICREeClteOWAOG2VQ" memberEnd="_eG8FsICREeClteOWAOG2VQ _eG-h8YCREeClteOWAOG2VQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:id="_eG-h8YCREeClteOWAOG2VQ" name="" type="_eGxGkYCREeClteOWAOG2VQ" association="_eG-h8ICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eG-h8oCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eG-h84CREeClteOWAOG2VQ"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eG_JAICREeClteOWAOG2VQ" memberEnd="_eG8swICREeClteOWAOG2VQ _eG_JAYCREeClteOWAOG2VQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:id="_eG_JAYCREeClteOWAOG2VQ" name="" type="_eGxGkYCREeClteOWAOG2VQ" association="_eG_JAICREeClteOWAOG2VQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eG_JAoCREeClteOWAOG2VQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eG_JA4CREeClteOWAOG2VQ"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_eErb4ICREeClteOWAOG2VQ" name="java.io">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_eEt4IICREeClteOWAOG2VQ" name="Serializable" isAbstract="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_eE1M4ICREeClteOWAOG2VQ" name="java.util">
+    <packagedElement xmi:type="uml:Class" xmi:id="_eE1z8ICREeClteOWAOG2VQ" name="ArrayList">
+      <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_eE1z8YCREeClteOWAOG2VQ" parameter="_eE1z8oCREeClteOWAOG2VQ">
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_eE1z8oCREeClteOWAOG2VQ" parameteredElement="_eE1z84CREeClteOWAOG2VQ">
+          <ownedParameteredElement xmi:type="uml:DataType" xmi:id="_eE1z84CREeClteOWAOG2VQ" name="E" templateParameter="_eE1z8oCREeClteOWAOG2VQ"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eE2bAICREeClteOWAOG2VQ" name="ArrayList">
+      <templateBinding xmi:id="_eE3CEICREeClteOWAOG2VQ" signature="_eE1z8YCREeClteOWAOG2VQ">
+        <parameterSubstitution xmi:id="_eE3CEYCREeClteOWAOG2VQ" formal="_eE1z8oCREeClteOWAOG2VQ" actual="_eE3pIICREeClteOWAOG2VQ"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eFWKQICREeClteOWAOG2VQ" name="ArrayList">
+      <templateBinding xmi:id="_eFWKQYCREeClteOWAOG2VQ" signature="_eE1z8YCREeClteOWAOG2VQ">
+        <parameterSubstitution xmi:id="_eFWKQoCREeClteOWAOG2VQ" formal="_eE1z8oCREeClteOWAOG2VQ" actual="_eFWKQ4CREeClteOWAOG2VQ"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eF-cYoCREeClteOWAOG2VQ" name="ArrayList">
+      <templateBinding xmi:id="_eF_DcICREeClteOWAOG2VQ" signature="_eE1z8YCREeClteOWAOG2VQ">
+        <parameterSubstitution xmi:id="_eF_DcYCREeClteOWAOG2VQ" formal="_eE1z8oCREeClteOWAOG2VQ" actual="_eFXYYICREeClteOWAOG2VQ"/>
+      </templateBinding>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_eE3CEoCREeClteOWAOG2VQ" name="java.lang">
+    <packagedElement xmi:type="uml:Class" xmi:id="_eE3pIICREeClteOWAOG2VQ" name="Float" isLeaf="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eFXYYICREeClteOWAOG2VQ" name="String" isLeaf="true"/>
+  </packagedElement>
+  <profileApplication xmi:id="_d-TuIICREeClteOWAOG2VQ">
+    <eAnnotations xmi:id="_d-TuIYCREeClteOWAOG2VQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="platform:/plugin/com.soyatec.core/profiles/Soyatec.profile.uml#_LBLaIPscEdqYc77HqxgcqA"/>
+    </eAnnotations>
+    <appliedProfile href="platform:/plugin/com.soyatec.core/profiles/Soyatec.profile.uml#_zrN_0iUoEdmNXYQzyImvfA"/>
+  </profileApplication>
+  <profileApplication xmi:id="_d-TuIoCREeClteOWAOG2VQ">
+    <eAnnotations xmi:id="_d-TuI4CREeClteOWAOG2VQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="platform:/plugin/com.soyatec.core/profiles/Archetype.profile.uml#_D-NGoPscEdqYc77HqxgcqA"/>
+    </eAnnotations>
+    <appliedProfile href="platform:/plugin/com.soyatec.core/profiles/Archetype.profile.uml#_14txEWVxEdmLjaVkDjVh5g"/>
+  </profileApplication>
+  <profileApplication xmi:id="_d-TuJICREeClteOWAOG2VQ">
+    <eAnnotations xmi:id="_d-UVMICREeClteOWAOG2VQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="platform:/plugin/org.eclipse.uml2.uml.resources/profiles/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+    </eAnnotations>
+    <appliedProfile href="platform:/plugin/org.eclipse.uml2.uml.resources/profiles/Standard.profile.uml#_0"/>
+  </profileApplication>
+  <profileApplication xmi:id="_d-UVMYCREeClteOWAOG2VQ">
+    <eAnnotations xmi:id="_d-UVMoCREeClteOWAOG2VQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="platform:/plugin/com.soyatec.core/profiles/Java.profile.uml#_I0dq8PscEdqYc77HqxgcqA"/>
+    </eAnnotations>
+    <appliedProfile href="platform:/plugin/com.soyatec.core/profiles/Java.profile.uml#_aZhLkH6MEdmbwasWWc4yvw"/>
+  </profileApplication>
+</uml:Model>

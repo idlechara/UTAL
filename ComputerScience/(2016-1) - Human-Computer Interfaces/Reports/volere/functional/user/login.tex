@@ -1,0 +1,29 @@
+\subsection{Login}
+\begin{requirement}{functional}{}
+	\reqdescription{Usuario puede ingresar e iniciar sesión en el sistema 
+		utilizando sus credenciales de acceso}
+	\reqrationale{Se busca que los usuarios registrados puedan tener acceso a proyectos no
+		disponibles de manera pública como tambien el registro de proyectos. En el caso de 
+		administradores y moderadores, estos pueden ingresar al sistema para poder
+		cumplir con sus funciones.}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Usuarios con credenciales pueden realizar ``login'' en la plataforma.}
+	\reqsatisfaction{2}{2}
+	\reqdepencies{\reffr{RF:U:ELEVAR_SOLICITUD}}{}
+	\reqdocuments{Entrevista 1,2, 5}
+	\reqhistory{Entrevista 6: Formulario solicita información de afiliación.}
+	\label{RF:U:LOGIN}
+\end{requirement}
+
+\begin{requirement}{functional}{}
+	\reqdescription{Producto notifica al usuario cuando sus credenciales son incorrectas.}
+	\reqrationale{Si no permite el acceso al usuario con sus credenciales, debe mostrar un mensaje
+	que diga que son incorrectas sin enseñar mayor detalle del porqué}
+	\reqsource{Rodrigo Bustamante}
+	\reqfitcriterion{Cuando un usuario ingresa con credenciales incorrectas muestra un mensaje de alerta.}
+	\reqsatisfaction{2}{2}
+	\reqdepencies{\reffr{RF:U:LOGIN}}{}
+	\reqdocuments{Entrevista 1}
+	\reqhistory{}
+	\label{RF:U:LOGIN_WARNING}
+\end{requirement}

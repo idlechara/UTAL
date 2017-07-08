@@ -1,0 +1,131 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\input{spanishAlgorithmic}
+\graphicspath{ {images/} }
+
+\title{{\bf Diseño y análisis de algoritmos}\\Cálculo de mediana en tiempo lineal como mejor caso y caso promedio y estabilización del algoritmo de selección por pivotes IQS}
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{20 de Junio del 2015}
+
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+
+\section{Algoritmos de selección basados en pivotes}
+Los algoritmos de ordenamiento y selección basados en la estrategia "dividir y conquistar" se fundamentan el el uso de pivotes para poder dividir el problema. Se ha demostrado la eficiencia de esta técnica en el caso promedio de un arreglo desordenado, pese a esto, cuando el conjunto de datos es la fuente del peor caso, el algoritmo de selección nada puede hacer. Este es el caso de algoritmos como \textit{QuickSort} con pivote en la mediana del conjunto desordenado. 
+
+Se define entonces que un buen pivote representa a la mediana del conjunto ordenado, el cual permite dividir equitativamente el problema en dos para que así la subdivisión sea óptima y se cumpla el tiempo esperado.
+
+
+\section{Selección de mediana en tiempo lineal para el caso promedio}
+Existen métodos de encontrar la mediana geométrica de los datos en un tiempo lineal en promedio, utilizando el segmento de QuickSort que divide el arreglo en dos utilizando un pivote aleatorio, pero solo aplicando la recursión para el lado promisorio del arreglo (ver Algoritmo \ref{ALG:SELECCION_MEDIANA}).
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\REQUIRE $A$ arreglo de datos desordenados
+\ENSURE $A[p]$ es la mediana de $A$
+\STATE $i \leftarrow 0$
+\STATE $j \leftarrow |A|$
+\WHILE{$p \neq \frac{|A|}{2}$}
+	\STATE $p \leftarrow obtenerPivote(A, i, j)$
+	\STATE $p \leftarrow particionar(A, i, j)$
+	\IF{$p > \frac{|A|}{2}$}
+		\STATE $i \leftarrow p$
+	\ELSE
+		\STATE $j \leftarrow p$
+	\ENDIF
+\ENDWHILE
+\RETURN $p$
+\end{algorithmic}
+\caption{Selección de mediana utilizando QuickSelect}\label{ALG:SELECCION_MEDIANA}
+\end{algorithm}
+
+
+\section{Selección de mediana en tiempo lineal para el peor caso}
+Está dicho que es imposible buscar el $k$-esimo elemento de un arreglo dado con un peor caso inferior a $n log(n)$. Sin embargo, para efectos de balance, no nos interesa precisamente que el arbol esté perfectamente balanceado. Para nuestros efectos, sirve el que cumpla con un cierto umbral de confianza respecto a el resto de los valores. 
+\subsection{Hipótesis}
+Se puede obtener una mediana $m$ perteneciente a  $P_{30} \leq m \leq P_{70}$  en un arreglo $A$, si para $d=\frac{|A|}k{}$ elementos se le agrupan $\frac{k-1}{2}$ elementos menores y $\frac{k-1}{2}$ elementos mayores a cada uno de los $d$ elementos dados.
+
+\subsection{Prueba}
+Sea $n$ el tamaño de un arreglo $K$ dado. Al ordenar $K$ se tiene que $k_1<k_2< ... < k_n$. Entonces el elemento central $k_{\frac{n}{2}}$ posee $\frac{n-1}{2}$ elementos mayores ($k_1<k_2< ... < k_{\frac{n-1}{2}}$) y $\frac{n}{2}$ elementos mayores que ($k_{n+1}<k_{n+2}< ... < k_n$).
+
+Si tomamos la mediana de $K$ entonces sabemos que tiene exactamente $n-1$ elementos de los cuales sabemos si son mayores o menores que este. Ahora, tomemos un arreglo $J$ de dimensión $m$. Sub-dividimos $J$ en conjuntos $K$ (que cumplen con la condición de $K$ descrita anteriormente) de tamaño $n$. Si $i$ es la mediana de $K$, ordenamos $J$ en base al elemento $i$ de cada $K$ generado. Sea $t$ la mediana del conjunto de $J$, sabemos que existen $\frac{m-1}{2n}$ grupos que poseen una mediana menor y $frac{m-1}{2n}$ conjuntos que poseen una mayor.
+
+Entonces, de nuestros $\frac{n-1}{k}$ conjuntos, sabemos que cada uno de ellos tiene $\frac{n-1}{4}$ elementos que sabemos, son menores que $t$, y que otro grupo de $\frac{n-1}{k}$ conjuntos, sabemos que cada elemento también tiene $\frac{n-1}{4}$ elementos mayores que $i$  (ver Figura \ref{IMG:MEDIAN_OF_MEDIANS}). No es necesario recalcar que dado que los procesos de ordenamiento son ejecutados sobre $K$, el cual siempre es constante, este para tamaños relativamente pequeños de $n$ puede ser considerado constante al ser aplicado sobre todo $J$.
+
+Además, una variante de este algoritmo puede ser incluida para incrementar la precisión de la selección sin afectar significativamente el tiempo de ejecución al iterar el proceso sobre el conjunto de medianas, sin embargo, si lo que a uno le interesa es encontrar el pivote, conlleva a un gasto en espacio extra al almacenar los índices o bien a un incremento en el tiempo de ejecución debido a que es necesario mover cada elemento dentro el mismo arreglo.
+
+Actualmente no hay documentación respecto a la existencia de mecanismos que puedan aprovechar esta situación de ordenamiento parcial sobre cierto grupo de elementos en el arreglo. Como trabajo futuro, se estudiarán estos fenómenos.
+
+\begin{figure}
+\begin{center}
+	\includegraphics[width=\textwidth]{medianas.pdf}
+\caption{Ejemplo de ejecución del algoritmo de mediana de medianas para un conjunto de 35 elementos. En amarillo es la mediana de de lis $i$ generados, en verde los elementos que son garantizados menores que $i$ y en rojo los elementos garantizados de ser mayores que $i$ y en celeste cada dato del cual no se tiene información relativa a su posición. Cada línea vertical de tamaño $k$ (en este caso igual a 5) representa un conjunto $K$, generado en base a $J$. La línea horizontal representa el arreglo de medianas de cada grupo de $K$.}
+\label{IMG:MEDIAN_OF_MEDIANS}
+\end{center}
+\end{figure}
+
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\REQUIRE $J$ arreglo de datos desordenados, $k$ el largo de la lista temporal $K$
+\ENSURE $A_{\frac{|A|}{2}}$ es la mediana aproximada de $J$
+\STATE $A \leftarrow []$
+\STATE $i \leftarrow 0$
+\WHILE{$i+k<|A|$}
+	\STATE $K \leftarrow A_{i...min(i+k,|A|)}$
+	\STATE $K \leftarrow ordenar(K)$
+	\STATE $insertar K_{\frac{|K|}{2} en A}$
+	\STATE $i \leftarrow i+k$
+\ENDWHILE
+\STATE $A \leftarrow ordenar(A)$
+\RETURN $A_{\frac{|A|}{2}}$
+\end{algorithmic}
+\caption{Selección de mediana aproximada utilizando mediana de medianas}\label{ALG:SELECCION_MEDIANA}
+\end{algorithm}
+
+
+\section{Metodología}
+Los pasos a seguir se enumeran a continuación:
+	\begin{enumerate}
+		\item Investigar respecto a algoritmos para cálculo de medianas.
+		\item Demostrar matemáticamente que los algoritmos cumplen con los requerimientos.
+		\item Describir las estructuras de datos involucradas en cada uno de ellos.					\item Implementar los algoritmos correspondientes para realizar una comparativa entre cada uno de ellos.
+		\item Llevar a cabo una investigación experimental, analizar e interpretar los resultados.
+	\end{enumerate}
+
+Lo que está hecho:
+	\begin{itemize}
+		\item Investigar respecto a algoritmos para cálculo de medianas.
+		\item Describir las estructuras y algoritmos involucrados.
+		\item Implementar los algoritmos correspondientes para realizar una comparativa entre cada uno de ellos.
+	\end{itemize}
+
+Lo que falta:
+	\begin{itemize}
+		\item Mejorar documentación del algoritmo de mediana promedio (aunque no creo que sea necesario, dado que no es más que usar QuickSelect con pivote aleatorio).
+		\item Preguntar que es lo que va en el informe debido a que la descripción pedida de este corresponde a la del semestre pasado y no especifica nada.
+		\item Redactar este informe.
+	\end{itemize}
+
+\subsection{Resultados de la investigación hasta ahora}
+En la literatura se encuentran demostraciones de cuando es atingente implementar estos algoritmos descritos para acelerar o estabilizar otros. Un ejemplo de esto, es el algoritmo \textit{QuickSelect}. 
+
+\subsection{Implementación del caso de estudio}
+Para realizar las comparativas se tomó como víctima a \textit{IQS}\footnote{También conocido como \textit{Incremental Quick Select}}, el cual es un algoritmo de selección basado en pivotes diseñado para entregar los primeros $k$-ésimos elementos en un tiempo $m+k\ log(k)$ de forma online en $k$. Actualmente como parte del mecanismo, la implementación original utiliza como pivote el elemento del medio entre el rango que actualmente está buscando. El objetivo de esta investigación es cambiar la implementación del método \textit{getPivot()}, el cual elige como pivote un elemento al azar y estudiar como cambia el comportamiento al ser implementado este cambio de forma permanente de selección y de forma introspectiva. buscando mejorar la cota superior del peor caso de \textit{IQS} sin afectar notorialmente el rendimiento en el caso promedio.
+
+
+
+\end{document}

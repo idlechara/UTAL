@@ -1,0 +1,92 @@
+\section{Inducción sobre fórmulas lógicas}
+\subsubsection{Base inductiva}
+Definiremos los operadores lógicos $\vee$, $\wedge$, $\Rightarrow$ y $\Leftrightarrow$:
+
+Sea $1=Verdadero$ y $0=Falso$:
+
+\[ A \vee B =
+ \begin{cases}
+ 0,	\qquad& \text{si $A=0$ y $B=0$}.\\
+ 1,	\qquad& \text{en otro caso}.\\
+\end{cases} \]
+
+\[ A \wedge B =
+ \begin{cases}
+ 1, 	\qquad& \text{si $A=1$ y $B=1$}.\\
+ 0,	 	\qquad& \text{en otro caso}.\\
+\end{cases} \]
+
+\[ A \rightarrow B =
+ \begin{cases}
+ 0,	 	\qquad& \text{si $A=1$ y $B=0$}.\\
+ 1,		\qquad& \text{en otro caso}.\\
+\end{cases} \]
+
+\[ A \Leftrightarrow B =
+ \begin{cases}
+ 1, 	\qquad& \text{si $A$ y $B$ son iguales}.\\
+ 0,	 	\qquad& \text{en otro caso}.\\
+\end{cases} \]
+
+
+\begin{align}
+\left(\bigvee\limits_{i=1}^{1}X_i\right)\rightarrow Y &= x_1 \rightarrow Y \Leftrightarrow \bigwedge\limits_{i=1}^{1}(X_i\rightarrow Y) = x_1\rightarrow Y \label{EQ:ORATORIA_BI_1}\\
+\end{align}
+
+\subsection{Hipotésis inductiva} 
+\begin{align}
+\left(\bigvee\limits_{i=1}^{n}X_i\right)\rightarrow Y \Leftrightarrow \bigwedge\limits_{i=1}^{n}(X_i\rightarrow Y) 
+\end{align}
+
+Lo cual demuestra nuestra base.
+
+
+\subsection{Tésis inductiva}
+
+
+Resolviendo la tabla de verdad para $(A \rightarrow C) \wedge (B \rightarrow C)$:\\
+\begin{center}
+\begin{tabular}{| l | l | l | l | l | l |}
+	A	&B	&C	&A$\rightarrow$C	&B$\rightarrow$C	&Resultado\\
+	\hline
+	1       &1       &1       &1       &1       &1\\
+	1       &1       &0       &0       &0       &0\\
+	1       &0       &1       &1       &1       &1\\
+	1       &0       &0       &0       &1       &0\\
+	0       &1       &1       &1       &1       &1\\
+	0       &1       &0       &1       &0       &0\\
+	0       &0       &1       &1       &1       &1\\
+	0       &0       &0       &1       &1       &1\\
+\end{tabular}
+\end{center}
+
+
+\[ (A \rightarrow Y) \wedge (B \rightarrow Y) =
+ \begin{cases}
+ 0, 	\qquad& \text{si $Y=0$ y $(A\vee B) = 1$ }.\\
+ 1,	 	\qquad& \text{en otro caso}.\\
+\end{cases} \]
+
+Por lo cual podemos asociar $A$ y $B$ de esta manera:
+\begin{equation}
+(A \rightarrow Y) \wedge (B \rightarrow Y) = (A\vee B) \rightarrow Y = u \rightarrow Y
+\end{equation}\label{EQ:ANDATORIA_PROPIEDAD_1}
+
+Entonces, tomando nuestra hipótesis:
+\begin{align}
+\left(\bigvee\limits_{i=1}^{n}X_i\right)\rightarrow Y &= (x_1\vee x_2\vee \ldots \vee x_{n-1} \vee x_n)\rightarrow Y\label{EQ:ORATORIA_TI_1}\\
+\bigwedge\limits_{i=1}^{n}(X_i\rightarrow Y) &= (x_1\rightarrow Y) \wedge (x_2\rightarrow Y) \wedge \ldots \wedge (x_{n-1}\rightarrow Y) \wedge (x_n\rightarrow Y) \label{EQ:ANDATORIA_TI_1}
+\end{align}
+
+Usando el cambio de variable \ref{EQ:ANDATORIA_PROPIEDAD_1} sobre la Operatoria \ref{EQ:ORATORIA_TI_1} y haciendo uso de la propiedad asociativa del operador $\vee$ tenemos:
+
+\begin{align}
+\bigwedge\limits_{i=1}^{n}(X_i\rightarrow Y) &= ((x_1\vee x_2)\rightarrow Y) \wedge ((x_3\vee x_4)\rightarrow Y) \wedge \ldots \wedge ((x_{n-1}\vee x_n)\rightarrow Y)
+\nonumber\\
+\bigwedge\limits_{i=1}^{n}(X_i\rightarrow Y) &= ((x_1\vee x_2\vee x_3 \vee x_4)\rightarrow Y) \wedge ((x_5\vee x_6\vee x_7 \vee x_8)\rightarrow Y) \wedge \ldots \wedge ((x_{n-3}\vee x_{n-2}\vee x_{n-1}\vee x_n)\rightarrow Y)
+\nonumber\\
+&\vdots\nonumber\\
+\bigwedge\limits_{i=1}^{n}(X_i\rightarrow Y) &= ((x_1\vee x_2\vee \ldots \vee x_{n-1} \vee x_n)\rightarrow Y) \label{EQ:ANDATORIA_TI_2}
+\end{align}
+
+Es obvio que la Operatoria \ref{EQ:ANDATORIA_TI_2} es idéntica a la Operatoria \ref{EQ:ORATORIA_TI_1}, con lo cual, hemos demostrado que ambas expresiones son lógicamente equivalentes.

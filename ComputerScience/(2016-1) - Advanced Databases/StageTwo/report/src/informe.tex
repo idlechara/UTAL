@@ -1,0 +1,369 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{listings}
+% \usepackage{placeins}
+\usepackage[section]{placeins}
+\graphicspath{ {images/} }
+
+\title{{\bf Bases de Datos Avanzadas}\\Informe etapa 2}
+
+\author{Fabián Olivares, Erik Regla\\ \{folivares13,eregla09\}@alumnos.utalca.cl}
+\date{19 de Abril del 2016}
+\lstset{language=SQL, 
+		basicstyle=\ttfamily\tiny, 
+		showspaces=false, 
+		numbers=left, 
+		breaklines=true,
+		frame=shadowbox
+		}
+
+\begin{document}
+\maketitle
+
+\section{Modelo final de la base de datos}
+En base a los resultados obtenidos en la etapa anterior se optó por mantener las
+siguientes desnormalizaciones:
+
+\begin{enumerate}
+	\item \emph{Relación 1-1:} Separación de columna \texttt{plain_text_content}
+	de \texttt{problems}. Esta resultó en una reducción del tamaño de la tabla de 
+	problemas como también en una mejora de la velocidad de consulta.
+
+	\item \emph{Relación 1-N clave:} Columna \texttt{country_id} añadida a tabla 
+	\texttt{teams} dado que es muy frecuente consultar el país atribuido a un equipo.
+
+	\item \emph{Relación N-M:} Nueva columna \texttt{team_name} a tabla 
+	\texttt{team_members} ya que es frecuente consultar los equipos en los que ha 
+	participado un competidor.
+
+	\item \emph{Tabla de búsqueda:} Se separa al malescrito \texttt{ballon_colour} 
+	de la tabla \texttt{problems} ya que son 20 colores que se utilizan. Esta 
+	resultó en una reducción del tamaño de la tabla de problemas.
+\end{enumerate}
+
+La \emph{Relación 1-N no clave:} Nueva columna \texttt{contest_name} en tabla
+\texttt{problems}, no fue exitosa dado que si bien consultar a que competencia 
+pertenece un problema dado es bastante frecuente, la cantidad de tuplas en la
+tabla hizo que agregar una nueva columna de texto fuese muy costoso en espacio.
+
+\begin{figure}[!ht]
+\begin{lstlisting}
+CREATE TABLE teams_2 AS SELECT teams.id,teams.institution,teams.coach_id,teams.name,teams.site_id,teams.approved,teams.include_coach_cert,teams.make_coach_individual_cert,sites.country_id AS country_id FROM teams,sites WHERE teams.site_id = sites.id;
+CREATE TABLE team_members_2 AS SELECT team_members.id,team_members.contestant_id,team_members.team_id,team_members.role_id,team_members.registration_complete,team_members.on_team_certificate,team_members.on_individual_certificate,teams.name AS team_name FROM teams,team_members WHERE team_members.team_id = teams.id;
+CREATE TABLE colours AS SELECT row_number()over() AS id,problems.ballon_colour AS name FROM problems GROUP BY ballon_colour;
+CREATE TABLE problems_2 AS SELECT problems.id,problems.letter,problems.pdf_file,colours.id AS colour_id,problems.description,problems.codename FROM problems,colours WHERE problems.ballon_colour = colours.name;
+CREATE TABLE problems_content AS SELECT id,plain_text_content FROM problems;
+DROP TABLE teams;
+DROP TABLE team_members;
+DROP TABLE problems;
+ALTER TABLE teams_2 RENAME TO teams;
+ALTER TABLE team_members_2 RENAME TO team_members;
+ALTER TABLE problems_2 RENAME TO problems;
+\end{lstlisting}
+\label{FIG:DENORMALIZATION}
+\caption{Consulta SQL para desnormalizar base de datos original.}
+\end{figure}
+
+\begin{figure}[!ht]
+\includegraphics[width=\textwidth]{ER}
+\label{FIG:ER_DIA}
+\caption{Diagrama ER final.}
+\end{figure}
+
+
+En un experimento adicional de la primera etapa se comprobó que no es costoso
+indexar las tablas más consultadas de la base de datos (problemas, sitios, 
+equipos y miembros del equipo). Una de las opciones barajadas además era la 
+posibilidad de dejar \texttt{GIST} como índice para la tabla de descripción 
+de problemas, sin embargo, dada la envergadura del texto el proceso de
+indexado tomaba mucho tiempo como para ser considerado una opción viable.
+
+\begin{figure}[!ht]
+\begin{lstlisting}
+-- PROBLEM INDICES
+CREATE INDEX problem_id_idx ON problems USING hash (id);
+CREATE INDEX problem_letter_idx ON problems USING hash (letter);
+CREATE INDEX problem_pdf_file_idx ON problems USING hash (pdf_file);
+CREATE INDEX problem_colour_id_idx ON problems USING hash (colour_id);
+CREATE INDEX problem_description_id_idx ON problems USING hash (description);
+CREATE INDEX problem_codename_idx ON problems USING hash (codename);
+
+-- Problem content :p
+CREATE INDEX problems_content_id_idx ON problems_content USING hash (id);
+--CREATE INDEX problems_content_plain_text_content_idx ON problems_content USING gist (plain_text_content);
+
+-- Sites
+CREATE INDEX sites_institution_idx ON sites USING hash (institution);
+
+-- Team members
+CREATE INDEX team_members_id_idx ON team_members USING hash (id);
+CREATE INDEX team_members_contestant_id_idx ON team_members USING hash (contestant_id);
+CREATE INDEX team_members_team_id_idx ON team_members USING hash (team_id);
+CREATE INDEX team_members_role_id_idx ON team_members USING hash (role_id);
+CREATE INDEX team_members_registration_complete_idx ON team_members USING hash (registration_complete);
+CREATE INDEX team_members_on_team_certificate_idx ON team_members USING hash (on_team_certificate);
+CREATE INDEX team_members_on_individual_certificate_idx ON team_members USING hash (on_individual_certificate);
+CREATE INDEX team_members_team_name_idx ON team_members USING hash (team_name);
+
+-- TEAMS!
+CREATE INDEX team_id_idx ON teams USING hash (id);
+CREATE INDEX team_institution_idx ON teams USING hash (institution);
+CREATE INDEX team_coach_id_idx ON teams USING hash (coach_id);
+CREATE INDEX team_name_idx ON teams USING hash (name);
+CREATE INDEX team_site_id_idx ON teams USING hash (site_id);
+CREATE INDEX team_approved_idx ON teams USING hash (approved);
+CREATE INDEX team_include_coach_cert_idx ON teams USING hash (include_coach_cert);
+CREATE INDEX team_make_coach_individual_cert_idx ON teams USING hash (make_coach_individual_cert);
+CREATE INDEX team_country_id_idx ON teams USING hash (country_id);
+\end{lstlisting}
+\label{FIG:INDICES}
+\caption{Consulta SQL para agregar indices a tablas}
+\end{figure}
+
+
+%TODO: ingresar figura
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Restricciones de dominio}
+Muchas de las restricciones fueron ya implementadas durante la etapa uno\footnote{Ver 
+\url{https://github.com/eregla/3407B414_A-databases_management/tree/master/StageOne}},
+por tanto acá solo se mencionarán las mas importantes y nuevas implementadas.
+
+\begin{enumerate}
+	\item \emph{Restricción de dominio COLOURS:NAME}: Los colores de los globos
+	están restringidos a ser una cadena de texto sin caracteres especiales. Sin
+	embargo si están permitidos los espacios dado que existen colores como 
+	``VERMILION RED'' o ``PALE GREEN'', los cuales están compuestos además de un espacio
+	en blanco. Para esto se creó una restricción de dominio sobre un tipo nuevo de dato
+	denominado \texttt{baloon_type} (Ver Figura~\ref{FIG:BALOON_DOMAIN}).
+	\item \emph{Restricción de dominio DEFAULT}: Debido a la implementación de la
+	etapa 1, muchas de las tablas ya contaban con secuencias para establecer los valores
+	por defecto de sus llaves primarias. Solo fueron agregadas a las nuevas tablas generadas
+	producto de la desnormalización (ver Figuras~\ref{FIG:BALOON_DOMAIN} y \ref{FIG:PROBLEMS_CONTENT_SEQUENCE}).
+\end{enumerate}
+
+\begin{figure}[!ht]
+\begin{lstlisting}
+CREATE SEQUENCE colours_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 0
+  CACHE 1;
+ALTER TABLE colours_id_seq OWNER TO postgres;
+ALTER TABLE colours ALTER COLUMN id SET DEFAULT nextval('colours_id_seq');
+CREATE DOMAIN baloon_type AS text CONSTRAINT baloon_type_check CHECK (VALUE ~ '([A-Za-z]+( )*)+');
+ALTER TABLE colours ALTER COLUMN name SET DATA TYPE baloon_type;
+\end{lstlisting}
+\label{FIG:BALOON_DOMAIN}
+\caption{Consulta SQL para agregar secuencia a colours junto con su restricción de dominio.}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{lstlisting}
+CREATE SEQUENCE problems_content_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 880000
+  CACHE 1;
+ALTER TABLE problems_content_id_seq OWNER TO postgres;
+ALTER TABLE problems_content ALTER COLUMN id SET DEFAULT nextval('problems_content_id_seq');
+\end{lstlisting}
+\label{FIG:PROBLEMS_CONTENT_SEQUENCE}
+\caption{Consulta SQL para agregar secuencia a tabla problems_content.}
+\end{figure}
+
+
+\section{Llaves primarias}
+
+\begin{figure}[!ht]
+\begin{lstlisting}
+ALTER TABLE colours ADD CONSTRAINT colours_pk PRIMARY KEY (id);
+ALTER TABLE contest_sites ADD CONSTRAINT contest_sites_pk PRIMARY KEY (id);
+ALTER TABLE contestants ADD CONSTRAINT contestants_pk PRIMARY KEY (id);
+ALTER TABLE contests ADD CONSTRAINT contests_pk PRIMARY KEY (id);
+ALTER TABLE countries ADD CONSTRAINT countries_pk PRIMARY KEY (id);
+ALTER TABLE problem_set ADD CONSTRAINT problem_set_pk PRIMARY KEY (id);
+ALTER TABLE problems ADD CONSTRAINT problems_pk PRIMARY KEY (id);
+ALTER TABLE problems_content ADD CONSTRAINT problems_content_pk PRIMARY KEY (id);
+ALTER TABLE roles ADD CONSTRAINT roles_pk PRIMARY KEY (id);
+ALTER TABLE scoreboards ADD CONSTRAINT scoreboards_pk PRIMARY KEY (id);
+ALTER TABLE sites ADD CONSTRAINT sites_pk PRIMARY KEY (id);
+ALTER TABLE team_members ADD CONSTRAINT team_members_pk PRIMARY KEY (id);
+ALTER TABLE teams ADD CONSTRAINT teams_pk PRIMARY KEY (id);
+\end{lstlisting}
+\label{FIG:PRIMARY_KEYS}
+\caption{Consulta SQL para agregar llaves primarias}
+\end{figure}
+
+
+\section{Llaves foráneas y restricciones de integridad}
+%TODO
+\begin{figure}[!ht]
+\begin{lstlisting}
+ALTER TABLE contest_sites ADD FOREIGN KEY (id_site) REFERENCES sites ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE contest_sites ADD FOREIGN KEY (id_contest) REFERENCES contests ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE contestants ADD FOREIGN KEY (home_country) REFERENCES countries ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE problem_set ADD FOREIGN KEY (contest_id) REFERENCES contests ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE problem_set ADD FOREIGN KEY (problem_id) REFERENCES problem ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE problems ADD FOREIGN KEY (colour_id) REFERENCES colour ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE scoreboards ADD FOREIGN KEY (problem_id) REFERENCES problems ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE scoreboards ADD FOREIGN KEY (contest_id) REFERENCES contests ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE scoreboards ADD FOREIGN KEY (team_id) REFERENCES teams ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE sites ADD FOREIGN KEY (country_id) REFERENCES countries ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE team_members ADD FOREIGN KEY (contestant_id) REFERENCES contestants ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE team_members ADD FOREIGN KEY (role_id) REFERENCES roles ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE team_members ADD FOREIGN KEY (team_id) REFERENCES teams ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE teams ADD FOREIGN KEY (coach_id) REFERENCES contestants ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE teams ADD FOREIGN KEY (site_id) REFERENCES sites ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE teams ADD FOREIGN KEY (country_id) REFERENCES countries ON DELETE SET NULL ON UPDATE CASCADE;
+\end{lstlisting}
+\label{FIG:FOREIGN_KEYS}
+\caption{Consulta SQL para agregar llaves foráneas}
+\end{figure}
+
+\section{Reglas de negocio}
+Las reglas de negocio que hemos diseñado se pueden clasificar en tres tipos:
+\begin{enumerate}
+    \item { Consistencia de problemas y sets de problemas
+        \begin{enumerate}
+	        \item \emph{No se puede repetir la letra de un problema en un mismo problem set}
+	        \item \emph{No se puede repetir el color del globo en un mismo problem set}
+	        \item \emph{Un mismo problema no se puede asignar más de una vez al mismo contest}
+		\end{enumerate}
+	}
+	\item { Borrado de problemas y actualización de los marcadores
+        \begin{enumerate}
+        	\item \emph{Al borrar un problema, se borran las entradas asociadas a éste en el scoreboard}
+		\end{enumerate}
+	}
+	\item { Consistencia de equipos y miembros
+        \begin{enumerate}
+	        \item \emph{Un team debe estar compuesto por exactamente tres contestants}
+	        \item \emph{Un contestant asociado a un team debe pertenecer a la misma institución que dicho team}
+		\end{enumerate}
+	}
+\end{enumerate}
+
+\begin{figure}[!ht]
+\begin{lstlisting}
+CREATE OR REPLACE FUNCTION baloon_and_letter() RETURNS trigger AS $baloon_and_letter$
+	DECLARE
+	    repeated_letters int;
+	    the_letter text;
+	    repeated_problems int;
+	    the_balloon int;
+	    repeated_balloons int;
+	BEGIN
+	    SELECT letter into the_letter FROM problems WHERE NEW.problem_id = problems.id;
+	    SELECT colour_id into the_balloon FROM problems WHERE NEW.problem_id = problems.id;
+	    SELECT COUNT (*) into repeated_letters FROM problems, problem_set WHERE the_letter = problems.letter AND problems.id = problem_set.problem_id AND problem_set.contest_id = NEW.contest_id;
+	    SELECT COUNT (*) into repeated_balloons FROM problems, problem_set WHERE the_balloon = problems.colour_id AND problems.id = problem_set.problem_id AND problem_set.contest_id = NEW.contest_id;
+	    SELECT COUNT (*) into repeated_problems FROM problem_set WHERE contest_id = NEW.contest_id;
+        IF repeated_letters != 0 THEN
+            RAISE EXCEPTION 'Letter % is already present on the problem set for the contest %', the_letter, NEW.contest_id;
+        END IF;
+        IF repeated_balloons != 0 THEN
+            RAISE EXCEPTION 'Balloon % is already present on the problem set for the contest %', (SELECT colours.name FROM problems, colours WHERE colours.id = problems.id AND NEW.problem_id = problems.id) , NEW.contest_id;
+        END IF;
+        IF repeated_problems != 0 THEN
+            RAISE EXCEPTION 'Problem % is already present on the problem set for the contest %', NEW.problem_id, NEW.contest_id;
+        END IF;
+        RETURN NEW;
+    END;
+$baloon_and_letter$ LANGUAGE plpgsql;
+DROP TRIGGER baloon_and_letter ON problem_set;
+CREATE TRIGGER baloon_and_letter BEFORE INSERT OR UPDATE ON problem_set
+    FOR EACH ROW EXECUTE PROCEDURE baloon_and_letter();
+\end{lstlisting}
+\label{FIG:TRIGGER_BALLOON_AND_LETTER}
+\caption{Definición del trigger para verificación de consistencia para problemas y sets de problemas.}
+\end{figure}
+
+\begin{figure}[!htb]
+\begin{lstlisting}
+CREATE OR REPLACE FUNCTION delete_problem_scoreboard() RETURNS TRIGGER AS $$
+    BEGIN
+        DELETE FROM scoreboards WHERE scoreboards.problem_id = OLD.id;
+        RETURN OLD;
+    END;
+$$ LANGUAGE plpgsql;
+DROP TRIGGER t_delete_problem_scoreboard ON problems;
+CREATE TRIGGER t_delete_problem_scoreboard
+    BEFORE DELETE ON problems
+    FOR EACH ROW EXECUTE PROCEDURE delete_problem_scoreboard();
+\end{lstlisting}
+\label{FIG:TRIGGER_PROBLEMS_DELETION}
+\caption{Definición del trigger para borrado de problemas y actualización de marcadores.}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\begin{lstlisting}
+CREATE OR REPLACE FUNCTION check_members_from_team() RETURNS TRIGGER AS $$
+	DECLARE
+	    the_institution text;
+	    the_affiliation text;
+    BEGIN
+        SELECT institution into the_affiliation FROM teams WHERE NEW.team_id = teams.id;
+        SELECT affiliation into the_institution FROM contestants WHERE NEW.contestant_id = contestants.id;
+       
+        IF (the_institution != the_affiliation) THEN
+            RAISE EXCEPTION 'The contestant does not share the same institution as the team';
+        END IF;
+ 
+        IF((SELECT COUNT(*) FROM team_members WHERE team_id = NEW.team_id) < 3.0 )
+        THEN
+            RETURN NEW;
+        END IF;
+        RAISE EXCEPTION 'A team cannot have more than 3 members';
+    END;
+$$ LANGUAGE plpgsql;
+DROP TRIGGER t_max_members_per_team ON team_members;
+CREATE TRIGGER t_max_members_per_team
+    BEFORE INSERT ON team_members
+    FOR EACH ROW EXECUTE PROCEDURE check_members_from_team();
+\end{lstlisting}
+\label{FIG:TRIGGER_TEAMS_AND_MEMBERS}
+\caption{Definición del trigger para verificación de consistencia para equipos y miembros.}
+\end{figure}
+
+\section{Definicion de transaciones aplicables}
+\begin{enumerate}
+	\item Cuando se efectúa un cambio en un problema, por reglamento, todos los 
+	puntajes asociados a ese problema deben ser eliminados. De no ser así, el 
+	problema no puede cambiar de estado. En caso de ser interrumpido el proceso
+	requiere de savepoints para poder reanudar o bien abortar la operación al vuelo.
+
+	\item Para crear un set de problemas, es necesario incluirlos todos y este
+	problem set debe estar ligado a una competencia. No puede existir un problem set
+	sin competencia ni un problema que no pertenezca a un set. De fallar alguno de
+	estos pasos, es necesario revertir los cambios para evitar lanzar una competencia
+	con datos inválidos. En este caso, si bien está utilizando un nivel de aislamiento \texttt{READ UNCOMMITED}
+	para evitar problemas con otras transacciones, es necesario realizar todas las comprobaciones
+	de llaves de inmediato (\texttt{ALL IMMEDIATE}) para evitar conflictos con otras transacciones concurrentes.
+
+	\item Para crear correctamente un equipo, se debe crear la instancia y además
+	conectar a los participantes. En caso de fallar uno, todo debe ser deshecho.
+
+\end{enumerate}
+
+\input{transaction1.tex}
+\input{transaction2.tex}
+
+\end{document}

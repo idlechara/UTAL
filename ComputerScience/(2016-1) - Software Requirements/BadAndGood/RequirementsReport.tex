@@ -1,0 +1,269 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage{tabularx}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{framed}
+\usepackage[section]{placeins}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{etoolbox}
+\usepackage{ifthen}
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
+\hypersetup{
+    pdftitle={Especificación de requisitos de software},    % title
+    pdfauthor={autores},                     % author
+    pdfsubject={TeX and LaTeX},                        % subject of the document
+    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+}%
+
+\title{{\bf Requisitos de software}\\Tarea}
+
+\author{Reinaldo Jerez,Daniela Paredes, Erik Regla, Yorch Sepúlveda\\ \{rjerez10, dparedes09,eregla09,ysepulveda11\}@alumnos.utalca.cl}
+\date{19 de Abril del 2016}
+
+\input{volere.tex}
+
+\begin{document}
+\maketitle
+\section{Asignación de privilegios}
+\begin{requirement}{functional}{---}
+    \reqdescription{Profesor puede asignar privilegios a alumnos para subir proyectos.}
+    \reqrationale{El profesor es quien designa las tareas}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{}
+    \reqsatisfaction{2}{2}
+    \reqdepencies{}{}
+    \reqdocuments{Entrevista 2}
+    %\reqhistory{}
+    % \label{RF:ACEPTACION_PROYECTO}
+\end{requirement}
+
+Este requerimiento no poseía ni criterio de ajuste ni dependencias. En una entrevista posterior este fue eliminado al capturarse un nuevo requisito el cual indicaba que las cuentas de usuario son creadas por el administrador y el es quien asigna los permisos.
+
+\section{Modificación de proyectos}
+\begin{requirement}{functional}{---}
+    \reqdescription{Los usuarios pueden modificar un proyecto una vez que haya sido enviado}
+    \reqrationale{Los proyectos enviados están sujetos a moderación}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{}
+    \reqsatisfaction{2}{1}
+    \reqdepencies{}{}
+    \reqdocuments{Entrevista 2}
+    %\reqhistory{}
+    % \label{RF:ACEPTACION_PROYECTO}
+\end{requirement}
+
+\begin{requirement}{functional}{---}
+    \reqdescription{Los usuarios pueden modificar los proyectos siempre y cuando hayan sido publicados}
+    \reqrationale{Errores de título o de categorías, entre otros}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{}
+    \reqsatisfaction{2}{1}
+    \reqdepencies{}{}
+    \reqdocuments{Entrevista 1}
+    %\reqhistory{}
+    % \label{RF:ACEPTACION_PROYECTO}
+\end{requirement}
+
+\begin{requirement}{functional}{---}
+    \reqdescription{El solo el administrador podrá modificar proyectos sin importar si fueron o no publicados}
+    \reqrationale{Errores de título o de categorías, entre otros}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{}
+    \reqsatisfaction{2}{1}
+    \reqdepencies{}{}
+    \reqdocuments{Entrevista 3}
+    %\reqhistory{}
+    % \label{RF:ACEPTACION_PROYECTO}
+\end{requirement}
+
+En este caso, tenemos tres requisitos que en diferentes entrevistas hacen alusión a la misma operación (modificación de proyecto). Finalmente, estos fueron reemplazados por: 
+
+\begin{requirement}{functional}{---}
+    \reqdescription{El código fuente de un proyecto puede ser modificado por su autor si y solo si, este no ha sido enviado para su revisión.}
+    \reqrationale{Errores de título, comentarios o de categorías, entre otros pueden ser revisados y editados durante la etapa de ``carga de contenido'', pero una vez que este es enviado, se espera que no se cambie durante el proceso de revisión y aprobación}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{}
+    \reqsatisfaction{2}{2}
+    \reqdepencies{Solicitud Revisión, Aceptación proyecto}{}
+    \reqdocuments{Entrevista 6}
+    %\reqhistory{}
+    % \label{RF:ACEPTACION_PROYECTO}
+\end{requirement}
+
+\begin{requirement}{functional}{---}
+    \reqdescription{La documentación de un proyecto puede ser modificado por su autor si y solo si, este no ha sido enviado para su revisión.}
+    \reqrationale{Errores de título, comentarios o de categorías, entre otros pueden ser revisados y editados durante la etapa de ``carga de contenido'', pero una vez que este es enviado, se espera que no se cambie durante el proceso de revisión y aprobación}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{}
+    \reqsatisfaction{2}{2}
+    \reqdepencies{Solicitud Revisión, Aceptación proyecto}{}
+    \reqdocuments{Entrevista 6}
+    %\reqhistory{}
+    % \label{RF:ACEPTACION_PROYECTO}
+\end{requirement}
+
+\begin{requirement}{functional}{---}
+    \reqdescription{El paquete ejecutable de un proyecto puede ser modificado por su autor si y solo si, este no ha sido enviado para su revisión.}
+    \reqrationale{Errores de título, comentarios o de categorías, entre otros pueden ser revisados y editados durante la etapa de ``carga de contenido'', pero una vez que este es enviado, se espera que no se cambie durante el proceso de revisión y aprobación}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{}
+    \reqsatisfaction{2}{2}
+    \reqdepencies{Solicitud Revisión, Aceptación proyecto}{}
+    \reqdocuments{Entrevista 6}
+\end{requirement}
+
+\section{Creación de cuentas}
+\begin{requirement}{functional}{---}
+    \reqdescription{La creación de cuentas se realiza por medio de un formulario el cual aprueba el administrador}
+    \reqrationale{Se necesita un medio para poder cargar usuarios al producto.}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{El administrador puede agregar cuentas de usuario previamente solicitadas a través del formulario.}
+    \reqsatisfaction{3}{2}
+    \reqdepencies{Login}{}
+    \reqdocuments{Entrevista 3}
+\end{requirement}
+\begin{requirement}{functional}{---}
+    \reqdescription{Las cuentas de usuario solo pueden ser creadas por el administrador de la plataforma}
+    \reqrationale{Se necesita un medio para poder cargar usuarios al producto.}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{El administrador puede agregar cuentas de usuario.}
+    \reqsatisfaction{3}{2}
+    \reqdepencies{Login}{}
+    \reqdocuments{Entrevista 1}
+\end{requirement}
+
+Luego de discutirse este requerimiento finalmente se optó por extender el primero mostrado en la entrevista 3.
+
+\begin{requirement}{functional}{---}
+    \reqdescription{La creación de cuentas se realiza por medio de un formulario el cual aprueba el administrador}
+    \reqrationale{Se necesita un medio para poder cargar usuarios al producto.}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{El administrador puede agregar cuentas de usuario previamente solicitadas a través del formulario.}
+    \reqsatisfaction{4}{4}
+    \reqdepencies{Formulario, Notificación nueva cuenta, Login, Permisos de acceso}{}
+    \reqdocuments{Entrevista 6}
+\end{requirement}
+\begin{requirement}{functional}{---}
+    \reqdescription{Un usuario puede solicitar una cuenta en el sistema para acceso privado ingresando su información personal.}
+    \reqrationale{Se necesita un medio para poder cargar usuarios al producto.}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{El administrador puede agregar cuentas de usuario previamente solicitadas a través del formulario, el cual debe solicitar información básica y extra para comprobar su afiliación.}
+    \reqsatisfaction{4}{3}
+    \reqdepencies{Notificación nueva cuenta, Login, Permisos de acceso}{}
+    \reqdocuments{Entrevista 6}
+\end{requirement}
+\begin{requirement}{functional}{---}
+    \reqdescription{Administrador es notificado de la creación y solicitud de nuevas cuentas}
+    \reqrationale{Se necesita un medio para poder indicar al administrador el trabajo pendiente}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{El administrador recibe una notificación en tiempo real de cada creación y solicitud}
+    \reqsatisfaction{4}{1}
+    \reqdepencies{Cuenta nueva, Formulario, Login, Permisos de acceso}{}
+    \reqdocuments{Entrevista 6}
+\end{requirement}
+\begin{requirement}{functional}{---}
+    \reqdescription{Administrador acepta o rechaza cuentas nuevas}
+    \reqrationale{Dado que el administrador es quien se encarga de los permisos y del control de acceso, este puede aceptar o rechazar cuentas a voluntad.}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{El administrador puede aceptar o rechazar una cuenta de usuario. En caso de aceptarla debe ingresar su nivel de acceso a la plataforma}
+    \reqsatisfaction{4}{4}
+    \reqdepencies{Notificación nueva cuenta, Formulario, Login, Permisos de acceso}{}
+    \reqdocuments{Entrevista 6}
+\end{requirement}
+
+\section{Eliminación y persistencia de proyectos y cuentas de usuario}
+\begin{requirement}{functional}{---}
+    \reqdescription{Usuarios pueden ser eliminados del sistema por un administrador, independiente de si es administrador o lider de proyecto}
+    \reqrationale{De haber uno o más usuarios, deben de poder borrarse en caso de que ya no sean necesarios.}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{Administrador tiene la opción de poder eliminar usuarios.}
+    \reqsatisfaction{2}{3}
+    \reqdepencies{Creación cuenta}{}
+    \reqdocuments{Entrevista 2}
+\end{requirement}
+
+En entrevistas posteriores los tipos de usuarios fueron redefinidos, por tanto líder de proyecto ya no es viable. Adicionalmente hay un problema con la eliminación en cascada de usuarios y proyectos que fue discutida en la entrevista 6. Se llegó a la conclusión que no es buena idea eliminar contenido de la plataforma, mas bien dejar contenido persistente y deshabilitarlo según sea necesario.
+
+\begin{requirement}{functional}{---}
+    \reqdescription{Usuarios pueden ser deshabilitados de la plataforma por un administrador}
+    \reqrationale{De haber uno o más usuarios, deben de poder deshabilitarse en caso de que ya no sean necesarios.}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{Administrador tiene la opción de poder deshabilitar usuarios.}
+    \reqsatisfaction{4}{3}
+    \reqdepencies{Creación cuenta, deshabilitación proyectos, persistencia}{}
+    \reqdocuments{Entrevista 6}
+\end{requirement}
+\begin{requirement}{functional}{---}
+    \reqdescription{Proyectos pueden ser deshabilitados de la plataforma por un administrador}
+    \reqrationale{De haber uno o más proyectos, deben de poder deshabilitarse en caso de que ya no sean necesarios.}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{Administrador tiene la opción de poder deshabilitar proyectos.}
+    \reqsatisfaction{4}{3}
+    \reqdepencies{Creación cuenta, deshabilitación usuarios, persistencia}{}
+    \reqdocuments{Entrevista 6}
+\end{requirement}
+\begin{requirement}{nonfunctional}{---}
+    \reqdescription{No se pueden borrar datos de la plataforma, solo se pueden deshabilitar a fin de volver persistentes los datos de esta.}
+    \reqrationale{No se desea perder información asociada a proyectos o usuarios.}
+    \reqsource{Rodrigo Bustamante}
+    \reqfitcriterion{Deshabilitar proyectos o usuarios no altera el estado de sus miembros de datos relacionados}
+    \reqsatisfaction{5}{4}
+    \reqdepencies{Creación cuenta, deshabilitación usuarios, deshabilitación proyectos}{}
+    \reqdocuments{Entrevista 6}
+\end{requirement}
+
+\section{Replicación y control de versiones}
+
+
+\begin{requirement}{functional}{---}
+    \reqdescription{El sistema debe permitir la existencia de versiones mejoradas de un mismo proyecto.}
+    \reqrationale{En caso de algún error, corregir el proyecto ya aceptado.}
+    \reqsource{Rodrigo Bustamante}
+    %\reqfitcriterion{Deshabilitar proyectos o usuarios no altera el estado de sus miembros de datos relacionados}
+    \reqsatisfaction{3}{2}
+    %\reqdepencies{Creación cuenta, deshabilitación usuarios, deshabilitación proyectos}{}
+    \reqdocuments{Entrevista 1}
+\end{requirement}
+\begin{requirement}{functional}{---}
+    \reqdescription{El administrador puede moderar dos proyectos similares; eliminar uno de los dos o mezclarlos.}
+    %\reqrationale{No se desea perder información asociada a proyectos o usuarios.}
+    \reqsource{Rodrigo Bustamante}
+    %\reqfitcriterion{Deshabilitar proyectos o usuarios no altera el estado de sus miembros de datos relacionados}
+    \reqsatisfaction{3}{1}
+    %\reqdepencies{Creación cuenta, deshabilitación usuarios, deshabilitación proyectos}{}
+    \reqdocuments{Entrevista 2}
+\end{requirement}
+\begin{requirement}{functional}{---}
+    \reqdescription{Los proyectos deben tener un control de versiones asociado}
+    %\reqrationale{No se desea perder información asociada a proyectos o usuarios.}
+    \reqsource{Ruth Garrido}
+    %\reqfitcriterion{Deshabilitar proyectos o usuarios no altera el estado de sus miembros de datos relacionados}
+    \reqsatisfaction{4}{4}
+    %\reqdepencies{Creación cuenta, deshabilitación usuarios, deshabilitación proyectos}{}
+    \reqdocuments{Entrevista 4}
+\end{requirement}
+
+Acá existe un conflicto de intereses entre los principales stakeholders. Uno desea que se pueda subir versiones mejoradas de un proyecto sin necesidad de rastrear sus cambios, sin embargo, otro desea que estos tengan un control de versiones asociado para poder así ser de utilidad para alumnos y profesores.
+
+Se determinó que esta característica de ser implementada sería para versiones posteriores de esta plataforma por ende se ignoró el requisito presentado por Ruth Garrido y se eliminaron los anteriores al ser sobrecedidos por el anterior de subida de proyectos a la plataforma sin necesidad de publicarlo inmediatamente. En caso de querer hacer cambios, estos se presentan como nuevos proyectos.
+\begin{requirement}{functional}{---}
+    \reqdescription{Un proyecto puede tener dependencias de otro anterior}
+    \reqrationale{Muchos proyectos serán versiones posteriores de otros ya realizados con anterioridad. Si bien no se guarda registro de los cambios, es necesario saber su evolución.}
+    \reqsource{Ruth Garrido, Rodrigo Bustamante}
+    \reqfitcriterion{Al asociar proyectos, esta información queda visible a todos los usuarios}
+    \reqsatisfaction{4}{4}
+    \reqdepencies{Creación cuenta, permisos de usuario}{}
+    \reqdocuments{Entrevista 6}
+\end{requirement}
+\end{document}

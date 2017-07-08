@@ -1,0 +1,120 @@
+\documentclass{scrreprt}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage{tabularx}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{framed}
+\usepackage[section]{placeins}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{etoolbox}
+\usepackage{ifthen}
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
+\hypersetup{
+    pdftitle={Especificación de requisitos de software},    % title
+    pdfauthor={autores},                     % author
+    pdfsubject={TeX and LaTeX},                        % subject of the document
+    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+}%
+\def\myversion{1.0 }
+\title{%
+\flushright
+\rule{16cm}{5pt}\vskip1cm
+\Huge{ESPECIFICACIÓN DE REQUISITOS DE\\SOFTWARE}\\
+\vspace{2cm}
+para\\
+\vspace{1.7cm}
+Librería de Software Interna\\
+\vspace{1.7cm}
+\LARGE{Entrega 1.0\\}
+\vspace{1.7cm}
+\LARGE{Version \myversion en proceso de aprobación\\}
+\vspace{1.7cm}
+Preparado por Reinaldo Jeréz,\\Daniela Paredes, Erik Regla y Yorch Sepúlveda\\
+\vfill
+\rule{16cm}{5pt}
+}
+\date{}
+\input{volere/volere.tex}
+
+\begin{document}
+\maketitle
+\tableofcontents
+%\chapter*{Revision History}
+\chapter{Introducción}
+\input{volere/misc/introduccion.tex}
+\chapter{Propósito del proyecto}
+\input{volere/misc/proposito.tex}
+
+\chapter{Los actores}
+\input{volere/misc/actores.tex}
+
+
+\chapter{Restricciones del proyecto}
+\input{volere/misc/restricciones.tex}
+
+%\chapter{Convención de nombres y terminología}
+%\chapter{Hechos relevantes y supuestos}
+%\section{Hechos relevantes}
+%\section{Reglas del negocio}
+%\section{Supuestos}
+%\begin{enumerate}
+%\item Asumimos que cuando el administrador elimina una cuenta de usuario, también se eliminan sus proyectos asociados. 
+%\end{enumerate}
+
+\chapter{Alcances del trabajo}
+\input{volere/misc/alcances.tex}
+
+\section{Casos de uso de negocio}
+\subsection{Lista y resumen de casos de uso de negocio}
+\input{volere/buc/buclist.tex}
+\subsection{Casos de uso de negocio}
+\input{volere/buc/buc.tex}
+\input{volere/buc/buc2.tex}
+
+
+\chapter{Requerimentos funcionales y de datos}
+\section{Requisitos funcionales}
+\input{volere/functional/user.tex}
+\input{volere/functional/messaging.tex}
+\input{volere/functional/project.tex}
+\input{volere/functional/visualization.tex}
+\input{volere/functional/search.tex}
+\chapter{Requerimentos no funcionales}
+\input{volere/nonfunctional/lookandfeel.tex}
+\input{volere/nonfunctional/usability.tex}
+\input{volere/nonfunctional/performance.tex}
+\input{volere/nonfunctional/operational.tex}
+\input{volere/nonfunctional/maintainabilityandportability.tex}
+\input{volere/nonfunctional/security.tex}
+\input{volere/nonfunctional/culturalandpolitical.tex}
+\input{volere/nonfunctional/legal.tex}
+
+
+
+%\chapter{Conflictos}
+%\begin{enumerate}
+%\item \reffr{RF:ELIMINACION_USUARIOS}
+%\item \reffr{RF:ADMINISTRADOR_ATTRIB}
+%\item \reffr{RF:MODIFICACION_SUBIDA} y \reffr{RF:MODIFICACION_PUBLICACION}
+%\item \reffr{RNF:INSTANCIAR_TEMPORALMENTE} y \reffr{RF:SUBDOMINIO}
+%\item \reffr{RF:RESTRICCION_FUENTE} y \reffr{RF:DESCARGA_COMPLETA}
+%\end{enumerate}
+
+\chapter{Casos de uso de producto}
+\input{volere/puc/puclist.tex}
+\input{volere/puc/puc.tex}
+
+\chapter{Prototipos}
+\input{volere/proto.tex}
+
+\end{document}

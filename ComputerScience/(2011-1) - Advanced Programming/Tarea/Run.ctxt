@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=numeroProblema\ nombreProblema\ tiempoDeEnvio
+comment0.target=Run(int,\ java.lang.String,\ int)
+comment0.text=\r\n\ contructor\ por\ defecto\ de\ la\ clase\ Run.\ recibe\ parametros\ para\ todos\ los\ valores,\r\n\ pero\ el\ valor\ de\ la\ respuesta\ es\ calculado\ al\ momento\ de\ crear\ la\ instancia.\r\n\ @param\ numeroProblema\ el\ numero\ del\ problema\ a\ enviar\r\n\ @param\ nombreProblema\ el\ nombre\ del\ problema\ a\ enviar\r\n\ @param\ tiempoDeEnvio\ el\ tiempo\ al\ que\ fue\ enviado\r\n
+comment1.params=
+comment1.target=java.lang.String\ getRespuesta()
+comment1.text=\r\n\ retorna\ el\ valor\ de\ la\ respuesta\ dada\ por\ el\ juez\ a\ este\ run\r\n\ @return\ la\ respuesta\ del\ juez\r\n
+comment2.params=
+comment2.target=java.lang.String\ getProblema()
+comment2.text=\r\n\ retorna\ el\ nombre\ del\ problema\r\n\ @return\ el\ nombre\ del\ problema\r\n
+comment3.params=
+comment3.target=int\ getTiempoEnvio()
+comment3.text=\r\n\ retorna\ el\ tiempo\ de\ envio\ del\ problema\ en\ minutos\r\n\ @return\ el\ tiempo\ del\ envio\ del\ problema\r\n
+numComments=4

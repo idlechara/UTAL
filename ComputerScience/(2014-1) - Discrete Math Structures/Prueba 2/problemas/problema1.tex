@@ -1,0 +1,62 @@
+\section{Pregunta 1}
+
+\subsection{¿Al Menos Tan sabio?}
+
+\begin{tabular}{ c | c | c }
+  \hline                       
+  $alMenosTanSabioQue(a,b)$ & $alMenosTanSabioQue(b,a)$ & $alMenosTanSabioQue(a,b) \vee alMenosTanSabioQue(b,a) $ \\
+  \hline                
+  Verdadero 	& Falso 		& Verdadero \\
+  Verdadero 	& Verdadero 	& Verdadero \\  
+  Falso 		& Falso 		& Falso \\
+  Falso 		& Verdadero 	& Verdadero \\
+  \hline  
+\end{tabular}
+
+\subsubsection{Conclusión}
+Contingencia.
+
+\subsubsection{Argumento}
+No conocemos cual es el criterio para determinar que tan sabio puede ser una persona en comparaci'on a la otra. Dado que $a$ y $b$ son arbitrarios, la combinaci'on se resume a los resultados que pueda arrojar la caja negra $alMenosTanSabioQue(x,y)$. No se especifica conocimiento alguno de las reglas para determinar sus valores tampoco. Por ende, se asume que las entradas son las propias salidas de esas funciones.
+
+
+\subsection{¿Un primo es impar?}
+
+\begin{tabular}{ c | c | c | c }
+  \hline                       
+  $primo(a)$ & $impar(a)$ & $impar(a) \rightarrow primo(a)$  & $primo(a) \rightarrow (impar(a) \rightarrow primo(a))$\\
+  \hline                
+  Verdadero 	& Falso 		& Verdadero 	&Verdadero \\
+  Verdadero 	& Verdadero 	& Verdadero 	&Verdadero \\  
+  Falso 		& Falso 		& Verdadero 	&Verdadero \\
+  Falso 		& Verdadero 	& Falso 		&Verdadero \\
+  \hline  
+\end{tabular}
+
+\subsubsection{Conclusión}
+Tautología.
+
+\subsubsection{Argumento}
+Idem al caso anterior.
+
+
+
+
+\subsection{¿Es una cosa mejor que la otra?}
+
+\begin{tabular}{ c | c | c | c }
+  \hline                       
+  $mejorQue(a,b)$ & $mejorQue(b,a)$ & $\neg mejorQue(b,a)$ & $mejorQue(a,b)\rightarrow \neg mejorQue(b,a)$\\
+  \hline                
+  Verdadero 	& Falso 		& Verdadero 	&Verdadero \\
+  Verdadero 	& Verdadero 	& Falso	 		&Verdadero \\  
+  Falso 		& Falso 		& Verdadero 	&Falso 		\\
+  Falso 		& Verdadero 	& Falso 		&Verdadero \\
+  \hline  
+\end{tabular}
+
+\subsubsection{Conclusión}
+Contingencia.
+
+\subsubsection{Argumento}
+Idem al caso anterior.

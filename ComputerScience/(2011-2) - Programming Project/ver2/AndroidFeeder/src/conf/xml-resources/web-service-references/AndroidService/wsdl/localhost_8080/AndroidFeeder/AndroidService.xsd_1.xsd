@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://services.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.com/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="requestFilteredNotices" type="tns:requestFilteredNotices"/>
+
+<xs:element name="requestFilteredNoticesResponse" type="tns:requestFilteredNoticesResponse"/>
+
+<xs:element name="requestNotices" type="tns:requestNotices"/>
+
+<xs:element name="requestNoticesList" type="tns:requestNoticesList"/>
+
+<xs:element name="requestNoticesListByType" type="tns:requestNoticesListByType"/>
+
+<xs:element name="requestNoticesListByTypeResponse" type="tns:requestNoticesListByTypeResponse"/>
+
+<xs:element name="requestNoticesListResponse" type="tns:requestNoticesListResponse"/>
+
+<xs:element name="requestNoticesResponse" type="tns:requestNoticesResponse"/>
+
+<xs:element name="test" type="tns:test"/>
+
+<xs:element name="testResponse" type="tns:testResponse"/>
+
+<xs:complexType name="requestFilteredNotices">
+<xs:sequence>
+<xs:element name="type" type="xs:int"/>
+<xs:element name="from" type="xs:int"/>
+<xs:element name="range" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="requestFilteredNoticesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="requestNoticesList">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="requestNoticesListResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="requestNotices">
+<xs:sequence>
+<xs:element name="from" type="xs:int"/>
+<xs:element name="range" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="requestNoticesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="test">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="testResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="requestNoticesListByType">
+<xs:sequence>
+<xs:element name="type" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="requestNoticesListByTypeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

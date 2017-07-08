@@ -1,0 +1,250 @@
+\label{•} \documentclass[11pt]{utalcaDoc}
+
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+
+\title{{\bf Algoritmos y estructuras de datos}\\Tarea 1}
+\author{Profesor: Rodrigo Paredes}
+\date{Plazo: Viernes 20 de Abril de 2012. 0.5 puntos de descuento por d\'ia de atraso.}
+
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+
+\section{Objetivos}
+ 
+En esta tarea se pretende que el alumno (1) se familiarice con los lenguajes
+de programaci'on C/C++ o Java, y (2) aprenda una metodolog'ia
+que le permita enfrentar un problema, construir un algoritmo que lo resuelva,
+definir un conjunto de casos de prueba apropiado para el problema en estudio
+y realizar los experimentos para validar el programa escrito.
+%que permitan analizar alguna caracter'istica
+%interesante del problema, realizar los experimentos y por 'ultimo modelar
+%el comportamiento de la caracter'istica de inter'es.
+ 
+
+
+\section{Descripci'on de la tarea}
+
+Existen numerosas conjeturas sobre los n'umeros primos. En esta tarea trataremos
+de verificar experimentalmente si es que se cumplen o no tres de ellas, a saber:
+\begin{itemize}
+\item Conjetura Par de Goldbach: ``Todo n'umero natural par es la suma de a lo m'as
+dos primos''.
+\item Conjetura Impar de Goldbach: ``Todo n'umero natural impar mayor que 1
+es la suma de a lo m'as tres primos''.
+\item Conjetura de cinco primos: ``Todo n'umero natural es la suma de a lo m'as cinco primos distintos''.
+\end{itemize}
+
+
+El objetivo de la tarea es verificar experimentalmente las conjeturas. Para eso
+ustedes implementar'an un programa en C/C++/Java que obedezca la
+siguiente l'inea de comandos:\\
+\verb$tarea1 --conjetura [1|2|3] -n N -v$
+
+donde el primer par de argumentos (\verb$--conjetura [1|2|3]$) indica que conjetura
+est'an verificando, el segundo par (\verb|-n N|) para que valor de $N$ lo est'an haciendo
+y \verb|-v| es una ejecuci'on con muchos comentarios con fines de depuraci'on.
+Noten que se prueba cada conjetura por separado. Por ejemplo, para probar la
+conjetura impar de Goldbach, para el primer mill'on de n'umeros y sin activar
+la opci'on verbosa, la invocaci'on en la l'inea de comandos ser'ia:\\
+\verb$tarea1 --conjetura 2 -n 1000000$
+
+Para esto ustedes deber'an manejar una estructura que permita administrar a los n'umeros
+primos, y luego implementar algoritmos iterativos o recursivos para verificar la
+conjetura para cada valor de $n$ entre 2 y $N$.
+
+Si la conjetura se cumple, el programa imprime:\\
+\noindent \verb|La conjetura XXX se cumple|
+
+En caso contrario, imprime:
+\begin{verbatim}
+La conjetura XXX no se cumple
+Numeros que la fallan: N1, N2, ...
+\end{verbatim}
+
+En que \verb|XXX| es el n'umero o texto de la conjetura y \verb|N1, N2, ...| son los
+n'umeros que hacen fallar la conjetura, de haberlos.
+
+
+\textbf{Pruebas preliminares.} Para poder verificar que sus algoritmos est'en
+operando correctamente, ustedes implementar'an una variante verbosa
+que les permitir'a chequear manualmente (esta opci'on tambi'en ser'a usada
+en el proceso de correcci'on de la presente tarea). En la variante verbosa su
+programa tendr'a que mostrar la tabla de n'umeros primos desde 2 hasta $N$.
+
+En la opci'on verbosa tienen que mostrar la tabla de primos. El formato de
+salida es de acuerdo al siguiente ejemplo:
+\begin{verbatim}
+tarea1 --conjetura 2 -n 20 -v
+TABLA DE PRIMOS
+2
+3
+5
+7
+11
+13
+17
+19
+La conjetura impar de Goldbach se cumple
+\end{verbatim}
+
+
+
+\textbf{Experimentaci'on.} Tendr'an que ejecutar el programa con valores grandes
+de $N$. Por razones de uso de memoria, vuestro programa tendr'ia que poder ejecutarse
+con valores de $N$ que lleguen a $10^{9}$ para cada una de las tres conjeturas.
+
+En el informe indiquen como var'ian los tiempos de computo a medida que aumenta
+$N$ en una decada de estudio (por ejemplo, de $10^{8}$ hasta $10^{9}$).
+
+La tarea tendr'a las siguientes penalizaciones que se aplican a la nota total de la tarea.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+rango de $N$ & $[10^{9}, \infty)$ & $[10^{8}, 10^{9})$ & $[10^{7}, 10^{8})$ & $[10^{6}, 10^{7})$ & $[1, 10^{6})$\\ \hline 
+penalizaci'on & sin penalizaci'on & -0.5 pts & -1 pt & -2 pts & -4 pts \\ \hline
+\end{tabular}
+\end{center}
+
+%\section{Pruebas}
+
+
+\section{Restricciones}
+
+\begin{itemize}
+\item Los programas debe ser escritos en C, C++ o Java.
+\item Plazo de entrega: Viernes 20 de Abril de 2012. 0.5 puntos de descuento por d'ia de atraso.
+\item Queda prohibido utilizar bibliotecas o clases preconstruidas en el lenguaje
+    que implementen operaciones no est'andar sobre arreglos. Tampoco se puede
+    utilizar clases que administren arreglos (por ejemplo, se prohibe el uso de HashMaps
+    u otras). USTED DEBE IMPLEMENTAR TODO.
+\item La tarea es individual.
+\item Para la tarea tienen que entregar un informe de resultados junto al c'odigo
+    fuente (el programa que implementa la tarea). No se aceptan c'odigos sin
+    informe ni informes sin c'odigo.
+\item Si la tarea no compila tiene nota 1.0 tanto en el c'odigo como en el informe.
+\item Cualquier falta a las restricciones anteriores invalida irrevocablemente
+la tarea.
+\end{itemize}
+
+
+\section{Indicaciones}
+
+%Se recomienda Java.
+
+Si el informe de la tarea se escribe en \LaTeX, tiene un punto extra
+en el informe.
+
+
+\section{Ponderaci'on}
+
+El informe equivale a un 35\% de la nota de tarea.
+    
+El c'odigo equivale a un 65\% de la nota de tarea.
+
+
+\section{Entrega de la tarea}
+
+La entrega de la tarea debe incluir (1) el c'odigo del programa que resuelve
+la tarea y (2) un informe escrito donde se describa y documente el programa
+entregado, y se incluyan ejemplos de entradas y salidas. La entrega de la tarea
+se realizar'a a trav'es de la plataforma {\tt lms.educandus.cl} hasta las 23:55 del d'ia
+del plazo final. Generen un 'unico archivo que contenga tanto el informe como
+los c'odigos para compilar. Tambi'en se solicita que se adjunte un archivo
+README que explique c'omo compilar la tarea.
+     
+El contenido del informe debe seguir la siguiente pauta com'un para todas las tareas: 
+
+\begin{itemize}
+\item
+Portada. El formato de la portada se muestra en la Figura \ref{fig1}.
+%Portada. El formato de la portada se muestra a continuaci'on:
+
+\begin{figure}[tbp]
+\epsffile{utalca.eps} %{\epsfxsize16mm \epsffile{utalca.eps}} %
+\rlap{\kern 4mm \lower -9.5mm \hbox to0pt{{\Large \sc Universidad~~de~~Talca}\hfill}}%
+\rlap{\kern 4mm \lower -5mm \hbox to0pt{\Large \sc Facultad~~de~~Ingenier\'ia\hfill}}%
+\rlap{\kern 4mm \lower -1mm \hbox to0pt{%
+  {\large \sc Departamento~~de~~Ciencias~~de~~la~~Computaci\'on}\hfill}}%
+
+\vspace{1cm}
+
+\centerline{\huge \bf Informe Tarea X}
+\vspace{0.8cm}
+\centerline{\Large \bf Nombre de la Tarea X}
+
+\vspace{2cm}
+
+\hfill \begin{tabular}{ll}
+Fecha:  & $<$fecha entrega$>$\\
+Autor:  & $<$nombre alumno$>$\\
+e-mail: & $<$correo del alumno$>$
+\end{tabular}
+\caption{Formato para la portada.}
+\label{fig1}
+\end{figure}
+
+\item Introducci'on: Breve descripci'on del problema y de su soluci'on.
+
+\item An'alisis del problema: El problema consiste basicamente en solucional la simulacion de una fila de un banco, utilizando sistemas de colas de prioridad, y colas normales, para luego establecer una estadistica con los resultados de tiempo de atencion por grupo etario. Esta simulacion esta regida por un numero finito de horas (valor entero entre 1.. 12), ademas como antecedente se tiene que llega una persona a la cola cada minuto a un ritmo constante, con edad aleatoria distribuida de forma uniforme entre 11.. 100; al igual que un tiempo de atencion variable entre 20.. 140 segundos, distribuidos de forma uniforme.\\
+
+Como estructuras necesarias, se plantea el uso de una cola de prioridad, una cola simple, y una estructura basica para almacenar la informacion de cada una de las personas. Abondar en como esta compuesta cada una de ellas, es trivial ya que es algo visto en la clase.\\
+
+\item Soluci'on del problema:
+  \begin{itemize}
+  \item Algoritmo de soluci'on: Primero, dentro de el programa solicitado, comienza con la etapa de verificacion. Se validan los argumentos entregados de modo que estos no produzcan algun error propagable dentro de la ejecucion. De no ser valido algun argumento, el programa termina su ejecucion informandole al usuario del error.\\
+  Luego comienza la etapa de la ejecucion propiamente tal. La clase ``Simulador.java'' se encarga de iniciar la ejecucion de la simulacion en el mismo constructor de la clase. Este configura las variables de la ejecucion, y luego define el tipo de cola a utilizar. Luego entra a un ciclo infinito, que dependiendo del retardo que tenga provoca que la simulacion tome mas o menos tiempo. 
+  
+  \item Diagrama de Estados: Muestra en forma global el programa.
+  
+  \item Dise\~no: Explicitar las Pre y Post condiciones consideradas,
+  mostrar los invariantes empleados.
+
+  \item Implementaci'on: Se debe mostrar el pseudo-c'odigo del programa que
+  soluciona el problema, explicando lo que hace. Omita cualquier detalle de
+  implementaci'on que sea irrelevante para entender la soluci'on del problema.
+  Se recomienda usar nombres representativos para las variables.
+  NOTA: El c'odigo generado para resolver la tarea debe corresponder al
+  dise\~no descrito, preoc'upese de comentar el c'odigo donde sea necesario
+  para facilitar su lectura.
+  
+  \item Modo de uso: Se debe explicar el modo de uso del programa y el modo
+  de compilaci'on. Nota la tarea debe ser compilable en los computadores de la Universidad.
+  \end{itemize}
+
+\item Pruebas: Se debe mostrar las pruebas realizadas y sus resultados.
+%Se debe se\~nalar claramente cual es la llamada al programa y su salida.
+El n'umero de pruebas puede variar dependiendo del problema
+En esta secci'on debe incluir las tablas y gr'aficos necesarios solicitados,
+y el an'alisis de los resultados. En este cap'itulo adjunten las conclusiones
+obtenidas de los resultados de la tarea.
+%En general tres pruebas es suficiente.
+
+\item Anexos: De ser necesario, cualquier informaci'on adicional se debe
+agregar en los anexos y debe ser referenciada en alguna secci'on del
+informe de la tarea. Dentro de los anexos se puede incluir un listado con
+el programa completo que efectivamente fue compilado.
+
+\end{itemize}
+
+En este y los siguientes informes se va a valorar la ortograf'ia y la
+redacci'on de acuerdo a las siguientes reglas de penalizaci'on.
+
+\begin{description}
+\item[Ortograf'ia]
+Se permiten hasta 10 errores ortogr'aficos en todo el informe.
+Entre 11 y 20 errores descuenten 0.5 puntos al informe.
+Entre 21 y 30 descuentan 1.0 puntos al informe.
+M'as de 30 descuenten 2.0 puntos al informe.
+\item[Redacci'on]
+Se permiten hasta 5 ideas o p'arrafos mal redactados (es decir que no se entiendan).
+Entre 6 y 10 p'arrafos con problemas de redacci'on descuenten 0.5 puntos al informe.
+Entre 11 y 14 p'arrafos descuentan 1.0 puntos al informe.
+M'as de 24 parrafos incomprensibles descuenten 2.0 puntos al informe.
+\end{description}
+
+\end{document}

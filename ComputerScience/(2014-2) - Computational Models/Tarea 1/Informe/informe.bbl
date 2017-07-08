@@ -1,0 +1,24 @@
+\begin{thebibliography}{CSRL01}
+
+\bibitem[CSRL01]{Cormen:2001:IA:580470}
+Thomas~H. Cormen, Clifford Stein, Ronald~L. Rivest, and Charles~E. Leiserson.
+\newblock {\em Introduction to Algorithms}.
+\newblock McGraw-Hill Higher Education, 2nd edition, 2001.
+
+\bibitem[HW73]{1873}
+Carl Hierholzer and Chr Wiener.
+\newblock Ueber die möglichkeit, einen linienzug ohne wiederholung und ohne
+  unterbrechung zu umfahren.
+\newblock {\em Mathematische Annalen}, 6(1):30--32, 1873.
+
+\bibitem[Sed02]{Sedgewick2002}
+Robert Sedgewick.
+\newblock {\em Algorithms in C++ Part 5: Graph Algorithms}, volume~5.
+\newblock Addison Wesley, 3 edition, 2002.
+
+\bibitem[Tuc76]{1976}
+Alan Tucker.
+\newblock A new applicable proof of the euler circuit theorem.
+\newblock {\em The American Mathematical Monthly}, 83(8):pp. 638--640, 1976.
+
+\end{thebibliography}

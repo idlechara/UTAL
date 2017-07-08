@@ -1,0 +1,345 @@
+\documentclass{scrreprt}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage{tabularx}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{framed}
+\usepackage[section]{placeins}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{etoolbox}
+\usepackage{ifthen}
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
+\hypersetup{
+    pdftitle={Especificación de requisitos de software},    % title
+    pdfauthor={autores},                     % author
+    pdfsubject={TeX and LaTeX},                        % subject of the document
+    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+}%
+\def\myversion{1.0 }
+\title{%
+\flushright
+\rule{16cm}{5pt}\vskip1cm
+\Huge{ESPECIFICACIÓN DE REQUISITOS DE\\SOFTWARE}\\
+\vspace{2cm}
+para\\
+\vspace{1.7cm}
+Aplicación movil ``Liceo Virtual''\\
+\vspace{1.7cm}
+\LARGE{Entrega 1.0\\}
+\vspace{1.7cm}
+\LARGE{Version \myversion en proceso\\}
+\vspace{1.7cm}
+Preparado por Patricio Castro, Reinaldo Jeréz,\\Alejandro Naranjo y Erik Regla\\
+\vfill
+\rule{16cm}{5pt}
+}
+\date{}
+\input{volere/volere.tex}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+% %\chapter*{Revision History}
+% \chapter{Introducción}
+% \input{volere/misc/introduccion.tex}
+% \chapter{Propósito del proyecto}
+% \input{volere/misc/proposito.tex}
+
+% \chapter{Los actores}
+% \input{volere/misc/actores.tex}
+
+
+% \chapter{Restricciones del proyecto}
+% \input{volere/misc/restricciones.tex}
+
+% %\chapter{Convención de nombres y terminología}
+% %\chapter{Hechos relevantes y supuestos}
+% %\section{Hechos relevantes}
+% %\section{Reglas del negocio}
+% %\section{Supuestos}
+% %\begin{enumerate}
+% %\item Asumimos que cuando el administrador elimina una cuenta de usuario, también se eliminan sus proyectos asociados. 
+% %\end{enumerate}
+
+% \chapter{Alcances del trabajo}
+% \input{volere/misc/alcances.tex}
+
+% \section{Casos de uso de negocio}
+% \subsection{Lista y resumen de casos de uso de negocio}
+% \input{volere/buc/buclist.tex}
+% \subsection{Casos de uso de negocio}
+% \input{volere/buc/buc.tex}
+% \input{volere/buc/buc2.tex}
+
+\chapter{Descripcion general}
+\section{Introducción}
+Liceo virtual es una aplicacion desarrollada por alumnos de la Universidad de Talca, de la escuela de Ingenieria Civil en Computacion en conjunto con el profesor Renzo Angles, docente de la facultad, la cual tiene como funcion implementar quizzes cortos para ser utilizados como ayuda al aprendizaje en alumnos de enseñanza media. Sin embargo, el profesor Angles considera que esta aplicacion puede ser mejorada sustancialmente por medio de cambios en la interaccion y aspectos visuales.
+
+\section{Proposito y Objetivo}
+Los principales objetivos que tiene esta aplicacion son generar el interes por parte del usuario, para convertirla en una aplicacion util y atractiva a nuestro publico objetivo (Alumnos de enseñanza media), donde puedan aprender de una manera divertida como si fuese un juego.
+
+\section{Ambito}
+El producto esta principalmente orientado a asistir a los procesos de medicion, evaluacion y mejoramiento del conocimiento de sus usuarios en el area de biologia, como tambien para ser utilizada como un complemento de las clases por el personal docente de establecimientos de enseñanza media.
+
+No obstante tambien puede ser utilizado por personas que esten interesadas en aprender conceptos basicos de biologia como tambien por quienes se estan preparando para rendir la PSU.
+
+\chapter{Requisitos}
+\section{Requisitos funcionales}
+
+\begin{requirement}{9}{---}
+    \reqdescription{El producto permite ?jugar? cuestionarios sobre Biología.}
+    \reqrationale{Jugar es una de las formas más interactivas para aprender.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Para aprender sobre biología más didácticamente.}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 25 de Mayo, 2016}
+    \label{CUESTIONARIOS}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{Los cuestionarios están conformados por 10 preguntas.}
+    \reqrationale{Menos serían muy pocas y con más se pierde la noción.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Al terminar una trivia se han respondido 10 preguntas}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{\ref{CUESTIONARIOS}}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 25 de Mayo, 2016}
+    \label{PREGUNTASCUESTIONARIO}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{Una trivia se aprueba con 8 respuestas correctas.}
+    \reqrationale{Un 80\% de las respuestas correctas significa un aprendizaje significativo de la materia.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Al responder 8 o mas preguntas de manera correcta durante una trivia, esta es aprobada}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{\ref{PREGUNTASCUESTIONARIO}}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    \label{RESPUESTASCORRECTAS}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{El producto debe tener trivias separadas en 4 niveles correspondientes a los años de enseñanza media}
+    \reqrationale{Se busca lograr una complejidad igual a la de enseñanza media.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Al querer iniciar una trivia se puede seleccionar el nivel de la trivia}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    \label{SEPARACIONTRIVIAS}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{Los niveles superiores al nivel 1 (Primer año de enseñanza media), deben estar bloqueados}
+    \reqrationale{Se busca que el aprendizaje sea incremental, comenzado desde la base}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{No se puede acceder a un nivel superior al 1 mientras estos esten bloqueados}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{\ref{SEPARACIONTRIVIAS}}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    \label{NIVELESBLOQUEADOS}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{Para desbloquear los niveles superiores, se deben contestar correctamente dos trivias}
+    \reqrationale{Comprueba que el alumno haya aprendido de manera íntegra los pilares del nivel en particular.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Al responder la trivia correctamente dos veces, se puede acceder al siguiente nivel}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{\ref{NIVELESBLOQUEADOS}}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{Las preguntas en cada nivel deben ser asociadas al nivel seleccionado}
+    \reqrationale{Dado que cada nivel tiene una dificultad, las respuestas se agrupan por nivel al que pertenecen, el nivel está dado por los conocimientos impartidos por curso.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Al cursar un nivel no se encuentran preguntas existentes en otros niveles}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{\ref{SEPARACIONTRIVIAS}}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{El producto debe entregar retroalimentacion al usuario sobre las respuestas que este da}
+    \reqrationale{Es importante que el usuario sepa cuando se ha equivocado y cuando ha acertado}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Luego de responder una pregunta se puede saber si esta estaba correcta o no}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{\ref{CUESTIONARIOS}}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NO FUNC
+\section{Requisitos no funcionales}
+
+\begin{requirement}{10}{---}
+    \reqdescription{El producto debe ser una aplicación móvil.}
+    \reqrationale{Se busca producir una aplicación portátil, y de rápido acceso.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{La aplicacion puede ejecutarse en telefonos inteligentes}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{10}{---}
+    \reqdescription{El producto no debe requerir conexion a internet para su uso}
+    \reqrationale{Se busca una aplicación móvil educativa, para que alumnos de enseñanza media puedan estudiar en cualquier lugar, y en algunos de ellos no hay conexión estable a internet.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{La aplicación se ejecuta sin necesidad de estar conectado a internet.}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 25 de Mayo, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{10}{---}
+    \reqdescription{El flujo entre las ventanas del producto debe darse mediante solo una acción.}
+    \reqrationale{Se busca que la interfaz de la aplicación sea de transición sencilla.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Se puede avazar a otra ventana mendiante un solo click o toque}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{10}{---}
+    \reqdescription{El texto de la aplicación no debe ocupar tanto espacio y debe ser legible, a la vez.}
+    \reqrationale{En una aplicación móvil el espacio es un punto vital en el diseño de su interfaz, además, hacer respuestas no tiene sentido si no se pueden leer.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Una persona con vision promedio logra leer una pregunta de la trivia en menos de 10 segundos despues de haberla visto}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{10}{---}
+    \reqdescription{La aplicacion debe ser compatible con versiones de android 2.2 y superior}
+    \reqrationale{Es necesario para aumentar los niveles de portabilidad que podría alcanzar.}
+    \reqsource{Renzo Angles \& Catalina Carvajal}
+    \reqfitcriterion{En una version de android superior a 2.2, se puede instalar y ejecutar la aplicacion}
+    \reqsatisfaction{5}{4}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016\\Mejora: Miercoles 8 de Junio, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{10}{---}
+    \reqdescription{Los botones deben ser simples y atractivos.}
+    \reqrationale{Se busca un diseño simple e intuitivo que no requiera de ayuda externa.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Un usuario nuevo en la aplicacion puede distinguir los botones y los encuentra al menos atractivos (3+) en una escala de 1-5}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{10}{---}
+    \reqdescription{Las preguntas deben mostrarse de distintas maneras a lo largo de la trivia.}
+    \reqrationale{El objetivo de mejorar la interfaz es modificar la forma en que se muestran las preguntas de la trivia.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Una misma pregunta se puede responder de distintas maneras en distintas instancias de esta}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 25 de Mayo, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{10}{---}
+    \reqdescription{La interaccion con la aplicacion debe ser intuitiva}
+    \reqrationale{Dado que se utilizara en distintos niveles, esta debe ser intuitiva para facilitar su uso}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Un usuario nuevo logra contestar una trivia sin instruccion previa en menos de 5 minutos}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{10}{---}
+    \reqdescription{La manera de contestar las preguntas debe ser didactica y atractiva para el usuario}
+    \reqrationale{Se busca enseñar de una manera didactiva y divertida, para atraer a los usuarios a utilizar el producto}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Los usuarios dicen que se divierten un 3 o mas en una escala de 1 a 5 (Donde 5 es mas)}
+    \reqsatisfaction{5}{5}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{Captura: Miercoles 1 de Junio, 2016}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\section{Una mirada a los requisitos futuros}
+La aplicacion movil posee la estructura de una aplicacion de preguntas y respuestas, en un futuro, se espera que la aplicacion provea mediante actualizaciones nuevos quizes con conocimientos relacionados con otras arenas de las ciencias.\\
+Otro punto a tomar en cuenta es, dada la realidad chilena, realizar una trivia mediante la cual el usuario pueda responder preguntas de todos los niveles, para realizar una simulacion de la PSU, para darle a la aplicacion un mayor de alcance de usuarios y generar un mayor interes en el publico en general.
+% \chapter{Requerimentos funcionales y de datos}
+% \section{Requisitos funcionales}
+% \input{volere/functional/user.tex}
+% \input{volere/functional/messaging.tex}
+% \input{volere/functional/project.tex}
+% \input{volere/functional/visualization.tex}
+% \input{volere/functional/search.tex}
+% \chapter{Requerimentos no funcionales}
+% \input{volere/nonfunctional/lookandfeel.tex}
+% \input{volere/nonfunctional/usability.tex}
+% \input{volere/nonfunctional/performance.tex}
+% \input{volere/nonfunctional/operational.tex}
+% \input{volere/nonfunctional/maintainabilityandportability.tex}
+% \input{volere/nonfunctional/security.tex}
+% \input{volere/nonfunctional/culturalandpolitical.tex}
+% \input{volere/nonfunctional/legal.tex}
+
+
+
+% %\chapter{Conflictos}
+% %\begin{enumerate}
+% %\item \reffr{RF:ELIMINACION_USUARIOS}
+% %\item \reffr{RF:ADMINISTRADOR_ATTRIB}
+% %\item \reffr{RF:MODIFICACION_SUBIDA} y \reffr{RF:MODIFICACION_PUBLICACION}
+% %\item \reffr{RNF:INSTANCIAR_TEMPORALMENTE} y \reffr{RF:SUBDOMINIO}
+% %\item \reffr{RF:RESTRICCION_FUENTE} y \reffr{RF:DESCARGA_COMPLETA}
+% %\end{enumerate}
+
+% \chapter{Casos de uso de producto}
+% \input{volere/puc/puclist.tex}
+% \input{volere/puc/puc.tex}
+
+% \chapter{Prototipos}
+% \input{volere/proto.tex}
+
+\end{document}
