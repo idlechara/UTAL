@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p .backup
 
 function init_if_exists_git {
     if [ -d "$1" ]; then
@@ -10,7 +11,10 @@ function init_if_exists_git {
             # echo $REMOTE
             DESTINATION=./$1
             echo $DESTINATION
-            git submodule add $REMOTE $DESTINATION
+            cp -rfv "${DESTINATION}" ./.backup
+            echo "DESTINATION" ${DESTINATION}
+            rm -rfv "${DESTINATION}"
+            git submodule add "${REMOTE}" "${DESTINATION}"
         fi
     fi
 }
@@ -22,13 +26,13 @@ function nested_search {
         for directory in "$2"/*
         do
             # echo "Found" $directory
-            init_if_exists_git "$directory"
-            nested_search $[$1-1] "$directory"
+            init_if_exists_git "${directory}"
+            nested_search $[$1-1] "${directory}"
         done
     fi
 }
 
 for study_plan in *
 do
-    nested_search 4 "$study_plan"
+    nested_search 4 "${study_plan}"
 done
