@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;Leela Compass/lib/lib&apos;" deleteContents="false" description="Delete resource &apos;Leela Compass/lib/lib&apos;" element1="/Leela Compass/lib/lib" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1392752105327"/>
-</session>
