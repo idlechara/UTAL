@@ -1,0 +1,85 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsfonts}
+\usepackage{algo}
+\input{spanishAlgorithmic}
+
+\title{{\bf Modelos de Computabilidad}\\Tarea 2 - Informe}
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{10 de Diciembre del 2014}
+
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+
+\section{Introducción}
+Dada una calculadora infija proporcionada como base, diseñar una calculadora prefija que soporte suma, resta, multiplicación, división, potencia, negación, asignación de variables y soporte para numeros de doble prescición.
+\section{Análisis del problema}
+
+\subsection{Desambiguación del Lenguaje}
+
+\begin{figure}
+\begin{center}
+\begin{verbatim}
+operacion   :   NUM                      { $$ = $1;      }
+            |   '+' lista_suma expresion { $$ = $2 + $3; }
+			;
+			
+lista_suma  :   lista_suma  expresion    { $$ = $1 + $2; }
+            |   expresion                { $$ = $1;      }
+            ;
+
+\end{verbatim}
+\end{center}
+\caption{Ejemplo de desambiguación para la operación \textit{suma}.}
+\label{DEFINICION_LISTA}
+\end{figure} 
+
+\subsubsection{Descripción del problema}
+Las operaciones solicitadas piden que se ejecuten las operaciones en un formato similar al de \textit{Racket}, cada operación rodeada de paréntesis, el primer miembro siendo el operador en caso de estar disponible. El problema se presenta en que dado que el operador se presenta en un extremo de la \textit{expresion}, entonces no tenemos forma de saber que operación le precede a cada elemento. Para lo cual se implementó una lista inherente a cada tipo de operación, de modo tal que permita alojar expresiones de forma recursiva y siempre aplique la misma operación a los miembros de su nivel (ver ejemplo en la Figura \ref{DEFINICION_LISTA}). Esta misma desambiguación fue realizada para las operaciones \textit{resta}, \textit{multiplicación} y \textit{división}. 
+
+\section{Implementación}
+\subsection{Parser Léxico}
+
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\REQUIRE $W$ es un puntero a un caracter del lenguaje
+\ENSURE $NUM$ si se encuentra un número, un caracter si se encuentra alguna otra cosa, error en caso contrario.
+
+\STATE consumir espacios en blanco de $W$
+\IF{$W$ es un dígito o un punto}
+	\STATE $NUM \leftarrow $leer numero en $W$
+	\RETURN $NUM$
+\ELSIF{$W$ es un caracter}
+	\RETURN $W$
+\ENDIF
+\RETURN error
+\end{algorithmic}
+\caption{BFS}\label{ALG:LEX_PARSER}
+\end{algorithm}
+
+\subsection{Variables}
+Las variables son almacenadas en un arreglo unidimensional de tipo double, Todas las variables si no han sido inicializadas tienen como valor por defecto 0. El tratamiento de la asignación se hace en la definición de \textit{variable}, de modo de mantener la coherencia del resto de la sintáxis.
+
+\section{Notas}
+\begin{itemize}
+\item Las fuentes de \textit{Blumenkranz}, el programa que implementa los algoritmos anteriormente descritos, está alojado en  \texttt{https://bitbucket.org/eregla/ecd2014-1/} al igual que la prueba y tarea anterior.
+\item El programa está licenciado bajo una licencia abierta MIT.
+\end{itemize}
+%\newpage
+%\bibliographystyle{alpha}
+%\bibliography{informe}
+\end{document}

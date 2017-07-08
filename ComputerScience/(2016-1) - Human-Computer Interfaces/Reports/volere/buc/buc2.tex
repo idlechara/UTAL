@@ -1,0 +1,447 @@
+
+\begin{table}[]
+\centering
+\caption{BUC_13}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & El moderador recibe un comentario sujeto a moderación.                                                         \\ \hline
+\textbf{BUC Name}       & Moderador recibe comentario sujeto a moderación                                                                \\ \hline
+\textbf{Triggers}       & Usuario Registrado                                                                                             \\ \hline
+\textbf{Precondiciones}  & El moderador debe tener el nivel de acceso requerido para recibir la notificación. Debe existir un comentario. \\ \hline
+\textbf{SH Interesados}  & Moderadores, Usuarios Registrados, Subsistema Usuarios y Permisos, Subsistema Mensajería, Administrador        \\ \hline
+Active SH      & Moderadores, Administrador                                                                                     \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                                                                                 \\ \hline
+1.             & Recibir una notificación de un nuevo comentario.                                                               \\ \hline
+2.             & Ingresar al módulo de moderación de comentarios.                                                               \\ \hline
+3.             & Recibir un nuevo comentario.                                                                                   \\ \hline
+E3.1           & No existe ningún comentario recibido.                                                                          \\ \hline
+A3.1           & Operación Cancelada.                                                                                           \\ \hline
+\textbf{Outcome}        & El moderador recibe un comentario sujeto a moderación.                                                         \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[]
+\centering
+\caption{BUC_14}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & El Moderador decide aceptar o rechazar un comentario                                                                   \\ \hline
+\textbf{BUC Name}       & Moderador acepta o rechaza un comentario                                                                               \\ \hline
+\textbf{Triggers}       & Moderador                                                                                                              \\ \hline
+\textbf{Precondiciones} & El moderador debe tener el nivel de acceso requerido para poder realizar la operación. Debe existir un comentario.     \\ \hline
+\textbf{SH Interesados} & Moderadores, Usuarios Registrados, Subsistema Usuarios y Permisos, Subsistema Mensajería, Administrador                \\ \hline
+Active SH                 & Usuarios Registrados, Moderadores o Administrador                                                                      \\ \hline
+\multicolumn{2}{|l|}{\textbf{Escenario}}                                                                                                                    \\ \hline
+1.                        & Ingresar al módulo de moderación de comentarios.                                                                       \\ \hline
+2.                        & Abrir un nuevo comentario a moderar.                                                                                   \\ \hline
+E2.1                      & No existe ningún comentario recibido.                                                                                  \\ \hline
+3.                        & Revisar comentario.                                                                                                    \\ \hline
+4.                        & Aceptar Comentario.                                                                                                    \\ \hline
+A4.1                      & Rechazar Comentario.                                                                                                   \\ \hline
+A4.2                      & Operación Cancelada.                                                                                                   \\ \hline
+5.                        & Envía al usuario una notificación de comentario aceptado.                                                              \\ \hline
+E5.1                      & Envía al usuario una notificación de comentario rechazado.                                                             \\ \hline
+\textbf{Outcome}        & El usuario recibe una notificación de comentario aceptado. El comentario es mostrado en el proyecto donde se escribió. \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{BUC_15}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Moderador agrega filtro de lenguaje             \\ \hline
+\textbf{BUC Name}       & Agregar filtro de lenguaje                      \\ \hline
+\textbf{Triggers}       & Moderador                                       \\ \hline
+\textbf{Precondiciones}  & Moderador identificado                          \\ \hline
+\textbf{SH Interesados}  & Moderador, Administrador                        \\ \hline
+Active SH      & Moderador, Administrador                        \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                  \\ \hline
+1              & Solicitar ingreso de nuevo filtro               \\ \hline
+2              & Ingresar nueva palabra a filtrar                \\ \hline
+3              & Enviar el nuevo filtro                          \\ \hline
+E3.1           & La palabra ingresada ya existe                  \\ \hline
+\textbf{Outcome}        & Nueva palabra en la lista de filtro de palabras \\ \hline
+\end{tabular}%
+}
+\end{table}
+\clearpage
+\begin{table}[]
+\centering
+\caption{BUC_16}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Moderador modifica filtro de lenguaje                    \\ \hline
+\textbf{BUC Name}       & Modificar filtro de lenguaje                             \\ \hline
+\textbf{Triggers}       & Moderador                                                \\ \hline
+\textbf{Precondiciones}  & Moderador identificado. Moderador en la lista de filtros \\ \hline
+\textbf{SH Interesados}  & Moderador, Administrador                                 \\ \hline
+Active SH      & Moderador o Administrador                                \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                           \\ \hline
+1              & Seleccionar filtro a modificar                           \\ \hline
+2              & Modificar el filtro                                      \\ \hline
+3              & Enviar la modificacion del filtro                        \\ \hline
+E3.1           & La modificacion coincide con un filtro existente         \\ \hline
+E3.2           & No se ha podido realizar la modificacion                 \\ \hline
+\textbf{Outcome}        & Palabra seleccionada con modificacion realizada          \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{BUC_17}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Moderador ingresa el sistema                                                                           \\ \hline
+\textbf{BUC Name}       & Ingreso al sistema                                                                                     \\ \hline
+\textbf{Triggers}       & Moderador                                                                                              \\ \hline
+\textbf{Precondiciones}  & Moderador con cuenta en el sistema                                                                     \\ \hline
+\textbf{SH Interesados}  & Moderador, Administrador                                                                               \\ \hline
+Active SH      & Moderador o Administrador                                                                              \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                                                                         \\ \hline
+1.             & Ingresar al módulo de inicio de sesión                                                                 \\ \hline
+2.             & Ingresar nombre de usuario                                                                             \\ \hline
+3.             & Ingresar contraseña                                                                                    \\ \hline
+4.             & Iniciar sesión.                                                                                        \\ \hline
+A4.1           & Envía una notificación al usuarios acerca de sus datos que no coincidieron con los datos persistentes. \\ \hline
+A4.2           & Operación Cancelada.                                                                                   \\ \hline
+\textbf{Outcome}        & Usuario identificado en el sistema como moderador                                                      \\ \hline
+\end{tabular}%
+}
+\end{table}
+\clearpage
+\begin{table}[]
+\centering
+\caption{BUC_18}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Administrador recibe lista de proyectos                         \\ \hline
+\textbf{BUC Name}       & Revision lista de proyectos pendientes                          \\ \hline
+\textbf{Triggers}       & Administrador, proyecto a ser administrado                      \\ \hline
+\textbf{Precondiciones}  & Administrador identificado, proyecto en espera de moderacion    \\ \hline
+\textbf{SH Interesados}  & Usuario, Administrador                                          \\ \hline
+Active SH      & Administrador                                                   \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                                  \\ \hline
+1.             & Ingresar a proyectos en espera de evaluacion                    \\ \hline
+E1.1           & No hay proyectos en espera                                      \\ \hline
+2              & Seleccionar un proyecto de la lista                             \\ \hline
+E2.1           & Salir                                                           \\ \hline
+\textbf{Outcome}        & El usuario inicia sesion y es redirigido a la página principal. \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{BUC_19}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Administrador evalua proyecto                   \\ \hline
+\textbf{BUC Name}       & Evaluacion de proyectos                         \\ \hline
+\textbf{Triggers}       & Administrador, proyecto.                        \\ \hline
+\textbf{Precondiciones}  & Administrador, proyecto en espera de evaluacion \\ \hline
+\textbf{SH Interesados}  & Usuario, Administrador                          \\ \hline
+Active SH      & Administrador                                   \\ \hline
+\multicolumn{2}{|l|}{\textbf{Escenario}}                                  \\ \hline
+1.             & Descargar componentes del proyecto              \\ \hline
+2              & Revisar informacion del proyecto                \\ \hline
+3              & Revisar codigo fuente                           \\ \hline
+4              & Revisar ejecutable                              \\ \hline
+5              & Revisar documentacion                           \\ \hline
+6              & Aceptar proyecto                                \\ \hline
+A6.1           & Rechazar proyecto                               \\ \hline
+7              & Generar notificacion al ``dueño'' del proyecto    \\ \hline
+\textbf{Outcome}        & Proyecto publicado, notificacion generada       \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{BUC_20}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Administrador evalua solicitudes de registro de cuenta                         \\ \hline
+\textbf{BUC Name}       & Evaluacion de solicitudes de registro de cuenta                                \\ \hline
+\textbf{Triggers}       & Administrador, solicitud de registro                                           \\ \hline
+\textbf{Precondiciones}  & Administrador identificado, solicitud de registro elevada                      \\ \hline
+\textbf{SH Interesados}  & Usuario no registrado                                                          \\ \hline
+Active SH      & Administrador                                                                  \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                                                 \\ \hline
+1.             & Seleccionar mostrar la lista de solicitudes pendientes                         \\ \hline
+2              & Seleccionar una solicitud                                                      \\ \hline
+3              & Revisar solicitud                                                              \\ \hline
+4              & Aceptar solicitud                                                              \\ \hline
+A4.1           & Rechazar solicitud                                                             \\ \hline
+5              & Generar una notificacion al realizador de la solicitud                         \\ \hline
+\textbf{Outcome}        & Solicitud aceptada, nueva cuenta generada, notificacion enviada al solicitador \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{BUC_21}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Usuario Administrador decide agregar una etiqueta al proyecto en revisión                                                                                   \\ \hline
+\textbf{BUC Name}       & Usuario (Administrador) agrega una etiqueta                                                                                                                 \\ \hline
+\textbf{Triggers}       & Usuarios registrados                                                                                                                                        \\ \hline
+\textbf{Precondiciones}  & El usuario debe tener el nivel de acceso requerido                                                                                                          \\ \hline
+\textbf{SH Interesados}  & Usuarios registrados, Usuarios no registrados, Subsistema de busqueda                                                                                       \\ \hline
+Active SH      & Usuarios registrados, Administradores, Moderadores                                                                                                          \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                                                                                                                              \\ \hline
+1.-            & Ingresar al módulo de lista de proyectos pendientes                                                                                                         \\ \hline
+2.-            & Seleccionar un proyecto proyecto                                                                                                                            \\ \hline
+3.-            & Seleccionar y agregar etiquetas                                                                                                                             \\ \hline
+E.3            & Etiqueta se encuentra asignada al proyecto                                                                                                                  \\ \hline
+A.3.1          & Crear etiquetas                                                                                                                                             \\ \hline
+A.3.1.1        & Cancelar operación                                                                                                                                          \\ \hline
+E.3.2          & Etiqueta no creada por problemas de conexión                                                                                                                \\ \hline
+\textbf{Outcome}        & Usuario agrega etiquetas pertinentes a un proyecto en evaluación. Al momento de guardar la informacion las etiquetas quedan ancladas al perfil del proyecto \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\caption{BUC_22}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Usuario Administrador decide agregar una categoría al proyecto en revisión                                                                                    \\ \hline
+\textbf{BUC Name}       & Usuario (Administrador) agrega una categoría                                                                                                                  \\ \hline
+\textbf{Triggers}       & Usuarios registrados                                                                                                                                          \\ \hline
+\textbf{Precondiciones}  & El usuario debe tener el nivel de acceso requerido                                                                                                            \\ \hline
+\textbf{SH Interesados}  & Usuarios registrados, Usuarios no registrados, Subsistema de busqueda                                                                                         \\ \hline
+Active SH      & Usuarios registrados, Administradores, Moderadores                                                                                                            \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                                                                                                                                \\ \hline
+1.-            & Ingresar al módulo de lista de proyectos pendientes                                                                                                           \\ \hline
+2.-            & Seleccionar un proyecto pendiente                                                                                                                             \\ \hline
+3.-            & Seleccionar y agregar categorias                                                                                                                              \\ \hline
+E.3            & Etiqueta se encuentra asignada al proyecto                                                                                                                    \\ \hline
+A.3.1          & Crear categoría                                                                                                                                               \\ \hline
+A.3.1.1        & Cancelar operación                                                                                                                                            \\ \hline
+E.3.1          & Categoría no enviada por problemas de conexión                                                                                                                \\ \hline
+\textbf{Outcome}        & Usuario agrega categorías pertinentes a un proyecto en evaluación. Al momento de guardar la informacion las categorías quedan ancladas al perfil del proyecto \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\caption{BUC_23}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Usuario modifica una etiqueta                      \\ \hline
+\textbf{BUC Name}       & Modificacion de etiquetas                          \\ \hline
+\textbf{Triggers}       & Administrador                                      \\ \hline
+\textbf{Precondiciones}  & Administrador identificado                         \\ \hline
+\textbf{SH Interesados}  & Administrador                                      \\ \hline
+Active SH      & Administrador                                      \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                     \\ \hline
+1.-            & Seleccionar la etiqueta                            \\ \hline
+2.-            & Ingresar nuevo valor de la etiqueta                \\ \hline
+3.-            & Confirmar modificacion de la etiqueta              \\ \hline
+E.3            & El nuevo valor coincide con una etiqueta existente \\ \hline
+\textbf{Outcome}        & Categoria borrada                                  \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\caption{BUC_24}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Usuario modifica categoria                          \\ \hline
+\textbf{BUC Name}       & Modificacion de categoria                           \\ \hline
+\textbf{Triggers}       & Administrador                                       \\ \hline
+\textbf{Precondiciones}  & Administrador identificado, categoria existente     \\ \hline
+\textbf{SH Interesados}  & Administrador                                       \\ \hline
+Active SH      & Administrador                                       \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                                     \\ \hline
+1.-            & Seleccionar categoria                               \\ \hline
+2.-            & Ingresar nuevo label de la categoria                \\ \hline
+3              & Agregar/quitar categorias hijo                      \\ \hline
+4              & Confirmar modificacion de la categoria              \\ \hline
+E4.1           & El nuevo valor coincide con una categoria existente \\ \hline
+\textbf{Outcome}        & Categoria modificada                                \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\caption{BUC_25}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Usuario modifica visibilidad de proyecto                \\ \hline
+\textbf{BUC Name}       & Cambio de visibilidad de proyecto                       \\ \hline
+\textbf{Triggers}       & Administrador                                           \\ \hline
+\textbf{Precondiciones}  & Administrador identificado, proyecto registrado         \\ \hline
+\textbf{SH Interesados}  & Administrador                                           \\ \hline
+Active SH      & Administrador                                           \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                          \\ \hline
+1.-            & Seleccionar proyecto                                    \\ \hline
+2.-            & Cambiar visibilidad Publico/Privado                     \\ \hline
+3.-            & Confirmar cambio de visibilidad                         \\ \hline
+A3.1           & Cancerlar cambio de visibilidad                         \\ \hline
+E3.2           & Enviar notificacion al ``dueño'' del proyecto             \\ \hline
+\textbf{Outcome}        & Proyecto con visibilidad cambiada, notificacion enviada \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\caption{BUC_26}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & El administrador decide modificar cuenta.                                                                                          \\ \hline
+\textbf{BUC Name}       & Administrador modifica cuenta                                                                                                      \\ \hline
+\textbf{Triggers}       & Administrador                                                                                                                      \\ \hline
+\textbf{Precondiciones}  & El administrador debe tener el nivel de acceso requerido para poder realizar la operación. Debe existir un usuario para modificar. \\ \hline
+\textbf{SH Interesados}  & Administradores, Usuarios Registrados, Subsistema Usuarios y Permisos, Subsistema Mensajería                                       \\ \hline
+Active SH      & Usuarios Registrados, Administradores.                                                                                             \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                                                                                                     \\ \hline
+1.             & Buscar una cuenta de usuario.                                                                                                      \\ \hline
+2.             & Modificar correo                                                                                                                   \\ \hline
+A2.1           & No modificar correo                                                                                                                \\ \hline
+3              & Modificar afiliacion                                                                                                               \\ \hline
+A3.1           & No modificar afiliacion                                                                                                            \\ \hline
+4              & Modificar estado Habilitado/Deshabilitado                                                                                          \\ \hline
+A4.1           & No modificar estado                                                                                                                \\ \hline
+5              & Enviar los cambios efectuados.                                                                                                     \\ \hline
+A5.1           & Cancelar operacion                                                                                                                 \\ \hline
+6              & Enviar una notificación al usuario sobre la cuenta modificada.                                                                     \\ \hline
+\textbf{Outcome}        & Cuenta modificada, usuario notificado                                                                                              \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{BUC_27}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Administrador configura instanciado de proyecto   \\ \hline
+\textbf{BUC Name}       & Configuracion de instanciado de proyectos         \\ \hline
+\textbf{Triggers}       & Administrador                                     \\ \hline
+\textbf{Precondiciones}  & Administrador identificado, proyecto seleccionado \\ \hline
+\textbf{SH Interesados}  & Administrador, UsuarioS                           \\ \hline
+Active SH      & Administrador                                     \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                    \\ \hline
+1.             & Ingresar a configuracion de instanciado           \\ \hline
+2.             & Seleccionar sistema operativo necesario           \\ \hline
+3              & Instalar programas necesarios                     \\ \hline
+4              & Instalar librerias necesarias                     \\ \hline
+5              & Realizar prueba de ejecucion                      \\ \hline
+E5.1           & La ejecucion no se pudo realizar                  \\ \hline
+6              & Enviar configuracion                              \\ \hline
+E6.1           & La configuracion no es valida                     \\ \hline
+\textbf{Outcome}        & Instanciado de proyecto configurado               \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{BUC_28}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Administrador borra categoria                     \\ \hline
+\textbf{BUC Name}       & Borrado de categoria                              \\ \hline
+\textbf{Triggers}       & Administrador                                     \\ \hline
+\textbf{Precondiciones}  & Administrador idefentificado                      \\ \hline
+\textbf{SH Interesados}  & Administrador                                     \\ \hline
+Active SH      & Administrador                                     \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                    \\ \hline
+1              & Ingresar al listado de categorias                 \\ \hline
+2              & Seleccionar la categoria                          \\ \hline
+3              & Seleccionar borrar categoria                      \\ \hline
+4              & Ver listado de proyectos afectados por el borrado \\ \hline
+5              & Confirmar borrado de la categoria                 \\ \hline
+E5.1           & La categoria no se pudo borrar                    \\ \hline
+\textbf{Outcome}        & Categoria borrada                                 \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{BUC_29}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Administrador borra etiqueta     \\ \hline
+\textbf{BUC Name}       & Borrado de etiquetas             \\ \hline
+\textbf{Triggers}       & Administrador                    \\ \hline
+\textbf{Precondiciones}  & Administrador idefentificado     \\ \hline
+\textbf{SH Interesados}  & Administrador                    \\ \hline
+Active SH      & Administrador                    \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                   \\ \hline
+1.             & Seleccionar la etiqueta          \\ \hline
+2.             & Seleccionar borrar etiqueta      \\ \hline
+3.             & Confirmar borrado de la etiqueta \\ \hline
+E3.1           & La etiqueta no se pudo borrar    \\ \hline
+\textbf{Outcome}        &                                  \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{BUC_30}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{3cm}|p{7cm}|}
+\hline
+\textbf{Business Event} & Administrador modifica proyecto en espera de revision      \\ \hline
+\textbf{BUC Name}       & Modificacion de proyectos en revision                      \\ \hline
+\textbf{Triggers}       & Administrador, proyecto en necesidad de modificacion       \\ \hline
+\textbf{Precondiciones}  & Administrador identificado, proyecto en espera de revision \\ \hline
+\textbf{SH Interesados}  & Usuario registrado, Administrador                          \\ \hline
+Active SH      & Administrador                                              \\ \hline
+\multicolumn{2}{|l|}{\textbf{\textbf{Escenario}}}                                             \\ \hline
+1.             & Realizar cambios en la descripcion del proyecto            \\ \hline
+A1.1           & Dejar descripcion sin cambios                              \\ \hline
+2              & Subir nuevo codigo fuente                                  \\ \hline
+A2.1           & Quitar codigo fuente                                       \\ \hline
+A2.2           & Dejar codigo fuente actual                                 \\ \hline
+3              & Subir nuevos ejecutables                                   \\ \hline
+A3.1           & Quitar ejecutables                                         \\ \hline
+A3.2           & Dejar ejecutables intactos                                 \\ \hline
+4              & Subir nueva documentacion                                  \\ \hline
+A4.1           & Quitar documentacion                                       \\ \hline
+A4.2           & Dejar documentacion actual                                 \\ \hline
+5              & Confirmar modificacion                                     \\ \hline
+6              & Enviar notificacion al usuario de modificacion realizada   \\ \hline
+\textbf{Outcome}        & Proyecto modificado, usuario notificado                    \\ \hline
+\end{tabular}%
+}
+\end{table}

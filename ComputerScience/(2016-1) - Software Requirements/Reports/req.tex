@@ -1,0 +1,282 @@
+\documentclass{scrreprt}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage{tabularx}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{framed}
+\usepackage[section]{placeins}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{etoolbox}
+\usepackage{ifthen}
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
+\hypersetup{
+    pdftitle={Especificación de requisitos de software},    % title
+    pdfauthor={autores},                     % author
+    pdfsubject={TeX and LaTeX},                        % subject of the document
+    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+}%
+\def\myversion{1.0 }
+\title{%
+\flushright
+\rule{16cm}{5pt}\vskip1cm
+\Huge{ESPECIFICACIÓN DE REQUISITOS DE\\SOFTWARE}\\
+\vspace{2cm}
+para\\
+\vspace{1.7cm}
+Librería de Software Interna\\
+\vspace{1.7cm}
+\LARGE{Entrega 1.0\\}
+\vspace{1.7cm}
+\LARGE{Version \myversion en proceso de aprobación\\}
+\vspace{1.7cm}
+Preparado por Reinaldo Jeréz,\\Daniela Paredes, Erik Regla y Yorch Sepúlveda\\
+\vfill
+\rule{16cm}{5pt}
+}
+\date{}
+\input{volere/volere.tex}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+% %\chapter*{Revision History}
+% \chapter{Introducción}
+% \input{volere/misc/introduccion.tex}
+% \chapter{Propósito del proyecto}
+% \input{volere/misc/proposito.tex}
+
+% \chapter{Los actores}
+% \input{volere/misc/actores.tex}
+
+
+% \chapter{Restricciones del proyecto}
+% \input{volere/misc/restricciones.tex}
+
+% %\chapter{Convención de nombres y terminología}
+% %\chapter{Hechos relevantes y supuestos}
+% %\section{Hechos relevantes}
+% %\section{Reglas del negocio}
+% %\section{Supuestos}
+% %\begin{enumerate}
+% %\item Asumimos que cuando el administrador elimina una cuenta de usuario, también se eliminan sus proyectos asociados. 
+% %\end{enumerate}
+
+% \chapter{Alcances del trabajo}
+% \input{volere/misc/alcances.tex}
+
+% \section{Casos de uso de negocio}
+% \subsection{Lista y resumen de casos de uso de negocio}
+% \input{volere/buc/buclist.tex}
+% \subsection{Casos de uso de negocio}
+% \input{volere/buc/buc.tex}
+% \input{volere/buc/buc2.tex}
+
+\chapter{Requerimientos}
+
+\begin{requirement}{9}{---}
+    \reqdescription{ El producto debe ser una aplicación móvil.}
+    \reqrationale{Se busca producir una aplicación portátil, y de rápido acceso.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{La aplicación debe ejecutarse en teléfonos inteligentes con Sistema Operativo Android.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+
+\begin{requirement}{9}{---}
+    \reqdescription{ La aplicación no debe requerir internet para su uso.}
+    \reqrationale{Se busca una aplicación móvil educativa, para que alumnos de enseñanza media puedan estudiar en cualquier lugar, y en algunos de ellos no hay conexión estable a internet.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{La aplicación se ejecuta sin necesidad de estar conectado a internet.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+
+\begin{requirement}{9}{---}
+    \reqdescription{El flujo entre las ventanas de la aplicación debe darse mediante solo 1 acción.}
+    \reqrationale{Se busca que la interfaz de la aplicación sea de transición sencilla.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Al presionar un botón, se debe realizar la transición de una ventana a otra.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+
+\begin{requirement}{9}{---}
+    \reqdescription{La aplicación permite ?jugar? cuestionarios sobre Biología.}
+    \reqrationale{Jugar es una de las formas más interactivas para aprender.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Para aprender sobre biología más didácticamente.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+
+\begin{requirement}{9}{---}
+    \reqdescription{Los cuestionarios están conformados por 10 preguntas.}
+    \reqrationale{Menos serían muy pocas y con más se pierde la noción.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Cada trivia requiere tener 10 preguntas.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+
+\begin{requirement}{9}{---}
+    \reqdescription{Una trivia se aprueba con 8 respuestas correctas.}
+    \reqrationale{Un 80\% de las respuestas correctas significa un aprendizaje significativo de la materia.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{El fin de la aplicación es que los alumnos aprehendan la mayor cantidad de conocimientos de biología, por ende un 80\% es significativo.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+
+\begin{requirement}{9}{---}
+    \reqdescription{Para desbloquear los niveles siguientes, el usuario debe aprobar 2 veces la trivia.}
+    \reqrationale{Comprueba que el alumno haya aprendido de manera íntegra los pilares del nivel en particular.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Aprobar un nivel de la trivia 2 veces, desbloquea el siguiente.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{El texto de la aplicación no debe ocupar tanto espacio y debe ser legible, a la vez.}
+    \reqrationale{En una aplicación móvil el espacio es un punto vital en el diseño de su interfaz, además, hacer respuestas no tiene sentido si no se pueden leer.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Un tamaño muy pequeño corresponde a 12sp, uno pequeño a 14sp, medio a 18sp y grande a 22sp.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{La aplicación debe ser compatible con versiones anteriores de Android.}
+    \reqrationale{Es necesario para aumentar los niveles de portabilidad que podría alcanzar.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{App se ejecuta en distintas versiones de Android.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{Los botones deben ser simples y atractivos.}
+    \reqrationale{Se busca un diseño simple e intuitivo que no requiera de ayuda externa.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Botones simples, llamativos, reconocible y fácilmente entendibles.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{Existen 4 niveles.}
+    \reqrationale{Se busca lograr una complejidad igual a la de enseñanza media.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Existen 4 niveles, 1ro Medio, 2do Medio, 3ro Medio y 4to Medio.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{9}{---}
+    \reqdescription{Las preguntas deben ir asociadas a los niveles.}
+    \reqrationale{Dado que cada nivel tiene una dificultad, las respuestas se agrupan por nivel al que pertenecen, el nivel está dado por los conocimientos impartidos por curso.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{No se repiten las preguntas por nivel.}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+
+\begin{requirement}{10}{---}
+    \reqdescription{Las preguntas deben mostrarse de distintas maneras a lo largo de la trivia.}
+    \reqrationale{El objetivo de mejorar la interfaz es modificar la forma en que se muestran las preguntas de la trivia.}
+    \reqsource{Renzo Angles}
+    \reqfitcriterion{Las preguntas se muestran de distintas formas?}
+    \reqsatisfaction{}{}
+    \reqdepencies{}{}
+    \reqdocuments{}
+    \reqhistory{}
+    %\label{RF:U:ELEVAR_SOLICITUD}
+\end{requirement}
+% \chapter{Requerimentos funcionales y de datos}
+% \section{Requisitos funcionales}
+% \input{volere/functional/user.tex}
+% \input{volere/functional/messaging.tex}
+% \input{volere/functional/project.tex}
+% \input{volere/functional/visualization.tex}
+% \input{volere/functional/search.tex}
+% \chapter{Requerimentos no funcionales}
+% \input{volere/nonfunctional/lookandfeel.tex}
+% \input{volere/nonfunctional/usability.tex}
+% \input{volere/nonfunctional/performance.tex}
+% \input{volere/nonfunctional/operational.tex}
+% \input{volere/nonfunctional/maintainabilityandportability.tex}
+% \input{volere/nonfunctional/security.tex}
+% \input{volere/nonfunctional/culturalandpolitical.tex}
+% \input{volere/nonfunctional/legal.tex}
+
+
+
+% %\chapter{Conflictos}
+% %\begin{enumerate}
+% %\item \reffr{RF:ELIMINACION_USUARIOS}
+% %\item \reffr{RF:ADMINISTRADOR_ATTRIB}
+% %\item \reffr{RF:MODIFICACION_SUBIDA} y \reffr{RF:MODIFICACION_PUBLICACION}
+% %\item \reffr{RNF:INSTANCIAR_TEMPORALMENTE} y \reffr{RF:SUBDOMINIO}
+% %\item \reffr{RF:RESTRICCION_FUENTE} y \reffr{RF:DESCARGA_COMPLETA}
+% %\end{enumerate}
+
+% \chapter{Casos de uso de producto}
+% \input{volere/puc/puclist.tex}
+% \input{volere/puc/puc.tex}
+
+% \chapter{Prototipos}
+% \input{volere/proto.tex}
+
+\end{document}

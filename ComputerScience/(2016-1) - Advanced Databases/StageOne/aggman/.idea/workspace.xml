@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="108b673c-f7d0-42e2-9539-10594012452e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../informe_t1/src/imgs/E2expbothdl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../informe_t1/src/imgs/E2expbothqueries.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../informe_t1/src/imgs/E2135cmp.png" afterPath="$PROJECT_DIR$/../informe_t1/src/imgs/E2135cmp.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../informe_t1/src/imgs/E2246cmp.png" afterPath="$PROJECT_DIR$/../informe_t1/src/imgs/E2246cmp.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../informe_t1/src/imgs/E4comp.png" afterPath="$PROJECT_DIR$/../informe_t1/src/imgs/E4comp.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../informe_t1/src/informe.pdf" afterPath="$PROJECT_DIR$/../informe_t1/src/informe.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../informe_t1/src/informe.synctex.gz" afterPath="$PROJECT_DIR$/../informe_t1/src/informe.synctex.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../informe_t1/src/informe.tex" afterPath="$PROJECT_DIR$/../informe_t1/src/informe.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../informe_t1/src/informe.aux" afterPath="$PROJECT_DIR$/../informe_t1/src/informe.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../informe_t1/src/informe.log" afterPath="$PROJECT_DIR$/../informe_t1/src/informe.log" />
+    </list>
+    <ignored path="aggman.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/aggman$main.coverage" NAME="main Coverage Results" MODIFIED="1461012510621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aggman$stage4.coverage" NAME="stage4 Coverage Results" MODIFIED="1461035583419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stage_3" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - icpcdb_non_indexed@10.211.55.11" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="postgres" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - icpcdb_non_indexed@10.211.55.11" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="aggman" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/filegen.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/dumper.py" />
+        <option value="$PROJECT_DIR$/commands/01_table_generation.sql" />
+        <option value="$PROJECT_DIR$/experiments.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9fbb9959-8d72-4444-936d-f66caf51c395/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9fbb9959-8d72-4444-936d-f66caf51c395/console_1.sql" />
+        <option value="$PROJECT_DIR$/stage_2/experiments.py" />
+        <option value="$PROJECT_DIR$/stage_2/experiments_2.py" />
+        <option value="$PROJECT_DIR$/stage_2/experiments_3py" />
+        <option value="$PROJECT_DIR$/commands/01_backupindexes.sql" />
+        <option value="$PROJECT_DIR$/commands/01_table_generation_btree.sql" />
+        <option value="$PROJECT_DIR$/commands/01_table_generation_hash.sql" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/exec.log_icpcdb_w_o_index" />
+        <option value="$PROJECT_DIR$/exec.log_icpcdb_hash_index" />
+        <option value="$PROJECT_DIR$/exec.log_icpcdb_full_index" />
+        <option value="$PROJECT_DIR$/exec.log_icpcdb_btree_index" />
+        <option value="$PROJECT_DIR$/stage_2/experiments_3.py" />
+        <option value="$PROJECT_DIR$/stage_3/stage4.py" />
+        <option value="$PROJECT_DIR$/stage_3/scripts/13_queries.sql" />
+        <option value="$PROJECT_DIR$/stage_3/scripts/14_queries_denormalized.sql" />
+        <option value="$PROJECT_DIR$/stage_3/migration.py" />
+        <option value="$PROJECT_DIR$/stage_3/scripts/15_final.sql" />
+        <option value="$USER_HOME$/Desktop/backup/temp/unzip.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aggman" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="true" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/backup/temp/unzip.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/stage_2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.stage4">
+    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="stage4" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stage_3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stage_3/stage4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="aggman" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aggman" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.main" />
+      <item index="1" class="java.lang.String" itemvalue="Python.stage4" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.stage4" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="108b673c-f7d0-42e2-9539-10594012452e" name="Default" comment="" />
+      <created>1459010906097</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1459010906097</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14453125" sideWeight="0.47722772" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19765624" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17264277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.52277225" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="100" width="1080" height="600" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22391559" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21779549" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/stage_3/scripts/14_queries_denormalized.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/13_queries.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="289" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_3/scripts/01_table_creation_denormalized.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="141" selection-start-line="6" selection-start-column="141" selection-end-line="6" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_3/scripts/13_queries.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_1/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4590">
+          <caret line="313" column="8" selection-start-line="313" selection-start-column="8" selection-end-line="314" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_2/experiments_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_2/experiments_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_2/experiments_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py" />
+    <entry file="file://$PROJECT_DIR$/main.py" />
+    <entry file="file://$PROJECT_DIR$/dumper.py" />
+    <entry file="file://$PROJECT_DIR$/filegen.py" />
+    <entry file="file://$PROJECT_DIR$/main.py" />
+    <entry file="file://$PROJECT_DIR$/dumper.py" />
+    <entry file="file://$PROJECT_DIR$/main.py" />
+    <entry file="file://$PROJECT_DIR$/dumper.py" />
+    <entry file="file://$PROJECT_DIR$/main.py" />
+    <entry file="file://$PROJECT_DIR$/filegen.py" />
+    <entry file="file:///usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/python2.7/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="274" column="0" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py" />
+    <entry file="file://$PROJECT_DIR$/experiments.py" />
+    <entry file="file://$PROJECT_DIR$/dumper.py" />
+    <entry file="uml://DATABASE/9fbb9959-8d72-4444-936d-f66caf51c395">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>9fbb9959-8d72-4444-936d-f66caf51c395</OriginalElement>
+          <nodes>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_range</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_description</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_sys_indexes</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_proc</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_cast</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_attribute</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_sys_tables</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_xact_sys_tables</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stats</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_seclabels</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_replication_slots</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_extension</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_event_trigger</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_foreign_table</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_am</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_statio_sys_indexes</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_depend</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_conversion</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_matviews</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_tablespace</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_index</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_statio_user_tables</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_amop</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_seclabel</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_available_extensions</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_ts_template</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_statio_sys_sequences</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_roles</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_views</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_largeobject</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_constraint</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_db_role_setting</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_available_extension_versions</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_user</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_xact_user_tables</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_default_acl</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_replication</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_archiver</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_prepared_xacts</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_language</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_shdepend</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_ts_config_map</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_cursors</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_xact_all_tables</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_tables</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_database</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_all_tables</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_pltemplate</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_operator</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_prepared_statements</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_settings</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_statio_all_sequences</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_all_indexes</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_user_mappings</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_authid</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_rules</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_collation</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_rewrite</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_foreign_data_wrapper</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_inherits</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_attrdef</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_opfamily</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_aggregate</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_group</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_user_functions</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_activity</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_enum</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_user_mapping</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_locks</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_shseclabel</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_statistic</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_amproc</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_opclass</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_indexes</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_bgwriter</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_statio_user_indexes</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_foreign_server</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_timezone_abbrevs</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_timezone_names</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_statio_user_sequences</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_auth_members</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_statio_all_tables</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_ts_parser</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_database_conflicts</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_ts_config</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_shadow</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_ts_dict</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_xact_user_functions</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_type</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_shdescription</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_user_tables</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_largeobject_metadata</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_trigger</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_user_indexes</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_statio_sys_tables</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_stat_database</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_namespace</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.VIEW:postgres.pg_catalog.pg_statio_all_indexes</node>
+            <node x="" y="">9fbb9959-8d72-4444-936d-f66caf51c395.TABLE:postgres.pg_catalog.pg_class</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.12475741613529248" x="1792.0" y="1794.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ce205a9a/9fbb9959-8d72-4444-936d-f66caf51c395/icpcdb_non_indexed.public.problems">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="ctid" enabled="false" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9fbb9959-8d72-4444-936d-f66caf51c395/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="228" selection-start-line="2" selection-start-column="228" selection-end-line="2" selection-end-column="228" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments.log" />
+    <entry file="file://$PROJECT_DIR$/stdout.log" />
+    <entry file="file://$PROJECT_DIR$/stage_2/experiments.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="63" selection-start-line="0" selection-start-column="0" selection-end-line="177" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9fbb9959-8d72-4444-936d-f66caf51c395/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_2/experiments_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-235">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/01_backupindexes.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="64" column="69" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exec.log_icpcdb_btree_index" />
+    <entry file="file://$PROJECT_DIR$/exec.log_icpcdb_w_o_index" />
+    <entry file="file://$PROJECT_DIR$/exec.log_icpcdb_hash_index" />
+    <entry file="file://$PROJECT_DIR$/icpcdb_hash_index.log" />
+    <entry file="file://$PROJECT_DIR$/exec.log_icpcdb_full_index" />
+    <entry file="file://$PROJECT_DIR$/commands/01_table_generation_hash.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/01_table_generation.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="78" selection-start-line="0" selection-start-column="78" selection-end-line="0" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/01_table_generation_btree.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_3/stage4.py" />
+    <entry file="file://$PROJECT_DIR$/stage_2/experiments_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3540">
+          <caret line="245" column="3" selection-start-line="245" selection-start-column="3" selection-end-line="245" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_3/scripts/15_final.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="4" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_3/migration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="102" column="70" selection-start-line="102" selection-start-column="70" selection-end-line="102" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_3/scripts/14_queries_denormalized.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/13_queries.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="289" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_3/scripts/01_table_creation_denormalized.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="141" selection-start-line="6" selection-start-column="141" selection-end-line="6" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_3/scripts/13_queries.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_1/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="313" column="8" selection-start-line="313" selection-start-column="8" selection-end-line="314" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/backup/temp/unzip.py" />
+  </component>
+</project>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1120,1475" id="Proyecto" metadata="uml2-1.0" initialized="true" scrolledX="-37" scrolledY="844" tag="1000" key="32303037303533312D313030302050726F796563746F2050726F6772612041762E2049492F6F74616B75">
+  <children xsi:type="editmodel:ClassEditModel" name="Sports" location="377,1131" size="252,93" id="Proyecto/Sports" runTimeClassModel="sport,categories,type">
+    <children xsi:type="editmodel:CompartmentEditModel" size="164,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="categories" id="Proyecto/Sports#categories"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sport" id="Proyecto/Sports#sport"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="type" id="Proyecto/Type@type+Proyecto/Sports@|Proyecto/Type#type"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="Proyecto/Type@type+Proyecto/Sports@" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="110,0" id="Proyecto/Type@type+Proyecto/Sports@|Proyecto/Sports#" attachSource="true" roleLabel="//@children.0/@sourceConnections.0/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="480,1112" size="0,12" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="type" location="65,105" id="Proyecto/Type@type+Proyecto/Sports@|Proyecto/Type#type" multiplicityLabel="//@children.0/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.0/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - type" location="494,1067" size="32,12" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="462,1067" size="18,12" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="Proyecto/Sports-Soyatec::Import->Proyecto/Type" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="252,15" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="114,105"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.0/@sourceConnections.1" name="Type" location="422,955" size="132,105" id="Proyecto/Type" runTimeClassModel="FULL%,AUDITIOR%,MISC%,EXTREME%">
+    <children xsi:type="editmodel:CompartmentEditModel" size="67,54">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="EXTREME" id="Proyecto/Type#EXTREME%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="FULL" id="Proyecto/Type#FULL%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="MISC" id="Proyecto/Type#MISC%"/>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" targetConnections="//@children.3/@sourceConnections.1" name="StrategyMode" location="570,915" size="181,87" id="Proyecto/StrategyMode" runTimeClassModel="TOURN%,REALTIME%,TURN%">
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,36">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="REALTIME" id="Proyecto/StrategyMode#REALTIME%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="TURN" id="Proyecto/StrategyMode#TURN%"/>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Strategy" location="692,774" size="211,93" id="Proyecto/Strategy" runTimeClassModel="playMode,strategy,plot">
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="playMode" id="Proyecto/PlayMode@playMode+Proyecto/Strategy@|Proyecto/PlayMode#playMode"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="plot" id="Proyecto/Strategy#plot"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="strategy" id="Proyecto/Strategy@strategy+Proyecto/Strategy@|Proyecto/Strategy#strategy"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="Proyecto/PlayMode@playMode+Proyecto/Strategy@" source="//@children.3" target="//@children.4" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="201,93" id="Proyecto/PlayMode@playMode+Proyecto/Strategy@|Proyecto/Strategy#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="playMode" location="0,10" id="Proyecto/PlayMode@playMode+Proyecto/Strategy@|Proyecto/PlayMode#playMode" multiplicityLabel="//@children.3/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.3/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - playMode" location="838,956" size="57,12" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="877,930" size="18,12" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="Proyecto/Strategy@strategy+Proyecto/Strategy@" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="strategy" location="29,93" id="Proyecto/Strategy@strategy+Proyecto/Strategy@|Proyecto/Strategy#strategy" attachSource="true" multiplicityLabel="//@children.3/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.3/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - strategy" location="728,874" size="51,12" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="696,874" size="18,12" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="151,0" id="Proyecto/Strategy@strategy+Proyecto/Strategy@|Proyecto/Strategy#" roleLabel="//@children.3/@sourceConnections.1/@children.2/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="714,896" size="0,12" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="Proyecto/Strategy-Soyatec::Import->Proyecto/PlayMode" source="//@children.3" target="//@children.4" targetEnd="//@children.3/@sourceConnections.2/@children.2" label="//@children.3/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="211,88" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="15,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" targetConnections="//@children.3/@sourceConnections.0 //@children.3/@sourceConnections.2" name="PlayMode" location="902,939" size="151,87" id="Proyecto/PlayMode" runTimeClassModel="INDIVIDUAL%,GROUP%">
+    <children xsi:type="editmodel:CompartmentEditModel" size="80,36">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="GROUP" location="9,75" id="Proyecto/PlayMode#GROUP%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="INDIVIDUAL" id="Proyecto/PlayMode#INDIVIDUAL%"/>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Shooter" location="720,1197" size="235,75" id="Proyecto/Shooter" runTimeClassModel="weapons,persona">
+    <children xsi:type="editmodel:CompartmentEditModel" size="157,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="persona" id="Proyecto/Persona@persona+Proyecto/Shooter@|Proyecto/Persona#persona"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="weapons" id="Proyecto/Shooter#weapons"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="Proyecto/Persona@persona+Proyecto/Shooter@" source="//@children.5" target="//@children.6" targetEnd="//@children.5/@sourceConnections.0/@children.2" label="//@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="90,0" id="Proyecto/Persona@persona+Proyecto/Shooter@|Proyecto/Shooter#" attachSource="true" roleLabel="//@children.5/@sourceConnections.0/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="803,1178" size="0,12" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="persona" location="75,87" id="Proyecto/Persona@persona+Proyecto/Shooter@|Proyecto/Persona#persona" multiplicityLabel="//@children.5/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.5/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - persona" location="817,1110" size="49,12" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="785,1110" size="18,12" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="Proyecto/Shooter-Soyatec::Import->Proyecto/Persona" source="//@children.5" target="//@children.6" targetEnd="//@children.5/@sourceConnections.1/@children.2" label="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="70,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="40,87"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.5/@sourceConnections.1" name="Persona" location="735,1016" size="151,87" id="Proyecto/Persona" runTimeClassModel="FIRST%,RD%,THIRD%,ST%">
+    <children xsi:type="editmodel:CompartmentEditModel" size="50,36">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="FIRST" id="Proyecto/Persona#FIRST%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="THIRD" id="Proyecto/Persona#THIRD%"/>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" targetConnections="//@children.10/@sourceConnections.1" name="Platform" location="807,313" size="167,447" id="Proyecto/Platform" runTimeClassModel="NGBA%,PC%,NGB%,SUPERNINTENDO%,VEDA%,PFP%,PSX%,ATARI%,NINTENDO64%,WINDING%,PS2%,PSP%,WII%,XBOX360%,NDS%,ANDROID%,SATURN%,XBOX%,MAC%,NDS3D%,GENESIS%,NDSI%">
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,396">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="ANDROID" id="Proyecto/Platform#ANDROID%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="ATARI" id="Proyecto/Platform#ATARI%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="GENESIS" id="Proyecto/Platform#GENESIS%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="MAC" id="Proyecto/Platform#MAC%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="NDS" id="Proyecto/Platform#NDS%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="NDS3D" id="Proyecto/Platform#NDS3D%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="NDSI" id="Proyecto/Platform#NDSI%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="NGB" id="Proyecto/Platform#NGB%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="NGBA" id="Proyecto/Platform#NGBA%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="NINTENDO64" id="Proyecto/Platform#NINTENDO64%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="PC" id="Proyecto/Platform#PC%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="PFP" id="Proyecto/Platform#PFP%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="PS2" id="Proyecto/Platform#PS2%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="PSP" id="Proyecto/Platform#PSP%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="PSX" id="Proyecto/Platform#PSX%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="SATURN" id="Proyecto/Platform#SATURN%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="SUPERNINTENDO" id="Proyecto/Platform#SUPERNINTENDO%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="VEDA" id="Proyecto/Platform#VEDA%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="WII" id="Proyecto/Platform#WII%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="WINDING" id="Proyecto/Platform#WINDING%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="XBOX" id="Proyecto/Platform#XBOX%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="XBOX360" id="Proyecto/Platform#XBOX360%"/>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.2" name="Evaluation" location="570,585" size="172,157" id="Proyecto/Evaluation" runTimeClassModel="vote(F),getWorstRank(),Evaluation(),getBestRank(),getAverageRank(),votation">
+    <children xsi:type="editmodel:CompartmentEditModel" size="149,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="votation" id="Proyecto/Evaluation#votation"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,90">
+      <children xsi:type="editmodel:MethodEditModel" name="Evaluation" id="Proyecto/Evaluation#Evaluation()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAverageRank" id="Proyecto/Evaluation#getAverageRank()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getBestRank" id="Proyecto/Evaluation#getBestRank()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWorstRank" id="Proyecto/Evaluation#getWorstRank()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="vote" id="Proyecto/Evaluation#vote(F)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="Proyecto/Evaluation@rating+Proyecto/Game@" source="//@children.8" target="//@children.10" targetEnd="//@children.8/@sourceConnections.0/@children.2" label="//@children.8/@sourceConnections.0/@children.0" sourceEnd="//@children.8/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="rating" location="73,0" id="Proyecto/Evaluation@rating+Proyecto/Game@|Proyecto/Evaluation#rating" attachSource="true" multiplicityLabel="//@children.8/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.8/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" # rating" location="650,566" size="42,12" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="618,566" size="18,12" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="284,142" id="Proyecto/Evaluation@rating+Proyecto/Game@|Proyecto/Game#" roleLabel="//@children.8/@sourceConnections.0/@children.2/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="606,453" size="0,12" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" targetConnections="//@children.10/@sourceConnections.0 //@children.10/@sourceConnections.3" name="Classification" location="-15,390" size="199,177" id="Proyecto/Classification" runTimeClassModel="R3%,R18%,R5%,RP%,R15%,R10%,ALL%">
+    <children xsi:type="editmodel:CompartmentEditModel" size="38,126">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="ALL" id="Proyecto/Classification#ALL%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="R10" id="Proyecto/Classification#R10%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="R15" id="Proyecto/Classification#R15%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="R18" id="Proyecto/Classification#R18%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="R3" id="Proyecto/Classification#R3%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="R5" location="57,558" id="Proyecto/Classification#R5%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="RP" id="Proyecto/Classification#RP%"/>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.8/@sourceConnections.0" name="Game" location="315,330" size="284,147" id="Proyecto/Game" runTimeClassModel="platform,maxPlayers,description,name,classification,rating">
+    <children xsi:type="editmodel:CompartmentEditModel" size="170,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="classification" id="Proyecto/Classification@classification+Proyecto/Game@|Proyecto/Classification#classification"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="description" id="Proyecto/Game#description"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="maxPlayers" id="Proyecto/Game#maxPlayers"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="Proyecto/Game#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="platform" id="Proyecto/Game#platform"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rating" id="Proyecto/Evaluation@rating+Proyecto/Game@|Proyecto/Evaluation#rating"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="Proyecto/Classification@classification+Proyecto/Game@" source="//@children.10" target="//@children.9" targetEnd="//@children.10/@sourceConnections.0/@children.2" label="//@children.10/@sourceConnections.0/@children.0" sourceEnd="//@children.10/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,103" id="Proyecto/Classification@classification+Proyecto/Game@|Proyecto/Game#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="classification" location="199,43" id="Proyecto/Classification@classification+Proyecto/Game@|Proyecto/Classification#classification" multiplicityLabel="//@children.10/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" # classification" location="191,414" size="73,12" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="191,440" size="18,12" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="Proyecto/Game-Soyatec::Import->Proyecto/Platform" source="//@children.10" target="//@children.7" targetEnd="//@children.10/@sourceConnections.1/@children.2" label="//@children.10/@sourceConnections.1/@children.0" sourceEnd="//@children.10/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="284,73" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,90"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="Proyecto/Game-Soyatec::Import->Proyecto/Evaluation" source="//@children.10" target="//@children.8" targetEnd="//@children.10/@sourceConnections.2/@children.2" label="//@children.10/@sourceConnections.2/@children.0" sourceEnd="//@children.10/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="269,147" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="14,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="Proyecto/Game-Soyatec::Import->Proyecto/Classification" source="//@children.10" target="//@children.9" targetEnd="//@children.10/@sourceConnections.3/@children.2" label="//@children.10/@sourceConnections.3/@children.0" sourceEnd="//@children.10/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,107" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="199,72"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.13/@sourceConnections.2" name="Characteristics" location="88,1125" size="209,147" id="Proyecto/Characteristics" runTimeClassModel="inteligence,stranght,luck,vitaly,dextrity,agility">
+    <children xsi:type="editmodel:CompartmentEditModel" size="88,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="agility" id="Proyecto/Characteristics#agility"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dextrity" id="Proyecto/Characteristics#dextrity"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="inteligence" id="Proyecto/Characteristics#inteligence"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="luck" id="Proyecto/Characteristics#luck"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="stranght" id="Proyecto/Characteristics#strenght"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="vitaly" id="Proyecto/Characteristics#vitaliy"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="Proyecto/Characteristics@characteristics+Proyecto/Rol@" source="//@children.11" target="//@children.13" targetEnd="//@children.11/@sourceConnections.0/@children.2" label="//@children.11/@sourceConnections.0/@children.0" sourceEnd="//@children.11/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="characteristics" location="4,0" id="Proyecto/Characteristics@characteristics+Proyecto/Rol@|Proyecto/Characteristics#characteristics" attachSource="true" multiplicityLabel="//@children.11/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.11/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ characteristics" location="2,1106" size="83,12" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="99,1106" size="18,12" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="84,121" id="Proyecto/Characteristics@characteristics+Proyecto/Rol@|Proyecto/Rol#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Arcade" location="45,759" size="241,75" id="Proyecto/Arcade" runTimeClassModel="dimension,stager">
+    <children xsi:type="editmodel:CompartmentEditModel" size="125,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="dimension" id="Proyecto/Dimension@dimension+Proyecto/Arcade@|Proyecto/Dimension#dimension"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="stager" id="Proyecto/Arcade#stages"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="Proyecto/Dimension@dimension+Proyecto/Arcade@" source="//@children.12" target="//@children.14" targetEnd="//@children.12/@sourceConnections.0/@children.2" label="//@children.12/@sourceConnections.0/@children.0" sourceEnd="//@children.12/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="241,50" id="Proyecto/Dimension@dimension+Proyecto/Arcade@|Proyecto/Arcade#" attachSource="true" roleLabel="//@children.12/@sourceConnections.0/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="293,790" size="0,12" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dimension" location="0,24" id="Proyecto/Dimension@dimension+Proyecto/Arcade@|Proyecto/Dimension#dimension" multiplicityLabel="//@children.12/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.12/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - dimension" location="336,790" size="59,12" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="377,816" size="18,12" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="Proyecto/Arcade-Soyatec::Import->Proyecto/Dimension" source="//@children.12" target="//@children.14" targetEnd="//@children.12/@sourceConnections.1/@children.2" label="//@children.12/@sourceConnections.1/@children.0" sourceEnd="//@children.12/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="241,70" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,57"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.0" name="Rol" location="88,936" size="249,121" id="Proyecto/Rol" runTimeClassModel="skills,dimension,printCharacteristics(),characteristics">
+    <children xsi:type="editmodel:CompartmentEditModel" size="166,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="characteristics" id="Proyecto/Characteristics@characteristics+Proyecto/Rol@|Proyecto/Characteristics#characteristics"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dimension" id="Proyecto/Dimension@dimension+Proyecto/Rol@|Proyecto/Dimension#dimension"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="skills" id="Proyecto/Rol#skills"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,18">
+      <children xsi:type="editmodel:MethodEditModel" name="printCharacteristics" id="Proyecto/Rol#printCharacteristics()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="Proyecto/Dimension@dimension+Proyecto/Rol@" source="//@children.13" target="//@children.14" targetEnd="//@children.13/@sourceConnections.0/@children.2" label="//@children.13/@sourceConnections.0/@children.0" sourceEnd="//@children.13/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="249,10" id="Proyecto/Dimension@dimension+Proyecto/Rol@|Proyecto/Rol#" attachSource="true" roleLabel="//@children.13/@sourceConnections.0/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="344,927" size="0,12" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dimension" location="10,87" id="Proyecto/Dimension@dimension+Proyecto/Rol@|Proyecto/Dimension#dimension" multiplicityLabel="//@children.13/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.13/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ dimension" location="419,879" size="63,12" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="387,879" size="18,12" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="Proyecto/Rol-Soyatec::Import->Proyecto/Dimension" source="//@children.13" target="//@children.14" targetEnd="//@children.13/@sourceConnections.1/@children.2" label="//@children.13/@sourceConnections.1/@children.0" sourceEnd="//@children.13/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="244,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,72"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="Proyecto/Rol-Soyatec::Import->Proyecto/Characteristics" source="//@children.13" target="//@children.11" targetEnd="//@children.13/@sourceConnections.2/@children.2" label="//@children.13/@sourceConnections.2/@children.0" sourceEnd="//@children.13/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="104,121" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="104,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" targetConnections="//@children.12/@sourceConnections.0 //@children.12/@sourceConnections.1 //@children.13/@sourceConnections.0 //@children.13/@sourceConnections.1" name="Dimension" location="402,785" size="162,87" id="Proyecto/Dimension" runTimeClassModel="TWO%,THREE%,TWODIMENSIONS%,im%">
+    <children xsi:type="editmodel:CompartmentEditModel" size="53,36">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="THREE" id="Proyecto/Dimension#THREE%"/>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="TWO" id="Proyecto/Dimension#TWO%"/>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=7;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler>
+      <guides position="-32"/>
+      <guides position="1077"/>
+    </topRuler>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

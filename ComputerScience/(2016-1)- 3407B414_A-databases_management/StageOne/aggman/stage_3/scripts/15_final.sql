@@ -1,0 +1,5 @@
+SELECT contestants.first_name AS coach_first_name, contestants.last_name AS coach_last_name, teams.name AS actual_team_name, teams.institution AS actual_team_institution, coach_teams.institution AS former_team_institution, coach_teams.name AS former_team_name FROM public.contestants, public.team_members, public.teams, public.teams coach_teams WHERE contestants.id = team_members.contestant_id AND team_members.team_id = coach_teams.id AND teams.coach_id = contestants.id LIMIT 50;
+SELECT coach_first_name, coach_last_name, actual_team_name, actual_team_institution, former_team_institution, former_team_name FROM non_materialized LIMIT 50;
+SELECT coach_first_name, coach_last_name, actual_team_name, actual_team_institution, former_team_institution, former_team_name FROM materialized LIMIT 50;;
+SELECT stored_procedure() LIMIT 50;
+SELECT stored_procedure_params('1989-11-27') LIMIT 50;

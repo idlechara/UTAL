@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=ciudad\ a\u00F1oActual\ nombreDelTorneo
+comment0.target=Marcador(java.lang.String,\ int,\ java.lang.String)
+comment0.text=\r\n\ Constructor\ por\ defecto\ de\ la\ clase\ marcador\r\n\ @param\ ciudad\ la\ ciudad\ donde\ se\ efectuara\ el\ torneo\r\n\ @param\ a\u00F1oActual\ el\ a\u00F1o\ en\ el\ que\ se\ efectua\r\n\ @param\ nombreDelTorneo\ el\ nombre\ del\ torneo\r\n
+comment1.params=equipo
+comment1.target=void\ addEquipo(Team)
+comment1.text=\r\n\ agrega\ un\ equipo\ a\ la\ lista\ del\ torneo\r\n\ @param\ equipo\ el\ equipo\ a\ a\u00F1adir\r\n
+comment2.params=
+comment2.target=Team\ getWinner()
+comment2.text=\r\n\ recupera\ el\ equipo\ que\ gana\ el\ torneo\r\n\ @return\ el\ equipo\ ganador\r\n
+numComments=3

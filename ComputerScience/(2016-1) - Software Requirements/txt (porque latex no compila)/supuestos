@@ -1,0 +1,5 @@
+\section{Supuestos}
+\begin{enumerate}
+\item Asumimos que cuando el administrador elimina una cuenta de usuario, también se eliminan sus proyectos asociados. 
+\item Se asumió que cuando el administrador crea una cuenta, el sistema verificará los datos antes de asignarse privilegios.
+\end{enumerate}
