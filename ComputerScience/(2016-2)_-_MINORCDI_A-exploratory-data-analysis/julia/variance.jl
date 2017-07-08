@@ -1,1 +1,0 @@
-df = readtable("data.csv")

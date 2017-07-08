@@ -1,9 +1,0 @@
-\select@language {spanish}
-\contentsline {section}{\numberline {1}Descripci\'on de la situaci\'on}{3}
-\contentsline {section}{\numberline {2}Principales falencias}{3}
-\contentsline {section}{\numberline {3}Repercusi\'on de fallos en el departamento de ``Control de entradas'' en la producci\'on}{3}
-\contentsline {section}{\numberline {4}Responsable de estos fallos}{4}
-\contentsline {section}{\numberline {5}Medidas a tomar}{4}
-\contentsline {subsection}{\numberline {5.1}Delegaci\'on}{4}
-\contentsline {subsection}{\numberline {5.2}Implementaci\'on}{4}
-\contentsline {subsection}{\numberline {5.3}Control}{4}

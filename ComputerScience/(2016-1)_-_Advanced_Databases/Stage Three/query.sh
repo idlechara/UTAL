@@ -1,1 +1,0 @@
-curl http://192.168.99.100:32768/solr/gettingstarted/query?q="title_t:black"&fl="author_s,title_t"
