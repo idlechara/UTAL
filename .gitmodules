@@ -1,23 +1,18 @@
 [submodule "ComputerScience/(2017-1)_SoftwareBuilding/Sistema_Asignacion_Salas"]
 	path = ComputerScience/(2017-1)_SoftwareBuilding/Sistema_Asignacion_Salas
 	url = git@github.com:KukyNekoi/Sistema_Asignacion_Salas.git
-
-[submodule "Non Course-Related/bicicletero"]
-	path = Non Course-Related/bicicletero
-	url = git@bitbucket.org:eregla/utal-bicicletero.git
-
 [submodule "ComputerScience/(2017-1)_-_Tech_Project_Management/unicornio_furioso"]
 	path = ComputerScience/(2017-1)_-_Tech_Project_Management/unicornio_furioso
 	url = git@github.com:KukyNekoi/UnicornioFurioso.git
-
 [submodule "ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-core"]
 	path = ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-core
 	url = git@gitlab.com:UTALCDS-2017-1/veterinuber-core.git
-
 [submodule "ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-db"]
 	path = ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-db
 	url = git@gitlab.com:UTALCDS-2017-1/veterinuber-db.git
-
 [submodule "ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-web"]
 	path = ComputerScience/(2017-1)_SoftwareBuilding/veterinuber/veterinuber-web
 	url = git@gitlab.com:UTALCDS-2017-1/veterinuber-web.git
+[submodule "Non Course-Related/bicicletero"]
+	path = Non Course-Related/bicicletero
+	url = git@bitbucket.org:eregla/utal-bicicletero.git
