@@ -1,0 +1,67 @@
+enable
+    ! Se entiende que son 800 usuarios compartidos entre cableado e inalambrico
+    ! file prompt quiet
+
+    vlan database
+        ! vlan 1 name infraestructura
+        ! vlan 2 name oficinas
+        ! vlan 3 name contabilidad
+        ! vlan 4 name administracion
+        ! vlan 5 name callcenter
+        ! vlan 6 name datacenter
+        vlan 7 name telefonia
+        ! vlan 8 name invitado
+    exit
+
+    configure terminal
+        hostname router_curico
+
+        ip dhcp pool telefonia
+            network 172.17.48.0 255.255.248.0
+            default-router 172.17.48.1
+            option 150 ip 172.17.48.1
+        exit
+        ip dhcp excluded-address 172.17.48.1
+
+        ! Se deja desactivada debido a eliminación de la encapsulación
+        interface fastEthernet 0/0
+            no ip address
+            duplex auto
+            speed auto
+            no shutdown 
+        exit
+
+        interface fastEthernet 0/0.7
+            description Utilizada para redes de telefonia
+            encapsulation dot1Q 7
+            ip address 172.17.48.1 255.255.248.0
+            ip helper-address 172.48.0.1
+            no shutdown 
+        exit
+        
+        telephony-service
+            max-dn 5
+            max-ephones 5
+            ip source-address 172.17.48.1 port 2000
+            auto assign 1 to 6
+        exit
+
+        ephone-dn 1
+            number 12341
+        exit
+        ephone-dn 2
+            number 12342
+        exit
+        ephone-dn 3
+            number 12343
+        exit
+        ephone-dn 4
+            number 12344
+        exit
+        ephone-dn 5
+            number 12345
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit

@@ -1,0 +1,158 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[latin1]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{listings}
+% \usepackage{placeins}
+\usepackage[section]{placeins}
+\graphicspath{ {images/} }
+
+\title{{\bf Redes de computadoras}\\Informe laboratorio}
+
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{12 de Julio del 2017}
+\lstset{language=SH, 
+		basicstyle=\ttfamily\tiny, 
+		showspaces=false, 
+		numbers=left, 
+		breaklines=true,
+		frame=shadowbox
+		}
+
+\begin{document}
+\maketitle
+
+\section{Introducción}
+En este informe se cubrirán los aspectos no obvios de los scripts involucrados en la simulación con PacketTracer así como las justificaciones de topología.
+
+\section{Aislamiento e interconectividad}
+\subsection{WAN}
+No existe aislamiento por parte de las WAN, en estricto rigor es posible acceder a cualquier equipo desde cualquier red.
+\subsection{LAN}
+Subnetting + VLAN. En el caso de la red para curicó se utilizó CIDR para usar una IP de la familia de las clase B pero subneteada. Para la VLAN se habilita InterVLANRouting limitada por una lista de control de accesos en cada uno de los enrutadores. Por motivos de simpleza, la limitación es sobre el tráfico saliente.
+
+Todas las VLAN están replicadas en todos los switch y routers con los mísmos identificadores, esto quiere decir, que si la VLAN de cableado para oficina es la 1, el mismo id es utilizado en todas las redes. Esto no implica que los rangos de IP asignados sean los mismos ni que se permita una interconexión entre ellos. Cada uno de los límites de asignación por DHCP son hechos por piso y no por VLAN, de este modo, propagar las conexiones y limites es más sencillo.
+
+Las vlan utilizadas se listan a continuación:
+\begin{itemize}
+\item \textbf{VLAN 1: Infraestructura. } Esta se utiliza para los servidores DHCP y DNS. No tiene asignación de IP dinámica. IP asignada por DHCP y tiene capacidad máxima de 800 equipos.
+\item \textbf{VLAN 2: Oficina. } Esta se utiliza para la red cableada de las oficinas. IP asignada por DHCP
+\item \textbf{VLAN 3: Contabilidad. } Esta se utiliza para la red cableada del piso de contabilidad. IP asignada por DHCP y tiene capacidad máxima de 800 equipos.
+\item \textbf{VLAN 4: Admnistración.} Esta se utiliza para la red cableada del piso de administracion. IP asignada por DHCP y tiene capacidad máxima de 800 equipos.
+\item \textbf{VLAN 5: Callcenter. } Esta se utiliza para la red cableada del piso de callcenter. IP asignada por DHCP y tiene capacidad máxima de 800 equipos.
+\item \textbf{VLAN 6: Datacenter. } Esta se utiliza para la red cableada del piso de datacenter. IP asignada por DHCP y tiene capacidad máxima de 800 equipos.
+\item \textbf{VLAN 7: Telefonia. } Permite la asignación de telefonos IP. En el caso de la red de Curicó existe un enrutador dedicado para la asignación de IPs y números de telefono, en las otras sucursales la asignación se realiza por DHCP y el servicio de telefonía está cargado sobre el router. Esto es porque se espera mucho menos tráfico en estas que en la casa matriz.
+\item \textbf{VLAN 8: Invitado} Permite la conexión a invitados por WLAN. Tiene un límite de 80 usuarios.
+\item \textbf{VLAN 9: Oficina-wlan. } Esta se utiliza para la red inalambrica de las oficinas. IP asignada por DHCP.
+\item \textbf{VLAN 10: Contabilidad-wlan. } Esta se utiliza para la red inalambrica del piso de contabilidad. IP asignada por DHCP y tiene capacidad máxima de 800 equipos. 
+\item \textbf{VLAN 11: Admnistración-wlan. } Esta se utiliza para la red inalambrica del piso de administracion. IP asignada por DHCP y tiene capacidad máxima de 800 equipos. 
+
+Para efectos de InterVLANRouting, las vlan de un mismo piso pueden interactuar entre si, pero no con los equipos de invitado.
+
+\end{itemize}
+
+\subsection{Manejo de DHCP}
+En el datacenter del nodo de Curicó existe un servidor DHCP bajo la VLAN nativa (1). Este servidor entrega las direcciones IP para cada una de las sucursales (includa la casa matriz). 
+Para cada piso, sucursal y tipo de conexión existe un rango definido, único y limitado.
+
+\subsection{Manejo de DNS}
+Asignado al DHCP para propagar su configuración. Propaga 172.17.40.2 y 172.17.40.3 como \emph{codeicc.cl} y \emph{admincodeicc.cl} respectivamente.
+
+\section{Topología}
+\subsection{WAN}
+En el caso de las redes WAN se realizó una conexión directa entre todos los nodos hacia Curicó con una redundancia entre Talca y Linares. La redundancia está para evitar problemas entre la conexión entre ambas sedes tomando ventaja que la distancia entre ellas no es tan amplia. Distinto es el caso con Santiago. Además, permite que si se llega a cortar una fibra, que esta no afecte al resto de las sucursales. 
+
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[scale=.3]{wan.png} 
+  \caption{Topología WAN}
+  \label{FIGURE:WAN}
+\end{figure}
+
+En ningún momento se explicitó si los pisos podían efectivamente verse entre sucursales, lo cual se asumió como falso.
+
+\subsubsection{Enrutado}
+El enrutado se realiza por medio de EIGRP, el cual cisco soporta nativamente. 
+
+\subsection{LAN}
+Para las redes LAN se utilizó una topología centralizador (en base al router) con Daisy-chain switching. Existe un Switch central el cual cuenta con 6 interfaces GigabitEthernet las cuales enlazan todos los pisos al router de la sucursal.
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[scale=.3]{lan.png} 
+  \caption{Topología LAN General}
+  \label{FIGURE:LAN_GENERAL}
+\end{figure}
+\begin{figure}[!ht]
+  \centering
+\includegraphics[scale=.3]{oficina.png} 
+  \caption{Topología LAN Oficina. No tiene sentido mostrar el resto de los pisos dado que no varian mucho.}
+  \label{FIGURE:LAN_OFICINA}
+\end{figure}
+\begin{figure}[!ht]
+  \centering
+\includegraphics[scale=.3]{datacenter.png} 
+  \caption{Topología LAN DATACENTER}
+  \label{FIGURE:LAN_DATACENTER}
+\end{figure}
+
+Para cada uno de los pisos es donde el daisy-chain se puede observar con mayor claridad. Cada piso cuenta con un router custom que cuenta con 10 puertas GigabitEhternet las cuales conectan con el switch central, 2 AccessPoint en modo acceso (la VLAN depende de que red inalambrica se trate, la del piso o la de invitado) y 7 puertas disponibles para incluir switches tradicionales en modo daisy-chain. En el proyecto a modo de simplicidad (y porque la máquina virtual sufrió problemas cuando hay más de 20 swtiches conectados al mismo tiempo), se puede apreciar un daisychain de dos niveles (con excepción del piso de callcenter que no manifiesta la antena y el datacenter en el cual no hay daisychaining dado que no se requiere y la mayoría de las puertas están cerradas).
+
+\subsubsection{Daisychaining}
+El daisychaining utiliza un switch 2960 el cual ambas puertas GigabitEhternet están en modo troncal y el resto de las puertas están en modo acceso para la red correspondiente al piso con excepción de la 24, la cual está pensada para efectos de telefonía. 
+
+Dado que se pueden establecer hasta 7 cadenas de switches interconectados, esto permite que con 5 switches por cada una de las cadenas se cubra la demanda o bien con solo un hilo de switches.
+
+\subsection{Dispositivos conectados}
+Todos los routers exponen la puerta 24 para la VLAN de telefonía, con la idea de poder mover el teléfono donde se desee. Se espera que al \emph{GigaSwitch} se le conecten por medio de los accesspoint equipos inalambricos y dentro de la red cableada se conecten equipos y una impresora.
+
+Uno tendería a pensar que la impresora debe requerir una IP estática, lo cual en realidad no es necesario. Dado que los usuarios son flojos y quieren todo por DHCP, basta con comprar una impresora que venga provista de SLP para ser descubierta en en el piso por los equipos que tengan acceso a ella.
+
+
+\section{Tabla de subredes de subredes asignadas por DHCP}
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[scale=.6]{subnet1.png} 
+  \caption{Tabla de subredes 1/4}
+  \label{FIGURE:SUBNET_1}
+\end{figure}
+\begin{figure}[!ht]
+  \centering
+\includegraphics[scale=.6]{subnet2.png} 
+  \caption{Tabla de subredes 2/4}
+  \label{FIGURE:SUBNET_2}
+\end{figure}
+\begin{figure}[!ht]
+  \centering
+\includegraphics[scale=.6]{subnet3.png} 
+  \caption{Tabla de subredes 3/4}
+  \label{FIGURE:SUBNET_3}
+\end{figure}
+\begin{figure}[!ht]
+  \centering
+\includegraphics[scale=.6]{subnet4.png} 
+  \caption{Tabla de subredes 4/4. Se asume que server_pool tiene efectos administrativos.}
+  \label{FIGURE:SUBNET_4}
+\end{figure}
+
+\FloatBarrier
+Para efectos del router de telefonía de la casa central, se utiliza la red \texttt{172.17.48.0} con la máscara \texttt{255.255.248.0}.
+
+\section{Scripting}
+Los scripts están provistos junto con la fuente de este informe, no adosados a este dado su longitud, comentarios en el código y cantidad de archivos.
+
+Como recomendación se sugiere utilizar VisualStudio Code para abrirlos junto con su extensión para lenguaje CISCO IOS para permitir resaltado sintáctico.
+
+
+\end{document}
