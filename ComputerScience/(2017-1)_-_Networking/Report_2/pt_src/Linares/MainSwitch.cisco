@@ -1,0 +1,50 @@
+enable
+    ! file prompt quiet
+
+    vlan database
+        vlan 1 name infraestructura
+        vlan 2 name oficinas
+        vlan 3 name contabilidad
+        vlan 4 name administracion
+        vlan 5 name callcenter
+        vlan 6 name datacenter
+        vlan 7 name telefonia
+        vlan 8 name invitado
+    exit
+
+    configure terminal
+        hostname switch_principal
+
+        interface range gigabitEthernet 0/1
+            switchport mode trunk
+            no shutdown
+        exit
+
+        interface range gigabitEthernet 1/1
+            switchport mode trunk
+            no shutdown
+        exit
+
+        interface range gigabitEthernet 2/1
+            switchport mode trunk
+            no shutdown
+        exit
+
+        interface range gigabitEthernet 3/1
+            switchport mode trunk
+            no shutdown
+        exit
+
+        interface range gigabitEthernet 4/1
+            switchport mode trunk
+            no shutdown
+        exit
+
+        interface range gigabitEthernet 5/1
+            switchport mode trunk
+            no shutdown
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit

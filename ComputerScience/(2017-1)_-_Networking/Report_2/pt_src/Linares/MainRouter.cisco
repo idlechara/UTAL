@@ -1,0 +1,150 @@
+enable
+    ! Se entiende que son 800 usuarios compartidos entre cableado e inalambrico
+    ! file prompt quiet
+
+    ! se asume que la impresora solo es usada 
+    ! por empleados dentro de la misma red del piso
+    ! esto implica que la impresora se conecta bajo la misma red
+    vlan database
+        vlan 2 name oficinas
+        vlan 7 name telefonia
+        vlan 8 name invitado
+        
+        ! Wlan vlan
+        vlan 9 name oficinas-wlan
+    exit
+
+    configure terminal
+        hostname router_santiago
+
+        license boot module c2900 technology-package uck9
+        yes
+
+        do wr
+        ! ACL
+        ! por defecto los edificios solo acceden a su propio piso y al data
+        ip access-list standard oficina
+            permit 192.168.64.0 0.0.7.255
+            permit 192.168.88.0 0.0.7.255
+            permit 172.17.40.0 0.0.7.255
+            deny any
+        exit
+        ip access-list standard telefonia
+            permit 192.168.72.0 0.0.7.255
+            permit 172.17.48.0 0.0.7.255
+            deny any
+        exit
+        ip access-list standard invitado
+            permit 192.168.80.0 0.0.7.255
+            permit 172.17.40.2 0.0.0.0
+            deny any
+        exit
+
+
+        telephony-service
+            max-dn 5
+            max-ephones 5
+            ip source-address 172.17.0.2 port 2000
+            auto assign 1 to 6
+        exit
+
+        ephone-dn 1
+            number 22341
+        exit
+        ephone-dn 2
+            number 22342
+        exit
+        ephone-dn 3
+            number 32343
+        exit
+        ephone-dn 4
+            number 42344
+        exit
+        ephone-dn 5
+            number 52345
+        exit
+
+        ! Se deja desactivada debido a eliminación de la encapsulación
+        interface gigabitEthernet 0/0
+            no ip address
+            duplex auto
+            speed auto
+            no shutdown 
+        exit
+
+        interface gigabitEthernet 0/0.2
+            description Utilizada para redes de oficina
+            encapsulation dot1Q 2
+            ip address 192.168.64.1 255.255.248.0
+            ip helper-address 172.17.0.2
+            ip access-group oficina out
+            no shutdown 
+        exit
+
+
+        interface gigabitEthernet 0/0.7
+            description Utilizada para redes de telefonia
+            encapsulation dot1Q 7
+            ip address 192.168.72.1 255.255.248.0
+            ip helper-address 172.17.0.2
+            no shutdown 
+        exit
+
+        interface gigabitEthernet 0/0.8
+            description Utilizada para redes de invitado
+            encapsulation dot1Q 8
+            ip address 192.168.80.1 255.255.248.0
+            ip helper-address 172.17.0.2
+            ip access-group invitado out
+            no shutdown 
+        exit
+
+
+        interface gigabitEthernet 0/0.9
+            description Utilizada para redes de oficina
+            encapsulation dot1Q 9
+            ip address 192.168.88.1 255.255.248.0
+            ip helper-address 172.17.0.2
+            ip access-group oficina out
+            no shutdown 
+        exit
+
+       
+        !Santiago
+        interface Serial0/0/0
+            bandwidth 512
+            ip address 10.0.0.3 255.255.255.248
+            clock rate 2000000
+            no shutdown 
+        exit
+
+        !Talca
+        interface Serial0/0/1
+            bandwidth 512
+            ip address 10.0.0.11 255.255.255.248
+            clock rate 2000000
+            no shutdown 
+        exit
+
+        !Curico
+        interface Serial0/1/0
+            bandwidth 512
+            ip address 10.0.0.19 255.255.255.248
+            clock rate 2000000
+            no shutdown 
+        exit
+        
+
+        router eigrp 10
+            network 192.168.64.0  0.0.7.255
+            network 192.168.72.0  0.0.7.255
+            network 192.168.80.0  0.0.7.255
+            network 192.168.88.0  0.0.7.255
+            network 10.0.0.0 0.0.0.7
+            network 10.0.0.8 0.0.0.7
+            network 10.0.0.16 0.0.0.7
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
