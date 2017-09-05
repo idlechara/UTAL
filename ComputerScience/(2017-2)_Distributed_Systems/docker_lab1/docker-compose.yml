@@ -1,0 +1,35 @@
+version: '2'
+services:
+  client:
+    image: ubuntu:16.04
+    container_name: client
+    # links:
+    #   - server:server
+    # environment:
+    #   - FORUM_URL=https://forum.domain.tld
+    #   - DB_PASS=cEwleL4ui#Ikbp0vF0nimPAXgc
+    volumes:
+      - ./sources:/root/sources
+    ports:
+      - "80:80"
+      - "8000:8000"
+      - "443:443"
+    onrun: 
+      - /bin/bash
+
+  server:
+    image: ubuntu:16.04
+    container_name: server
+    # links:
+    #   - client:client
+    # environment:
+    #   - FORUM_URL=https://forum.domain.tld
+    #   - DB_PASS=cEwleL4ui#Ikbp0vF0nimPAXgc
+    volumes:
+      - ./sources:/root/sources
+    ports:
+      - "80:80"
+      - "8000:8000"
+      - "443:443"
+    onrun: 
+      - /bin/bash
