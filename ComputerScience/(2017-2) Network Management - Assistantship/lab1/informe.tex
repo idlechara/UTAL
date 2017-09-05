@@ -1,0 +1,203 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{ae}
+\usepackage{bigfoot}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{imakeidx}
+\usepackage{algorithmic}
+\usepackage{hyperref}
+
+
+\title{{\bf Gestion de Redes}\\Laboratorio 1\\Introducción al análisis de paquetes con Wireshark.}
+\author{
+    \bf{Profesor:} José Letelier (\texttt{jletelier@utalca.cl})\\ 
+    \bf{Alumno Ayudante:} Erik Regla (\texttt{eregla09@alumnos.utalca.cl})\\ }
+\date{18 de Diciembre del 2015}
+
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+%\newpage
+%\tableofcontents
+
+%\newpage
+\section{Instalación y uso de Wireshark}
+Wireshark es un analizador de paquetes de código abierto, multiplataforma, 
+comunmente usado en analisis, resolución de problemas y desarrollo de 
+software y protocolos de comunicaciones.
+\begin{enumerate}
+    \item Dirígase a \url{https://www.wireshark.org/#download} para descargar 
+    e instalar la versión apropiada para su sistema. (Se recomienda utilizar 
+    \emph{Kali Linux} como distribuición dado que trae esta y otras herramientas
+    comúnmente utilizadas en estudio de redes.)
+    \item En caso de sistemas Linux, el instalador de su distribución puede preguntar
+    si desea permitir la captura de paquetes sobre los usuarios sin privilegios.
+    Si bien permitir esta opción no afecta el funcionamiento, se recomienda marcar
+    \emph{no}, a momentos pueden ocurrir problemas debido a los permisos que requieren
+    librerías como \emph{libpcap}.
+\end{enumerate}
+
+\section{Análisis de paquetes ICMP sobre una red local (1.5 pto.)}
+\subsection{Pre-requisitos}
+\begin{enumerate}
+    \item{ Inicie una captura sobre la interfaz actualmente conectada. }
+    \item{ Abra un intérprete de comandos y ejecute \texttt{ping 192.168.0.101},
+    para realizar \emph{ping} a una máquina dentro de la red local. }
+    \item{ Espere 5 segundos. }
+    \item{ Detenga la captura de datos. }
+\end{enumerate}
+\subsection{Actividad}
+Analice los paquetes capturados y responda las siguientes preguntas: 
+\footnote{puede utilizar el filtro \texttt{icmp} para ocultar todos los 
+paquetes que no correspondan a este protocolo.}
+\begin{enumerate}
+    \item{ Identifique un paquete ICMP enviado desde su equipo. 
+        \begin{enumerate}
+            \item { ¿Cuál es la dirección física de origen?}
+            \item { ¿Cuál es la dirección física de destino?}
+            \item { ¿Coinciden estas direcciones con las expuestas por las máquinas?}
+        \end{enumerate}
+    }
+    \item{ Identifique un paquete ICMP recibido como respuesta al paquete anterior. 
+        \begin{enumerate}
+            \item { ¿Cuál es la dirección física de origen?}
+            \item { ¿Cuál es la dirección física de destino?}
+            \item { ¿Coinciden estas direcciones con las expuestas por las máquinas?}
+        \end{enumerate}
+    }
+    \item{ El protocolo Ethernet II utiliza campos de \emph{fuente (source)}, 
+    \emph{destino (destination)}, \emph{versión (version)}. Identifíquelas.} 
+
+    \item{ El protocolo ICMP (Internet Control Message Protocol), como el \emph{tipo (type)},
+    \emph{suma de verificación (checksum)},\emph{número de secuencia (sequence number)},
+    \emph{timestamps} }. Identifíquelas.
+
+    \item {¿Por qué la información del protocolo ICMP está al final del paquete?}
+
+    \item {Repita el ejercicio pero esta vez realizando \texttt{ping 192.168.0.150}.
+    ¿Nota alguna diferencia entre los paquetes capturados cuando el host existe? 
+    \footnote{Es posible que sea necesario
+    remover los filtros para volver este cambio notable en Wireshark.}}
+\end{enumerate}
+
+
+\section{Análisis de paquetes ICMP sobre una red extendida (1.5 pto.)}
+\subsection{Pre-requisitos}
+\begin{enumerate}
+    \item{ Inicie una captura sobre la interfaz actualmente conectada. }
+    \item{ Abra un intérprete de comandos y ejecute \texttt{ping www.utalca.cl},
+    para realizar \emph{ping} a una máquina dentro de la red local. }
+    \item{ Espere 5 segundos. }
+    \item{ Detenga la captura de datos. }
+\end{enumerate}
+\subsection{Actividad}
+Analice los paquetes capturados y responda las siguientes preguntas: 
+\footnote{puede utilizar el filtro \texttt{icmp} para ocultar todos los 
+paquetes que no correspondan a este protocolo.}
+\begin{enumerate}
+    \item{ Identifique un paquete ICMP enviado desde su equipo. 
+        \begin{enumerate}
+            \item { ¿Cuál es la dirección física de origen?}
+            \item { ¿Cuál es la dirección física de destino?}
+            \item { ¿Coinciden estas direcciones con las expuestas por las máquinas?}
+        \end{enumerate}
+    }
+    \item{ Identifique un paquete ICMP recibido como respuesta al paquete anterior. 
+        \begin{enumerate}
+            \item { ¿Cuál es la dirección física de origen?}
+            \item { ¿Cuál es la dirección física de destino?}
+            \item { ¿Coinciden estas direcciones con las expuestas por las máquinas?}
+        \end{enumerate}
+    }
+    \item{ El protocolo Ethernet II posee campos de \emph{fuente (source)}, 
+    \emph{destino (destination)}, \emph{versión (version)}. Identifíquelas.} 
+
+    \item{ El protocolo ICMP (Internet Control Message Protocol), como el \emph{tipo (type)},
+    \emph{suma de verificación (checksum)},\emph{número de secuencia (sequence number)},
+    \emph{timestamps} }. Identifíquelas.
+\end{enumerate}
+
+\section{Análisis de paquetes TCP (1.5 pto.)}
+\subsection{Pre-requisitos}
+\begin{enumerate}
+    \item{ Inicie una captura sobre la interfaz actualmente conectada. }
+    \item{ Con un navegador web abra el sitio \texttt{www.utalca.cl},
+    para realizar \emph{ping} a una máquina dentro de la red local. }
+    \item{ Espere 5 segundos. }
+    \item{ Detenga la captura de datos. }
+\end{enumerate}
+\subsection{Actividad}
+Analice los paquetes capturados y responda las siguientes preguntas: 
+\footnote{puede utilizar el filtro \texttt{http} para visualizar solo paquetes que 
+correspondan al protocolo HTTP/1.1.}
+\begin{enumerate}
+    \item{ Identifique una petición GET enviada desde su equipo en la cual se recupere un archivo JavaScript.
+        \begin{enumerate}
+            \item { Indique los campos que exponen los paquetes del protocolo HTTP.}
+            \item { Indique las direcciones físicas de origen y destino y contrástelas con 
+            las presentes en su maquina. ¿La dirección física de destino a que máquina pertenece?
+            Justifique.}
+            \item { Identifique el host al cual la petición fue realizada. }
+        \end{enumerate}
+    }
+    \item{ Identifique un paquete en el cual se recupere una imagen JPEG y otro en el cual
+    se recupere un archivo PNG desde el servidor.
+        \begin{enumerate}
+            \item { Indique las diferencias entre el paquete recuperado para la imágen JPEG y PNG.}
+            \item { Como podrá haber observado, Wireshark muestra un apartado dentro del 
+            examinador de paquetes que dice \texttt{Reassembled TCP Segments}. ¿Qué significa esto?}
+        \end{enumerate}
+    }
+\end{enumerate}
+
+\section{Análisis de trama IPv6 (1.5 pto.)}
+\subsection{Pre-requisitos}
+\begin{enumerate}
+    \item{ Inicie una captura sobre la interfaz actualmente conectada. }
+    \item{ Abra un intérprete de comandos y ejecute \texttt{ping6 2001::100},
+    para realizar \emph{ping6} a una máquina dentro de la red local. }
+    \item{ Espere 5 segundos. }
+    \item{ Detenga la captura de datos. }
+\end{enumerate}
+\subsection{Actividad}
+Analice los paquetes capturados y responda las siguientes preguntas: 
+\footnote{puede utilizar el filtro \texttt{icmpv6} para visualizar solo paquetes que 
+correspondan al protocolo ICMPv6}
+\begin{enumerate}
+    \item{ Identifique un paquete ICMPv6 enviado desde su equipo. 
+    \begin{enumerate}
+        \item { ¿Cuál es la dirección física de origen?}
+        \item { ¿Cuál es la dirección física de destino?}
+    \end{enumerate}
+    }
+    \item{ Identifique un paquete ICMPv6 recibido en su equipo. 
+    \begin{enumerate}
+        \item { ¿Cuál es la dirección física de origen?}
+        \item { ¿Cuál es la dirección física de destino?}
+    \end{enumerate}
+    }
+    \item { Indique algunas diferencias notables entre las tramas ICMP y ICMPv6.}
+    \item { Repita el ejercicio pero esta vez realizando \texttt{ping6 2001::150}. 
+    ¿Nota alguna diferencia en los paquetes enviados y recibidos por medio de este
+    protocolo en comparación a ICMPv4? }
+    
+\end{enumerate}
+
+\section{Reflexión}
+Como podrá haber notado, Wireshark solo captura los paquetes que están siendo 
+transmitidos en la interfaz destino. En base a los ejercicios anteriores, de querer
+capturar paquetes enviados por otros equipos dentro de la red local, ¿Qué tendría
+que hacer para poder capturarlos?
+\end{document}
