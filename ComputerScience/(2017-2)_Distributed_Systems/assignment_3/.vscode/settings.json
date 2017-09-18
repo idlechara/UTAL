@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.cisco": "cisco",
+        "mpi.h": "c",
+        "stdio.h": "c"
+    }
+}
