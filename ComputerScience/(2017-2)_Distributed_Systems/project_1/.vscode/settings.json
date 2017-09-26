@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.cisco": "cisco",
+        "unistd.h": "c",
+        "operations.h": "c",
+        "uuid.h": "c"
+    }
+}
