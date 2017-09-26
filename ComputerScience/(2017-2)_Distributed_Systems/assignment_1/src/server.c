@@ -30,8 +30,7 @@ int main(int argc, char *argv[])
     assert(bind(ssocket, (struct sockaddr *)&server, sizeof(struct sockaddr)) != -1);
     assert(listen(ssocket, queue) != -1);
     printf("Starting server...");
-    while (1)
-    {
+    while (1) {
         int sin_size = sizeof(struct sockaddr_in);
         assert((csocket = accept(ssocket, (struct sockaddr *)&client, &sin_size)) != -1);
 
