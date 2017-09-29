@@ -1,0 +1,93 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{ae}
+\usepackage{bigfoot}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{imakeidx}
+\usepackage{algorithmic}
+\usepackage{hyperref}
+
+
+
+\title{{\bf Gestion de Redes}\\Laboratorio 2\\Sockets.}
+\author{
+    \bf{Profesor:} José Letelier (\texttt{jletelier@utalca.cl})\\ 
+    \bf{Alumno Ayudante:} Erik Regla (\texttt{eregla09@alumnos.utalca.cl})\\ }
+\date{\today}
+
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+%\newpage
+%\tableofcontents
+
+%\newpage
+\section{Descripción}
+En este laboratorio se espera que el alumno se familiarize con la implementación y debugging
+de sockets unix para protocolos de transporte UDP y TCP. Para estos efectos, ha de construir un
+programa (en C) utilizando sockets UNIX el cual permita trasferir archivos de manera remota.
+
+\section{Implementación transferencia de archivos por medio de sockets TCP (1.7 pto.)}
+Implemente dos programas (\texttt{emisor_tcp} y \texttt{receptor_tcp}) los cuales enviarán y recibirán respectivamente los archivos por medio de una conexión establecida por medio de TCP. 
+
+El programa que debe desarrollar debe cumplir con los siguientes requisitos\footnote{ Bonus 1: Replique los permisos del archivo original. }:
+\begin{enumerate}
+    \item{ El programa que envía el archivo debe ejecutarse de la siguiente manera:\\ \texttt{./emisor_tcp <archivo_origen> <host>:<puerto>}}
+
+    \item{ El programa que recibe el archivo debe ejecutarse de la siguiente manera:\\ \texttt{./emisor_tcp <host>:<puerto>}}
+
+    \item{ El programa emisor debe poder cargar archivos en cualquier ruta del sistema, mientras que el receptor al momento de recibirlos deberá escribirlos en su mismo directorio respetando su extensión original. }
+
+    \item{ El programa receptor debe poder mostrar el progreso de la transferencia de una manera \textit{comprensible para un usuario sin experiencia}. }
+\end{enumerate}
+
+
+\section{Implementación transferencia de archivos por medio de sockets UDP (1.7 pto.)}
+Implemente dos programas (\texttt{emisor_udp} y \texttt{receptor_tcp}) los cuales enviarán y recibirán respectivamente los archivos por medio de una conexión establecida por medio de UDP. A modo de sugerencia, se recomienda ensamblar el archivo en memoria y dejar el volcado a memoria secundaria como el último paso.
+
+El programa que debe desarrollar debe cumplir con los siguientes requisitos\footnote{ Bonus 2: Soporte para transferencia de archivos de más de 500MB. }:
+\begin{enumerate}
+    \item{ El programa que envía el archivo debe ejecutarse de la siguiente manera:\\ \texttt{./emisor_udp <archivo_origen> <host>:<puerto>}}
+
+    \item{ El programa que recibe el archivo debe ejecutarse de la siguiente manera:\\ \texttt{./emisor_udp <puerto>}}
+
+    \item{ El programa emisor debe poder cargar archivos en cualquier ruta del sistema, mientras que el receptor al momento de recibirlos deberá escribirlos en su mismo directorio respetando su extensión original. }
+
+
+    \item{ El programa receptor debe de ser capaz de \textit{"recuperar"} los paquetes perdidos, vale decir, si alguno de estos no llega a destino, debe volver a ser solicitado. }
+
+    \item{ El programa receptor debe poder mostrar el progreso de la transferencia de una manera \textit{comprensible para un usuario sin experiencia} (esto incluye la cantidad de paquetes perdidos). }
+
+\end{enumerate}
+
+\section{Análisis (1.6 pto.)}
+Para ambas implementaciones del programa anteriormente desarrollado, ejecute las siguientes pruebas:
+\begin{enumerate}
+    \item{ Transfiera archivos de 100B, 512B, 1KB, 500KB, 2MB e identifique los paquetes involucrados en la llamada \texttt{send()/sendto()} y \texttt{recv()/recvfrom()} y contrástelos.}
+
+    \item{ Wireshark para identificar si se produce o no un handshake durante la comunicación para cada una de las dos implementaciones y documente apropiadamente (esto quiere decir, la captura involucrada además de evidencia visual que respalde las afirmaciones. Utilize la interfaz ``packet details'' para facilitar el proceso).}
+\end{enumerate}
+
+\section{Debugging (1.0 pto.)}
+Esta\footnote{\url{https://gist.github.com/KukyNekoi/a7e1e56612c403505ddf7e675116dc59}} es una copia (defectuosa) de un programa desarrollado por el ayudante para el curso ``Sistemas Distribuidos'' de este semestre. Sin embargo tiene un problema, la transferencia de datos no se efectua de manera correcta dado que si bien los sockets conectan y la conexión se establece, al momento de recibir los datos solo se obtiene un mensaje vacío.
+
+El objetivo del programa es realizar una cola de tareas. El proceso cliente envía una tarea a una cola de tareas y un worker contínuamente realiza polling para saber si tiene tareas que resolver. En caso de tener tareas, este la resuelve y le envía la respuesta por medio de un mailbox el cual el cliente está activamente esperando. La comunicación entre la cola de tareas y el cliente funciona normalmente, sin embargo al momento de realizar consultas sobre esta solo se obtienen valores inválidos. \footnote{Puede realizar todas las consultas pertinentes al funcionamiento de este código fuente al ayudante o bien solicitar una demostración de una ejecución correcta.}
+
+\begin{enumerate}
+    \item{ Diagnostique\footnote{Por diagnosticar se subentiende analizar el programa sin necesariamente estudiar el código.} el defecto. Puede utilizar las herramientas que estime conveniente.}
+    \item{ Parche el programa. }
+\end{enumerate}
+
+\end{document}
