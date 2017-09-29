@@ -1,0 +1,97 @@
+enable
+    configure terminal
+        interface gigabitEthernet 0/0
+            ip address 192.168.1.1 255.255.255.0
+            no shutdown 
+        exit
+        interface Serial0/3/0
+            bandwidth 512
+            ip address 10.0.0.2 255.0.0.0
+            clock rate 2000000
+            no shutdown 
+        exit
+        router eigrp 10
+            network 192.168.1.0 255.255.255.0
+            network 10.0.0.0 255.0.0.0
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
+
+enable
+    configure terminal
+        interface gigabitEthernet 0/0
+            ip address 192.168.2.1 255.255.255.0
+            no shutdown 
+        exit
+        interface Serial0/3/0
+            bandwidth 512
+            ip address 10.0.0.1 255.0.0.0
+            clock rate 2000000
+            no shutdown 
+        exit
+        interface Serial0/3/1
+            bandwidth 512
+            ip address 11.0.0.1 255.0.0.0
+            clock rate 2000000
+            no shutdown 
+        exit
+        router eigrp 10
+            network 192.168.2.0 255.255.255.0
+            network 10.0.0.0 255.0.0.0
+            network 11.0.0.0 255.0.0.0
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
+
+enable
+    configure terminal
+        interface gigabitEthernet 0/0
+            ip address 192.168.3.1 255.255.255.0
+            no shutdown 
+        exit
+        interface Serial0/3/0
+            bandwidth 512
+            ip address 11.0.0.2 255.0.0.0
+            clock rate 2000000
+            no shutdown 
+        exit
+        interface Serial0/3/1
+            bandwidth 512
+            ip address 190.139.83.91 255.255.255.0
+            clock rate 2000000
+            no shutdown 
+        exit
+        router eigrp 10
+            network 190.139.83.91 255.255.255.0
+            network 11.0.0.0 255.0.0.0
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
+
+enable
+    configure terminal
+        int loopback 1
+            ip add 179.60.0.0 255.0.0.0
+            no shut
+        exit
+        interface Serial0/3/0
+            bandwidth 512
+            ip address 190.139.83.92 255.255.255.0
+            clock rate 2000000
+            no shutdown 
+        exit
+
+        router eigrp 10
+            network 190.139.83.0 0.0.0.0
+            network 179.60.0.0 0.0.0.0
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
