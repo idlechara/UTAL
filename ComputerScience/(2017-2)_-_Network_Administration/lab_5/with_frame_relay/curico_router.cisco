@@ -1,0 +1,59 @@
+!router 0
+enable
+    ! file prompt quiet
+    vlan database
+        vlan 10 name privado
+        vlan 20 name fijo
+        vlan 30 name inalámbrico
+        vlan 40 name publico
+        vlan 99 name administracion
+        vlan 1000 name blackhole
+    exit
+    configure terminal
+        hostname router1
+        interface gigabitEthernet 0/0
+            no ip address
+            duplex auto
+            speed auto
+            no shutdown 
+        exit
+        interface gigabitEthernet 0/0.10
+            ! 100, fijos
+            encapsulation dot1Q 10
+            ip address 192.168.10.129 255.255.255.128
+            no shutdown 
+        exit
+        interface gigabitEthernet 0/0.99
+            ! nativa, administrativa
+            encapsulation dot1Q 99 native 
+            ip address 192.168.99.17 255.255.255.240
+            no shutdown 
+        exit
+        interface gigabitEthernet 0/0.20
+            ! 250, inalámbrico
+            encapsulation dot1Q 20
+            ip address 192.168.22.1 255.255.255.0
+            ip helper-address 192.168.99.2
+            no shutdown 
+        exit
+
+        interface Serial0/3/0
+            bandwidth 512
+            ip address 10.0.0.2 255.0.0.0
+            encapsulation frame-relay
+            frame-relay map ip 10.0.0.1 201 broadcast
+            frame-relay map ip 10.0.0.3 203 broadcast
+            frame-relay lmi-type ansi 
+            ip ospf network broadcast
+            clock rate 2000000
+            no shutdown 
+        exit
+        router ospf 1
+            network 10.0.0.0        255.0.0.0 area 10
+            network 192.168.10.128  255.255.255.128 area 10
+            network 192.168.22.0    255.255.254.0 area 10
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit

@@ -1,0 +1,59 @@
+!switch 0
+enable
+    ! file prompt quiet
+    vlan database
+        vlan 10 name fijo
+        vlan 20 name inalámbrico
+        vlan 30 name privado
+        vlan 40 name publico
+        vlan 99 name administracion
+        vlan 1000 name blackhole
+    exit
+    configure terminal
+        hostname switch0_talca
+        interface GigabitEthernet 0/1
+            switchport mode trunk
+            switchport trunk native vlan 99
+            switchport trunk allowed vlan add 10
+            switchport trunk allowed vlan add 20
+            switchport trunk allowed vlan add 99
+            ! put 30 40 on another
+            no shutdown
+        exit
+        interface range FastEthernet 0/1-4
+            switchport mode access
+            switchport access vlan 10
+            no shutdown
+        exit
+        interface range FastEthernet 0/5-8
+            switchport mode access
+            !vlan 1000 not used
+            switchport access vlan 1000 
+            no shutdown
+        exit
+        interface range FastEthernet 0/9-12
+            switchport mode access
+            !vlan 1000 not used
+            switchport access vlan 1000 
+            no shutdown
+        exit
+        interface range FastEthernet 0/13-16
+            switchport mode access
+            !vlan 1000 not used
+            switchport access vlan 1000 
+        exit
+        interface range FastEthernet 0/16-24
+            switchport mode access
+            !vlan 1000 not used
+            switchport access vlan 1000 
+            shutdown
+        exit
+        interface GigabitEthernet 0/2
+            switchport mode access
+            switchport access vlan 20
+            no shutdown
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
