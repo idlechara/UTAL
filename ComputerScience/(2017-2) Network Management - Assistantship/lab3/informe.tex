@@ -1,0 +1,112 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{ae}
+\usepackage{bigfoot}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{imakeidx}
+\usepackage{algorithmic}
+\usepackage{hyperref}
+
+
+
+\title{{\bf Gestion de Redes}\\Laboratorio 3\\DHCP, VLAN, Ruteo Estático}
+\author{
+    \bf{Profesor:} José Letelier (\texttt{jletelier@utalca.cl})\\ 
+    \bf{Alumno Ayudante:} Erik Regla (\texttt{eregla09@alumnos.utalca.cl})\\ }
+\date{\today}
+
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+\begin{document}
+\renewcommand{\figurename}{Figura~}
+\renewcommand{\tablename}{Tabla~}
+
+\maketitle
+%\newpage
+%\tableofcontents
+
+%\newpage
+\section{Descripción}
+En este laboratorio se espera que el alumno se familiarize con el diseño de redes en las cuales se requiere aislar tráfico entre diferentes segmentos de red por medio de VLAN.
+
+\section{Enunciado}
+Los desarrolladores del proyecto ``El Socket Me La Ganó'' se acaban de adjudicar una gran cantidad de fondos por medio de una hackatón la cual ganaron recientemente y están pensando en coordinar las tres oficinas que tienen distribuidas en Santiago, Concepción y Curicó. Para esto, ellos requieren conectar las redes de cada una de las oficinas.
+
+\subsection{Oficina Santiago}
+Esta cuenta con los siguientes equipos:
+\begin{itemize}
+    \item{50 equipos de escritorio para desarrolladores.}
+    \item{1 Access Point, con capacidad agregada para 64 invitados por medio de la red inalámbrica.}
+    \item{1 Servidor Privado.}
+\end{itemize}
+
+\subsection{Oficina Concepción}
+Esta cuenta con los siguientes equipos:
+\begin{itemize}
+    \item{50 equipos de escritorio para desarrolladores.}
+    \item{3 Access Point, con capacidad agregada para 300 invitados por medio de la red inalámbrica.}
+    \item{1 Servidor Privado.}
+    \item{2 Servidores Públicos.}
+\end{itemize}
+
+\subsection{Oficina Curicó - Casa Matriz}
+Esta cuenta con los siguientes equipos:
+\begin{itemize}
+    \item{15 equipos de escritorio para vendedores.}
+    \item{50 equipos de escritorio para desarrolladores.}
+    \item{4 equipos de escritorio para administrativos.}
+    \item{1 Access Point, con capacidad agregada para 90 invitados por medio de la red inalámbrica.}
+    \item{1 Servidor DHCP (para la red inalámbrica)}
+    \item{1 Servidor DHCP (para la red de vendedores y administrativos)}
+    \item{1 Servidor privado.}
+    \item{2 Servidores públicos.}
+\end{itemize}
+
+Adicionalmente, Pepe, uno de los desarrolladores está preocupado respecto a la disponibilidad de direcciones en caso de que la empresa sea un boom y crezca. Por esta razón le piden que además de hacer un diseño de la red utilizando IPv4, un diseño extra que siga la misma topología utilizando IPv6 para demostrar que al hacer la migración entre protocolos las instalaciones seguirán funcionando.
+
+\section{Consideraciones}
+\subsection{Diseño}
+\begin{itemize}
+    \item {El tráfico entre los vendedores, desarrolladores y administrativos debe estar aislado uno del otro. Esto quiere decir, que los desarrolladores podrían comunicarse entre oficinas pero está prohibido que los vendedores se puedan comunicar con ellos y viciversa tanto por la red local como entre oficinas.}
+\end{itemize}
+
+
+\subsection{VLAN}
+\begin{itemize}
+\item{Los segmentos de red deben soportar AL MENOS la cantidad especificada, pero tenga en consideración que el segmento debe ser lo más ajustado posible. Por ejemplo, si se piden 9 equipos, la longitud del segmento a utilizar sería 16, ya que un segmento de 8 no tiene capacidad suficiente y uno igual o mayor a 32 es un desperdicio de direcciones.}
+\item{Todos los switches deben tener sus compuertas asignadas a alguna VLAN.}
+\item{Tanto la VLAN administrativa como la nativa NO PUEDEN SER la por defecto (vlanid 1) y deben ser distintas entre si.}
+\end{itemize}
+
+\subsection{DHCP}
+\begin{itemize}
+    \item{El servidor DHCP de la casa matriz provee de información a los enrutadores utilizadas en las otras dos oficinas.}
+    \item{Si bien en el caso de la vlan el segmento puede no estar exactamente ajustado, se exige que el servidor DHCP entregue la cantidad exacta de IPs que posee cada oficina. No mas, ni menos.}
+    \item{NOTA: PacketTracer manifiesta un bug al momento de generar los pools para VLAN en el caso de cambiar los datos de la configuración del serverpool por defecto.}
+\end{itemize}
+
+\subsection{Ruteo}
+\begin{itemize}
+    \item{Utilize direcciones de clase A para cada uno de los enrutadores.}
+    \item{Los enrutadores siguen una topología de anillo.}
+    \item{Utilize ruteo estático siguiendo un sentido horario para cada una de las rutas.}
+\end{itemize}
+
+\section{Evaluación}
+\begin{itemize}
+    \item{Diseño topología de red: \textbf{0.5pto}}
+    \item{Ruteo: \textbf{0.5pto IPv4, 0.5pto IPv6}}
+    \item{Implementación de VLAN: \textbf{0.5pto IPv4, 0.5pto IPv6}}
+    \item{DHCP: \textbf{0.5pto IPv4, 0.5pto IPv6}}
+    \item{Ruteo + VLAN + DHCP funcionan correctamente: \textbf{1.0pto IPv4, 1.5pto IPv6}}
+\end{itemize}
+
+\end{document}

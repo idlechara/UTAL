@@ -1,0 +1,194 @@
+!switch 1
+enable
+    ! file prompt quiet
+    vlan database
+        vlan 10 name pc0
+        vlan 20 name pc1
+        vlan 30 name pc2
+        vlan 40 name pc3
+        vlan 99 name administracion
+        vlan 1000 name blackhole
+    exit
+
+    configure terminal
+        hostname switch2
+        interface GigabitEthernet 0/1
+            switchport mode trunk
+            switchport trunk native vlan 99
+            switchport trunk allowed vlan add 10
+            switchport trunk allowed vlan add 20
+            switchport trunk allowed vlan add 99
+            ! put 30 40 on another
+            no shutdown
+        exit
+        interface FastEthernet 0/1
+            switchport mode access
+            switchport access vlan 10
+            no shutdown
+        exit
+        interface FastEthernet 0/2
+            switchport mode access
+            switchport access vlan 20
+            no shutdown
+        exit
+        interface range FastEthernet 0/3-24
+            switchport mode access
+            !vlan 1000 not used
+            switchport access vlan 1000 
+            shutdown
+        exit
+        interface GigabitEthernet 0/2
+            switchport mode access
+            !vlan 1000 not used
+            switchport access vlan 1000 
+            shutdown
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
+
+!switch 2
+enable
+    ! file prompt quiet
+    vlan database
+        vlan 10 name pc0
+        vlan 20 name pc1
+        vlan 30 name pc2
+        vlan 40 name pc3
+        vlan 99 name administracion
+        vlan 1000 name blackhole
+    exit
+
+    configure terminal
+        hostname switch2
+        interface GigabitEthernet 0/1
+            switchport mode trunk
+            switchport trunk native vlan 99
+            switchport trunk allowed vlan add 30
+            switchport trunk allowed vlan add 40
+            switchport trunk allowed vlan add 99
+            ! put 30 40 on another
+            no shutdown
+        exit
+        interface FastEthernet 0/1
+            switchport mode access
+            switchport access vlan 30
+            no shutdown
+        exit
+        interface FastEthernet 0/2
+            switchport mode access
+            switchport access vlan 40
+            no shutdown
+        exit
+        interface range FastEthernet 0/3-24
+            switchport mode access
+            !vlan 1000 not used
+            switchport access vlan 1000 
+            shutdown
+        exit
+        interface GigabitEthernet 0/2
+            switchport mode access
+            !vlan 1000 not used
+            switchport access vlan 1000 
+            shutdown
+        exit
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
+
+!router 0
+enable
+    ! file prompt quiet
+    vlan database
+        vlan 10 name pc0
+        vlan 20 name pc1
+        vlan 30 name pc2
+        vlan 40 name pc3
+        vlan 99 name administracion
+        vlan 1000 name blackhole
+    exit
+    configure terminal
+        hostname router1
+        interface gigabitEthernet 0/0
+            no ip address
+            duplex auto
+            speed auto
+            no shutdown 
+        exit
+        interface gigabitEthernet 0/0.10
+            encapsulation dot1Q 10
+            ip address 192.168.10.1 255.255.255.0
+            no shutdown 
+        exit
+        interface gigabitEthernet 0/0.20
+            encapsulation dot1Q 20
+            ip address 192.168.20.1 255.255.255.0
+            no shutdown 
+        exit
+        interface gigabitEthernet 0/0.99
+            encapsulation dot1Q 99 native 
+            ip address 192.168.30.1 255.255.255.0
+            no shutdown 
+        exit
+        interface Serial0/3/0
+            bandwidth 512
+            ip address 10.0.0.1 255.0.0.0
+            clock rate 2000000
+            no shutdown 
+        exit
+        ip route 172.16.10.0 255.255.255.0 10.0.0.2
+        ip route 172.17.10.0 255.255.255.0 10.0.0.2
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
+
+
+!router 1
+enable
+    ! file prompt quiet
+    vlan database
+        vlan 10 name pc0
+        vlan 20 name pc1
+        vlan 30 name pc2
+        vlan 40 name pc3
+        vlan 99 name administracion
+        vlan 1000 name blackhole
+    exit
+    configure terminal
+        hostname router1
+        interface gigabitEthernet 0/0
+            no ip address
+            duplex auto
+            speed auto
+            no shutdown 
+        exit
+        interface gigabitEthernet 0/0.30
+            encapsulation dot1Q 30
+            ip address 172.16.10.1 255.255.0.0
+            no shutdown 
+        exit
+        interface gigabitEthernet 0/0.40
+            encapsulation dot1Q 40
+            ip address 172.17.10.1 255.255.0.0
+            no shutdown 
+        exit
+        interface gigabitEthernet 0/0.99
+            encapsulation dot1Q 99 native 
+            ip address 172.18.10.1 255.255.0.0
+            no shutdown 
+        exit
+        interface Serial0/3/0
+            bandwidth 512
+            ip address 10.0.0.2 255.0.0.0
+            clock rate 2000000
+            no shutdown 
+        exit
+        ip route 192.168.10.1 255.255.255.0 10.0.0.1
+        ip route 192.168.20.1 255.255.255.0 10.0.0.1
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
