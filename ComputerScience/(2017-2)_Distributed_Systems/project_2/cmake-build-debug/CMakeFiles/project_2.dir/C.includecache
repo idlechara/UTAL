@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jvarred/Documents/Sources/UTAL/ComputerScience/(2017-2)_Distributed_Systems/project_2/main.c
+stdio.h
+-
+stdlib.h
+-
+errno.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/wait.h
+-
+sys/ipc.h
+-
+sys/sem.h
+-
+sys/shm.h
+-
+

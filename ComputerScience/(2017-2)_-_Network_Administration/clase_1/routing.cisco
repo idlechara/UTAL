@@ -1,0 +1,46 @@
+!router 1
+enable
+    configure terminal
+        hostname router1
+        interface gigabitEthernet 0/0
+            ip address 192.168.1.1 255.255.0.0
+            ip nat inside
+            no shutdown 
+        exit
+        interface Serial0/3/0
+            bandwidth 512
+            ip address 209.165.201.18 255.255.255.252
+            clock rate 2000000
+            ip nat outside
+            no shutdown 
+        exit
+        ip route 0.0.0.0 0.0.0.0 209.165.201.17
+
+        access-list 1 permit 192.168.1.1 0.0.0.255
+        ip nat inside source list 1 pool NAT-POOL1
+
+        ip nat pool NAT-POOL1 209.165.201.19
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
+
+!router inet
+enable
+    configure terminal
+        hostname router1
+        interface lo0
+            ip address 192.31.7.1 255.255.255.0
+            no shutdown 
+        exit
+        interface Serial0/3/0
+            bandwidth 512
+            ip address 209.165.201.17 255.255.255.252
+            clock rate 2000000
+            no shutdown 
+        exit
+        ip route 0.0.0.0 0.0.0.0 209.165.201.16
+    exit
+    copy running-config startup-config
+    startup-config 
+exit
