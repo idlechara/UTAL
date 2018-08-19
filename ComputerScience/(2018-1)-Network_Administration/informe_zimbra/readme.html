@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="instalaci%C3%B3n-de-zimbra">Instalación de Zimbra</h1>
+<p>Vamos a utilizar la guía disponible en <a href="https://blog.zimbra.com/2018/01/install-zimbra-collaboration-8-8-ubuntu-16-04-lts/">este enlace</a>, para comenzar la instalación de zimbra.</p>
+<p><img src="./homepage.png" alt="homepage"></p>
+<h2 id="preparando-la-m%C3%A1quina">Preparando la máquina</h2>
+<p>La máquina objetivo requiere tres cosas.. Configurar un SplitDNS dentro de la máquina, preparar las interfaces de red, y tener correctamente configurados sus hosts.</p>
+<h3 id="ip">IP</h3>
+<p>Se configura una IP estática. En este caso, se utiliza la IP provista por la red interna de VBox.</p>
+<p><img src="./ip.png" alt=""></p>
+<p>Adicionalmente se configura el archivo resolv.conf para evitar problemas con la resolución de nombres.</p>
+<p><img src="./resolv.conf.png" alt=""></p>
+<h3 id="hosts">Hosts</h3>
+<p>Luego editamos el archivo hosts. Hay que tener cuidado con esta parte ya que si se hace de manera incorrecta, la instalación falla en medio del proceso. Acá es necesario declarar nuestra configuración para el SplitDNS que deseamos, a modo de que pueda resolver la máquina su propia dirección.</p>
+<p><img src="./hosts1.png" alt=""></p>
+<p>Luego de esto, se pueden reiniciar los servicios de red o bien reiniciar el equipo.</p>
+<h3 id="splitdns">SplitDNS</h3>
+<p>Para la configuración de splitDNS vamos a utilizar <code>dnsmask</code>, un servicio que nos permite levantar un servidor DNS en relativamente corto tiempo y sin tanta configuración.</p>
+<p><img src="./aptgetdnsmask.png" alt=""></p>
+<p>Por desgracia, durante el proceso de instalación se instaló también <code>bind9</code>, un servicio de DNS, el cual es necesario remover para el correcto funcionamiento de <code>dnsmasq</code>.</p>
+<p><img src="./bind.png" alt=""></p>
+<p>Luego <code>dnsmasq</code> puede ser utilizado normalmente.</p>
+<p><img src="./ok_dns.png" alt=""></p>
+<p>Luego de esto, es necesario cambiar la configuración de <code>dnsmasq</code>.</p>
+<p><img src="./config_dns.png" alt=""></p>
+<p>Finalmente, reiniciamos el servicio</p>
+<p><img src="./restart_dns.png" alt=""></p>
+<p>Luego la guia sugiere realizar unas pruebas sobre este servidor para verificar que todo esté funcionando normalmente. Para esto utilizamos el comando <code>dig</code> para realizar una consulta DNS.</p>
+<p><img src="./test1.png" alt="">
+<img src="./test2.png" alt=""></p>
+<p>La parte importante de esto es la sección <code>ANSWER</code>, la cual debe recibir exactamente los mismos datos que les configuramos en los pasos anteriores.</p>
+<h2 id="instalando-zimbra">Instalando Zimbra</h2>
+<p>Antes que todo, es necesario obtener una licencia. Una vez que se tenga esta, se nos entregará un archivo por correo y tendremos acceso a la descarga. Necesitamos integrar ambos elementos dentro de nuestro entorno para poder instalar Zimbra (hey, software libre no quiere decir que sea gratis!).</p>
+<p><img src="./downloadpage.png" alt="">
+<img src="./lic.png" alt="">
+<img src="./mail.png" alt="">
+<img src="./downloadzimbra.png" alt="">
+<img src="./installzimbra.png" alt=""></p>
+<p>Luego de dar paso a la instalación de Zimbra, comienza la autoconfiguración de los servicios.</p>
+<p><img src="./install_start.png" alt=""></p>
+<p>En nuestro caso falló porque nos equivocamos al setear el archivo hosts.</p>
+<p><img src="./fail_hosts.png" alt=""></p>
+<p>Luego de esto, reiniciamos y luego de preguntarnos por las licencias, términos y condiciones y otras cosas comenzamos la instalación. Cuando pregunte si queremos usar los repositorios propios le indicamos que no, porque simplemente no tenemos ninguno.</p>
+<p><img src="./install_packages.png" alt=""></p>
+<p>Acá no instalamos todos los paquetes, ya que hay algunos que son de carácter experimental como el cacheado de la DNS pero no lo tomamos en cuenta.</p>
+<p>Luego de instalar los paquetes, nos preguntará si queremos cambiar la configuración del DNS. Claro, nos falta el registro MX por lo que no podemos hacer mucho. Le damos que si y continuamos.</p>
+<p><img src="./domainname.png" alt="">
+<img src="./domainname2.png" alt=""></p>
+<p>Luego tenemos que entrar a configurar la contraseña de administrador. Aca se puede utilizar los comandos 6 y 4, para ingresar una contraseña nueva de administrador.</p>
+<p><img src="./config1.png" alt="">
+<img src="./config2.png" alt="">
+<img src="./config3.png" alt="">
+<img src="./config4.png" alt="">
+<img src="./config5.png" alt="">
+<img src="./config6.png" alt=""></p>
+<p>Finalmente, agregamos el DNS y abrimos el sitio.</p>
+<p><img src="./dns_client1.png" alt="">
+<img src="./dns_client2.png" alt=""></p>
+<h2 id="testing-todo-falla">Testing, todo falla</h2>
+<p>Si intentamos abrir el sitio, nos llevaremos una sorpresa porque el servidor DNS no funciona y ni siquiera podremos entrar por nuestra IP.</p>
+<p>Esto es porque</p>
+<ol>
+<li>No tenemos abierto el firewall</li>
+<li>No tenemos declarado de <code>dnsmasq</code> escuche a otros lugares por su nombre.</li>
+</ol>
+<p>Para solucionar lo primero, cambiamos la configuración de <code>ufw</code> y le agregamos el servicio Zimbra para que esté abierto.</p>
+<p><img src="./ufw1.png" alt="">
+<img src="./ufw2.png" alt="">
+<img src="./ufw3.png" alt=""></p>
+<p>Pero tampoco va a funcionar nuestro DNS ya que aún tenemos bloqueado el puerto 53.</p>
+<p><img src="./ufw4.png" alt="">
+<img src="./ufw5.png" alt=""></p>
+<p>Luego de esto tenemos que verificar la configuración de <code>dnsmasq</code> la cual claramente está mal y cambiarla por una que esté bien configurada con el <code>listen-address</code>.</p>
+<p><img src="./dnsmasqconfig1.png" alt="">
+<img src="./dnsmasqconfig2.png" alt=""></p>
+<p>Y ahora nuestras queries desde otros equipos podrán funcionar bien.</p>
+<p><img src="./dnsmasqconfig3.png" alt=""></p>
+<h2 id="usando">Usando!</h2>
+<p>Luego de esto, Zimbra está listo para ser usado, con todos sus servicios.</p>
+<p><img src="./mail1.png" alt="">
+<img src="./mail2.png" alt="">
+<img src="./mail3.png" alt=""></p>
+<p>Pero los problemas continúan, ya que no se puede enviar correo de manera directa.</p>
+<p>Para esto es necesario tener un relay, y para esto usaremos google basado en esta guia</p>
+<p>https://wiki.zimbra.com/wiki/Outgoing_SMTP_Authentication</p>
+<p>Sin embargo, el relay es harina de otro costal.</p>
+
+</body>
+</html>
