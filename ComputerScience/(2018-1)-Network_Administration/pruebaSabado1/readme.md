@@ -72,20 +72,20 @@ aws ec2 authorize-security-group-ingress --group-name bastion-development --prot
 El [archivo .pkt](./packet_prueba.pkt) contiene la información de la red solicitada. No fue segurizado ningun router puesto que el problema era de enrutamiento + argumentos.
 
 ## Capturas
-![captura1](./capt1.png)
-![captura1](./capt2.png)
-![captura1](./capt3.png)
-![captura1](./capt4.png)
-![captura1](./capt5.png)
-![captura1](./capt6.png)
-![captura1](./capt7.png)
-![captura1](./capt8.png)
-![captura1](./capt9.png)
-![captura1](./capt10.png)
-![captura1](./capt11.png)
-![captura1](./capt12.png)
-![captura1](./capt13.png)
-![captura1](./capt14.png)
+![captura1](./packet1.png)
+![captura1](./packet2.png)
+![captura1](./packet3.png)
+![captura1](./packet4.png)
+![captura1](./packet5.png)
+![captura1](./packet6.png)
+![captura1](./packet7.png)
+![captura1](./packet8.png)
+![captura1](./packet9.png)
+![captura1](./packet10.png)
+![captura1](./packet11.png)
+![captura1](./packet12.png)
+![captura1](./packet13.png)
+![captura1](./packet14.png)
 
 ## Configuracion ospf
 
