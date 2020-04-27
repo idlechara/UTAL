@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section.1}{Enunciado}{}% 1
+\BOOKMARK [1][-]{section.2}{Desarrollo}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{ CWE-89: Neutralizaci\363n impropia de elementos especiales usados en un comando \040https://cwe.mitre.org/data/definitions/89.html }{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{ CWE-287: Autenticaci\363n impropia \040https://cwe.mitre.org/data/definitions/287.html \040}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{ CWE-202: Exposici\363n de informaci\363n sensitiva por medio de consultas \040https://cwe.mitre.org/data/definitions/202.html \040}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{ Descubrimiento de Buckes en S3 debido a configuraci\363n defectuosa \040https://blog.websecurify.com/2017/10/aws-s3-bucket-discovery.html \040}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{ CVE-2019-17026: Confusi\363n de tipos en Mozilla Firefox \040https://www.mozilla.org/en-US/security/advisories/mfsa2020-04/ \040}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.6}{ Android/Trojan.Dropper.Agent.UMX \040https://www.darkreading.com/threat-intelligence/chinese-malware-found-preinstalled-on-us-government-funded-phones/d/d-id/1336771 \040}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.7}{ CWE-223: Omisi\363n deinformaci\363n relevante a la seguridad \040http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1029 \040}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.8}{ Phishing \040https://krebsonsecurity.com/2020/01/tricky-phish-angles-for-persistence-not-passwords/ \040}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.9}{ Exposici\363n de n\372meros de tel\351fonos por parte de Facebook \040https://www.cnet.com/news/millions-of-facebook-user-phone-numbers-exposed-online-security-researchers-say/ \040}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.10}{ Encriptado punto-a-punto inexistente \040https://theintercept.com/2020/03/31/zoom-meeting-encryption/ \040}{section.2}% 12
