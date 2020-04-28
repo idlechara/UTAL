@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.27)  28 APR 2020 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.27)  28 APR 2020 12:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -730,7 +730,7 @@ Package pdftex.def Info: images/paper.png  used on input line 56.
  </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/paper.png (PNG copy)>] [4
 
 ]
-<images/repo.png, id=127, 980.16188pt x 741.52031pt>
+<images/repo.png, id=128, 980.16188pt x 741.52031pt>
 File: images/repo.png Graphic file (type png)
 <use images/repo.png>
 Package pdftex.def Info: images/repo.png  used on input line 76.
@@ -760,18 +760,18 @@ Package rerunfilecheck Info: File `informe.out' has not changed.
 (rerunfilecheck)             Checksum: F6AD7F93A7D42A3A1E9E89E4D6590016;79.
  ) 
 Here is how much of TeX's memory you used:
- 20442 strings out of 481239
- 376987 string characters out of 5920377
- 639108 words of memory out of 5000000
- 35180 multiletter control sequences out of 15000+600000
- 549504 words of font info for 60 fonts, out of 8000000 for 9000
+ 20487 strings out of 481239
+ 377744 string characters out of 5920377
+ 640108 words of memory out of 5000000
+ 35212 multiletter control sequences out of 15000+600000
+ 554993 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,14n,67p,904b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/informe.pdf" (7 pages, 341867 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/informe.pdf" (7 pages, 352106 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
+ 233 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
  16 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
