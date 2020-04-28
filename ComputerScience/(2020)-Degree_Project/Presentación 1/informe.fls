@@ -364,13 +364,19 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/paper.png
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/paper.png
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/paper.png
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/iqs.png
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/iqs.png
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/iqs.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aess10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/ae/aess10.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/iiqs.png
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/iiqs.png
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/iiqs.png
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/paper.png
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/paper.png
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/paper.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aess9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm

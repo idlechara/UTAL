@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.27)  28 APR 2020 12:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.27)  28 APR 2020 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -710,36 +710,54 @@ Dictionary: translator-theorem-dictionary, Language: English
  (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/informe.nav) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2
 
 ]
-<images/paper.png, id=74, 980.16188pt x 741.52031pt>
-File: images/paper.png Graphic file (type png)
-<use images/paper.png>
-Package pdftex.def Info: images/paper.png  used on input line 56.
-(pdftex.def)             Requested size: 213.4527pt x 161.48961pt.
+<images/IQS.png, id=74, 901.86937pt x 328.97906pt>
+File: images/IQS.png Graphic file (type png)
+<use images/IQS.png>
+Package pdftex.def Info: images/IQS.png  used on input line 56.
+(pdftex.def)             Requested size: 295.127pt x 107.657pt.
  [3
 
- </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/paper.png (PNG copy)>] [4
+ </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/iqs.png (PNG copy)>]
+<images/IIQS.png, id=100, 429.10312pt x 590.95781pt>
+File: images/IIQS.png Graphic file (type png)
+<use images/IIQS.png>
+Package pdftex.def Info: images/IIQS.png  used on input line 64.
+(pdftex.def)             Requested size: 117.26056pt x 161.48961pt.
+ [4
 
-]
-<images/repo.png, id=128, 980.16188pt x 741.52031pt>
-File: images/repo.png Graphic file (type png)
-<use images/repo.png>
-Package pdftex.def Info: images/repo.png  used on input line 76.
+ </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/iiqs.png (PNG copy)>]
+<images/paper.png, id=127, 980.16188pt x 741.52031pt>
+File: images/paper.png Graphic file (type png)
+<use images/paper.png>
+Package pdftex.def Info: images/paper.png  used on input line 73.
 (pdftex.def)             Requested size: 213.4527pt x 161.48961pt.
  [5
 
- </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/repo.png (PNG copy)>] [6
+ </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/paper.png (PNG copy)>] [6
 
 ] [7
+
+]
+<images/repo.png, id=206, 980.16188pt x 741.52031pt>
+File: images/repo.png Graphic file (type png)
+<use images/repo.png>
+Package pdftex.def Info: images/repo.png  used on input line 109.
+(pdftex.def)             Requested size: 213.4527pt x 161.48961pt.
+ [8
+
+ </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/images/repo.png (PNG copy)>] [9
+
+] [10
 
 ]
 \tf@nav=\write6
@@ -751,27 +769,27 @@ Package pdftex.def Info: images/repo.png  used on input line 76.
 \tf@snm=\write8
 \openout8 = `informe.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
  (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/informe.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 127.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 127.
 Package rerunfilecheck Info: File `informe.out' has not changed.
 (rerunfilecheck)             Checksum: F6AD7F93A7D42A3A1E9E89E4D6590016;79.
  ) 
 Here is how much of TeX's memory you used:
- 20487 strings out of 481239
- 377744 string characters out of 5920377
- 640108 words of memory out of 5000000
- 35212 multiletter control sequences out of 15000+600000
+ 20513 strings out of 481239
+ 378044 string characters out of 5920377
+ 641108 words of memory out of 5000000
+ 35232 multiletter control sequences out of 15000+600000
  554993 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,14n,67p,904b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/informe.pdf" (7 pages, 352106 bytes).
+Output written on "/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020)-Degree_Project/Presentación 1/informe.pdf" (10 pages, 590955 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
- 16 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 279 compressed objects within 3 object streams
+ 22 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
