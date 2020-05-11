@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.3)  3 MAY 2020 18:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.3)  11 MAY 2020 13:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Ensayo 1/informe.tex"
-(/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Ensayo 1/informe.tex
+**"/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Tarea 3/informe.tex"
+(/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Tarea 3/informe.tex
 LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14> (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Ensayo 1/utalcaDoc.cls
+L3 programming layer <2020-02-14> (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Tarea 3/utalcaDoc.cls
 Document Class: utalcaDoc 2009/08/28 Utalca Article, based on the article class
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
@@ -313,34 +313,34 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count278
 \l__pdf_internal_box=\box49
-) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Ensayo 1/informe.aux
+) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Tarea 3/informe.aux
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
 )
 \openout1 = `informe.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Trying to load font information for T1+aer on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )
-LaTeX Info: Redefining \. on input line 32.
-LaTeX Info: Redefining \% on input line 32.
+LaTeX Info: Redefining \. on input line 33.
+LaTeX Info: Redefining \% on input line 33.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count279
@@ -358,7 +358,7 @@ LaTeX Info: Redefining \% on input line 32.
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
 )
 \AtBeginShipoutBox=\box51
-Package hyperref Info: Link coloring OFF on input line 32.
+Package hyperref Info: Link coloring OFF on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -368,26 +368,26 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count285
 )
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
- (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Ensayo 1/informe.out) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Ensayo 1/informe.out)
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
+ (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Tarea 3/informe.out) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Tarea 3/informe.out)
 \@outlinefile=\write3
 \openout3 = `informe.out'.
 
 \c@lstlisting=\count286
-LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<utalca.pdf, id=6, 41.15375pt x 40.15pt>
+<utalca.pdf, id=52, 41.15375pt x 40.15pt>
 File: utalca.pdf Graphic file (type pdf)
 <use utalca.pdf>
-Package pdftex.def Info: utalca.pdf  used on input line 42.
+Package pdftex.def Info: utalca.pdf  used on input line 52.
 (pdftex.def)             Requested size: 41.15364pt x 40.14989pt.
 
 Overfull \hbox (163.46658pt too wide) has occurred while \output is active
@@ -406,45 +406,33 @@ Overfull \hbox (290.62515pt too wide) has occurred while \output is active
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
- </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Ensayo 1/utalca.pdf>] [2] [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
+ </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Tarea 3/utalca.pdf>] [2] [3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
  [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
- (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Ensayo 1/informe.aux
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
+ (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Tarea 3/informe.aux
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
 Package rerunfilecheck Info: File `informe.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 77.
+(rerunfilecheck)             Checksum: EEAAE52BDFF92807A503C6A866E4A0CD;986.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
  ) 
 Here is how much of TeX's memory you used:
- 9090 strings out of 481239
- 135367 string characters out of 5920378
- 596320 words of memory out of 5000000
- 24097 multiletter control sequences out of 15000+600000
- 571124 words of font info for 103 fonts, out of 8000000 for 9000
+ 9087 strings out of 481239
+ 135466 string characters out of 5920378
+ 595292 words of memory out of 5000000
+ 24093 multiletter control sequences out of 15000+600000
+ 567386 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,11n,72p,1183b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Ensayo 1/informe.pdf" (4 pages, 138036 bytes).
+ 40i,11n,72p,762b,414s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Tarea 3/informe.pdf" (4 pages, 87287 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
