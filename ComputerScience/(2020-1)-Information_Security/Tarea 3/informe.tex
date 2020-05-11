@@ -1,0 +1,120 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{listings}
+% \usepackage{placeins}
+\usepackage[section]{placeins}
+\usepackage[stable]{footmisc}
+
+
+\title{{\bf Seguridad Informática}\\ Tarea 2}
+
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{\today}
+\lstset{language=SH, 
+		basicstyle=\ttfamily\tiny, 
+		showspaces=false, 
+		numbers=left, 
+		breaklines=true,
+		frame=shadowbox
+		}
+
+\begin{document}
+
+\maketitle
+
+\section{Enunciado}
+Definir una Política de Utilización de Dispositivos Celulares para una empresa.
+
+\section{Desarrollo}
+
+\subsection{ Contexto }
+Vamos a tomar el ejemplo de una empresa pequeña de consultoría de software con un área de ventas y un área de desarrollo, para así tener una diferenciación entre los niveles de privilegios globales. La empresa está basada en el uso de software Microsoft por lo que es necesario restringir en lo posible las herramientas a dicho ecosistema.
+
+Una empresa que trabaja con software Microsoft (el cual es la mayoría del mercado en este momento), por lo general utiliza OneDrive/Sharepoint como herramienta de colaboración, Office365 para productividad y Azure para infraestructura. Estos tres recursos tienen un alto valor dependiendo del negocio y las politicas de seguridad implementadas para la segregación de contenido. Para efectos de este desarrollo se considera que existe una alta segregación de los privilegios.
+
+El componente con el nivel de valor más alto de manera inmediata es el repositorio de documentos (OneDrive/Sharepoint) que es utilizado por el equipo de ventas. Si bien es de esperarse que el mismo repositorio tenga información sensible de clientes para el area de desarrollo, en el caso del área de ventas por lo general suele ser compartido con la gerencia y tienen información relativa a todos los clientes de la empresa (a diferencia de un área de desarrollo, la cual por lo general maneja solo información de sus clientes asignados). Debido a esto, nos vamos a centrar en una política centrada en esta unidad en específico.
+
+\subsubsection{ Vulnerabilidades detectadas, probabilidad de ser explotada y costo }
+\begin{itemize}
+    \item Factores humanos: Es de esperarse que el área de ventas no tenga un conocimiento profundo en temas de seguridad y suelen tener un comportamiento más relajado que sus pares en otras unidades. La probabilidad de ser afectado por los mismos errores que son cometidos en un ambiente de trabajo son extremadamente altos, el almacenaje de contraseñas dentro del dispositivo, transferencia a medios locales de información sensible, etc.
+    \item Factores físicos: La posibilidad de el robo de el dispositivo es alta como también el de su pérdida. Si bien en este último caso es responsabilidad del usuario, la intervención física del dispositivo es una realidad, por lo cual es necesario tener mecanismos para prevenir la exfiltración de información en caso de emergencias.
+    \item Factores culturales: La cultura chilena es bastante pobre en términos del trabajo, ya que a muchos nos gusta \textit{sacar la vuelta}. Esto deja a los dispositivos expuestos a su uso como unidades de entretenimiento, nevegación, etc en las cuales el riesgo de recibir información infectada es alta.
+\end{itemize}
+
+\subsection{Políticas}
+
+\subsubsection{Declaración de autoridad y alcance}
+Esta politica es diseñada por parte del SOC (security operations center) de la organización para velar por la seguridad de TI de dispositivos moviles del área comercial de la empresa.
+
+\subsubsection{Política de uso aceptable}
+\begin{itemize}
+    \item El usuario tiene prohibido extraer información de su dispositivo personal a otro medio físico.
+    \item El usuario no puede utilizar otra SIM que no sea la provista por la empresa.
+    \item El usuario no puede utilizar aplicaciones externas o fuera del ecosistema utilizado por la organización.
+    \item No esta permitido realizar cambios al sistema operativo, hardware o estructura interna del dispositivo entregado.
+    \item El dispositivo no podrá ser desconectado de su enlace a InTune bajo ninguna circunstancia.
+\end{itemize}
+
+\subsubsection{Política de identificación y autenticación}
+\begin{itemize}
+    \item Para poder ingresar a sus dispositivos será necesaria la utilización de un PIN numérico de minimo 8 caracteres al momento de iniciar el equipo para luego ser autenticado por medio de su huella digital.
+    \item Todos los usuarios deben contar con autenticación de doble factor y dos pasos.
+    \item Todos los usuarios deben contar con un acceso a una VPN de privilegios y alcance restringido.
+    \item Todos los dispositivos no deben presentar medios para poder establecer cambios al sistema operativo ni a su entorno. Esta medida consta pero no está solo restringida a uso de puertos como solo carga, eliminación de bootloader y mecanismos de recovery para particiones.
+    \item Todos los dispositivos deben contar con encendido automático cada cierto número de horas.
+\end{itemize}
+
+\subsubsection{Política de acceso a internet}
+\begin{itemize}
+    \item Todas las conexiones hacia los recursos de la empresa deben ser realizadas por medio de una conexión 4G y una VPN, no teniendo permitido el uso de redes IEEE802.11 diferentes a la de la misma empresa.
+\end{itemize}
+
+\subsubsection{Política de acceso}
+\begin{itemize}
+    \item Para poder iniciar sesión en los recursos de la empresa es necesario proveer de la contraseña de la cuenta corporativa y una verificación de dos pasos por medio de Office365 S2-E5.
+    \item Las conexiones a recursos de la empresa solo pueden ser ejecutadas por medio de las aplicaciones stand-alone correspondientes.
+\end{itemize}
+
+
+\subsubsection{Política de acceso remoto}
+\begin{itemize}
+    \item El acceso remoto solo está permitido por medio de el uso conjunto de una VPN y la red inalámbrica.
+    \item Las conexiones a recursos de la empresa solo pueden ser ejecutadas por medio de las aplicaciones stand-alone correspondientes.
+\end{itemize}
+
+\subsubsection{Políticas del manejo de incidentes}
+En caso de robo o pérdida del equipo:
+\begin{itemize}
+    \item Se debe dar anuncio inmediato a el SOC para iniciar el procedimiento de traza y de ser necesario de borrado de información.
+    \item El SOC debe dar anuncio inmediato del evento a las autoridades pertinentes e iniciar los trámites necesarios para la obtención del equipo. El individuo afectado también deberá concurrir junto con el SOC para tales efectos.
+    \item La gerencia debera gestionar la entrega de un nuevo dispositivo en un plazo no mayor a 5 días hábiles.
+    \item De no ser posible la recuperación del dispositivo, se debe iniciar un procedimiento de eliminación e inhabilitación remota por medio del encendido automático.
+\end{itemize}
+
+En caso de mal uso:
+\begin{itemize}
+    \item En caso de detectarse mal uso el SOC deberá emitir una carta de amonestación a la persona, la cual deberá acusar su recibo con su jefe directo. Esta carta solo será entregada como máximo tres veces, luego de esto será considerado una violación al código de seguridad de la empresa.
+    \item En caso de reiteradas violaciones al código de conducta, el caso será derivado a la gerencia de recursos humanos para sus respectivas medidas o sanciones que estimen pertinentes.
+\end{itemize}
+
+En caso de ser victima de un ataque informático u sospecha del mismo:
+\begin{itemize}
+    \item La persona afectada deberá dar cuenta al SOC de sus actividades y sospechas para que este pueda investigar en el problema.
+    \item Se deberá hacer un security assesment para poder identificar los posibles afectados y comenzar con mitigaciones.
+    \item De ser necesario afectado deberá hacer entrega de sus equipos digitales para ser examinados por el SOC y esclarecer el origen del problema y sus mitigaciones.
+    \item El SOC deberá pasado el proceso de examen entregar los equipos limpios a su usuario para que este pueda retomar sus funciones.
+    \item El incidente deberá ser archivado dentro de los registros del SOC. Dependiendo de la gravedad del incidente, este reporte puede ser elevado a otras unidades de la organización o bien a entes gubernamentales en acuerdo a la ley de protección de datos vigente actualmente en el país.
+\end{itemize}
+\end{document}
