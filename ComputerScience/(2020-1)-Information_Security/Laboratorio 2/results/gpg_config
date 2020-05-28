@@ -1,0 +1,12 @@
+%echo Generating a basic OpenPGP key
+Key-Type: DSA
+Key-Length: 1024
+Subkey-Type: ELG-E
+Subkey-Length: 1024
+Name-Real: Erik Regla
+Name-Comment: uwu 110%
+Name-Email: eregla@alumnos.utalca.cl
+Expire-Date: 0
+Passphrase: password
+%commit
+%echo done

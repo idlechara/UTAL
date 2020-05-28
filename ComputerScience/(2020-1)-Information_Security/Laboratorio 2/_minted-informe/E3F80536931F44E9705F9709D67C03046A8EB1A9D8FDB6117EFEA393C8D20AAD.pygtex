@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{\PYGZsh{}/bin/bash}
+	\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Instalación de thunderbird}
+	sudo apt install \PYGZhy{}y thunderbird
+\end{Verbatim}
