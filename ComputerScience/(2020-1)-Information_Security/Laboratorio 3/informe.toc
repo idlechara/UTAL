@@ -15,6 +15,6 @@
 \contentsline {subsubsection}{\numberline {1.1.12}\texttt { \enquote *{robots.txt} \enquote *{disallow:} filetype:txt}}{8}{subsubsection.1.1.12}%
 \contentsline {subsubsection}{\numberline {1.1.13}\texttt {allintitle:restricted filetype:doc site:gov}}{8}{subsubsection.1.1.13}%
 \contentsline {subsubsection}{\numberline {1.1.14}\texttt {index.of.dcim}}{9}{subsubsection.1.1.14}%
-\contentsline {section}{\numberline {2}En el informe de laboratorio deberá investigar a lo menos 2 comandos que no se encuentren en el listado de la actividad, entregando detalles de los resultados obtenidos y explicando cada uno de los componentes del comando.\cite {REF:google}\cite {REF:moz}}{9}{section.2}%
+\contentsline {section}{\numberline {2}En el informe de laboratorio deberá investigar a lo menos 2 comandos que no se encuentren en el listado de la actividad, entregando detalles de los resultados obtenidos y explicando cada uno de los componentes del comando.}{9}{section.2}%
 \contentsline {subsubsection}{\numberline {2.0.1}\texttt {filetype:log \enquote *{usuario} \enquote *{email}}}{9}{subsubsection.2.0.1}%
 \contentsline {subsubsection}{\numberline {2.0.2}\texttt {filetype:pem certificate}}{10}{subsubsection.2.0.2}%
