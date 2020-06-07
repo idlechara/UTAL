@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.3)  7 JUN 2020 03:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.3)  7 JUN 2020 03:51
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/informe.tex"
-(/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/informe.tex
+**"/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/informe.tex"
+(/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/informe.tex
 LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14> (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/utalcaDoc.cls
+L3 programming layer <2020-02-14> (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/utalcaDoc.cls
 Document Class: utalcaDoc 2009/08/28 Utalca Article, based on the article class
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
@@ -390,7 +390,7 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
 runsystem(uname -s > "informe.w18")...executed.
 
- (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/informe.w18)
+ (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/informe.w18)
 runsystem(rm -- "informe.w18")...executed.
 
 ) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
@@ -536,7 +536,7 @@ Package csquotes Info: Redefining alias 'default' -> 'spanish'.
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count325
 \l__pdf_internal_box=\box104
-) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/informe.aux
+) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/informe.aux
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
 )
@@ -592,7 +592,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 27.
 LaTeX Info: Redefining \pageref on input line 27.
 LaTeX Info: Redefining \nameref on input line 27.
- (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/informe.out) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/informe.out)
+ (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/informe.out) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/informe.out)
 \@outlinefile=\write5
 \openout5 = `informe.out'.
 
@@ -627,7 +627,7 @@ Overfull \hbox (290.62515pt too wide) has occurred while \output is active
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
- </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/utalca.pdf>] (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/informe.toc
+ </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/utalca.pdf>] (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/informe.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 4.
@@ -643,62 +643,62 @@ LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
  [2]
 LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
 (Font)              scaled to size 10.95pt on input line 36.
-<images/command1/base.png, id=126, 946.53625pt x 983.675pt>
+<images/command1/base.png, id=122, 946.53625pt x 983.675pt>
 File: images/command1/base.png Graphic file (type png)
 <use images/command1/base.png>
 Package pdftex.def Info: images/command1/base.png  used on input line 40.
 (pdftex.def)             Requested size: 93.94957pt x 97.62277pt.
-<images/command1/result1.png, id=128, 948.54375pt x 1034.86626pt>
+<images/command1/result1.png, id=124, 948.54375pt x 1034.86626pt>
 File: images/command1/result1.png Graphic file (type png)
 <use images/command1/result1.png>
 Package pdftex.def Info: images/command1/result1.png  used on input line 41.
 (pdftex.def)             Requested size: 93.94957pt x 102.49786pt.
-<images/command1/result2.png, id=129, 951.555pt x 1032.85875pt>
+<images/command1/result2.png, id=125, 951.555pt x 1032.85875pt>
 File: images/command1/result2.png Graphic file (type png)
 <use images/command1/result2.png>
 Package pdftex.def Info: images/command1/result2.png  used on input line 42.
 (pdftex.def)             Requested size: 93.94957pt x 101.96806pt.
-<images/command1/result3.png, id=130, 949.5475pt x 1034.86626pt>
+<images/command1/result3.png, id=126, 949.5475pt x 1034.86626pt>
 File: images/command1/result3.png Graphic file (type png)
 <use images/command1/result3.png>
 Package pdftex.def Info: images/command1/result3.png  used on input line 43.
 (pdftex.def)             Requested size: 93.94957pt x 102.38733pt.
-<images/command2/base.png, id=131, 951.555pt x 1034.86626pt>
+<images/command2/base.png, id=127, 951.555pt x 1034.86626pt>
 File: images/command2/base.png Graphic file (type png)
 <use images/command2/base.png>
 Package pdftex.def Info: images/command2/base.png  used on input line 53.
 (pdftex.def)             Requested size: 93.94957pt x 102.16626pt.
-<images/command2/result1.png, id=132, 947.54pt x 1031.855pt>
+<images/command2/result1.png, id=128, 947.54pt x 1031.855pt>
 File: images/command2/result1.png Graphic file (type png)
 <use images/command2/result1.png>
 Package pdftex.def Info: images/command2/result1.png  used on input line 54.
 (pdftex.def)             Requested size: 93.94957pt x 102.30983pt.
-<images/command2/result2.png, id=133, 947.54pt x 1029.8475pt>
+<images/command2/result2.png, id=129, 947.54pt x 1029.8475pt>
 File: images/command2/result2.png Graphic file (type png)
 <use images/command2/result2.png>
 Package pdftex.def Info: images/command2/result2.png  used on input line 55.
 (pdftex.def)             Requested size: 93.94957pt x 102.11078pt.
-<images/command2/result3.png, id=134, 947.54pt x 1030.85126pt>
+<images/command2/result3.png, id=130, 947.54pt x 1030.85126pt>
 File: images/command2/result3.png Graphic file (type png)
 <use images/command2/result3.png>
 Package pdftex.def Info: images/command2/result3.png  used on input line 56.
 (pdftex.def)             Requested size: 93.94957pt x 102.21031pt.
-<images/command3/base.png, id=135, 944.52875pt x 1032.85875pt>
+<images/command3/base.png, id=131, 944.52875pt x 1032.85875pt>
 File: images/command3/base.png Graphic file (type png)
 <use images/command3/base.png>
 Package pdftex.def Info: images/command3/base.png  used on input line 67.
 (pdftex.def)             Requested size: 93.94957pt x 102.72455pt.
-<images/command3/result1.png, id=136, 950.55125pt x 1032.85875pt>
+<images/command3/result1.png, id=132, 950.55125pt x 1032.85875pt>
 File: images/command3/result1.png Graphic file (type png)
 <use images/command3/result1.png>
 Package pdftex.def Info: images/command3/result1.png  used on input line 68.
 (pdftex.def)             Requested size: 93.94957pt x 102.07838pt.
-<images/command3/result2.png, id=137, 950.55125pt x 1033.8625pt>
+<images/command3/result2.png, id=133, 950.55125pt x 1033.8625pt>
 File: images/command3/result2.png Graphic file (type png)
 <use images/command3/result2.png>
 Package pdftex.def Info: images/command3/result2.png  used on input line 69.
 (pdftex.def)             Requested size: 93.94957pt x 102.1776pt.
-<images/command3/result3.png, id=138, 946.53625pt x 1029.8475pt>
+<images/command3/result3.png, id=134, 946.53625pt x 1029.8475pt>
 File: images/command3/result3.png Graphic file (type png)
 <use images/command3/result3.png>
 Package pdftex.def Info: images/command3/result3.png  used on input line 70.
@@ -713,43 +713,43 @@ l.75
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.75 
-      </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command1/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command1/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command1/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command1/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command2/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command2/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command2/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command2/result3.png>]
-<images/command4/base.png, id=156, 952.55875pt x 1035.87pt>
+      </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command1/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command1/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command1/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command1/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command2/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command2/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command2/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command2/result3.png>]
+<images/command4/base.png, id=152, 952.55875pt x 1035.87pt>
 File: images/command4/base.png Graphic file (type png)
 <use images/command4/base.png>
 Package pdftex.def Info: images/command4/base.png  used on input line 81.
 (pdftex.def)             Requested size: 93.94957pt x 102.15471pt.
-<images/command4/result1.png, id=157, 944.52875pt x 1032.85875pt>
+<images/command4/result1.png, id=153, 944.52875pt x 1032.85875pt>
 File: images/command4/result1.png Graphic file (type png)
 <use images/command4/result1.png>
 Package pdftex.def Info: images/command4/result1.png  used on input line 82.
 (pdftex.def)             Requested size: 93.94957pt x 102.72455pt.
-<images/command4/result2.png, id=158, 945.5325pt x 1032.85875pt>
+<images/command4/result2.png, id=154, 945.5325pt x 1032.85875pt>
 File: images/command4/result2.png Graphic file (type png)
 <use images/command4/result2.png>
 Package pdftex.def Info: images/command4/result2.png  used on input line 83.
 (pdftex.def)             Requested size: 93.94957pt x 102.61423pt.
-<images/command4/result3.png, id=159, 946.53625pt x 1031.855pt>
+<images/command4/result3.png, id=155, 946.53625pt x 1031.855pt>
 File: images/command4/result3.png Graphic file (type png)
 <use images/command4/result3.png>
 Package pdftex.def Info: images/command4/result3.png  used on input line 84.
 (pdftex.def)             Requested size: 93.94957pt x 102.4043pt.
-<images/command5/base.png, id=160, 939.51pt x 1018.80624pt>
+<images/command5/base.png, id=156, 939.51pt x 1018.80624pt>
 File: images/command5/base.png Graphic file (type png)
 <use images/command5/base.png>
 Package pdftex.def Info: images/command5/base.png  used on input line 94.
 (pdftex.def)             Requested size: 93.94957pt x 101.87105pt.
-<images/command5/result1.png, id=161, 945.5325pt x 1029.8475pt>
+<images/command5/result1.png, id=157, 945.5325pt x 1029.8475pt>
 File: images/command5/result1.png Graphic file (type png)
 <use images/command5/result1.png>
 Package pdftex.def Info: images/command5/result1.png  used on input line 95.
 (pdftex.def)             Requested size: 93.94957pt x 102.31506pt.
-<images/command5/result2.png, id=162, 948.54375pt x 1033.8625pt>
+<images/command5/result2.png, id=158, 948.54375pt x 1033.8625pt>
 File: images/command5/result2.png Graphic file (type png)
 <use images/command5/result2.png>
 Package pdftex.def Info: images/command5/result2.png  used on input line 96.
 (pdftex.def)             Requested size: 93.94957pt x 102.39845pt.
-<images/command5/result3.png, id=163, 952.55875pt x 1028.84375pt>
+<images/command5/result3.png, id=159, 952.55875pt x 1028.84375pt>
 File: images/command5/result3.png Graphic file (type png)
 <use images/command5/result3.png>
 Package pdftex.def Info: images/command5/result3.png  used on input line 97.
@@ -764,43 +764,43 @@ l.102
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.102 
-       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command3/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command3/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command3/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command3/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command4/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command4/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command4/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command4/result3.png>]
-<images/command6/base.png, id=178, 948.54375pt x 1036.87375pt>
+       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command3/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command3/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command3/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command3/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command4/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command4/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command4/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command4/result3.png>]
+<images/command6/base.png, id=174, 948.54375pt x 1036.87375pt>
 File: images/command6/base.png Graphic file (type png)
 <use images/command6/base.png>
 Package pdftex.def Info: images/command6/base.png  used on input line 109.
 (pdftex.def)             Requested size: 93.94957pt x 102.6967pt.
-<images/command6/result1.png, id=179, 942.52126pt x 1025.8325pt>
+<images/command6/result1.png, id=175, 942.52126pt x 1025.8325pt>
 File: images/command6/result1.png Graphic file (type png)
 <use images/command6/result1.png>
 Package pdftex.def Info: images/command6/result1.png  used on input line 110.
 (pdftex.def)             Requested size: 93.94957pt x 102.24489pt.
-<images/command6/result2.png, id=180, 950.55125pt x 1032.85875pt>
+<images/command6/result2.png, id=176, 950.55125pt x 1032.85875pt>
 File: images/command6/result2.png Graphic file (type png)
 <use images/command6/result2.png>
 Package pdftex.def Info: images/command6/result2.png  used on input line 111.
 (pdftex.def)             Requested size: 93.94957pt x 102.07838pt.
-<images/command6/result3.png, id=181, 942.52126pt x 1030.85126pt>
+<images/command6/result3.png, id=177, 942.52126pt x 1030.85126pt>
 File: images/command6/result3.png Graphic file (type png)
 <use images/command6/result3.png>
 Package pdftex.def Info: images/command6/result3.png  used on input line 112.
 (pdftex.def)             Requested size: 93.94957pt x 102.7451pt.
-<images/command7/base.png, id=182, 945.5325pt x 1031.855pt>
+<images/command7/base.png, id=178, 945.5325pt x 1031.855pt>
 File: images/command7/base.png Graphic file (type png)
 <use images/command7/base.png>
 Package pdftex.def Info: images/command7/base.png  used on input line 123.
 (pdftex.def)             Requested size: 93.94957pt x 102.51451pt.
-<images/command7/result1.png, id=183, 947.54pt x 1028.84375pt>
+<images/command7/result1.png, id=179, 947.54pt x 1028.84375pt>
 File: images/command7/result1.png Graphic file (type png)
 <use images/command7/result1.png>
 Package pdftex.def Info: images/command7/result1.png  used on input line 124.
 (pdftex.def)             Requested size: 93.94957pt x 102.01126pt.
-<images/command7/result2.png, id=184, 948.54375pt x 1030.85126pt>
+<images/command7/result2.png, id=180, 948.54375pt x 1030.85126pt>
 File: images/command7/result2.png Graphic file (type png)
 <use images/command7/result2.png>
 Package pdftex.def Info: images/command7/result2.png  used on input line 125.
 (pdftex.def)             Requested size: 93.94957pt x 102.1002pt.
-<images/command7/result3.png, id=185, 945.5325pt x 1031.855pt>
+<images/command7/result3.png, id=181, 945.5325pt x 1031.855pt>
 File: images/command7/result3.png Graphic file (type png)
 <use images/command7/result3.png>
 Package pdftex.def Info: images/command7/result3.png  used on input line 126.
@@ -815,63 +815,63 @@ l.131
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.131 
-       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command5/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command5/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command5/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command5/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command6/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command6/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command6/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command6/result3.png>]
-<images/command8/base.png, id=200, 938.50626pt x 1026.83624pt>
+       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command5/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command5/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command5/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command5/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command6/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command6/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command6/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command6/result3.png>]
+<images/command8/base.png, id=196, 938.50626pt x 1026.83624pt>
 File: images/command8/base.png Graphic file (type png)
 <use images/command8/base.png>
 Package pdftex.def Info: images/command8/base.png  used on input line 138.
 (pdftex.def)             Requested size: 93.94957pt x 102.78365pt.
-<images/command8/result1.png, id=201, 948.54375pt x 1024.82875pt>
+<images/command8/result1.png, id=197, 948.54375pt x 1024.82875pt>
 File: images/command8/result1.png Graphic file (type png)
 <use images/command8/result1.png>
 Package pdftex.def Info: images/command8/result1.png  used on input line 139.
 (pdftex.def)             Requested size: 93.94957pt x 101.50371pt.
-<images/command8/result2.png, id=202, 944.52875pt x 1030.85126pt>
+<images/command8/result2.png, id=198, 944.52875pt x 1030.85126pt>
 File: images/command8/result2.png Graphic file (type png)
 <use images/command8/result2.png>
 Package pdftex.def Info: images/command8/result2.png  used on input line 140.
 (pdftex.def)             Requested size: 93.94957pt x 102.5249pt.
-<images/command8/result3.png, id=203, 948.54375pt x 1032.85875pt>
+<images/command8/result3.png, id=199, 948.54375pt x 1032.85875pt>
 File: images/command8/result3.png Graphic file (type png)
 <use images/command8/result3.png>
 Package pdftex.def Info: images/command8/result3.png  used on input line 141.
 (pdftex.def)             Requested size: 93.94957pt x 102.29903pt.
-<images/command9/base.png, id=204, 941.5175pt x 1032.85875pt>
+<images/command9/base.png, id=200, 941.5175pt x 1032.85875pt>
 File: images/command9/base.png Graphic file (type png)
 <use images/command9/base.png>
 Package pdftex.def Info: images/command9/base.png  used on input line 152.
 (pdftex.def)             Requested size: 93.94957pt x 103.05551pt.
-<images/command9/result1.png, id=205, 947.54pt x 1024.82875pt>
+<images/command9/result1.png, id=201, 947.54pt x 1024.82875pt>
 File: images/command9/result1.png Graphic file (type png)
 <use images/command9/result1.png>
 Package pdftex.def Info: images/command9/result1.png  used on input line 153.
 (pdftex.def)             Requested size: 93.94957pt x 101.61316pt.
-<images/command9/result2.png, id=206, 943.525pt x 1017.8025pt>
+<images/command9/result2.png, id=202, 943.525pt x 1017.8025pt>
 File: images/command9/result2.png Graphic file (type png)
 <use images/command9/result2.png>
 Package pdftex.def Info: images/command9/result2.png  used on input line 154.
 (pdftex.def)             Requested size: 93.94957pt x 101.33583pt.
-<images/command9/result3.png, id=207, 947.54pt x 1023.825pt>
+<images/command9/result3.png, id=203, 947.54pt x 1023.825pt>
 File: images/command9/result3.png Graphic file (type png)
 <use images/command9/result3.png>
 Package pdftex.def Info: images/command9/result3.png  used on input line 155.
 (pdftex.def)             Requested size: 93.94957pt x 101.51364pt.
-<images/command10/base.png, id=208, 937.5025pt x 1024.82875pt>
+<images/command10/base.png, id=204, 937.5025pt x 1024.82875pt>
 File: images/command10/base.png Graphic file (type png)
 <use images/command10/base.png>
 Package pdftex.def Info: images/command10/base.png  used on input line 167.
 (pdftex.def)             Requested size: 93.94957pt x 102.69215pt.
-<images/command10/result1.png, id=209, 947.54pt x 1029.8475pt>
+<images/command10/result1.png, id=205, 947.54pt x 1029.8475pt>
 File: images/command10/result1.png Graphic file (type png)
 <use images/command10/result1.png>
 Package pdftex.def Info: images/command10/result1.png  used on input line 168.
 (pdftex.def)             Requested size: 93.94957pt x 102.11078pt.
-<images/command10/result2.png, id=210, 947.54pt x 1026.83624pt>
+<images/command10/result2.png, id=206, 947.54pt x 1026.83624pt>
 File: images/command10/result2.png Graphic file (type png)
 <use images/command10/result2.png>
 Package pdftex.def Info: images/command10/result2.png  used on input line 169.
 (pdftex.def)             Requested size: 93.94957pt x 101.81221pt.
-<images/command10/result3.png, id=211, 944.52875pt x 1027.84pt>
+<images/command10/result3.png, id=207, 944.52875pt x 1027.84pt>
 File: images/command10/result3.png Graphic file (type png)
 <use images/command10/result3.png>
 Package pdftex.def Info: images/command10/result3.png  used on input line 170.
@@ -891,43 +891,43 @@ l.175
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.175 
-       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command7/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command7/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command7/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command7/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command8/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command8/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command8/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command8/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command9/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command9/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command9/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command9/result3.png>]
-<images/command11/base.png, id=232, 939.51pt x 1027.84pt>
+       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command7/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command7/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command7/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command7/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command8/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command8/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command8/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command8/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command9/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command9/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command9/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command9/result3.png>]
+<images/command11/base.png, id=228, 939.51pt x 1027.84pt>
 File: images/command11/base.png Graphic file (type png)
 <use images/command11/base.png>
 Package pdftex.def Info: images/command11/base.png  used on input line 181.
 (pdftex.def)             Requested size: 93.94957pt x 102.77434pt.
-<images/command11/result1.png, id=233, 931.48pt x 1033.8625pt>
+<images/command11/result1.png, id=229, 931.48pt x 1033.8625pt>
 File: images/command11/result1.png Graphic file (type png)
 <use images/command11/result1.png>
 Package pdftex.def Info: images/command11/result1.png  used on input line 182.
 (pdftex.def)             Requested size: 93.94957pt x 104.27573pt.
-<images/command11/result2.png, id=234, 933.4875pt x 1030.85126pt>
+<images/command11/result2.png, id=230, 933.4875pt x 1030.85126pt>
 File: images/command11/result2.png Graphic file (type png)
 <use images/command11/result2.png>
 Package pdftex.def Info: images/command11/result2.png  used on input line 183.
 (pdftex.def)             Requested size: 93.94957pt x 103.73607pt.
-<images/command11/result3.png, id=235, 932.48375pt x 1031.855pt>
+<images/command11/result3.png, id=231, 932.48375pt x 1031.855pt>
 File: images/command11/result3.png Graphic file (type png)
 <use images/command11/result3.png>
 Package pdftex.def Info: images/command11/result3.png  used on input line 184.
 (pdftex.def)             Requested size: 93.94957pt x 103.9473pt.
-<images/command12/base.png, id=236, 930.47626pt x 978.65625pt>
+<images/command12/base.png, id=232, 930.47626pt x 978.65625pt>
 File: images/command12/base.png Graphic file (type png)
 <use images/command12/base.png>
 Package pdftex.def Info: images/command12/base.png  used on input line 195.
 (pdftex.def)             Requested size: 93.94957pt x 98.81213pt.
-<images/command12/result1.png, id=237, 931.48pt x 1025.8325pt>
+<images/command12/result1.png, id=233, 931.48pt x 1025.8325pt>
 File: images/command12/result1.png Graphic file (type png)
 <use images/command12/result1.png>
 Package pdftex.def Info: images/command12/result1.png  used on input line 196.
 (pdftex.def)             Requested size: 93.94957pt x 103.46582pt.
-<images/command12/result2.png, id=238, 936.49875pt x 1026.83624pt>
+<images/command12/result2.png, id=234, 936.49875pt x 1026.83624pt>
 File: images/command12/result2.png Graphic file (type png)
 <use images/command12/result2.png>
 Package pdftex.def Info: images/command12/result2.png  used on input line 197.
 (pdftex.def)             Requested size: 93.94957pt x 103.003pt.
-<images/command12/result3.png, id=239, 938.50626pt x 1025.8325pt>
+<images/command12/result3.png, id=235, 938.50626pt x 1025.8325pt>
 File: images/command12/result3.png Graphic file (type png)
 <use images/command12/result3.png>
 Package pdftex.def Info: images/command12/result3.png  used on input line 198.
@@ -942,43 +942,43 @@ l.203
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.203 
-       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command10/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command10/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command10/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command10/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command11/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command11/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command11/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command11/result3.png>]
-<images/command13/base.png, id=255, 946.53625pt x 1037.8775pt>
+       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command10/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command10/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command10/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command10/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command11/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command11/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command11/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command11/result3.png>]
+<images/command13/base.png, id=251, 946.53625pt x 1037.8775pt>
 File: images/command13/base.png Graphic file (type png)
 <use images/command13/base.png>
 Package pdftex.def Info: images/command13/base.png  used on input line 210.
 (pdftex.def)             Requested size: 93.94957pt x 103.00198pt.
-<images/command13/result1.png, id=256, 965.6075pt x 1084.05pt>
+<images/command13/result1.png, id=252, 965.6075pt x 1084.05pt>
 File: images/command13/result1.png Graphic file (type png)
 <use images/command13/result1.png>
 Package pdftex.def Info: images/command13/result1.png  used on input line 211.
 (pdftex.def)             Requested size: 93.94957pt x 105.467pt.
-<images/command13/result2.png, id=257, 966.61125pt x 1083.04625pt>
+<images/command13/result2.png, id=253, 966.61125pt x 1083.04625pt>
 File: images/command13/result2.png Graphic file (type png)
 <use images/command13/result2.png>
 Package pdftex.def Info: images/command13/result2.png  used on input line 212.
 (pdftex.def)             Requested size: 93.94957pt x 105.25366pt.
-<images/command13/result3.png, id=258, 965.6075pt x 1084.05pt>
+<images/command13/result3.png, id=254, 965.6075pt x 1084.05pt>
 File: images/command13/result3.png Graphic file (type png)
 <use images/command13/result3.png>
 Package pdftex.def Info: images/command13/result3.png  used on input line 213.
 (pdftex.def)             Requested size: 93.94957pt x 105.467pt.
-<images/command14/base.png, id=259, 942.52126pt x 1033.8625pt>
+<images/command14/base.png, id=255, 942.52126pt x 1033.8625pt>
 File: images/command14/base.png Graphic file (type png)
 <use images/command14/base.png>
 Package pdftex.def Info: images/command14/base.png  used on input line 225.
 (pdftex.def)             Requested size: 93.94957pt x 103.04524pt.
-<images/command14/result1.png, id=260, 944.52875pt x 1031.855pt>
+<images/command14/result1.png, id=256, 944.52875pt x 1031.855pt>
 File: images/command14/result1.png Graphic file (type png)
 <use images/command14/result1.png>
 Package pdftex.def Info: images/command14/result1.png  used on input line 226.
 (pdftex.def)             Requested size: 93.94957pt x 102.62473pt.
-<images/command14/result2.png, id=261, 949.5475pt x 1030.85126pt>
+<images/command14/result2.png, id=257, 949.5475pt x 1030.85126pt>
 File: images/command14/result2.png Graphic file (type png)
 <use images/command14/result2.png>
 Package pdftex.def Info: images/command14/result2.png  used on input line 227.
 (pdftex.def)             Requested size: 93.94957pt x 101.9901pt.
-<images/command14/result3.png, id=262, 948.54375pt x 1031.855pt>
+<images/command14/result3.png, id=258, 948.54375pt x 1031.855pt>
 File: images/command14/result3.png Graphic file (type png)
 <use images/command14/result3.png>
 Package pdftex.def Info: images/command14/result3.png  used on input line 228.
@@ -993,55 +993,47 @@ l.233
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.233 
-       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command12/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command12/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command12/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command12/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command13/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command13/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command13/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command13/result3.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 234.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 234.
-
+       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command12/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command12/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command12/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command12/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command13/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command13/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command13/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command13/result3.png>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 238.
 
-<images/command15/base.png, id=279, 938.50626pt x 989.6975pt>
+<images/command15/base.png, id=276, 938.50626pt x 989.6975pt>
 File: images/command15/base.png Graphic file (type png)
 <use images/command15/base.png>
 Package pdftex.def Info: images/command15/base.png  used on input line 242.
 (pdftex.def)             Requested size: 93.94957pt x 99.06615pt.
-<images/command15/result1.png, id=280, 936.49875pt x 1035.87pt>
+<images/command15/result1.png, id=277, 936.49875pt x 1035.87pt>
 File: images/command15/result1.png Graphic file (type png)
 <use images/command15/result1.png>
 Package pdftex.def Info: images/command15/result1.png  used on input line 243.
 (pdftex.def)             Requested size: 93.94957pt x 103.90918pt.
-<images/command15/result2.png, id=281, 946.53625pt x 1027.84pt>
+<images/command15/result2.png, id=278, 946.53625pt x 1027.84pt>
 File: images/command15/result2.png Graphic file (type png)
 <use images/command15/result2.png>
 Package pdftex.def Info: images/command15/result2.png  used on input line 244.
 (pdftex.def)             Requested size: 93.94957pt x 102.00584pt.
-<images/command15/result3.png, id=282, 948.54375pt x 1028.84375pt>
+<images/command15/result3.png, id=279, 948.54375pt x 1028.84375pt>
 File: images/command15/result3.png Graphic file (type png)
 <use images/command15/result3.png>
 Package pdftex.def Info: images/command15/result3.png  used on input line 245.
 (pdftex.def)             Requested size: 93.94957pt x 101.90137pt.
-<images/command16/base.png, id=283, 943.525pt x 1036.87375pt>
+<images/command16/base.png, id=280, 943.525pt x 1036.87375pt>
 File: images/command16/base.png Graphic file (type png)
 <use images/command16/base.png>
 Package pdftex.def Info: images/command16/base.png  used on input line 257.
 (pdftex.def)             Requested size: 93.94957pt x 103.23462pt.
-<images/command16/result1.png, id=284, 944.52875pt x 1030.85126pt>
+<images/command16/result1.png, id=281, 944.52875pt x 1030.85126pt>
 File: images/command16/result1.png Graphic file (type png)
 <use images/command16/result1.png>
 Package pdftex.def Info: images/command16/result1.png  used on input line 258.
 (pdftex.def)             Requested size: 93.94957pt x 102.5249pt.
-<images/command16/result2.png, id=285, 943.525pt x 1031.855pt>
+<images/command16/result2.png, id=282, 943.525pt x 1031.855pt>
 File: images/command16/result2.png Graphic file (type png)
 <use images/command16/result2.png>
 Package pdftex.def Info: images/command16/result2.png  used on input line 259.
 (pdftex.def)             Requested size: 93.94957pt x 102.73494pt.
-<images/command16/result3.png, id=286, 949.5475pt x 1028.84375pt>
+<images/command16/result3.png, id=283, 949.5475pt x 1028.84375pt>
 File: images/command16/result3.png Graphic file (type png)
 <use images/command16/result3.png>
 Package pdftex.def Info: images/command16/result3.png  used on input line 260.
@@ -1056,42 +1048,47 @@ l.265
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.265 
-       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command14/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command14/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command14/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command14/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command15/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command15/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command15/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command15/result3.png>]
+       </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command14/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command14/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command14/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command14/result3.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command15/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command15/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command15/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command15/result3.png>]
 Overfull \hbox (40.02823pt too wide) in paragraph at lines 274--277
 []\T1/aer/m/n/10.95 Refine web sear-ches \T1/aer/m/it/10.95 Goo-gle Search Help\T1/aer/m/n/10.95 . https://support.google.com/websearch/answer/2466433?hl=en. 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--282
+\T1/aer/m/n/10.95 https://github.com/KukyNekoi/UTAL/tree/master/ComputerScience/(2020-1)-Information_-
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
 [10pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.280 \end{document}
-                     </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command16/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command16/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command16/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/images/command16/result3.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
- (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/informe.aux
+l.284 \end{document}
+                     </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command16/base.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command16/result1.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command16/result2.png> </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/images/command16/result3.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
+ (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/informe.aux
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
 Package rerunfilecheck Info: File `informe.out' has not changed.
-(rerunfilecheck)             Checksum: 0C598A02C555C95078C35DC20B6B905E;1975.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
+(rerunfilecheck)             Checksum: 4D7AA15E5041FA6BD7F9D378AD2CAAAD;1958.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 284.
  ) 
 Here is how much of TeX's memory you used:
- 13601 strings out of 481239
- 224367 string characters out of 5920378
- 555881 words of memory out of 5000000
+ 13602 strings out of 481239
+ 224185 string characters out of 5920378
+ 555911 words of memory out of 5000000
  28476 multiletter control sequences out of 15000+600000
  568639 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,12n,43p,1078b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,12n,43p,1068b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3 - pending/informe.pdf" (10 pages, 11384404 bytes).
+Output written on "/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Laboratorio 3/informe.pdf" (10 pages, 11385245 bytes).
 PDF statistics:
- 357 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
+ 356 PDF objects out of 1000 (max. 8388607)
+ 200 compressed objects within 2 object streams
+ 51 named destinations out of 1000 (max. 500000)
  478 words of extra memory for PDF output out of 10000 (max. 10000000)
 
