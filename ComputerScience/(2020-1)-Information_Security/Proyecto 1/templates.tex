@@ -1,0 +1,60 @@
+
+
+\newcommand{\informationResource}[9] {
+    \begin{tabularx}{\linewidth}{|r|X|}
+        \hline
+        \textbf{Nombre}      & #1  \\ 
+        \hline
+        \textbf{Descripción} & #2  \\ 
+        \hline
+        \textbf{Categoría}   & #3  \\ 
+        \hline
+        \textbf{Ubicación}   & #4  \\ 
+        \hline
+        \textbf{Propietario} & #5  \\ 
+        \hline
+        \textbf{Valoración}  &  \makecell[l]{Confidencialidad: #6\\ Integridad: #7\\ Disponibilidad: #8}\\
+        \hline
+        \textbf{\makecell[r]{Vulnerabilidades y \\Amenazas}}  &  \makecell[l]{#9}\\ 
+        \hline
+    \end{tabularx}
+    }
+    
+    %% For offices
+    \newcommand{\repetatOfficeInformationResource}[9]{
+        \informationResource{#1\_001}{#2}{#3}{#4}{Jefe de #5}
+        {#6}{#7}{#8}{#9}\\
+    
+        \informationResource{#1\_002}{#2}{#3}{#4}{Secretario de #5}
+        {#6}{#7}{#8}{#9}\\
+    
+        \informationResource{#1\_003}{#2}{#3}{#4}{Ejecutivo de #5}
+        {#6}{#7}{#8}{#9}
+    }
+    %% For depart
+    \newcommand{\repeatDepartmentInformationResource}[9]{
+        \informationResource{#1\_001}{#2}{#3}{#4}{Jefe de #5}
+        {#6}{#7}{#8}{#9}\\
+    
+        \informationResource{#1\_002}{#2}{#3}{#4}{Secretario de #5}
+        {#6}{#7}{#8}{#9}\\
+    
+        \informationResource{#1\_003}{#2}{#3}{#4}{Ejecutivo de #5}
+        {#6}{#7}{#8}{#9}
+
+        \informationResource{#1\_003}{#2}{#3}{#4}{Encargado de TI de #5}
+        {#6}{#7}{#8}{#9}
+    }
+
+    %% For secretary
+    \newcommand{\repeatSecretaryInformationResource}[9]{
+        \informationResource{#1\_101}{#2}{#3}{#4}{Dirección de #5}
+        {#6}{#7}{#8}{#9}\\
+
+        \informationResource{#1\_101}{#2}{#3}{#4}{Secretario de #5}
+        {#6}{#7}{#8}{#9}\\
+    
+        \informationResource{#1\_201}{#2}{#3}{#4}{Ejecutivo de #5}
+        {#6}{#7}{#8}{#9}
+    }
+    
