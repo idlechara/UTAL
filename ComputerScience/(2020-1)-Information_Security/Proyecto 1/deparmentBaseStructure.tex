@@ -1,5 +1,5 @@
 \newcommand{\repeatOnEachDepartmentBase}[3]{
-
+	\informationResource
 	{SWI\_#1}
 	{Switch general Cisco Catalyst 2960 para específico del departamento}
 	{Hardware TI}
@@ -97,5 +97,20 @@
 	{
 		\threatHumanIntervention
 		\threatRemoteIntervention
+	}
+
+
+	\informationResource
+	{ARC\_#1\_001}
+	{Archivo de #2 - registro de documentos}
+	{Activos tangibles / Activos intangibles}
+	{#2 - #3}
+	{Jefe de #2}
+	{5}{5}{4}
+	{
+		\threatNoPhysicalBackup
+		\threatNoDigitalBackup
+		\threatHumanIntervention
+		\threatValue
 	}
 }
