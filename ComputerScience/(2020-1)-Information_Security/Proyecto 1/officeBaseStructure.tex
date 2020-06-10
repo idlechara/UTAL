@@ -1,0 +1,85 @@
+
+\newcommand{\repeatOnEachOfficeBase}[3]{
+	\repetatOfficeInformationResource
+	{NTB\_#1}
+	{Thinkpad T490 series, equipo corporativo}
+	{Hardware TI}
+	{#2 - primer piso - recurso estático}
+	{#2}
+	{4}{5}{3}
+	{
+		\threatInformationBreach
+		\threatResourceLost
+		\threatHumanIntervention
+		\threatRemoteIntervention
+		\threatNaturalDisaster
+		\threatHumanDisaster
+	}
+
+	\repetatOfficeInformationResource
+	{EML\_#1}
+	{Cuenta de correo corporativa}
+	{Activo de información tangible}
+	{EXE\_EXCHA\_001}
+	{#2}
+	{4}{5}{3}
+	{
+		\threatInformationBreach
+		\threatRemoteIntervention
+		\threatTransitive
+	}
+
+	\informationResource
+	{NAS\_#1\_001}
+	{Cisco NSS324 NAS, NAS local para equipo de la #2}
+	{Hardware TI}
+	{#2 - primer piso - recurso estático}
+	{Departamento de TI - Encargado TI de #3}
+	{4}{5}{3}
+	{
+		\threatCVE{CVE-2017-7494}{Ejecución remota de código}
+		\threatInformationBreach
+		\threatResourceLost
+		\threatRemoteIntervention
+		\threatNaturalDisaster
+		\threatHumanDisaster
+		\threatInterest
+	}
+
+	\informationResource
+	{CAB\_#1\_001}
+	{Armario de archivos para #2}
+	{Infraestructura TI}
+	{#2 - primer piso - recurso estático}
+	{Jefe de #2}
+	{5}{5}{5}
+	{
+		\threatNaturalDisaster
+		\threatHumanDisaster
+		\threatInterest
+	}
+
+	\informationResource
+	{OFI\_#1\_001}
+	{#2 - Instancia física}
+	{Infraestructura TI}
+	{#2 - primer piso - recurso estático}
+	{Administración del edificio}
+	{5}{5}{5}
+	{
+		\threatNaturalDisaster
+		\threatHumanDisaster
+	}
+
+	\informationResource
+	{RNG\_#1\_001}
+	{Alarma de #2}
+	{Control de entorno}
+	{#2 - primer piso - recurso estático}
+	{Administración del edificio}
+	{5}{5}{5}
+	{
+		\threatHumanIntervention
+		\threatRemoteIntervention
+	}
+}

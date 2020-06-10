@@ -1,0 +1,266 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{makecell}
+% \usepackage{placeins}
+\usepackage[section]{placeins}
+\usepackage[stable]{footmisc}
+\usepackage{minted}
+
+\title{{\bf Seguridad Informática}\\ Proyecto 1}
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{\today}
+
+\input{templates.tex}
+\input{officeBaseStructure.tex}
+\input{secretaryBaseStructure.tex}
+\input{deparmentBaseStructure.tex}
+\input{threatModel.tex}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section{Introducción}
+
+\section{Estructura organizacional}
+El alcance de este trabajo abarca solo las siguientes divisiones:
+\begin{itemize}
+	\item {
+		\textbf{Departamento de asuntos municipales}. Perteneciente a la secretaría municipal. Este se compone de las siguientes oficinas:
+		\begin{itemize}
+			\item Oficina de partes alcaldía
+			\item Sección resolutiva
+			\item Sección administrativa
+		\end{itemize}
+	}
+	\item {
+		\textbf{Departamento de certificación y archivo}.  Perteneciente a la secretaría municipal. Este se compone de las siguientes oficinas:
+		\begin{itemize}
+			\item Oficina de registro municipal de transferencias
+			\item Oficina de control de archivo y reoresentación.
+		\end{itemize}
+	}
+	\item {
+		\textbf{Departamento de asuntos concejo cosoc y otros}.  Perteneciente a la secretaría municipal. Este se compone de las siguientes secciones:
+		\begin{itemize}
+			\item Sección cosoc
+			\item Sección consejo municipal
+		\end{itemize}
+	}
+	\item {
+		\textbf{Departamento de revisión de procesos de contratación pública}.   Perteneciente a la dirección de control.
+	}
+	\item {
+		\textbf{Departamento de auditoría operativa}.  Perteneciente a la dirección de control.
+	}
+	\item {
+		\textbf{Departamento Revisión de procesos de pago, bienes y servicios}.  Perteneciente a la dirección de control. 
+	}
+\end{itemize}
+
+Se establece para cada departamento la siguiente estructura base:
+\begin{itemize}
+	\item Un(a) Jefe(a) de departamento.
+	\item Un(a) Secretario(a) general de departamento.
+	\item Uno o más ejecutivos de departamento.
+	\item Un encargado de TI del departamento.
+\end{itemize}
+
+
+Se establece para cada oficina la siguiente estructura base:
+\begin{itemize}
+	\item Un(a) Jefe(a) de oficina.
+	\item Un(a) Secretario(a) general.
+	\item Uno o más ejecutivos de oficina.
+\end{itemize}
+
+Se establece para cada secretaría la siguiente estructura base:
+\begin{itemize}
+	\item Un(a) Secretario(a) general.
+	\item Uno o más ejecutivos de oficina.
+\end{itemize}
+
+\section{Identificación de activos}
+Durante la identificación de activos esta se ha limitado a activos que puedan presentar riesgos de seguridad de la información, ignorando los activos humanos y los activos de servicios de TI ya que escapan a situaciones bajo el control directo y supervisión de el equipo de TI. Adicionalmente está especificado en la especificación del proyecto que dichos factores no deben de ser incluidos.
+
+\subsection{Activos de carácter transversal}
+A continuación se listan los activos de caracter transversal, quiere decir, cuyo uso se extiende por más de una sola oficina.
+
+\informationResource
+{RTR\_PRINC\_001}
+{Router principal Cisco 2901, gateway externo perteneciente a la municipalidad}
+{Hardware TI}
+{Sala de servidores - primer piso}
+{Departamento de TI}
+{1}{5}{5}
+{
+	\threatCVE{CVE-2013-1241}{Autenticación inválida en cabeceras del módulo ISM}
+	\threatResourceLost
+	\threatHumanIntervention
+	\threatRemoteIntervention
+	\threatNaturalDisaster
+	\threatHumanDisaster
+}
+
+\informationResource
+{RTR\_SECUN\_001}
+{Router secundario Cisco 2901, utilizado de punto intermedio hacia la red interna}
+{Hardware TI}
+{Sala de servidores - primer piso}
+{Departamento de TI}
+{1}{5}{5}
+{
+	\threatCVE{CVE-2017-3881}{Ejecución arbitraria de código (resuelto)}
+	\threatResourceLost
+	\threatHumanIntervention
+	\threatRemoteIntervention
+	\threatNaturalDisaster
+	\threatHumanDisaster
+}
+
+\informationResource
+{SWI\_NODES\_001}
+{Switch general Cisco Catalyst 2960, para nodo base del arbol de conectividad}
+{Hardware TI}
+{Sala de servidores - primer piso}
+{Departamento de TI}
+{1}{5}{5}
+{
+	\threatCVE{CVE-2017-3881}{Ejecución arbitraria de código (resuelto)}
+	\threatResourceLost
+	\threatHumanIntervention
+	\threatRemoteIntervention
+	\threatNaturalDisaster
+	\threatHumanDisaster
+}
+
+\informationResource
+{SRV\_SHARE\_001}
+{Dell PowerEdge R520 750W E5 2440}
+{Hardware TI}
+{Sala de servidores - primer piso}
+{Departamento de TI}
+{5}{5}{5}
+{
+	\threatHumanIntervention
+	\threatRemoteIntervention
+	\threatNaturalDisaster
+	\threatHumanDisaster
+	\threatInterest
+}
+
+
+\informationResource
+{OSS\_WINDO\_001}
+{Windows Server 2019 Datacenter Edition}
+{Sistemas Operativos}
+{SRV_SHARE_001}
+{Departamento de TI}
+{2}{5}{5}
+{
+	Mas de 390 vulnerabilidades detectadas\footnote{https://www.cvedetails.com/product/50662/Microsoft-Windows-Server-2019.html?vendor_id=26}\\
+	\threatHumanIntervention
+	\threatRemoteIntervention
+}
+
+
+\informationResource
+{EXE\_EXCHA\_001}
+{Módulo servidor para Microsoft Exchange 2016, para uso de correos corporativos de los funcionarios de la municipalidad.}
+{Software}
+{SRV_SHARE_001}
+{Departamento de TI}
+{5}{5}{5}
+{
+	\threatCVE{CVE-2018-8374}{Tampering Vulnerability existente al momento de \\un fallo en la información de los perfiles}
+	\threatCVE{CVE-2018-8302}{Ejecución de código remota debido al fallo de \\
+	manipulación de objetos en memoria, resultante en control total}
+	\threatCVE{CVE-2018-8159}{ XSS resultante en elevación de privilegios por \\
+	medio de requests web }
+	\threatCVE{CVE-2018-8154}{Ejecución de código remota debido a la corrupción \\
+	del manejo de objetos en memoria, resultante en control total}
+	\threatCVE{CVE-2018-8153}{ Spoofing }
+	\threatCVE{CVE-2018-8152}{ Elevación de privilegios }
+	\threatCVE{CVE-2018-8151}{ Corrupción de memoria }
+	\threatHumanIntervention
+	\threatRemoteIntervention
+	\threatNaturalDisaster
+	\threatHumanDisaster
+	\threatInterest
+}
+
+\subsection{Activos de carácter específico}
+A continuación se listan los activos de caracter específico, quiere decir, cuyo uso es solo de un oficina en particular.
+
+
+
+\repeatOnEachOfficeBase{OF001}{Oficina de Partes Alcaldía}{ Departamento de Asuntos Municipales}
+
+\repeatOnEachOfficeBase{OF002}{Oficina de Registro Municipal de Transferencias}{ Departamento de Certificación y Archivo}
+
+\repeatOnEachOfficeBase{OF003}{Oficina de Control de Archivo y reorsentación}{ Departamento de certificación y archivo}
+
+
+\repeatOnEachSecretaryBase{SE001}{Sección Resolutiva}{Departamento de Asuntos Municipales}
+
+\repeatOnEachSecretaryBase{SE002}{Sección Administrativa}{Departamento de Asuntos Municipales}
+
+
+\repeatOnEachDepartmentBase{DP001}{Departamento de Asuntos Municipales}{primer piso}
+
+\repeatOnEachDepartmentBase{DP002}{Departamento de Certificación y Archivo}{segundo piso}
+
+\repeatOnEachDepartmentBase{DP003}{Departamento de Asuntos Concejo Cosoc y Otros.}{tercer piso}
+
+\repeatOnEachDepartmentBase{DP004}{Departamento de Revisión de Procesos de Contratación Pública}{cuarto piso}
+
+\repeatOnEachDepartmentBase{DP005}{Departamento de Auditoría Operativa} {quinto piso}
+
+\repeatOnEachDepartmentBase{DP006}{Departamento de Revisión de Pagos de Bienes y Servicios}{sexto piso}
+
+\section{Análisis de riesgos}
+\section{Matriz de riesgos}
+\section{Política de seguridad}
+
+
+\begin{thebibliography}{9}
+	\bibitem{REF:crc}
+	Bill McDaniel.
+	\textit{An Algorithm for Error Correcting Cyclic Redundance Checks}.
+	https://www.drdobbs.com/an-algorithm-for-error-correcting-cyclic/184401662, 2002.
+
+	\bibitem{REF:gnupg}
+	Linux Man pages.
+	\textit{gpg(1) - Linux man page}.
+	https://linux.die.net/man/1/gpg.
+
+
+	\bibitem{REF:veracrypt}
+	VeraCrypt.
+	\textit{Documentation}.
+	https://www.veracrypt.fr/en/Documentation.html.
+
+
+	\bibitem{REF:mellon}
+	Koopman, Philip and Chakravarty, T.
+	\textit{Cyclic redundancy code (CRC) polynomial selection for embedded networks}.
+	10.1109/DSN.2004.1311885. 2004.
+
+
+\end{thebibliography}
+
+\end{document}
