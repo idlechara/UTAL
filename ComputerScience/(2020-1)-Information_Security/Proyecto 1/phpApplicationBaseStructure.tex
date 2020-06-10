@@ -1,0 +1,100 @@
+
+\makeatletter
+\define@key{phpappbase}{appdefinition}{\def\php@appdefinition{#1}}
+\define@key{phpappbase}{apprefr}{\def\php@apprefr{#1}}
+\define@key{phpappbase}{srvrefr}{\def\php@srvrefr{#1}}
+\define@key{phpappbase}{dbsrvrefr}{\def\php@dbsrvrefr{#1}}
+\define@key{phpappbase}{dbsrvrefconfi}{\def\php@dbsrvrefconfi{#1}}
+\define@key{phpappbase}{dbsrvrefinteg}{\def\php@dbsrvrefinteg{#1}}
+\define@key{phpappbase}{dbsrvrefavail}{\def\php@dbsrvrefavail{#1}}
+\define@key{phpappbase}{dbinstrefr}{\def\php@dbinstrefr{#1}}
+\define@key{phpappbase}{dbinstrefconfi}{\def\php@dbinstrefconfi{#1}}
+\define@key{phpappbase}{dbinstrefinteg}{\def\php@dbinstrefinteg{#1}}
+\define@key{phpappbase}{dbinstrefavail}{\def\php@dbinstrefavail{#1}}
+\define@key{phpappbase}{dbinstrefcve}{\def\php@dbinstrefcve{#1}}
+\define@key{phpappbase}{phpinstrefr}{\def\php@phpinstrefr{#1}}
+\define@key{phpappbase}{phpinstrefconfi}{\def\php@phpinstrefconfi{#1}}
+\define@key{phpappbase}{phpinstrefinteg}{\def\php@phpinstrefinteg{#1}}
+\define@key{phpappbase}{phpinstrefavail}{\def\php@phpinstrefavail{#1}}
+
+\setkeys{phpappbase}{
+appdefinition=appdefinition,
+apprefr=apprefr,
+srvrefr=srvrefr,
+dbsrvrefr=dbsrvrefr,
+dbsrvrefconfi=dbsrvrefconfi,
+dbsrvrefinteg=dbsrvrefinteg,
+dbsrvrefavail=dbsrvrefavail,
+dbinstrefr=dbinstrefr,
+dbinstrefconfi=dbinstrefconfi,
+dbinstrefinteg=dbinstrefinteg,
+dbinstrefavail=dbinstrefavail,
+dbinstrefcve=dbinstrefcve,
+phpinstrefr=phpinstrefr,
+phpinstrefconfi=phpinstrefconfi,
+phpinstrefinteg=phpinstrefinteg,
+phpinstrefavail=phpinstrefavail
+}
+
+\newcommand{\phpApplicationBaseStructure}[2][]{%
+  \setkeys{phpappbase}{#1}% Set the keys
+
+	\php@appdefinition
+
+	\informationResource
+	{\php@dbsrvrefr}
+	{Servidor MySQL 6.0.9 Beta3 para \php@apprefr}
+	{Software}
+	{\php@srvrefr}
+	{Departamento de TI}
+	{\php@dbsrvrefconfi}{\php@dbsrvrefinteg}{\php@dbsrvrefavail}
+	{
+		\threatCVE{CVE-2009-0819}{Denegación de servicio}
+		\threatCVE{CVE-2008-7247}{Bypass de restricciones RBAC}
+		\threatHumanIntervention
+		\threatRemoteIntervention
+	}
+
+	\informationResource
+	{\php@dbinstrefr}
+	{Base de datos MySQL en \php@dbsrvrefr para \php@apprefr}
+	{Software}
+	{\php@srvrefr}
+	{Departamento de TI}
+	{\php@dbinstrefconfi}{\php@dbinstrefinteg}{\php@dbinstrefavail}
+	{
+		\php@dbinstrefcve
+	}
+	
+	\informationResource
+	{\php@phpinstrefr}
+	{Servidor PHP 7.3.6 para \php@apprefr}
+	{Software}
+	{\php@srvrefr}
+	{Departamento de TI}
+	{\php@phpinstrefconfi}{\php@phpinstrefinteg}{\php@phpinstrefavail}
+	{
+		\threatCVE{CVE-2019-11042}{Buffer overflow causado por información EXIF}
+		\threatCVE{CVE-2008-7247}{Buffer overflow causado por información EXIF}
+		\threatHumanIntervention
+		\threatRemoteIntervention
+	}
+
+  #2
+}
+
+\makeatother
+
+% {EXE\_WPRES\_001}{SRV_SHARE_001}
+% {EXE\_MYSQL\_001}{1}{3}{3} %7
+% {EXE\_MYSDB\_001}{1}{3}{3}{
+% 	\threatTransitive
+% 	\threatValue
+% }%12
+% {EXE\_PHPSR\_001}{1}{3}{3}
+
+%
+% \newcommand{\phpApplicationBaseStructure}[16]{
+
+	
+% }
