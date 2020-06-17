@@ -1,0 +1,218 @@
+A continuación se listan los activos de caracter transversal, quiere decir, cuyo uso se extiende por más de una sola oficina.
+
+\informationResource
+{RTR\_PRINC\_001}
+{Router principal Cisco 2901, gateway externo perteneciente a la municipalidad}
+{Hardware TI}
+{Sala de servidores - primer piso}
+{Departamento de TI}
+{1}{5}{5}
+{
+	\threatCVE{CVE-2013-1241}{Autenticación inválida en cabeceras del módulo ISM}
+	\threatResourceLost
+	\threatHumanIntervention
+	\threatRemoteIntervention
+	\threatNaturalDisaster
+	\threatHumanDisaster
+}
+
+\informationResource
+{RTR\_SECUN\_001}
+{Router secundario Cisco 2901, utilizado de punto intermedio hacia la red interna}
+{Hardware TI}
+{Sala de servidores - primer piso}
+{Departamento de TI}
+{1}{5}{5}
+{
+	\threatCVE{CVE-2017-3881}{Ejecución arbitraria de código (resuelto)}
+	\threatResourceLost
+	\threatHumanIntervention
+	\threatRemoteIntervention
+	\threatNaturalDisaster
+	\threatHumanDisaster
+}
+
+\informationResource
+{SWI\_NODES\_001}
+{Switch general Cisco Catalyst 2960, para nodo base del arbol de conectividad}
+{Hardware TI}
+{Sala de servidores - primer piso}
+{Departamento de TI}
+{1}{5}{5}
+{
+	\threatCVE{CVE-2017-3881}{Ejecución arbitraria de código (resuelto)}
+	\threatResourceLost
+	\threatHumanIntervention
+	\threatRemoteIntervention
+	\threatNaturalDisaster
+	\threatHumanDisaster
+}
+
+\informationResource
+{SRV\_SHARE\_001}
+{Dell PowerEdge R520 750W E5 2440}
+{Hardware TI}
+{Sala de servidores - primer piso}
+{Departamento de TI}
+{5}{5}{5}
+{
+	\threatHumanIntervention
+	\threatRemoteIntervention
+	\threatNaturalDisaster
+	\threatHumanDisaster
+	\threatInterest
+}
+
+
+\informationResource
+{OSS\_WINDO\_001}
+{Windows Server 2019 Datacenter Edition}
+{Sistemas Operativos}
+{SRV_SHARE_001}
+{Departamento de TI}
+{2}{5}{5}
+{
+	Mas de 390 vulnerabilidades detectadas\footnote{https://www.cvedetails.com/product/50662/Microsoft-Windows-Server-2019.html?vendor_id=26}\\
+	\threatHumanIntervention
+	\threatRemoteIntervention
+}
+
+
+\informationResource
+{EXE\_EXCHA\_001}
+{Módulo servidor para Microsoft Exchange 2016, para uso de correos corporativos de los funcionarios de la municipalidad.}
+{Software}
+{SRV_SHARE_001}
+{Departamento de TI}
+{5}{5}{5}
+{
+	\threatCVE{CVE-2018-8374}{Tampering Vulnerability existente al momento de \\un fallo en la información de los perfiles}
+	\threatCVE{CVE-2018-8302}{Ejecución de código remota debido al fallo de \\
+	manipulación de objetos en memoria, resultante en control total}
+	\threatCVE{CVE-2018-8159}{ XSS resultante en elevación de privilegios por \\
+	medio de requests web }
+	\threatCVE{CVE-2018-8154}{Ejecución de código remota debido a la corrupción \\
+	del manejo de objetos en memoria, resultante en control total}
+	\threatCVE{CVE-2018-8153}{ Spoofing }
+	\threatCVE{CVE-2018-8152}{ Elevación de privilegios }
+	\threatCVE{CVE-2018-8151}{ Corrupción de memoria }
+	\threatHumanIntervention
+	\threatRemoteIntervention
+	\threatInterest
+}
+
+\informationResource
+{ARC\_LOCAL\_001}
+{Archivo general de la municipalidad - registro de documentos}
+{Activos tangibles / Activos intangibles}
+{Archivo - Primer piso}
+{Departamento de Certificación y Archivos}
+{5}{4}{2}
+{
+	\threatNoPhysicalBackup
+	\threatNoDigitalBackup
+	\threatHumanIntervention
+}
+
+\phpApplicationBaseStructure[appdefinition={
+	\informationResource
+	{EXE\_WPRES\_001}
+	{Servidor Wordpress 5.1 Beta3 para página institucional}
+	{Software}
+	{SRV\_SHARE\_001}
+	{Departamento de TI}
+	{1}{3}{3}
+	{
+		\threatCVE{CVE-2019-9787}{Ejecución remota de código por medio de CRSRF}
+		\threatCVE{CVE-2019-16220}{Sanitización de wp\_validate manipula redirects}
+		\threatHumanIntervention
+		\threatRemoteIntervention
+	}
+},
+apprefr=EXE\_WPRES\_001,
+srvrefr=SRV\_SHARE\_001,
+dbsrvrefr=EXE\_MYSQL\_001,
+dbsrvrefconfi=1,
+dbsrvrefinteg=3,
+dbsrvrefavail=3,
+dbinstrefr=EXE\_SQLTB\_001,
+dbinstrefconfi=1,
+dbinstrefinteg=3,
+dbinstrefavail=3,
+dbinstrefcve={
+	\threatTransitive
+	\threatInterest
+},
+phpinstrefr=EXE\_PHPSR\_001,
+phpinstrefconfi=1,
+phpinstrefinteg=3,
+phpinstrefavail=3]{}
+
+
+
+\phpApplicationBaseStructure[appdefinition={
+	\informationResource
+	{EXE\_ADMIN\_002}
+	{Servidor con aplicativo de administración propia para municipio}
+	{Software}
+	{SRV\_SHARE\_002}
+	{Departamento de TI}
+	{5}{5}{5}
+	{
+		\threatUnkown
+		\threatTransitive
+		\threatInterest
+	}
+},
+apprefr=EXE\_ADMIN\_002,
+srvrefr=SRV\_SHARE\_002,
+dbsrvrefr=EXE\_MYSQL\_002,
+dbsrvrefconfi=4,
+dbsrvrefinteg=5,
+dbsrvrefavail=4,
+dbinstrefr=EXE\_SQLTB\_002,
+dbinstrefconfi=5,
+dbinstrefinteg=5,
+dbinstrefavail=5,
+dbinstrefcve={
+	\threatTransitive
+	\threatInterest
+},
+phpinstrefr=EXE\_PHPSR\_002,
+phpinstrefconfi=4,
+phpinstrefinteg=5,
+phpinstrefavail=4]{}
+
+
+\phpApplicationBaseStructure[appdefinition={
+	\informationResource
+	{EXE\_ADMIN\_003}
+	{Servidor con aplicativo de administración para archivo de municipio}
+	{Software}
+	{SRV\_SHARE\_003}
+	{Departamento de TI}
+	{5}{5}{5}
+	{
+		\threatUnkown
+		\threatTransitive
+		\threatInterest
+	}
+},
+apprefr=EXE\_ADMIN\_003,
+srvrefr=SRV\_SHARE\_003,
+dbsrvrefr=EXE\_MYSQL\_003,
+dbsrvrefconfi=4,
+dbsrvrefinteg=5,
+dbsrvrefavail=4,
+dbinstrefr=EXE\_SQLTB\_003,
+dbinstrefconfi=5,
+dbinstrefinteg=5,
+dbinstrefavail=5,
+dbinstrefcve={
+	\threatTransitive
+	\threatInterest
+},
+phpinstrefr=EXE\_PHPSR\_003,
+phpinstrefconfi=4,
+phpinstrefinteg=5,
+phpinstrefavail=4]{}
