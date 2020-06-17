@@ -1,0 +1,68 @@
+
+\makeatletter
+\define@key{riskItem}{riskTitle}{\def\risk@riskTitle{#1}}
+\define@key{riskItem}{riskAuthor}{\def\risk@riskAuthor{#1}}
+\define@key{riskItem}{riskDate}{\def\risk@riskDate{#1}}
+\define@key{riskItem}{riskDescription}{\def\risk@riskDescription{#1}}
+\define@key{riskItem}{riskResourceOwner}{\def\risk@riskResourceOwner{#1}}
+\define@key{riskItem}{riskAssociatedProcess}{\def\risk@riskAssociatedProcess{#1}}
+\define@key{riskItem}{riskSubArea}{\def\risk@riskSubArea{#1}}
+\define@key{riskItem}{riskSubAreaDependencies}{\def\risk@riskSubAreaDependencies{#1}}
+\define@key{riskItem}{riskVulnDetails}{\def\risk@riskVulnDetails{#1}}
+\define@key{riskItem}{riskThreatDetails}{\def\risk@riskThreatDetails{#1}}
+\define@key{riskItem}{riskResponse}{\def\risk@riskResponse{#1}}
+\define@key{riskItem}{riskApproval}{\def\risk@riskApproval{#1}}
+
+\setkeys{riskItem}{
+riskTitle=riskTitle,
+riskAuthor=riskAuthor,
+riskDate=riskDate,
+riskDescription=riskDescription,
+riskResourceOwner=riskResourceOwner,
+riskAssociatedProcess=riskAssociatedProcess,
+riskSubArea=riskSubArea,
+riskSubAreaDependencies=riskSubAreaDependencies,
+riskVulnDetails=riskVulnDetails,
+riskThreatDetails=riskThreatDetails,
+riskResponse=riskResponse,
+riskApproval=riskApproval
+}
+
+\newcommand{\riskItemTable}[2][]{%
+    \setkeys{riskItem}{#1}% Set the keys
+
+    \begin{tabularx}{\linewidth}{|r|X|}
+        \hline
+        \textbf{Título de Riesgo}      & \risk@riskTitle  \\ 
+        \hline
+        \textbf{Autor} & \risk@riskAuthor  \\ 
+        \hline
+        \textbf{Fecha de Levantamiento}   & \risk@riskDate  \\ 
+        \hline
+        \textbf{Descripción}   & \risk@riskDescription  \\ 
+        \hline
+        \textbf{Dueño del Activo} & \risk@riskResourceOwner  \\ 
+        \hline
+        \textbf{Proceso}      & \risk@riskAssociatedProcess  \\ 
+        \hline
+        \textbf{Sub Área} & \risk@riskSubArea  \\ 
+        \hline
+        \textbf{Dependencia}   & \risk@riskSubAreaDependencies  \\ 
+        \hline
+        \textbf{Detalle de la Vulnerabilidad}   & \risk@riskVulnDetails  \\ 
+        \hline
+        \textbf{Detalle de la amenaza} & \risk@riskThreatDetails  \\ 
+        \hline
+        \textbf{Respuesta}   & \risk@riskResponse  \\ 
+        \hline
+        \textbf{Aprobación} & \risk@riskApproval  \\ 
+        \hline
+        %\textbf{Valoración}  &  \makecell[l]{Confidencialidad: #6\\ Integridad: #7\\ Disponibilidad: #8}\\
+        %\hline
+        %\textbf{\makecell[r]{Vulnerabilidades y \\Amenazas}}  &  \makecell[l]{#9}\\ 
+        %\hline
+    \end{tabularx}
+    #2
+}
+
+\makeatother

@@ -1,0 +1,167 @@
+\section{Riesgos asociados a la atención de público}
+\riskItemTable[
+    riskTitle={Imposibilidad de obtener una hora de atención a público},
+    riskAuthor={\riskAuthorErik},
+    riskDate={11/06/2020},
+    riskDescription={
+        Al materializarse este riesgo, una persona natural
+        queda imposibilitada de poder solicitar una hora para su atención, 
+        lo cual genera un cuello de botella.},
+    riskResourceOwner={\riskPOIAsuntosMunicipales},
+    riskAssociatedProcess={
+        \riskProcessGetAppointment  \\&
+        \riskProcessNewSuggestion   \\&
+        \riskProcessNewClaim        \\&
+        \riskProcessGetInformation
+    },
+    riskSubArea={ \riskSubAreaOIRS },
+    riskSubAreaDependencies={ \riskSubAreaAsuntosMunicipales },
+    riskVulnDetails={
+        Bla bla bla, el programa utilizado en bla bla...
+        
+        Debido a que la versión del sistema operativo utilizado tiene una gran cantidad de CVEs activos, existe la posibilidad de que un usuario malicioso intente generar un ataque de denegación de servicio dentro de la misma municipalidad.
+    },
+    riskThreatDetails={
+        Bla bla bla, el programa utilizado en bla bla...
+        
+        Debido a que la versión del sistema operativo utilizado tiene una gran cantidad de CVEs activos, existe la posibilidad de que un usuario malicioso intente generar un ataque de denegación de servicio dentro de la misma municipalidad.
+    },
+    riskResponse={ \riskRepsonsePrevent },
+    riskApproval={ \riskPOIAsuntosMunicipales }
+]{}
+
+\section{Riesgos asociados a plataformas o tecnologías generalizados dentro de la organización}
+
+\riskItemTable[
+    riskTitle={Denegación de servicio},
+    riskAuthor={\riskAuthorErik},
+    riskDate={11/06/2020},
+    riskDescription={
+        Al materializarse este riesgo, el sitio web de la municipalidad deja de quedar disponible para todo público.},
+    riskResourceOwner={\riskPOIDepartamentoTecnologias},
+    riskAssociatedProcess={
+        Nivel general, \riskProcessUsoDeSitioWeb
+    },
+    riskSubArea={ 
+        \riskSubAreaDireccionComunicaciones \\&
+        \riskSubAreaAsuntosMunicipales      \\&
+        \riskSubAreaDepartamentoTecnologias 
+    },
+    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias  },
+    riskVulnDetails={
+        La denegación de servicio es un tipo de ataque cuyo fin es eliminar temporal o parcialmente la disponibilidad de un servicio, usualmente por medios como ICMP Flood.
+    },
+    riskThreatDetails={
+        Si bien la aplicación está funcionando con las últimas versiones de PHP y de MYQSL disponibles, la infraestructura al ser local y no contar con un WAF, no hay filtro respecto a las peticiones que son resueltas en el servidor. Debido a esto, en caso de llegar un número importante de peticiones las cuales no pudiesen resolverse simultaneamente, podría ocurrir un problema de overflow de memoria colapsando el proceso.
+
+        Cabe destacar que esto también puede ocurrir de manera orgánica en situaciones de alta demanda. Y debido a los acuerdos internos de desarrollo estandarizado, está presente en todas las plataformas desarolladas para uso interno.
+    },
+    riskResponse={ \riskRepsonseCorrect },
+    riskApproval={ \riskPOIDepartamentoTecnologias }
+]{}
+
+
+\riskItemTable[
+    riskTitle={Ejecución remota de código},
+    riskAuthor={\riskAuthorErik},
+    riskDate={11/06/2020},
+    riskDescription={
+        Al materializarse este riesgo, el atacante ejecuta código en el navegador del cliente sin previo consentimiento.},
+    riskResourceOwner={\riskPOIDepartamentoTecnologias},
+    riskAssociatedProcess={
+        Nivel general, \riskProcessUsoDeSitioWeb
+        % \threatInterest \\&
+        % \threatHumanIntervention
+    },
+    riskSubArea={ 
+        \riskSubAreaAll
+    },
+    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias  },
+    riskVulnDetails={
+        La ejecución remota de código permite que un usuario no autorizado ejecute instrucciones en otro equipo.
+    },
+    riskThreatDetails={
+        Esta amenaza está atribuida a CVE-2019-9787, el cual especifica una vulnerabilidad sobre la ejecución remota de código por medio de CRSRF. Este tipo de ataque fuerza al usuario a ejecutar código utilizando sus credenciales ya cargadas en la aplicación.
+    },
+    riskResponse={ \riskRepsonsePrevent },
+    riskApproval={ \riskPOIDepartamentoTecnologias }
+]{}
+
+\riskItemTable[
+    riskTitle={Manipulación de redirecciones},
+    riskAuthor={\riskAuthorErik},
+    riskDate={11/06/2020},
+    riskDescription={
+        Al materializarse este riesgo, el atacante fuerza la redirección a un sitio externo.},
+    riskResourceOwner={\riskPOIDepartamentoTecnologias},
+    riskAssociatedProcess={
+        Nivel general, \riskProcessUsoDeSitioWeb \\&
+        Nivel general, \riskProcessConfiabilidadDeSitioWeb
+    },
+    riskSubArea={ 
+        \riskSubAreaAll
+    },
+    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias  },
+    riskVulnDetails={
+        La ejecución remota de código permite que un usuario no autorizado ejecute instrucciones en otro equipo.
+    },
+    riskThreatDetails={
+        Esta amenaza está atribuida a CVE-2019-16220, el cual especifica una vulnerabilidad sobre la ejecución remota de código por medio de CRSRF. Este tipo de ataque fuerza al usuario a ejecutar código utilizando sus credenciales ya cargadas en la aplicación.
+    },
+    riskResponse={ \riskRepsonseMitigate },
+    riskApproval={ \riskPOIDepartamentoTecnologias }
+]{}
+
+
+\riskItemTable[
+    riskTitle={Ejecución de malware en servidor principal},
+    riskAuthor={\riskAuthorErik},
+    riskDate={11/06/2020},
+    riskDescription={
+        Al materializarse este riesgo, el servidor principal de la municipalidad queda comprometido.},
+    riskResourceOwner={\riskPOIDepartamentoTecnologias},
+    riskAssociatedProcess={
+    },
+    riskSubArea={ 
+        \riskSubAreaAll
+    },
+    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias  },
+    riskVulnDetails={
+        Ataques por randomware, gusanos, trojanos, etc.
+    },
+    riskThreatDetails={
+        Debido al alto número de vulnerabilidades presentes en el sistema operativo, es posible que la materalización de un riesgo en un equipo de una red adyacente pueda propagar procesos de terceros y estos comprometan el servidor principal.
+    },
+    riskResponse={ \riskRepsonsePrevent },
+    riskApproval={ \riskPOIDepartamentoTecnologias }
+]{}
+
+
+\section{Riesgos generales asociados a ingenería social}
+
+\riskItemTable[
+    riskTitle={Phishing},
+    riskAuthor={\riskAuthorErik},
+    riskDate={11/06/2020},
+    riskDescription={
+        Al materializarse este riesgo, un usuario ingresa información institucional a un sitio falso.},
+    riskResourceOwner={\riskPOIDepartamentoTecnologias},
+    riskAssociatedProcess={
+    },
+    riskSubArea={ 
+        \riskSubAreaAll
+    },
+    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias  },
+    riskVulnDetails={
+        Un usuario recibe un correo con un mensaje falso pero con apariencia visual creible, de esta manera para tentar al usuario a ejecutar alguna acción que pueda comprometer la seguridad, ya sea filtrando credenciales o información sensible.
+    },
+    riskThreatDetails={
+        Un ataque de Phishing implica la personificación de otro individuo o entidad, la cual actua como emisor de un mensaje el cual puede ser de interés del usuario. En este caso la apuesta es que el lector del correo hará caso del call to action antes de verificar la veracidad del contenido, por lo que este tipo de ataques está dirigido a un público no tecnico.
+    },
+    riskResponse={ \riskRepsonsePrevent },
+    riskApproval={ \riskPOIDepartamentoTecnologias }
+]{}
+
+
+
+\section{Riesgos generales asociados a activos estándares}
