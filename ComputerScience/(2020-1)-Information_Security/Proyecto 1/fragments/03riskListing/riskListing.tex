@@ -1,36 +1,123 @@
-\section{Riesgos asociados a la atención de público}
-\riskItemTable[
-    riskTitle={Imposibilidad de obtener una hora de atención a público},
-    riskAuthor={\riskAuthorErik},
-    riskDate={11/06/2020},
-    riskDescription={
-        Al materializarse este riesgo, una persona natural
-        queda imposibilitada de poder solicitar una hora para su atención, 
-        lo cual genera un cuello de botella.},
-    riskResourceOwner={\riskPOIAsuntosMunicipales},
-    riskAssociatedProcess={
-        \riskProcessGetAppointment  \\&
-        \riskProcessNewSuggestion   \\&
-        \riskProcessNewClaim        \\&
-        \riskProcessGetInformation
-    },
-    riskSubArea={ \riskSubAreaOIRS },
-    riskSubAreaDependencies={ \riskSubAreaAsuntosMunicipales },
-    riskVulnDetails={
-        Bla bla bla, el programa utilizado en bla bla...
-        
-        Debido a que la versión del sistema operativo utilizado tiene una gran cantidad de CVEs activos, existe la posibilidad de que un usuario malicioso intente generar un ataque de denegación de servicio dentro de la misma municipalidad.
-    },
-    riskThreatDetails={
-        Bla bla bla, el programa utilizado en bla bla...
-        
-        Debido a que la versión del sistema operativo utilizado tiene una gran cantidad de CVEs activos, existe la posibilidad de que un usuario malicioso intente generar un ataque de denegación de servicio dentro de la misma municipalidad.
-    },
-    riskResponse={ \riskRepsonsePrevent },
-    riskApproval={ \riskPOIAsuntosMunicipales }
-]{}
+%% tengo que agregar las siguientes plataformas
 
-\section{Riesgos asociados a plataformas o tecnologías generalizados dentro de la organización}
+Remuneraciones
+Registro comunal de permisos de circulación
+Licencias de conducir
+Patentes municipalesControl de bienes
+Adquisisión y control de bodegas
+Contabilidad gubernamental
+Banco de datos propiedas comunales
+Oficina de partes
+DepartamentoTecnologiasJuzgados de polícia local
+Administracion red departamente licencias de conducir
+administracion red departamento de juzgados de policia local
+partes empadronados departamento de seguridad ciudadana
+administración red departamento patentes municpales y tesorería
+administración red del departamento de seguridad ciudadana
+administración de dirección de obras municipales
+administración de sistemas de egresos, recursos humanos y remuneraciones
+plataforma de egresos
+administracion de sistemas de desarrollo comunitario
+sistemas computaciones por internet y sistemas sociales
+mantencion y administración de cartografia digital
+
+% %% Sistema contabilidad gubernamental
+%     Sistema  contabilidad  gubernamental.
+%     Ingreso de cuentas  contables,  programas  y centro  de costos.
+%     Ingreso   de  tablas   para  el  funcionamiento    del  sistema   (meses,áreas,  tipo  de  comprobantes   contables,  tipo  de  documentos,   tablacentro  costos,  programas,  parámetros  y proveedores).
+%     Ingreso de presupuesto  inicialymodificaciones   presupuestarias.
+%     Ingreso d eobligaciones(contratos,orden de compra,adjudicaciones  y factibilidades).
+%     Ingreso  de devengados  por proveedor  (facturas).
+%     Confección  de órdenes  de pago.
+%     Ingreso y contabilización   de documentos  contables,  rendiciones  decuentas.
+
+% %% Sistema de tesoreria municipal
+% Boletas  de garantía.
+%     Mantención  de garantías.
+%     Consulta  documento  en garantía.
+%     Ingreso de contratos
+% Egresos.
+%     Emisión  de cheques  de distintas  cuentas  corrientes.
+%     Emisión   de  listados   de  información,   como   cuenta   corriente   deproveedor.
+%     Generación  de listado  de conciliaciones   bancarias  y retenciones  deimpuesto.
+%     Contabilización  de movimientos  contables
+% Ingresos.
+%     Apertura  y cierre de cajas.
+%     Anulación  de ingresos.
+%     Cuadraturas  de cajas.
+%     Contabilización  de ingresos.
+%     Conciliación  de ingresos.
+%     Pagos a través de Internet.
+%     Emisión  informes  varios.
+%     Consulta  de recaudación  por cajas.
+
+% %% Sistema patentes comerciales
+%     Consulta  de patentes.
+%     Listar patentes  CIPA, según tipo.
+%     Administrar  solicitud  de patente.
+%     Mantención  del maestro  de patentes.
+%     Cálculo  de patentes.
+%     Anulación  de patentes  y/o giros.
+
+
+% %% Sistema permisos de circulación
+%     Generación  de giro para pago de permisos  de circulación.
+%     Generación  de duplicado  de permisos  de circulación.
+%     Emisión  de giros de fondos  a terceros
+%     Bloqueo  por sistema  de placas  patentes.
+%     Consultas   de  pagos  años  anteriores,   de  registro  de  multas,   deincorporaciones  y de traslados.
+%     Generación  de giros de sellos.
+%     Mantención  de traslado.
+%     Asignación  de código de S.1.1.
+%     Anulación  de giros mal emitidos
+
+\section{Riesgos asociados a factores no tecnológicos}
+%% desastres naturales
+%% Multas por servicios operaciones (como agua, luz)
+%% Pérdida de soporte de proyectos licitados
+%% Fin de facturaciones
+%% Desastres lógicos
+%% Divulgación y copiado de informacion
+%% falta de stock de recursos tecnológicos
+%% candados de seguridad
+
+\section{Riesgos asociados a procesos municpales}
+%% Falta de documentación e implantación de políticas para envío de correos masivos
+%% Falta de punto de contacto
+%% Roles no definidos
+%% Falta de monitoreo
+
+
+
+\section{Riesgos asociados procesos de atención municipal}
+%%Obtención y/o renovación de permisos de circulación sin ingreso o acreditación física y online de datos sobre propietario, placa patente única, seguro obligatorio, revisión técnica y/o multas impagas
+
+%%Obtención y/o renovación de patentes municipales sin ingreso y/o acreditación de dataos del contribuyente, propiedad, sucursales y datos del servicio de impuestos internos
+
+%% Emisión de decretos de pago sin registrar datos y/o sin comprobantes
+
+%% Decretos de pago imputados a cuentas presupuestarias que no corresponden
+
+%% Emisión de cheque individual sin consultar datos en sistema de contabilidad gubernamental
+
+%% Recepción de pagos con cálculos de intereses y multas fuera de período
+
+\section{Riesgos asociados a control del personal}
+%% Quiebre autenticación de llave seguridad
+%% quiebre autenticación de tarjeta magnética
+%% Copia de llaves
+
+
+\section{Riesgos asociados de índole técnica}
+%% Interoperabilidad con estándar de norma técnica para los Órganos de la Administración del Estado
+%% Integridad de información por estructura de datos
+%% Carencia de licencias
+%% Nula precensia de antivirus
+%% equipo proxy para filtro de contenido web
+%% almacenamiento de transacciones
+%% encriptado de la información
+%% falta de protocolo de Eliminación de la información
+%% Mantenimiento preventivo externalizado
 
 \riskItemTable[
     riskTitle={Denegación de servicio},
@@ -162,6 +249,3 @@
     riskApproval={ \riskPOIDepartamentoTecnologias }
 ]{}
 
-
-
-\section{Riesgos generales asociados a activos estándares}
