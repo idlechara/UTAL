@@ -1,0 +1,116 @@
+\newcommand{\repeatOnEachDepartmentBase}[3]{
+	\informationResource
+	{SWI\_#1\_0001}
+	{Switch general Cisco Catalyst 2960 para específico del departamento}
+	{Hardware TI}
+	{#2 - #3}
+	{Departamento de TI - Encargado TI de #2}
+	{1}{5}{5}
+	{
+		\threatCVE{CVE-2017-3881}{Ejecución arbitraria de código (resuelto)}
+		\threatResourceLost
+		\threatHumanIntervention
+		\threatRemoteIntervention
+		\threatNaturalDisaster
+		\threatHumanDisaster
+	}
+
+
+	\repeatDepartmentInformationResource
+	{NTB\_#1}
+	{Thinkpad T490 series, equipo corporativo}
+	{Hardware TI}
+	{#2 - #3 - recurso estático}
+	{#2}
+	{4}{5}{3}
+	{
+		\threatInformationBreach
+		\threatResourceLost
+		\threatHumanIntervention
+		\threatRemoteIntervention
+		\threatNaturalDisaster
+		\threatHumanDisaster
+	}
+
+	\repeatDepartmentInformationResource
+	{EML\_#1}
+	{Cuenta de correo corporativa}
+	{Activo de información tangible}
+	{EXE\_EXCHA\_001}
+	{#2}
+	{4}{5}{3}
+	{
+		\threatInformationBreach
+		\threatRemoteIntervention
+		\threatTransitive
+	}
+
+	\informationResource
+	{NAS\_#1\_001}
+	{Cisco NSS324 NAS, NAS local para equipo de la #2}
+	{Hardware TI}
+	{#2 - #3 - recurso estático}
+	{Departamento de TI - Encargado TI de #2}
+	{4}{5}{3}
+	{
+		\threatCVE{CVE-2017-7494}{Ejecución remota de código}
+		\threatInformationBreach
+		\threatResourceLost
+		\threatRemoteIntervention
+		\threatNaturalDisaster
+		\threatHumanDisaster
+		\threatInterest
+	}
+
+	\informationResource
+	{CAB\_#1\_001}
+	{Armario de archivos para #2}
+	{Infraestructura TI}
+	{#2 - #3 - recurso estático}
+	{Jefe de #2}
+	{5}{5}{5}
+	{
+		\threatNaturalDisaster
+		\threatHumanDisaster
+		\threatInterest
+	}
+
+	\informationResource
+	{OFI\_#1\_001}
+	{#2 - Instancia física}
+	{Infraestructura TI}
+	{#2 - #3 - recurso estático}
+	{Administración del edificio}
+	{5}{5}{5}
+	{
+		\threatNaturalDisaster
+		\threatHumanDisaster
+	}
+
+	\informationResource
+	{RNG\_#1\_001}
+	{Alarma de #2}
+	{Control de entorno}
+	{#2 - #3 - recurso estático}
+	{Administración del edificio}
+	{5}{5}{5}
+	{
+		\threatHumanIntervention
+		\threatRemoteIntervention
+	}
+
+
+	\informationResource
+	{ARC\_#1\_001}
+	{Archivo de #2 - registro de documentos}
+	{Activos tangibles / Activos intangibles}
+	{#2 - #3}
+	{Jefe de #2}
+	{5}{5}{4}
+	{
+		\threatNoPhysicalBackup
+		\threatNoDigitalBackup
+		\threatHumanIntervention
+		\threatValue
+	}
+}
