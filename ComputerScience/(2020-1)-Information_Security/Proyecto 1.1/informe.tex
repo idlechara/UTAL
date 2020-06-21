@@ -1,0 +1,86 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{makecell}
+% \usepackage{placeins}
+\usepackage[section]{placeins}
+\usepackage[stable]{footmisc}
+\usepackage{keyval}% http://ctan.org/pkg/keyval
+\usepackage{minted}
+
+\title{{\bf Seguridad Informática}\\ Proyecto 1}
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{\today}
+
+\input{automated/templates.tex}
+\input{automated/officeBaseStructure.tex}
+\input{automated/secretaryBaseStructure.tex}
+\input{automated/deparmentBaseStructure.tex}
+\input{automated/phpApplicationBaseStructure.tex}
+\input{automated/threatModel.tex}
+%\input{automated/threatModel.tex}
+
+
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\section{Introducción}
+
+\section{Estructura organizacional}
+\input{fragments/01structure}
+
+\section{Identificación de activos}
+\input{fragments/02resourceListing}
+
+
+\section{Análisis de riesgos}
+\input{fragments/03riskListing}
+
+
+\section{Matriz de riesgos}
+\section{Política de seguridad}
+
+
+\begin{thebibliography}{9}
+% 	\bibitem{REF:crc}
+% 	Bill McDaniel.
+% 	\textit{An Algorithm for Error Correcting Cyclic Redundance Checks}.
+% 	https://www.drdobbs.com/an-algorithm-for-error-correcting-cyclic/184401662, 2002.
+
+% 	\bibitem{REF:gnupg}
+% 	Linux Man pages.
+% 	\textit{gpg(1) - Linux man page}.
+% 	https://linux.die.net/man/1/gpg.
+
+
+% 	\bibitem{REF:veracrypt}
+% 	VeraCrypt.
+% 	\textit{Documentation}.
+% 	https://www.veracrypt.fr/en/Documentation.html.
+
+
+% 	\bibitem{REF:mellon}
+% 	Koopman, Philip and Chakravarty, T.
+% 	\textit{Cyclic redundancy code (CRC) polynomial selection for embedded networks}.
+% 	10.1109/DSN.2004.1311885. 2004.
+
+
+\end{thebibliography}
+
+\end{document}
