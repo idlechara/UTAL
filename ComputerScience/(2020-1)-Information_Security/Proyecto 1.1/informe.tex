@@ -14,6 +14,7 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{tabularx}
+\usepackage{imakeidx}
 \usepackage{makecell}
 % \usepackage{placeins}
 \usepackage[section]{placeins}
@@ -40,22 +41,40 @@
 \maketitle
 
 \newpage
+\tableofcontents
 
-\section{Introducción}
+\newpage
+\part{ResumenEjecutivo}
+\input{fragments/00resumen.tex}
 
+\newpage
+\part{Introducción}
+\input{fragments/00introduction.tex}
+
+\newpage
+\part{Desarrollo}
 \section{Estructura organizacional}
-\input{fragments/01structure}
+\input{fragments/01structure.tex}
 
 \section{Identificación de activos}
-\input{fragments/02resourceListing}
+\input{fragments/02resourceListing.tex}
 
 
 \section{Análisis de riesgos}
-\input{fragments/03riskListing}
+\input{fragments/03riskListing.tex}
 
 
 \section{Matriz de riesgos}
-\section{Política de seguridad}
+\input{fragments/04riskMatrix.tex}
+
+\section{Políticas de seguridad}
+\input{fragments/05policies.tex}
+
+\newpage
+\part{Conclusiones}
+
+\newpage
+\part{Bibliografía}
 
 
 \begin{thebibliography}{9}

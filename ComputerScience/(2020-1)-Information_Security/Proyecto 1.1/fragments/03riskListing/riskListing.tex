@@ -75,200 +75,329 @@
 % %     Asignación  de código de S.1.1.
 % %     Anulación  de giros mal emitidos
 
-\section{Riesgos asociados a factores no tecnológicos}
+\subsection{Riesgos asociados a factores no tecnológicos}
 %% desastres naturales
 \riskItemTable[
     riskTitle={Desastres naturales},
-    riskAuthor={Ariel Valenzuela},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, distintas estructuras (departamentos) podrían verse dañadas parcial o totalmente. },
     riskResourceOwner={},
     riskAssociatedProcess={
-        
+        \riskProcessGeneral
     },
     riskSubArea={ 
         \riskSubAreaAll
     },
-    riskSubAreaDependencies={   },
+    riskSubAreaDependencies={ \riskSubAreaAsuntosMunicipales  },
     riskVulnDetails={
-        Dado que Chile está ubicado en una zona potencialmente sísmica, la integridad de los recursos físicos se encuentra en un peligro constante.
+        En caso de algun desastre de origen natural (terremoto, tsunami, pandemia), la infraestructura puede sufrir daños por consecuencia directa o transitiva a esta.
     },
     riskThreatDetails={
-       
+        Dado que Chile está ubicado en una zona potencialmente sísmica, la integridad de los recursos físicos se encuentra en un peligro constante.
     },
-    riskResponse={ },
-    riskApproval={  }
+    riskResponse={ \riskRepsonsePrevent },
+    riskApproval={ \riskPOIAlcalde  }
 ]{}
 
 %% Multas por servicios operaciones (como agua, luz)
+\riskItemTable[
     riskTitle={Multas por Servicios Básicos (Agua, luz)},
-    riskAuthor={Ariel Valenzuela},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
-    riskDescription={ Al materializarse este riesgo,  },
+    riskDescription={ Al materializarse este riesgo, una multa o una infracción a algún proceso de pago de un servicio puede interrumpirlo },
     riskResourceOwner={},
     riskAssociatedProcess={
-        
+        \riskProcessGeneral
     },
     riskSubArea={ 
-        \riskSubAreaAll
+        \riskProcessContabilidadGubernamental \\&
+        \riskProcessMantencionInfraestructuraServicios
     },
-    riskSubAreaDependencies={   },
+    riskSubAreaDependencies={\riskSubAreaPago \\& \riskSubAreaAsuntosMunicipales \\& \riskSubAreaRevisionProcesos},
     riskVulnDetails={
-        dd
+        El no pago de un servicio o incurrir en multas debido a un problema administrativo o burocrático.
     },
     riskThreatDetails={
-        dd
+        Una multa o infracción puede generar la suspención de un servicio básico lo cual puede causar la interrupción de los servicios de la municipalidad.
     },
     riskResponse={ },
     riskApproval={  }
 ]{}
 
 %% Pérdida de soporte de proyectos licitados
-riskTitle={Pérdidas de soporte de proyectos licitados},
-    riskAuthor={Ariel Valenzuela},
+\riskItemTable[
+    riskTitle={Pérdidas de soporte de proyectos licitados},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
-    riskDescription={ Al materializarse este riesgo,  },
-    riskResourceOwner={},
+    riskDescription={ Al materializarse este riesgo, un proyecto externalizado deja de tener soporte opeartivo. },
+    riskResourceOwner={ \riskPOIEmpresasExternas },
     riskAssociatedProcess={
-        
+        \riskProcessGeneralTerceros
     },
     riskSubArea={ 
-        \riskSubAreaAll
+        \riskSubAreaRevisionProcesos \\ &
+        \riskSubAreaAuditoria \\ &
+        \riskSubAreaPago \\ &
+        \riskSubAreaAsuntosMunicipales \\ &
+        \riskSubAreaDepartamentoTecnologias
     },
-    riskSubAreaDependencies={   },
+    riskSubAreaDependencies={ \riskSubAreaDepartamentoTecnologias \\& \riskSubAreaMajor },
     riskVulnDetails={
-        dd
+        Los contratos de licitación incluyen contratos de soporte por un periodo relativamente extendido de tiempo. Sin embargo, puede darse el caso que el desarrollo es demasiado caro para seguirlo manteniendo, una nueva licitación fracase o bien la empresa rompa relaciones con la municipalidad.
     },
     riskThreatDetails={
-        dd
+        En caso de una pérdida de soporte el equipo interno de TI queda a ciegas respecto a como administrar o normalizar una situación sobre el software licitado. En caso de ser un SaSS, la normativa vigente especifica que la fuente debe estar alojada dentro de un servidor municipal, sin embargo esto no garantiza un soporte efectivo.
     },
-    riskResponse={ },
-    riskApproval={  }
+    riskResponse={ \riskRepsonsePrevent },
+    riskApproval={ \riskPOIAlcalde }
 ]{}
 %% Fin de facturaciones
-riskTitle={Fin de facturaciones},
-    riskAuthor={Ariel Valenzuela},
+\riskItemTable[
+    riskTitle={Fin de facturaciones},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
-    riskDescription={ Al materializarse este riesgo,  },
-    riskResourceOwner={},
+    riskDescription={ Al materializarse este riesgo, los procesos de facturación terminan lo cual puede ser causal para una empresa para bajar la calidad de su soporte },
+    riskResourceOwner={\riskPOIPago},
     riskAssociatedProcess={
-        
+        \riskPOIEmpresasExternas
     },
     riskSubArea={ 
-        \riskSubAreaAll
+        \riskSubAreaRevisionProcesos \\ &
+        \riskSubAreaAuditoria \\ &
+        \riskSubAreaPago \\ &
+        \riskSubAreaAsuntosMunicipales \\ &
+        \riskSubAreaDepartamentoTecnologias
     },
-    riskSubAreaDependencies={   },
+    riskSubAreaDependencies={ \riskSubAreaMajor \\& \riskSubAreaPago },
     riskVulnDetails={
-        dd
+        Una baja en la calidad del servicio puede dejar expuestos los sistemas desarrollados por terceros.
     },
     riskThreatDetails={
-        dd
+        Dada la indiosincracia del Chileno y de las empresas Chilenas, las relaciones contractuales se vuelven mas distantes una vez se ejecuta el último periodo de facturación. Adicionalmente, esto se puede producir por un atraso. En cualquiera de los dos casos, incluso si por ley esta la empresa licitada obligada a mantener la calidad del servicio, esto podría no ser así ya que no hay fiscalización durante el proceso.
     },
-    riskResponse={ },
-    riskApproval={  }
+    riskResponse={ \riskRepsonsePrevent },
+    riskApproval={ \riskSubAreaMajor  }
 ]{}
 %% Desastres lógicos
-riskTitle={Desastres lógicos},
-    riskAuthor={Ariel Valenzuela},
+\riskItemTable[
+    riskTitle={Desastres lógicos},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
-    riskDescription={ Al materializarse este riesgo,  },
+    riskDescription={ Al materializarse este riesgo, surgen errores lógicos en el componente afectado. },
     riskResourceOwner={},
     riskAssociatedProcess={
-        
+        \riskProcessIntegridad
     },
     riskSubArea={ 
         \riskSubAreaAll
     },
-    riskSubAreaDependencies={   },
+    riskSubAreaDependencies={ \riskSubAreaDepartamentoTecnologias },
     riskVulnDetails={
-        dd
+        Se define como un desastre lógico a algun error propagado por un determinado motivo el cual es causado por un error humano no premeditado ni predecible el cual implica una pérdida total de la integridad de los datos.
     },
     riskThreatDetails={
-        dd
+        Este tipo de errores puede ser causado por un sinfin de procesos, desde un desarrollo defectuoso por terceros, errores de hardware, etc.
     },
-    riskResponse={ },
-    riskApproval={  }
+    riskResponse={ \riskRepsonsePrevent },
+    riskApproval={ \riskSubAreaDepartamentoTecnologias }
 ]{}
 %% Divulgación y copiado de informacion
-riskTitle={Divulgación y copiado de información},
-    riskAuthor={Ariel Valenzuela},
+\riskItemTable[
+    riskTitle={\riskNameDivulgacionYCopiadoDeInformacion},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
-    riskDescription={ Al materializarse este riesgo,  },
-    riskResourceOwner={},
+    riskDescription={ Al materializarse este riesgo, la información confidencial del municipio queda expuesta a terceros. },
+    riskResourceOwner={\riskPOIAlcalde},
     riskAssociatedProcess={
-        
+        \riskProcessGeneral
     },
     riskSubArea={ 
         \riskSubAreaAll
     },
-    riskSubAreaDependencies={   },
+    riskSubAreaDependencies={ \riskPOIAlcalde  },
     riskVulnDetails={
-        dd
+        La información propia del municipio puede ser copiada, transportada y/o divulgada por cualquier médio, permitiendo su uso malicioso.
     },
     riskThreatDetails={
-        dd
+        Comunmente asociado a pérdida de credenciales o ruptura de autenticación, este riesgo también se puede dar con empresas 
     },
-    riskResponse={ },
-    riskApproval={  }
+    riskResponse={ \riskRepsonsePrevent },
+    riskApproval={ \riskPOIAlcalde }
 ]{}
-%% falta de stock de recursos tecnológicos
-riskTitle={Falta de stock de recursos tecnológicos},
-    riskAuthor={Ariel Valenzuela},
-    riskDate={12/06/2020},
-    riskDescription={ Al materializarse este riesgo,  },
-    riskResourceOwner={},
-    riskAssociatedProcess={
-        
-    },
-    riskSubArea={ 
-        \riskSubAreaAll
-    },
-    riskSubAreaDependencies={   },
-    riskVulnDetails={
-        dd
-    },
-    riskThreatDetails={
-        dd
-    },
-    riskResponse={ },
-    riskApproval={  }
-]{}
+% %% falta de stock de recursos tecnológicos
+%     riskTitle={\riskNameFaltaDeStockDeRecursosTecnologicos},
+%     riskAuthor={\riskAuthorErik},
+%     riskDate={12/06/2020},
+%     riskDescription={ Al materializarse este riesgo, no es posible suplir una dep },
+%     riskResourceOwner={},
+%     riskAssociatedProcess={
+
+%     },
+%     riskSubArea={ 
+%         \riskSubAreaAll
+%     },
+%     riskSubAreaDependencies={   },
+%     riskVulnDetails={
+%         dd
+%     },
+%     riskThreatDetails={
+%         dd
+%     },
+%     riskResponse={ },
+%     riskApproval={  }
+% ]{}
 %% candados de seguridad
-riskTitle={Candados de Seguridad},
-    riskAuthor={Ariel Valenzuela},
+\riskItemTable[
+    riskTitle={\riskNameCandadosDeSeguridad},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
-    riskDescription={ Al materializarse este riesgo,  },
-    riskResourceOwner={},
+    riskDescription={ No hay candados de seguridad para poder restringir la movilidad del dispositivo},
+    riskResourceOwner={\riskPOIDepartamentoTecnologias},
     riskAssociatedProcess={
-        
+        \riskProcessSeguridadInfraestructura
     },
     riskSubArea={ 
         \riskSubAreaAll
     },
-    riskSubAreaDependencies={   },
+    riskSubAreaDependencies={
+        \riskSubAreaDepartamentoTecnologias
+    },
     riskVulnDetails={
-        dd
+        Los candados de seguridad permiten anclar dispositivos como notebooks hacia una mesa de manera relativamente segurida. Al no tener dichos candados, estos dispositivos son fáciles de sustraer.
     },
     riskThreatDetails={
-        dd
+        Al no tener mecanismos para restringir la movilidad de los equipos, estos se vuelven suceptibles a su sustracción de las dependencias por terceras personas, poniendo en riesgo la confidencialidad de los datos.
     },
-    riskResponse={ },
-    riskApproval={  }
+    riskResponse={ \riskRepsonseCorrect },
+    riskApproval={ \riskPOIDepartamentoTecnologias }
 ]{}
 
-\section{Riesgos asociados a procesos municpales}
-%% Falta de documentación e implantación de políticas para envío de correos masivos
-%% Falta de punto de contacto
-%% Roles no definidos
-%% Falta de monitoreo
+\subsection{Riesgos asociados a procesos municpales}
 
+\riskItemTable[
+    riskTitle={\riskNameFaltaDeDocumentacionEImplantacionDePoliticasParaEnvioDeCorreosMasivos},
+    riskAuthor={\riskAuthorErik},
+    riskDate={12/06/2020},
+    riskDescription={ No hay política de envios masivos de correo. },
+    riskResourceOwner={\riskPOIDepartamentoTecnologias},
+    riskAssociatedProcess={
+        \riskProcessGeneral
+    },
+    riskSubArea={ 
+        \riskSubAreaAsuntosMunicipales
+    },
+    riskSubAreaDependencies={ \riskPOIAlcalde },
+    riskVulnDetails={
+        No hay políticas de envio masivo de correos a nivel de servidor, de usuario o de política general. Debido a esto, no es posible regular los correos salientes.
+    },
+    riskThreatDetails={
+        Al no existir regulación de los correos salientes, los correos de la municipalidad se vuelven objetivo fácil de phishing. Esto es ya que si no se estandarisa el envío de correos (por ejemplo, utilizando una lista), se da a entender que cualquier correo puede ejecutar esta acción, lo cual la vuelve más creible.
 
+        De la misma manera, al no haber regulaciones permite que cualquier usuario pueda ejecutar estas acciones las cuales pueden tener consecuencias graves para la credibilidad de la municipalidad.
+    },
+    riskResponse={ \riskRepsonseCorrect },
+    riskApproval={ \riskPOIAlcalde \\& \riskPOIDepartamentoTecnologias }
+]{}
 
-\section{Riesgos asociados procesos de atención municipal}
+\riskItemTable[
+    riskTitle={\riskNameFaltaDePuntoDeContacto},
+    riskAuthor={\riskAuthorErik},
+    riskDate={12/06/2020},
+    riskDescription={ No existe punto de contacto por parte de la municipalidad. },
+    riskResourceOwner={Miguel Jorquera},
+    riskAssociatedProcess={
+        \riskProcessGeneral
+    },
+    riskSubArea={ 
+        \riskSubAreaAsuntosMunicipales
+    },
+    riskSubAreaDependencies={ \riskPOIAlcalde },
+    riskVulnDetails={
+        No existen índices ni puntos de contacto a la municipalidad para efectos de trámites civiles.
+    },
+    riskThreatDetails={
+        Al no existir puntos de contacto, la atención por parte al cliente se ve afectada, saturando a los ejecutivos lo cual lleva a cuellos de botella dentro de la operación normal de la municipalidad.
+    },
+    riskResponse={ \riskRepsonseCorrect },
+    riskApproval={ \riskPOIAlcalde }
+]{}
+
+\riskItemTable[
+    riskTitle={\riskNameRolesNoDefinidos},
+    riskAuthor={\riskAuthorErik},
+    riskDate={12/06/2020},
+    riskDescription={ No existen roles definidos de usuario. },
+    riskResourceOwner={Miguel Jorquera},
+    riskAssociatedProcess={
+        \riskProcessGeneral
+    },
+    riskSubArea={ 
+        \riskSubAreaAll
+    },
+    riskSubAreaDependencies={ \riskSubAreaDepartamentoTecnologias },
+    riskVulnDetails={
+        No existen roles definidos de usuario respecto a los permisos sobre cada plataforma mas alla de la autenticación interna de cada uno.
+    },
+    riskThreatDetails={
+        El no restringir los accesos a nivel de usuario (de la nube interna/hibrida) puede provocar brechas de seguridad debido a la no restriccion de permisos.
+    },
+    riskResponse={ \riskRepsonseCorrect },
+    riskApproval={ \riskPOIDepartamentoTecnologias }
+]{}
+
+\riskItemTable[
+    riskTitle={\riskNameFaltaDeMonitoreo},
+    riskAuthor={\riskAuthorErik},
+    riskDate={12/06/2020},
+    riskDescription={ Al materializarse este riesgo, los dispositivos afectados pueden desarrollar comportamientos anómalos . },
+    riskResourceOwner={Miguel Jorquera},
+    riskAssociatedProcess={
+        \riskProcessAdministracionRed
+    },
+    riskSubArea={ 
+        \riskSubAreaDepartamentoTecnologias
+    },
+    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias },
+    riskVulnDetails={
+        De no monitorearse servicios o dispositivos no se puede dar atención a una posible explotación (o aparición) fortuita de fallos.
+    },
+    riskThreatDetails={
+        Actualmente no existen políticas que determinen una conducta o protocolo de monitoreo de los recursos internos.
+    },
+    riskResponse={ \riskRepsonseCorrect },
+    riskApproval={ \riskPOIDepartamentoTecnologias }
+]{}
 
 \riskItemTable[
     riskTitle={\riskNamePermisosCirculacionVulnerables},
-    riskAuthor={Erik Regla},
+    riskAuthor={\riskAuthorErik},
+    riskDate={12/06/2020},
+    riskDescription={ Al materializarse este riesgo, el sistema de permisos de circulación ejecuta operaciones sin necesidad inmediata ni forzada de ingresar datos. },
+    riskResourceOwner={Miguel Jorquera},
+    riskAssociatedProcess={
+        \riskProcessRegistroComunalDePermisosDeCirculacion
+    },
+    riskSubArea={ 
+        \riskSubAreaPago
+        \riskSubAreaAsuntosMunicipales
+        \riskProcessRegistroComunalDePermisosDeCirculacion
+    },
+    riskSubAreaDependencies={ \riskPOIEmpresaExternaC },
+    riskVulnDetails={
+        Es posible que debido aun fallo interno del sistema externalizado de permisos de circulación, emite decretos de pago inválidos o con información errónea.
+    },
+    riskThreatDetails={
+        Al estar externalizado el servicio, no hay control sobre el funcionamiento interno de esta plataforma.
+    },
+    riskResponse={ \riskRepsonseCompensate },
+    riskApproval={ \riskPOIDepartamentoTecnologias }
+]{}
+
+
+\riskItemTable[
+    riskTitle={\riskNamePermisosCirculacionVulnerables},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, el sistema de permisos de circulación ejecuta operaciones sin necesidad inmediata ni forzada de ingresar datos. },
     riskResourceOwner={Miguel Jorquera},
@@ -295,19 +424,19 @@ riskTitle={Candados de Seguridad},
 
 \riskItemTable[
     riskTitle={\riskNamePatentesVulnerables},
-    riskAuthor={Erik Regla},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, el sistema dede patentes comerciales ejecuta operaciones sin necesidad inmediata ni forzada de ingresar datos. },
     riskResourceOwner={Miguel Jorquera},
     riskAssociatedProcess={
-        \riskProcessPatentesMunicipalesB
+        \riskProcessPatentesMunicipales
     },
     riskSubArea={ 
         \riskSubAreaPago
         \riskSubAreaAsuntosMunicipales
         \riskProcessPatentesMunicipales
     },
-    riskSubAreaDependencies={ \riskPOIEmpresaExternaA },
+    riskSubAreaDependencies={ \riskPOIEmpresaExternaB },
     riskVulnDetails={
         Es posible que debido aun fallo interno del sistema externalizado de patentes municipales, emite decretos de pago inválidos o con información errónea.
     },
@@ -322,7 +451,7 @@ riskTitle={Candados de Seguridad},
 
 \riskItemTable[
     riskTitle={\riskNameEmisionDecretosVulneravbles},
-    riskAuthor={Erik Regla},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, el sistema de tesorería municipal o el sistema externalizado de contabilidad gubernamental pueden emitir decretos sin requerir la información. },
     riskResourceOwner={Miguel Jorquera},
@@ -347,7 +476,7 @@ riskTitle={Candados de Seguridad},
 
 \riskItemTable[
     riskTitle={\riskNameDecretosDePagoImputadosNoCorresponden},
-    riskAuthor={Erik Regla},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, el sistema de tesorería municipal puede emitir cheques a terceros con cargo a la municipalidad. },
     riskResourceOwner={Miguel Jorquera},
@@ -372,7 +501,7 @@ riskTitle={Candados de Seguridad},
 
 \riskItemTable[
     riskTitle={\riskNameEmisionDeChequeIndividualVulnerable},
-    riskAuthor={Erik Regla},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, el sistema de contabilidad gubernamental puede emitir cheques a terceros con cargo a la municipalidad. },
     riskResourceOwner={Miguel Jorquera},
@@ -395,7 +524,7 @@ riskTitle={Candados de Seguridad},
 
 \riskItemTable[
     riskTitle={Recepción de pagos con cálculos de intereses y multas fuera de período},
-    riskAuthor={Erik Regla},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, es posible ingresar un pago con cálculos erroneos en el sistema, los cuales se ven reflejados posteriormente en el sistema interno de contabilidad. },
     riskResourceOwner={Miguel Jorquera},
@@ -422,11 +551,11 @@ riskTitle={Candados de Seguridad},
     riskApproval={ \riskPOIDepartamentoTecnologias }
 ]{}
 
-\section{Riesgos asociados a control del personal}
+\subsection{Riesgos asociados a control del personal}
 
 \riskItemTable[
     riskTitle={Quiebre autenticación de tarjeta magnética},
-    riskAuthor={Erik Regla},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, las llaves magnéticas que utilizadas como barrera para personal no autorizado quedan sin efecto. },
     riskResourceOwner={Miguel Jorquera},
@@ -449,7 +578,7 @@ riskTitle={Candados de Seguridad},
 
 \riskItemTable[
     riskTitle={Copia de llaves},
-    riskAuthor={Erik Regla},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, las llaves físicas que utilizadas como barrera para personal no autorizado quedan sin efecto. },
     riskResourceOwner={Miguel Jorquera},
@@ -475,7 +604,7 @@ riskTitle={Candados de Seguridad},
 
 \riskItemTable[
     riskTitle={Quiebre autenticación de llave de seguridad},
-    riskAuthor={Erik Regla},
+    riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, la información de autenticación queda comprometida a terceras partes },
     riskResourceOwner={Miguel Jorquera},
@@ -498,7 +627,7 @@ riskTitle={Candados de Seguridad},
 
 
 
-\section{Riesgos asociados de índole técnica}
+\subsection{Riesgos asociados de índole técnica}
 
 \riskItemTable[
     riskTitle={\riskNameInteroperabilidadConEstandarInexistente},
@@ -595,7 +724,7 @@ riskTitle={Candados de Seguridad},
 
 
 \riskItemTable[
-    riskTitle={Carencia de licencias},
+    riskTitle={\riskNameDependenciaDeLicencias},
     riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, la carencia de una licencia podría limitar la  disponibilidad de un servicio que dependa de esta. },
@@ -618,7 +747,7 @@ riskTitle={Candados de Seguridad},
 ]{}
 
 \riskItemTable[
-    riskTitle={Dependencia de licencias},
+    riskTitle={\riskNameDependenciaDeLicencias},
     riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, la invalidación de una licencia podría provocar problemas de seguridad o bien interrupciones en la disponibilidad de un servicio. },
@@ -627,7 +756,8 @@ riskTitle={Candados de Seguridad},
         \riskProcessUsoDeSitioWeb
     },
     riskSubArea={ 
-        \riskSubAreaAll
+        \riskProcessAdministracionMunicipal \\&
+        \riskProcessCorreo
     },
     riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias, \riskPOIEmpresasExternas  },
     riskVulnDetails={
@@ -641,13 +771,17 @@ riskTitle={Candados de Seguridad},
 ]{}
 
 \riskItemTable[
-    riskTitle={Transaccion rota},
+    riskTitle={\riskNameTransaccionRota},
     riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, es posible leer la información directamente desdfe el medio en que se encuentra sin ninguna barrera de seguridad },
     riskResourceOwner={\riskPOIDepartamentoTecnologias},
     riskAssociatedProcess={
-        \riskProcessIntegridad
+        \riskProcessIntegridad \\&
+        \riskProcessResguardoInformacionPersonal \\&
+        \riskProcessResguardoInformacionInstitucional \\&
+        \riskProcessContabilidadGubernamental \\&
+        \riskProcessAdministracionMunicipal
     },
     riskSubArea={ 
         \riskSubAreaAll
@@ -661,85 +795,65 @@ riskTitle={Candados de Seguridad},
 
         Sin embargo, Dado que los riesgos son mínimos de por el momento y no ha ocurrido no se le da mayor importancia, a excepción del sistema de pago.
     },
-    riskResponse={ \riskRepsonseCompensate },
+    riskResponse={ \riskRepsonseCorrect \\ & \riskRepsonseTransfer si es externalizado },
     riskApproval={ \riskPOIDepartamentoTecnologias }
 ]{}
 
 \riskItemTable[
-    riskTitle={Falta de encriptado},
+    riskTitle={\riskNameFaltaDeEncriptado},
     riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, es posible leer la información directamente desdfe el medio en que se encuentra sin ninguna barrera de seguridad },
-    riskResourceOwner={\riskPOIDepartamentoTecnologias},
+    riskResourceOwner={\riskPOIDepartamentoTecnologias, \riskPOIEmpresaExternaA},
     riskAssociatedProcess={
         \riskProcessResguardoInformacionPersonal \\&
         \riskProcessResguardoInformacionInstitucional \\&
+        \riskProcessContabilidadGubernamental \\&
+        \riskProcessAdministracionMunicipal
     },
     riskSubArea={ 
         \riskSubAreaAll
     },
-    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias, \riskPOIEmpresasExternas  },
+    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias, \riskPOIEmpresaExternaA  },
     riskVulnDetails={
         Una auditoria realizada por contraloría reveló que no existe encruiptación de los datos almacenados digitalmente salvo en la capa de transporte.
     },
     riskThreatDetails={
         La falta de encriptación puede producir fuga de información sensible.
     },
-    riskResponse={ \riskRepsonseCorrect },
+    riskResponse={ \riskRepsonseCorrect\\ & \riskRepsonseTransfer si es externalizado },
     riskApproval={ \riskPOIAlcalde }
 ]{}
 
 
 \riskItemTable[
-    riskTitle={Residuos de información},
+    riskTitle={\riskNameResiduosDeInformacion},
     riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, información que haya sido borrada sigue disponible dentro de una base de datos sin ser detectada },
     riskResourceOwner={\riskPOIDepartamentoTecnologias},
     riskAssociatedProcess={
-        \riskProcessResguardoInformacionPersonal \\&
-        \riskProcessResguardoInformacionInstitucional \\&
+        \riskProcessContabilidadGubernamental \\&
+        \riskProcessAdministracionMunicipal \\&
     },
     riskSubArea={ 
-        \riskSubAreaAll
+        \riskSubAreaPago \\ &
+        \riskSubAreaRevisionProcesos \\&
+        \riskSubAreaAsuntosMunicipales
     },
-    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias, \riskPOIEmpresasExternas  },
+    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias, \riskPOIEmpresaExternaA  },
     riskVulnDetails={
         Una auditoria realizada por contraloría reveló que no existen protocolos de eliminación de la información de manera interna y esta tampoco forma parte de los servicios contratados.
     },
     riskThreatDetails={
         Al no existir un protocolo de eliminado de información claro, es altamente probable que la información no pueda ser eliminada de manera efectiva ya sea de plataformas, dispositivos, medios extraibles, etc. Este problema aplica también a los archivos físicos que no cuenten con respaldo y que dentro de las operaciones vigentes consideren su eliminación. 
     },
-    riskResponse={ \riskRepsonseCorrect },
+    riskResponse={ \riskRepsonseMitigate\\ & \riskRepsonseTransfer si es externalizado },
     riskApproval={ \riskPOIAlcalde }
 ]{}
 
 \riskItemTable[
-    riskTitle={Residuos de información},
-    riskAuthor={\riskAuthorErik},
-    riskDate={12/06/2020},
-    riskDescription={ Al materializarse este riesgo, información que haya sido borrada sigue disponible dentro de una base de datos sin ser detectada },
-    riskResourceOwner={\riskPOIDepartamentoTecnologias},
-    riskAssociatedProcess={
-        \riskProcessResguardoInformacionPersonal \\&
-        \riskProcessResguardoInformacionInstitucional \\&
-    },
-    riskSubArea={ 
-        \riskSubAreaAll
-    },
-    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias, \riskPOIEmpresasExternas  },
-    riskVulnDetails={
-        Una auditoría realizada por contraloría reveló que no existen protocolos de eliminación de la información de manera interna y esta tampoco forma parte de los servicios contratados.
-    },
-    riskThreatDetails={
-        Al no existir un protocolo de eliminado de información claro, es altamente probable que la información no pueda ser eliminada de manera efectiva ya sea de plataformas, dispositivos, medios extraíbles, etc. Este problema aplica también a los archivos físicos que no cuenten con respaldo y que dentro de las operaciones vigentes consideren su eliminación. 
-    },
-    riskResponse={ \riskRepsonseCorrect },
-    riskApproval={ \riskPOIAlcalde }
-]{}
-
-\riskItemTable[
-    riskTitle={Mantenimiento preventivo externalizado ejecutado deficientemente},
+    riskTitle={\riskNameMantenimientoPreventivoExternalizadoEjecutadoDeficientemente},
     riskAuthor={\riskAuthorErik},
     riskDate={12/06/2020},
     riskDescription={ Al materializarse este riesgo, las plataformas sujetas a mantenimiendo por parte de una empresa externa podrían quedar expuestas a vulnerabilidades },
@@ -747,33 +861,35 @@ riskTitle={Candados de Seguridad},
     riskAssociatedProcess={
         \riskProcessResguardoInformacionPersonal \\&
         \riskProcessResguardoInformacionInstitucional \\&
-        \riskProcessResguardoPlataforma
+        \riskProcessResguardoPlataforma \\&
     },
     riskSubArea={ 
         \riskSubAreaAsuntosMunicipales
         \riskSubAreaPago
         \riskSubAreaAuditoria
     },
-    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias, \riskPOIEmpresasExternas  },
+    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias, \riskPOIEmpresaExternaA  },
     riskVulnDetails={
         Mantenciones negligentes, omitidas, incompletas.
     },
     riskThreatDetails={
         Una mantención negligente de las plataformas puede llevar a un uso malicioso de estas, las cuales pueden perjudicar enormemente el servicio entregado por la municipalidad como también poner en riesgo los datos disponibles en esta. Actualmente debido a la normativa actual, todas las aplicaciones están alojadas en servidores de la municipalidad, sin embargo, no implica que el código esté necesariamente abierto o que el personal propio del departamento de tecnologías pueda tener el conocimiento suficiente sobre este para tomar control completo.
     },
-    riskResponse={ \riskRepsonsePrevent },
+    riskResponse={ \riskRepsonseTransfer },
     riskApproval={ \riskPOIDepartamentoTecnologias }
 ]{}
 
 \riskItemTable[
-    riskTitle={Denegación de servicio},
+    riskTitle={\riskNameDenegacionDeServicio},
     riskAuthor={\riskAuthorErik},
     riskDate={11/06/2020},
     riskDescription={
         Al materializarse este riesgo, el sitio web de la municipalidad deja de quedar disponible para todo público.},
     riskResourceOwner={\riskPOIDepartamentoTecnologias},
     riskAssociatedProcess={
-        Nivel general, \riskProcessUsoDeSitioWeb
+        \riskProcessContabilidadGubernamental \\ &
+        \riskPOIDireccionAdministracionFinanzas
+
     },
     riskSubArea={ 
         \riskSubAreaDepartamentoTecnologias 
@@ -787,7 +903,7 @@ riskTitle={Candados de Seguridad},
 
         Cabe destacar que esto también puede ocurrir de manera orgánica en situaciones de alta demanda. Y debido a los acuerdos internos de desarrollo estandarizado, está presente en todas las plataformas desarolladas para uso interno.
     },
-    riskResponse={ \riskRepsonseCorrect },
+    riskResponse={ \riskRepsonseMitigate\\ & \riskRepsonseTransfer si es externalizado },
     riskApproval={ \riskPOIDepartamentoTecnologias }
 ]{}
 
@@ -814,7 +930,7 @@ riskTitle={Candados de Seguridad},
     riskThreatDetails={
         Esta amenaza está atribuida a CVE-2019-9787, el cual especifica una vulnerabilidad sobre la ejecución remota de código por medio de CRSRF. Este tipo de ataque fuerza al usuario a ejecutar código utilizando sus credenciales ya cargadas en la aplicación.
     },
-    riskResponse={ \riskRepsonsePrevent },
+    riskResponse={ \riskRepsonseMitigate },
     riskApproval={ \riskPOIDepartamentoTecnologias }
 ]{}
 
@@ -845,39 +961,42 @@ riskTitle={Candados de Seguridad},
 
 
 \riskItemTable[
-    riskTitle={Ejecución de malwarepor falta de software AV},
+    riskTitle={\riskNameEjecucionDeMalwareporFaltaDeSoftwareAv},
     riskAuthor={\riskAuthorErik},
     riskDate={11/06/2020},
     riskDescription={
         Al materializarse este riesgo, el servidor principal de la municipalidad queda comprometido.},
     riskResourceOwner={\riskPOIDepartamentoTecnologias},
     riskAssociatedProcess={
+        \riskProcessContabilidadGubernamental \\&
+        \riskProcessAdministracionRed
     },
     riskSubArea={ 
-        \riskSubAreaAll
+        \riskPOIDepartamentoTecnologias
     },
-    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias  },
+    riskSubAreaDependencies={ \riskPOIDepartamentoTecnologias \\& \riskPOIEmpresaExternaA  },
     riskVulnDetails={
         Ataques por randomware, gusanos, trojanos, etc.
     },
     riskThreatDetails={
         Debido al alto número de vulnerabilidades presentes en el sistema operativo, es posible que la materalización de un riesgo en un equipo de una red adyacente pueda propagar procesos de terceros y estos comprometan el servidor principal.
     },
-    riskResponse={ \riskRepsonsePrevent },
+    riskResponse={ \riskRepsonseCorrect \\ & \riskRepsonseTransfer si es externalizado },
     riskApproval={ \riskPOIDepartamentoTecnologias }
 ]{}
 
 
-\section{Riesgos generales asociados a ingenería social}
+\subsection{Riesgos generales asociados a ingenería social}
 
 \riskItemTable[
-    riskTitle={Phishing},
+    riskTitle={\riskNamePhishing},
     riskAuthor={\riskAuthorErik},
     riskDate={11/06/2020},
     riskDescription={
         Al materializarse este riesgo, un usuario ingresa información institucional a un sitio falso.},
     riskResourceOwner={\riskPOIDepartamentoTecnologias},
     riskAssociatedProcess={
+        \riskProcessCorreo
     },
     riskSubArea={ 
         \riskSubAreaAll
