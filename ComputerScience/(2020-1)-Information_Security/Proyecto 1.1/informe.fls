@@ -133,6 +133,14 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/imakeidx/imakeidx.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/imakeidx/imakeidx.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
@@ -162,8 +170,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
-INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
-INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
 INPUT /dev/null
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.w18
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.w18
@@ -210,8 +216,14 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-OUTPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
 OUTPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.pdf
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
+OUTPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aer17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aeb10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aer12.tfm
@@ -270,14 +282,20 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmu10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/ae/aer12.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aeb10.tfm
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure.tex
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure.tex
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.toc
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aeb10.tfm
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure/organigramaMunicipalidad.pdf
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure/organigramaMunicipalidad.pdf
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure/organigramaMunicipalidad.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aeb10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/ae/aeb10.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmb10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/ae/aeb10.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmb10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
@@ -290,14 +308,24 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/ae/aer10.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmu10.tfm
+OUTPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.toc
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aeb10.tfm
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/00resumen.tex
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/00resumen.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/ae/aeb10.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmb10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/00introduction.tex
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/00introduction.tex
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure.tex
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure.tex
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure/organigramaMunicipalidad.pdf
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure/organigramaMunicipalidad.pdf
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure/organigramaMunicipalidad.pdf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing.tex
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aer8.tfm
@@ -314,9 +342,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aer6.tfm
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing/01context.tex
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing/01context.tex
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/ae/aer8.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmu10.tfm
@@ -346,6 +371,10 @@ INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-In
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/03riskListing/subarea.tex
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/03riskListing/riskListing.tex
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/03riskListing/riskListing.tex
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/04riskMatrix.tex
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/04riskMatrix.tex
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/05policies.tex
+INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/05policies.tex
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.aux
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
 INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
