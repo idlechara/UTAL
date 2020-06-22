@@ -8,11 +8,10 @@
 	{#2}
 	{4}{5}{3}
 	{
-		\threatInformationBreach
-		\threatResourceLost
-		\threatHumanIntervention
-		\threatRemoteIntervention
-		\threatNaturalDisaster
+		\threatInformationBreach \\ &
+		\threatResourceLost \\ &
+		\threatHumanIntervention \\ &
+		\threatNaturalDisaster \\ &
 		\threatHumanDisaster
 	}
 
@@ -24,9 +23,13 @@
 	{#2}
 	{4}{5}{3}
 	{
-		\threatInformationBreach
-		\threatRemoteIntervention
-		\threatTransitive
+		\threatInformationBreach \\ &
+		\threatHumanIntervention \\ &
+		\threatTransitive \\ &
+		\riskNameRolesNoDefinidos
+		\riskNameQuiebreAutenticacionDeLlaveSeguridad \\ &
+		\riskNameTransaccionRota \\ &
+		\riskNamePhishing \\ &
 	}
 
 	\informationResource
@@ -37,13 +40,12 @@
 	{Departamento de TI - Encargado TI de #3}
 	{4}{5}{3}
 	{
-		\threatCVE{CVE-2017-7494}{Ejecución remota de código}
-		\threatInformationBreach
-		\threatResourceLost
-		\threatRemoteIntervention
-		\threatNaturalDisaster
+		\threatCVE{CVE-2017-7494}{Ejecución remota de código} \\ &
+		\threatInformationBreach \\ &
+		\threatResourceLost \\ &
+		\threatHumanIntervention \\ &
+		\threatNaturalDisaster \\ &
 		\threatHumanDisaster
-		\threatInterest
 	}
 
 	\informationResource
@@ -54,9 +56,8 @@
 	{Jefe de #2}
 	{5}{5}{5}
 	{
-		\threatNaturalDisaster
+		\threatNaturalDisaster \\ &
 		\threatHumanDisaster
-		\threatInterest
 	}
 
 	\informationResource
@@ -67,7 +68,7 @@
 	{Administración del edificio}
 	{5}{5}{5}
 	{
-		\threatNaturalDisaster
+		\threatNaturalDisaster \\ &
 		\threatHumanDisaster
 	}
 
@@ -80,7 +81,6 @@
 	{5}{5}{5}
 	{
 		\threatHumanIntervention
-		\threatRemoteIntervention
 	}
 
 
@@ -92,9 +92,8 @@
 	{Jefe de #2}
 	{5}{5}{4}
 	{
-		\threatNoPhysicalBackup
-		\threatNoDigitalBackup
+		\threatNoPhysicalBackup \\ &
+		\threatNoDigitalBackup \\ &
 		\threatHumanIntervention
-		\threatValue
 	}
 }
