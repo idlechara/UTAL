@@ -210,14 +210,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
-OUTPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.pdf
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
-INPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
 OUTPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.out
+OUTPUT /home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aer17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aeb10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aer12.tfm
