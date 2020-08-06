@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+sudo apt install gnupg2
+gpg2 \PYGZhy{}\PYGZhy{}keyserver hkp://pool.sks\PYGZhy{}keyservers.net \PYGZhy{}\PYGZhy{}recv\PYGZhy{}keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl \PYGZhy{}L https://get.rvm.io \PYG{p}{|} bash \PYGZhy{}s stable
+\PYG{n+nb}{source} \PYGZti{}/.rvm/scripts/rvm
+\PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}source \PYGZti{}/.rvm/scripts/rvm\PYGZdq{}} \PYGZgt{}\PYGZgt{} \PYGZti{}/.bashrc
+\PYG{n+nb}{source} \PYGZti{}/.bashrc
+\PYG{n+nv}{RUBYVERSION}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}wget https://raw.githubusercontent.com/rapid7/metasploit\PYGZhy{}framework/master/.ruby\PYGZhy{}version \PYGZhy{}q \PYGZhy{}O \PYGZhy{} \PYG{k}{)}
+rvm install \PYG{n+nv}{\PYGZdl{}RUBYVERSION}
+rvm use \PYG{n+nv}{\PYGZdl{}RUBYVERSION} \PYGZhy{}\PYGZhy{}default
+\PYG{n+nb}{cd} /opt
+sudo git clone https://github.com/rapid7/metasploit\PYGZhy{}framework.git
+sudo chown \PYGZhy{}R \PYG{l+s+sb}{`}whoami\PYG{l+s+sb}{`} /opt/metasploit\PYGZhy{}framework
+\PYG{n+nb}{cd} metasploit\PYGZhy{}framework
+rvm \PYGZhy{}\PYGZhy{}default use ruby\PYGZhy{}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{RUBYVERSION}\PYG{l+s+si}{\PYGZcb{}}@metasploit\PYGZhy{}framework
+gem install bundler
+bundle install
+\PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}export PATH=}\PYG{n+nv}{\PYGZdl{}PATH}\PYG{l+s+s2}{:/usr/lib/postgresql/10/bin\PYGZdq{}} \PYGZgt{}\PYGZgt{} \PYGZti{}/.bashrc
+. \PYGZti{}/.bashrc
+./msfdb init
+msfconsole
+\end{Verbatim}

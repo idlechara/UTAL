@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Sun Aug  2 18:14:03 2020 as: nmap -oX outputfile.xml -p- -sV -&#45;version-intensity 5 192.168.0.184 -->
+<nmaprun scanner="nmap" args="nmap -oX outputfile.xml -p- -sV -&#45;version-intensity 5 192.168.0.184" start="1596406443" startstr="Sun Aug  2 18:14:03 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1596406443" endtime="1596406520"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.0.184" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65505">
+<extrareasons reason="conn-refused" count="65505"/>
+</extraports>
+<port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" product="vsftpd" version="2.3.4" ostype="Unix" method="probed" conf="10"><cpe>cpe:/a:vsftpd:vsftpd:2.3.4</cpe></service></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="4.7p1 Debian 8ubuntu1" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:4.7p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service></port>
+<port protocol="tcp" portid="23"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="telnet" product="Linux telnetd" ostype="Linux" method="probed" conf="10"><cpe>cpe:/o:linux:linux_kernel</cpe></service></port>
+<port protocol="tcp" portid="25"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="smtp" product="Postfix smtpd" hostname=" metasploitable.localdomain" method="probed" conf="10"><cpe>cpe:/a:postfix:postfix</cpe></service></port>
+<port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="domain" product="ISC BIND" version="9.4.2" method="probed" conf="10"><cpe>cpe:/a:isc:bind:9.4.2</cpe></service></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.2.8" extrainfo="(Ubuntu) DAV/2" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.2.8</cpe></service></port>
+<port protocol="tcp" portid="111"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="rpcbind" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Samba smbd" version="3.X - 4.X" extrainfo="workgroup: WORKGROUP" method="probed" conf="10"><cpe>cpe:/a:samba:samba</cpe></service></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netbios-ssn" product="Samba smbd" version="3.X - 4.X" extrainfo="workgroup: WORKGROUP" method="probed" conf="10"><cpe>cpe:/a:samba:samba</cpe></service></port>
+<port protocol="tcp" portid="512"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="exec" method="table" conf="3"/></port>
+<port protocol="tcp" portid="513"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="login" product="OpenBSD or Solaris rlogind" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="514"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="tcpwrapped" method="probed" conf="8"/></port>
+<port protocol="tcp" portid="1099"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="java-rmi" product="GNU Classpath grmiregistry" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="1524"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="bindshell" product="Metasploitable root shell" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="2049"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="rpcbind" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="2121"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" product="ProFTPD" version="1.3.1" ostype="Unix" method="probed" conf="10"><cpe>cpe:/a:proftpd:proftpd:1.3.1</cpe></service></port>
+<port protocol="tcp" portid="3306"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="mysql" product="MySQL" version="5.0.51a-3ubuntu5" method="probed" conf="10"><cpe>cpe:/a:mysql:mysql:5.0.51a-3ubuntu5</cpe></service></port>
+<port protocol="tcp" portid="3632"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="distccd" product="distccd" version="v1" extrainfo="(GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4)" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="5432"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="postgresql" product="PostgreSQL DB" version="8.3.0 - 8.3.7" method="probed" conf="10"><cpe>cpe:/a:postgresql:postgresql:8.3</cpe></service></port>
+<port protocol="tcp" portid="5900"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="vnc" product="VNC" extrainfo="protocol 3.3" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="6000"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="X11" extrainfo="access denied" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="6667"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="irc" product="UnrealIRCd" hostname="irc.Metasploitable.LAN" method="probed" conf="10"><cpe>cpe:/a:unrealircd:unrealircd</cpe></service></port>
+<port protocol="tcp" portid="6697"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="irc" product="UnrealIRCd" extrainfo="Admin email admin@Metasploitable.LAN" method="probed" conf="10"><cpe>cpe:/a:unrealircd:unrealircd</cpe></service></port>
+<port protocol="tcp" portid="8009"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ajp13" product="Apache Jserv" extrainfo="Protocol v1.3" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="8180"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache Tomcat/Coyote JSP engine" version="1.1" method="probed" conf="10"><cpe>cpe:/a:apache:coyote_http_connector:1.1</cpe></service></port>
+<port protocol="tcp" portid="8787"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="drb" product="Ruby DRb RMI" extrainfo="Ruby 1.8; path /usr/lib/ruby/1.8/drb" method="probed" conf="10"><cpe>cpe:/a:ruby-lang:ruby:1.8</cpe></service></port>
+<port protocol="tcp" portid="41477"><state state="open" reason="syn-ack" reason_ttl="0"/></port>
+<port protocol="tcp" portid="53261"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="rpcbind" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="58032"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="rpcbind" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="60823"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="rpcbind" method="probed" conf="10"/></port>
+</ports>
+<times srtt="83" rttvar="26" to="100000"/>
+</host>
+<runstats><finished time="1596406520" timestr="Sun Aug  2 18:15:20 2020" elapsed="76.80" summary="Nmap done at Sun Aug  2 18:15:20 2020; 1 IP address (1 host up) scanned in 76.80 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

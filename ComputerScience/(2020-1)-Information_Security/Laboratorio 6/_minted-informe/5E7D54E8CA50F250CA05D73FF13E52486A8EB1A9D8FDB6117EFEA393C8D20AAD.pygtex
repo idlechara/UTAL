@@ -1,0 +1,70 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+kuky\PYGZus{}nekoi@fu\PYGZhy{}no\PYGZhy{}isan:\PYGZti{}/.wpscan\PYGZdl{} docker run \PYGZhy{}it \PYGZhy{}\PYGZhy{}rm wpscanteam/wpscan \PYGZhy{}\PYGZhy{}api\PYGZhy{}token DCTk3QgEgClCDCpU15LHbvxObvs6KnLij8SK3gsHcPM \PYGZhy{}\PYGZhy{}url http://www.dolphinwhalewatch.com/ \PYG{p}{|} egrep \PYG{l+s+s2}{\PYGZdq{}(Title|WordPress version )\PYGZdq{}}
+\PYG{o}{[}+\PYG{o}{]} WordPress version \PYG{l+m}{2}.7.1 identified \PYG{o}{(}Insecure, released on \PYG{l+m}{2009}\PYGZhy{}02\PYGZhy{}10\PYG{o}{)}.
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.0 \PYGZhy{} \PYG{l+m}{2}.7.1 admin.php Module Configuration Security Bypass
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.5 \PYGZhy{} \PYG{l+m}{3}.3.1 XSS in swfupload
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{1}.5.1 \PYGZhy{} \PYG{l+m}{3}.5 XMLRPC Pingback API Internal/External Port Scanning
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{1}.5.1 \PYGZhy{} \PYG{l+m}{3}.5 XMLRPC pingback additional issues
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.0 \PYGZhy{} \PYG{l+m}{3}.0.1 wp\PYGZhy{}includes/comment.php Bypass Spam Restrictions
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.0 \PYGZhy{} \PYG{l+m}{3}.0.1 Multiple Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in request\PYGZus{}filesystem\PYGZus{}credentials\PYG{o}{()}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.0 \PYGZhy{} \PYG{l+m}{3}.0.1 Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in wp\PYGZhy{}admin/plugins.php
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.0 \PYGZhy{} \PYG{l+m}{3}.0.1 wp\PYGZhy{}includes/capabilities.php Remote Authenticated Administrator Delete Action Bypass
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.0 \PYGZhy{} \PYG{l+m}{3}.0 Remote Authenticated Administrator Add Action Bypass
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.0.3 \PYGZhy{} \PYG{l+m}{3}.9.1 \PYG{o}{(}except \PYG{l+m}{3}.7.4 / \PYG{l+m}{3}.8.4\PYG{o}{)} CSRF Token Brute Forcing
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.0 \PYGZhy{} Long Password Denial of Service \PYG{o}{(}DoS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.0 \PYGZhy{} Server Side Request Forgery \PYG{o}{(}SSRF\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.4.2 \PYGZhy{} SSRF Bypass using Octal \PYG{p}{\PYGZam{}} Hexedecimal IP addresses
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.6.0\PYGZhy{}4.5.2 \PYGZhy{} Unauthorized Category Removal from Post
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.5\PYGZhy{}4.6 \PYGZhy{} Authenticated Stored Cross\PYGZhy{}Site Scripting via Image Filename
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.7 \PYGZhy{} Post via Email Checks mail.example.com by Default
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.3\PYGZhy{}4.8.3 \PYGZhy{} Host Header Injection in Password Reset
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.7.0\PYGZhy{}4.7.4 \PYGZhy{} Insufficient Redirect Validation
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.5.0\PYGZhy{}4.7.4 \PYGZhy{} Post Meta Data Values Improper Handling in XML\PYGZhy{}RPC
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.5.0\PYGZhy{}4.7.4 \PYGZhy{} Filesystem Credentials Dialog CSRF
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.3.0\PYGZhy{}4.8.1 \PYGZhy{} \PYG{n+nv}{\PYGZdl{}wpdb}\PYGZhy{}\PYGZgt{}prepare\PYG{o}{()} potential SQL Injection
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.3.0\PYGZhy{}4.7.4 \PYGZhy{} Authenticated SQL injection
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.8.2 \PYGZhy{} \PYG{n+nv}{\PYGZdl{}wpdb}\PYGZhy{}\PYGZgt{}prepare\PYG{o}{()} Weakness
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{1}.5.0\PYGZhy{}4.9 \PYGZhy{} RSS and Atom Feed Escaping
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.9.4 \PYGZhy{} Application Denial of Service \PYG{o}{(}DoS\PYG{o}{)} \PYG{o}{(}unpatched\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.9.6 \PYGZhy{} Authenticated Arbitrary File Deletion
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.2.2 \PYGZhy{} Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in URL Sanitisation
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: All in One SEO Pack \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.1.5 \PYGZhy{} aioseop\PYGZus{}functions.php new\PYGZus{}meta Parameter XSS
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: All in One SEO Pack \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.1.5 \PYGZhy{} Unspecified Privilege Escalation
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: All in One SEO Pack \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.0.3 \PYGZhy{} XSS
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: All in One SEO Pack \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.2.5.1 \PYGZhy{} Information Disclosure
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: All in One SEO Pack \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.2.6.1 \PYGZhy{} Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: All in One SEO Pack \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.3.6.1 \PYGZhy{} Unauthenticated Stored Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: All in One SEO Pack \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.3.7 \PYGZhy{}  Unauthenticated Stored Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: All in One SEO Pack \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.9.1.1 \PYGZhy{} Authenticated Stored Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: All In One SEO Pack \PYGZlt{} \PYG{l+m}{3}.2.7 \PYGZhy{} Stored Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: Google Analyticator \PYGZlt{}\PYG{o}{=} \PYG{l+m}{6}.4.9.3 \PYGZhy{} Cross\PYGZhy{}Site Request Forgery \PYG{o}{(}CSRF\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: Google Analyticator \PYGZlt{}\PYG{o}{=} \PYG{l+m}{6}.4.9.4 \PYGZhy{} Multiple Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: Google Analyticator \PYGZlt{} \PYG{l+m}{5}.2.1 \PYGZhy{} XSS
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.0.63 \PYGZhy{} Arbitrary File Upload
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYG{l+m}{2}.0.0 \PYGZhy{} Directory Traversal
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZhy{} swfupload.swf Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYG{l+m}{1}.9.12 \PYGZhy{} Arbitrary File Upload
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYG{l+m}{1}.9.11 \PYGZhy{} Full Path Disclosure
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYG{l+m}{1}.9.5 \PYGZhy{} gallerypath Parameter Stored XSS
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{1}.9.0 \PYGZhy{} Multiple Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{1}.8.3 \PYGZhy{} XXS \PYG{p}{\PYGZam{}} CSRF
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{1}.7.3 \PYGZhy{} xml/ajax.php Path Disclosure
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{1}.5.1 \PYGZhy{} Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.0.77 \PYGZhy{} CSRF \PYG{p}{\PYGZam{}} Arbitrary File Upload
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.1.7 \PYGZhy{} Authenticated Path Traversal
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.1.56 \PYGZhy{} Authenticated Local File Inclusion \PYG{o}{(}LFI\PYG{o}{)} \PYG{p}{\PYGZam{}} SQLi
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.1.77 \PYGZhy{} Unauthenticated SQL Injection
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.2.46 \PYGZhy{} Galley Paths Not Secured
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.2.44 \PYGZhy{} Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGen Gallery \PYGZlt{}\PYG{o}{=} \PYG{l+m}{3}.1.5 \PYGZhy{} Authenticated PHP Object Injection
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: Freemius Library \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.2.3 \PYGZhy{} Authenticated Option Update
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{} \PYG{l+m}{2}.1.15 \PYGZhy{} Unrestricted File Upload
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: Nextgen Gallery \PYGZlt{} \PYG{l+m}{3}.2.11 \PYGZhy{} SQL Injection
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGen Gallery \PYGZlt{} \PYG{l+m}{2}.1.15 \PYGZhy{} Path Traversal
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: NextGEN Gallery \PYGZlt{} \PYG{l+m}{2}.1.10 \PYGZhy{} Multiple XSS
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: qTranslate \PYG{l+m}{2}.5.34 \PYGZhy{} Setting Manipulation CSRF
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: qTranslate \PYGZlt{}\PYG{o}{=} \PYG{l+m}{2}.5.39 \PYGZhy{} Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WP\PYGZhy{}SpamFree \PYG{l+m}{3}.2.1 \PYGZhy{} Spam SQL Injection
+ \PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WP\PYGZhy{}SpamFree Anti\PYGZhy{}Spam \PYGZhy{} Authenticated Reflected Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+kuky\PYGZus{}nekoi@fu\PYGZhy{}no\PYGZhy{}isan:\PYGZti{}/.wpscan\PYGZdl{}
+\end{Verbatim}

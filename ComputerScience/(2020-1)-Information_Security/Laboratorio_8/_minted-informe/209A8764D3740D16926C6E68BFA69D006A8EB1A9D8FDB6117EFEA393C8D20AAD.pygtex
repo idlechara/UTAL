@@ -1,0 +1,75 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+kuky\PYGZus{}nekoi@fu\PYGZhy{}no\PYGZhy{}isan:\PYGZti{}/.wpscan\PYGZdl{} docker run \PYGZhy{}it \PYGZhy{}\PYGZhy{}rm wpscanteam/wpscan \PYGZhy{}\PYGZhy{}api\PYGZhy{}token DCTk3QgEgClCDCpU15LHbvxObvs6KnLij8SK3gsHcPM \PYGZhy{}\PYGZhy{}url https://www.mpi\PYGZhy{}sws.org/ \PYG{p}{|} egrep \PYG{l+s+s2}{\PYGZdq{}(Title|WordPress version )\PYGZdq{}}
+\PYG{o}{[}+\PYG{o}{]} WordPress version \PYG{l+m}{4}.6 identified \PYG{o}{(}Insecure, released on \PYG{l+m}{2016}\PYGZhy{}08\PYGZhy{}16\PYG{o}{)}.
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.5\PYGZhy{}4.6 \PYGZhy{} Authenticated Stored Cross\PYGZhy{}Site Scripting via Image Filename
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.8\PYGZhy{}4.6 \PYGZhy{} Path Traversal in Upgrade Package Uploader
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{4}.3\PYGZhy{}4.7 \PYGZhy{} Remote Code Execution \PYG{o}{(}RCE\PYG{o}{)} in PHPMailer
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.9\PYGZhy{}4.7 \PYGZhy{} Authenticated Cross\PYGZhy{}Site scripting \PYG{o}{(}XSS\PYG{o}{)} in update\PYGZhy{}core.php
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.4\PYGZhy{}4.7 \PYGZhy{} Stored Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} via Theme Name fallback
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.7 \PYGZhy{} Post via Email Checks mail.example.com by Default
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.8\PYGZhy{}4.7 \PYGZhy{} Accessibility Mode Cross\PYGZhy{}Site Request Forgery \PYG{o}{(}CSRF\PYG{o}{)}
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.0\PYGZhy{}4.7 \PYGZhy{} Cryptographically Weak Pseudo\PYGZhy{}Random Number Generator \PYG{o}{(}PRNG\PYG{o}{)}
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{4}.2.0\PYGZhy{}4.7.1 \PYGZhy{} Press This UI Available to Unauthorised Users
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.5\PYGZhy{}4.7.1 \PYGZhy{} WP\PYGZus{}Query SQL Injection
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{4}.3.0\PYGZhy{}4.7.1 \PYGZhy{} Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in posts list table
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.6.0\PYGZhy{}4.7.2 \PYGZhy{} Authenticated Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} via Media File Metadata
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.8.1\PYGZhy{}4.7.2 \PYGZhy{} Control Characters in Redirect URL Validation
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress  \PYG{l+m}{4}.0\PYGZhy{}4.7.2 \PYGZhy{} Authenticated Stored Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in YouTube URL Embeds
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{4}.2\PYGZhy{}4.7.2 \PYGZhy{} Press This CSRF DoS
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.3\PYGZhy{}4.8.3 \PYGZhy{} Host Header Injection in Password Reset
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.7.0\PYGZhy{}4.7.4 \PYGZhy{} Insufficient Redirect Validation
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.5.0\PYGZhy{}4.7.4 \PYGZhy{} Post Meta Data Values Improper Handling in XML\PYGZhy{}RPC
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.4.0\PYGZhy{}4.7.4 \PYGZhy{} XML\PYGZhy{}RPC Post Meta Data Lack of Capability Checks
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.5.0\PYGZhy{}4.7.4 \PYGZhy{} Filesystem Credentials Dialog CSRF
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.3\PYGZhy{}4.7.4 \PYGZhy{} Large File Upload Error XSS
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.4.0\PYGZhy{}4.7.4 \PYGZhy{} Customizer XSS \PYG{p}{\PYGZam{}} CSRF
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.3.0\PYGZhy{}4.8.1 \PYGZhy{} \PYG{n+nv}{\PYGZdl{}wpdb}\PYGZhy{}\PYGZgt{}prepare\PYG{o}{()} potential SQL Injection
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.3.0\PYGZhy{}4.7.4 \PYGZhy{} Authenticated SQL injection
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.9.2\PYGZhy{}4.8.1 \PYGZhy{} Open Redirect
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.0\PYGZhy{}4.8.1 \PYGZhy{} Path Traversal in Unzipping
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{4}.4\PYGZhy{}4.8.1 \PYGZhy{} Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in oEmbed
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{4}.2.3\PYGZhy{}4.8.1 \PYGZhy{} Authenticated Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in Visual Editor
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.8.2 \PYGZhy{} \PYG{n+nv}{\PYGZdl{}wpdb}\PYGZhy{}\PYGZgt{}prepare\PYG{o}{()} Weakness
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{2}.8.6\PYGZhy{}4.9 \PYGZhy{} Authenticated JavaScript File Upload
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{1}.5.0\PYGZhy{}4.9 \PYGZhy{} RSS and Atom Feed Escaping
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{4}.3.0\PYGZhy{}4.9 \PYGZhy{} HTML Language Attribute Escaping
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.7\PYGZhy{}4.9 \PYGZhy{} \PYG{l+s+s1}{\PYGZsq{}newbloguser\PYGZsq{}} Key Weak Hashing
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.7\PYGZhy{}4.9.1 \PYGZhy{} MediaElement Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.9.4 \PYGZhy{} Application Denial of Service \PYG{o}{(}DoS\PYG{o}{)} \PYG{o}{(}unpatched\PYG{o}{)}
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.7\PYGZhy{}4.9.4 \PYGZhy{} Remove localhost Default
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.7\PYGZhy{}4.9.4 \PYGZhy{} Use Safe Redirect \PYG{k}{for} Login
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.7\PYGZhy{}4.9.4 \PYGZhy{} Escape Version in Generator Tag
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{4}.9.6 \PYGZhy{} Authenticated Arbitrary File Deletion
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.0 \PYGZhy{} Authenticated File Delete
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.0 \PYGZhy{} Authenticated Post Type Bypass
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.0 \PYGZhy{} PHP Object Injection via Meta Data
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.0 \PYGZhy{} Authenticated Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.0 \PYGZhy{} Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} that could affect plugins
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.0 \PYGZhy{} User Activation Screen Search Engine Indexing
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.0 \PYGZhy{} File Upload to XSS on Apache Web Servers
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.7\PYGZhy{}5.0 \PYG{o}{(}except \PYG{l+m}{4}.9.9\PYG{o}{)} \PYGZhy{} Authenticated Code Execution
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYG{l+m}{3}.9\PYGZhy{}5.1 \PYGZhy{} Comment Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)}
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.2.2 \PYGZhy{} Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in URL Sanitisation
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.2.3 \PYGZhy{} Stored XSS in Customizer
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.2.3 \PYGZhy{} Unauthenticated View Private/Draft Posts
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.2.3 \PYGZhy{} Stored XSS in Style Tags
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.2.3 \PYGZhy{} JSON Request Cache Poisoning
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.2.3 \PYGZhy{} Server\PYGZhy{}Side Request Forgery \PYG{o}{(}SSRF\PYG{o}{)} in URL Validation
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.2.3 \PYGZhy{} Admin Referrer Validation
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.3 \PYGZhy{} Authenticated Improper Access Controls in REST API
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.3 \PYGZhy{} Authenticated Stored XSS via Crafted Links
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.3 \PYGZhy{} Authenticated Stored XSS via Block Editor Content
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.3 \PYGZhy{} wp\PYGZus{}kses\PYGZus{}bad\PYGZus{}protocol\PYG{o}{()} Colon Bypass
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{} \PYG{l+m}{5}.4.1 \PYGZhy{} Password Reset Tokens Failed to Be Properly Invalidated
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{} \PYG{l+m}{5}.4.1 \PYGZhy{} Unauthenticated Users View Private Posts
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{} \PYG{l+m}{5}.4.1 \PYGZhy{} Authenticated Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in Customizer
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{} \PYG{l+m}{5}.4.1 \PYGZhy{} Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in wp\PYGZhy{}object\PYGZhy{}cache
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{} \PYG{l+m}{5}.4.1 \PYGZhy{} Authenticated Cross\PYGZhy{}Site Scripting \PYG{o}{(}XSS\PYG{o}{)} in File Uploads
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{}\PYG{o}{=} \PYG{l+m}{5}.2.3 \PYGZhy{} Hardening Bypass
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{} \PYG{l+m}{5}.4.2 \PYGZhy{} Authenticated XSS via Media Files
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{} \PYG{l+m}{5}.4.2 \PYGZhy{} Open Redirection
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{} \PYG{l+m}{5}.4.2 \PYGZhy{} Authenticated XSS via Theme Upload
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{} \PYG{l+m}{5}.4.2 \PYGZhy{} Misuse of set\PYGZhy{}screen\PYGZhy{}option Leading to Privilege Escalation
+	\PYG{p}{|} \PYG{o}{[}!\PYG{o}{]} Title: WordPress \PYGZlt{} \PYG{l+m}{5}.4.2 \PYGZhy{} Disclosure of Password\PYGZhy{}Protected Page/Post Comments
+kuky\PYGZus{}nekoi@fu\PYGZhy{}no\PYGZhy{}isan:\PYGZti{}/.wpscan\PYGZdl{} 	
+\end{Verbatim}

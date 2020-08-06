@@ -1,0 +1,129 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{listings}
+% \usepackage{placeins}
+\usepackage[section]{placeins}
+\usepackage[stable]{footmisc}
+\usepackage{minted}
+\usepackage{multicol}
+
+\usepackage{csquotes}
+\title{{\bf Seguridad Informática}\\ Laboratorio 6}
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Actividades}
+
+Elegimos como objetivo disponible en la web la pagina principal de la universidad por motivos legales y de pruebas. Además que ya conocemos algo de información al respecto y estas herramientas no necesariamente pueden encontrar información de otras vulnerabilidades ya conocidas por la forma en la que está hecha la aplicación en si.
+
+
+\subsection{Configuración de ambiente de trabajo}
+Debido a las anteriores actividades del curso, VirtualBox (nuestro sistema de virtualizacion elegido) junto con una máquina virtual con linux ya estaban cargadas previamente. Para la instalación de metasploit solo se clonó la máquina y se cargó el disco provisto en la guia oficial.
+
+Todas las máquinas están configuradas con tres interfaces de red. NAT, bridge y host-only, de las cuales solo la bridge esta habilitada. Todos los accesos se realizan por medio de ssh.
+
+Si bien este servicio ya estaba pre-activado para la maquina con ubuntu, este no viene activo por defecto en metasploitable.
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+	/etc/init.d/ssh start
+\end{minted}
+
+Luego, 
+
+
+\subsection{Instalación lynis}
+De acuerdo al sitio oficial(\url{https://github.com/CISOfy/Lynis}), se clona el repositorio y luego se ejecuta directamente la herramienta en nuestro host (un sistema PopOS Linux):
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C80E383C3DE9F082E01391A0366C67DE91CA5D5F
+	sudo apt install apt-transport-https
+	echo 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/99disable-translations
+	echo "deb https://packages.cisofy.com/community/lynis/deb/ stable main" | sudo tee /etc/apt/sources.list.d/cisofy-lynis.list
+	sudo apt update
+	sudo apt install lynis
+	lynis audit system remote  user@192.168.0.138
+\end{minted}
+
+
+Esto nos entrega las instrucciones para poder ejecutar de manera remota el analis. 
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+	Laboratorio_8 git:(infosec-proj1) ✗ lynis audit system remote user@192.168.0.138
+	How to perform a remote scan:
+	=============================
+	Target  : user@192.168.0.138
+	Command : ./lynis audit system
+
+	* Step 1: Create tarball
+		mkdir -p ./files && cd .. && tar czf ./lynis/files/lynis-remote.tar.gz --exclude=files/lynis-remote.tar.gz ./lynis && cd lynis
+
+	* Step 2: Copy tarball to target user@192.168.0.138
+		scp -q ./files/lynis-remote.tar.gz user@192.168.0.138:~/tmp-lynis-remote.tgz
+
+	* Step 3: Execute audit command
+		ssh user@192.168.0.138 "mkdir -p ~/tmp-lynis && cd ~/tmp-lynis && tar xzf ../tmp-lynis-remote.tgz && rm ../tmp-lynis-remote.tgz && cd lynis && ./lynis audit system"
+
+	* Step 4: Clean up directory
+		ssh user@192.168.0.138 "rm -rf ~/tmp-lynis"
+
+	* Step 5: Retrieve log and report
+		scp -q user@192.168.0.138:/tmp/lynis.log ./files/user@192.168.0.138-lynis.log
+		scp -q user@192.168.0.138:/tmp/lynis-report.dat ./files/user@192.168.0.138-lynis-report.dat
+
+	* Step 6: Clean up tmp files (when using non-privileged account)
+		ssh user@192.168.0.138 "rm /tmp/lynis.log /tmp/lynis-report.dat"
+
+	➜  Laboratorio_8 git:(infosec-proj1) ✗ 
+\end{minted}
+
+
+
+
+
+
+\section{Conclusiones}
+
+
+
+\begin{thebibliography}{9}
+
+	\bibitem{REF:sqlmap}
+	Documentación de sqlmap
+	\textit{sqlmap homepage}.
+	http://sqlmap.org/
+
+	\bibitem{REF:nmap}
+	Documentación de nmap
+	\textit{nmap homepage}.
+	https://nmap.org/
+
+	\bibitem{REF:OWASP ZAP}
+	Documentación de OWASP ZAP
+	\textit{OWASP ZAP project homepage}.
+	https://owasp.org/www-project-zap/
+
+
+	\bibitem{REF:nikto}
+	RedTeamTutorials
+	\textit{NIKTO Cheat Sheet}.
+	https://redteamtutorials.com/2018/10/24/nikto-cheatsheet/
+\end{thebibliography}
+
+\end{document}

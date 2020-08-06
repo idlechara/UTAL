@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	/etc/init.d/ssh start
+\end{Verbatim}

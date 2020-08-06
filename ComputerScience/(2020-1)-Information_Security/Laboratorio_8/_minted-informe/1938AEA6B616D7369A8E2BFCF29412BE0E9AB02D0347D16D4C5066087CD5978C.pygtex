@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+Linux Malware Detect v1.6.4
+	(C) 2002\PYGZhy{}2019, R\PYGZhy{}fx Networks \PYGZlt{}proj@rfxn.com\PYGZgt{}
+	(C) 2019, Ryan MacDonald \PYGZlt{}ryan@rfxn.com\PYGZgt{}
+This program may be freely redistributed under the terms of the GNU GPL v2
+
+maldet(203176): \PYGZob{}scan\PYGZcb{} signatures loaded: 17045 (14225 MD5 | 2035 HEX | 785 YARA | 0 USER)
+maldet(203176): \PYGZob{}scan\PYGZcb{} building file list for /, this might take awhile...
+maldet(203176): \PYGZob{}scan\PYGZcb{} setting nice scheduler priorities for all operations: cpunice 19 , ionice 6
+maldet(203176): \PYGZob{}scan\PYGZcb{} file list completed in 10s, found 5492 files...
+maldet(203176): \PYGZob{}scan\PYGZcb{} scan of / (5492 files) in progress...
+maldet(203176): \PYGZob{}scan\PYGZcb{} 5492/5492 files scanned: 2 hits 0 cleaned[[D
+
+maldet(203176): \PYGZob{}scan\PYGZcb{} scan completed on /: files 5492, malware hits 2, cleaned hits 0, time 515s
+maldet(203176): \PYGZob{}scan\PYGZcb{} scan report saved, to view run: maldet \PYGZhy{}\PYGZhy{}report 200802\PYGZhy{}1753.203176
+maldet(203176): \PYGZob{}scan\PYGZcb{} quarantine is disabled! set quarantine\PYGZus{}hits=1 in conf.maldet or to quarantine results run: maldet \PYGZhy{}q 200802\PYGZhy{}1753.203176
+\end{Verbatim}

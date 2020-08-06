@@ -1,0 +1,273 @@
+Security scripts *** 3.2.4rc1, 2018.02.10.20.30 ***
+Sat Aug  1 21:13:05 EDT 2020
+21:13> Beginning security report for user-VirtualBox (x86_64 Linux 5.4.0-26-generic).
+
+# Performing check of passwd files...
+# Checking entries from /etc/passwd.
+--WARN-- [pass013w] Username `root' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `daemon' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `bin' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `sys' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `sync' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass015w] Login ID sync does not have a valid shell (/bin/sync). 
+--WARN-- [pass013w] Username `games' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `man' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `lp' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `mail' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `news' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `uucp' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `proxy' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `www-data' is not using an acceptable password 
+         hash (x). 
+--WARN-- [pass013w] Username `backup' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `list' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `irc' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `gnats' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `nobody' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `systemd-network' is not using an acceptable 
+         password hash (x). 
+--WARN-- [pass013w] Username `systemd-resolve' is not using an acceptable 
+         password hash (x). 
+--WARN-- [pass013w] Username `systemd-timesync' is not using an acceptable 
+         password hash (x). 
+--WARN-- [pass013w] Username `messagebus' is not using an acceptable password 
+         hash (x). 
+--WARN-- [pass013w] Username `syslog' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `_apt' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `tss' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `uuidd' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `tcpdump' is not using an acceptable password 
+         hash (x). 
+--WARN-- [pass013w] Username `avahi-autoipd' is not using an acceptable 
+         password hash (x). 
+--WARN-- [pass013w] Username `usbmux' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `rtkit' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `dnsmasq' is not using an acceptable password 
+         hash (x). 
+--WARN-- [pass013w] Username `cups-pk-helper' is not using an acceptable 
+         password hash (x). 
+--WARN-- [pass013w] Username `lightdm' is not using an acceptable password 
+         hash (x). 
+--WARN-- [pass013w] Username `speech-dispatcher' is not using an acceptable 
+         password hash (x). 
+--WARN-- [pass013w] Username `avahi' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `kernoops' is not using an acceptable password 
+         hash (x). 
+--WARN-- [pass016w] User kernoops has / as home directory 
+--WARN-- [pass013w] Username `saned' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `hplip' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `whoopsie' is not using an acceptable password 
+         hash (x). 
+--WARN-- [pass013w] Username `colord' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `pulse' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `user' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass013w] Username `systemd-coredump' is not using an acceptable 
+         password hash (x). 
+--WARN-- [pass016w] User systemd-coredump has / as home directory 
+--WARN-- [pass013w] Username `sshd' is not using an acceptable password hash 
+         (x). 
+--WARN-- [pass012w] Home directory / exists multiple times (2) in /etc/passwd. 
+--WARN-- [pass012w] Home directory /nonexistent exists multiple times (5) in 
+         /etc/passwd. 
+--WARN-- [pass012w] Home directory /run/systemd exists multiple times (3) in 
+         /etc/passwd. 
+
+# Performing check of group files...
+
+# Performing check of user accounts...
+# Checking accounts from /etc/passwd.
+--WARN-- [acc021w] Login ID avahi-autoipd appears to be a dormant account. 
+--WARN-- [acc021w] Login ID dnsmasq appears to be a dormant account. 
+--WARN-- [acc021w] Login ID lightdm appears to be a dormant account. 
+--WARN-- [acc006w] Login ID mail's home directory (/var/mail) has group `4096' 
+         write access. 
+--WARN-- [acc022w] Login ID nobody home directory (/nonexistent) is not 
+         accessible. 
+--WARN-- [acc021w] Login ID tss appears to be a dormant account. 
+
+# Performing check of /etc/hosts.equiv and .rhosts files...
+
+# Checking accounts from /etc/passwd...
+
+# Performing check of .netrc files...
+
+# Checking accounts from /etc/passwd...
+
+# Performing common access checks for root (in /etc/default/login, /securetty, and /etc/ttytab...
+
+# Performing check of PATH components...
+--WARN-- [path009w] /etc/profile does not export an initial setting for PATH. 
+# Only checking user 'root'
+--WARN-- [path002w] /bin/bsd-write in root's PATH from default is not owned by 
+         root (owned by tty). 
+--WARN-- [path002w] /bin/chage in root's PATH from default is not owned by 
+         root (owned by shadow). 
+--WARN-- [path002w] /bin/crontab in root's PATH from default is not owned by 
+         root (owned by crontab). 
+--WARN-- [path002w] /bin/expiry in root's PATH from default is not owned by 
+         root (owned by shadow). 
+--WARN-- [path002w] /bin/locate in root's PATH from default is not owned by 
+         root (owned by mlocate). 
+--WARN-- [path002w] /bin/mlocate in root's PATH from default is not owned by 
+         root (owned by mlocate). 
+--WARN-- [path002w] /bin/ssh-agent in root's PATH from default is not owned by 
+         root (owned by ssh). 
+--WARN-- [path002w] /bin/wall in root's PATH from default is not owned by root 
+         (owned by tty). 
+--WARN-- [path002w] /bin/write in root's PATH from default is not owned by 
+         root (owned by tty). 
+--WARN-- [path002w] /usr/bin/bsd-write in root's PATH from default is not 
+         owned by root (owned by tty). 
+--WARN-- [path002w] /usr/bin/chage in root's PATH from default is not owned by 
+         root (owned by shadow). 
+--WARN-- [path002w] /usr/bin/crontab in root's PATH from default is not owned 
+         by root (owned by crontab). 
+--WARN-- [path002w] /usr/bin/expiry in root's PATH from default is not owned 
+         by root (owned by shadow). 
+--WARN-- [path002w] /usr/bin/locate in root's PATH from default is not owned 
+         by root (owned by mlocate). 
+--WARN-- [path002w] /usr/bin/mlocate in root's PATH from default is not owned 
+         by root (owned by mlocate). 
+--WARN-- [path002w] /usr/bin/ssh-agent in root's PATH from default is not 
+         owned by root (owned by ssh). 
+--WARN-- [path002w] /usr/bin/wall in root's PATH from default is not owned by 
+         root (owned by tty). 
+--WARN-- [path002w] /usr/bin/write in root's PATH from default is not owned by 
+         root (owned by tty). 
+--WARN-- [path002w] /usr/sbin/pam_extrausers_chkpwd in root's PATH from 
+         default is not owned by root (owned by shadow). 
+--WARN-- [path002w] /usr/sbin/unix_chkpwd in root's PATH from default is not 
+         owned by root (owned by shadow). 
+
+# Performing check of anonymous FTP...
+
+# Performing checks of mail aliases...
+
+# Performing check of `cron' entries...
+--WARN-- [cron004w] Root crontab does not exist 
+--WARN-- [cron005w] Use of cron is not restricted 
+
+# Performing check of 'services' ...
+# Checking services from /etc/services.
+--WARN-- [inet003w] The port for service x400-snd is also assigned to service 
+         acr-nema. 
+
+# Performing NFS exports check...
+
+# Performing check of system file permissions...
+--ERROR-- [init004e] `./systems/default/gen_mounts' is not executable (command GET_MOUNTS).
+
+# Checking for known intrusion signs...
+--ERROR-- [init004e] `./systems/default/gen_mounts' is not executable (command GET_MOUNTS).
+--ERROR-- [init001e] Don't have required command STRINGS.
+--ERROR-- [misc025e] The ./scripts/check_rootkit will not be run since it is not executable
+
+# Performing system specific checks...
+
+# Performing check of root directory...
+
+# Checking device permissions...
+--FAIL-- [dev002f] /dev/autofs has world permissions 
+--WARN-- [dev003w] The directory /dev/block resides in a device directory. 
+--WARN-- [dev003w] The directory /dev/char resides in a device directory. 
+--WARN-- [dev003w] The directory /dev/cpu resides in a device directory. 
+--FAIL-- [dev002f] /dev/fuse has world permissions 
+--WARN-- [dev003w] The directory /dev/hugepages resides in a device directory. 
+--FAIL-- [dev002f] /dev/kmsg has world permissions 
+--WARN-- [dev003w] The directory /dev/lightnvm resides in a device directory. 
+--WARN-- [dev003w] The directory /dev/mqueue resides in a device directory. 
+--FAIL-- [dev002f] /dev/ptmx has world permissions 
+--FAIL-- [dev002f] /dev/rfkill has world permissions 
+--FAIL-- [dev002f] /dev/vboxuser has world permissions 
+--WARN-- [dev003w] The directory /dev/vfio resides in a device directory. 
+
+# Checking for existence of log files...
+--FAIL-- [logf005f] Log file /var/log/wtmp permission should be 644 
+--FAIL-- [logf005f] Log file /var/log/btmp permission should be 600 
+--FAIL-- [logf005f] Log file /var/run/utmp permission should be 644 
+--FAIL-- [logf007f] Log file /var/log/messages does not exist 
+
+# Checking for correct umask settings...
+--WARN-- [misc021w] There are no umask entries in /etc/profile 
+
+# Checking listening processes 
+--WARN-- [lin003w] The process `NetworkMa' is listening on socket 541881 (IPv6 
+         on 541881 interface) is run by 588. 
+--WARN-- [lin003w] The process `NetworkMa' is listening on socket raw6 (root 
+         on raw6 interface) is run by 588. 
+--WARN-- [lin003w] The process `NetworkMa' is listening on socket 541881 (IPv6 
+         on 541881 interface) is run by 606. 
+--WARN-- [lin003w] The process `NetworkMa' is listening on socket raw6 (root 
+         on raw6 interface) is run by 606. 
+--WARN-- [lin003w] The process `NetworkMa' is listening on socket UDP (0t0 on 
+         UDP interface) is run by root. 
+--WARN-- [lin003w] The process `NetworkMa' is listening on socket 20650 (raw6 
+         on 20650 interface) is run by root. 
+--WARN-- [lin003w] The process `avahi-dae' is listening on socket UDP (0t0 on 
+         UDP interface) is run by avahi. 
+--WARN-- [lin003w] The process `cups-brow' is listening on socket 80984 (IPv4 
+         on 80984 interface) is run by 6089. 
+--WARN-- [lin003w] The process `cups-brow' is listening on socket 80984 (IPv4 
+         on 80984 interface) is run by 6090. 
+--WARN-- [lin003w] The process `cups-brow' is listening on socket UDP (0t0 on 
+         UDP interface) is run by root. 
+--WARN-- [lin003w] The process `cupsd' is listening on socket TCP (0t0 on TCP 
+         interface) is run by root. 
+--WARN-- [lin003w] The process `fwupd' is listening on socket REG (root on REG 
+         interface) is run by 152282. 
+--WARN-- [lin003w] The process `fwupd' is listening on socket REG (root on REG 
+         interface) is run by 152284. 
+--WARN-- [lin003w] The process `fwupd' is listening on socket REG (root on REG 
+         interface) is run by 152285. 
+--WARN-- [lin003w] The process `fwupd' is listening on socket REG (root on REG 
+         interface) is run by 152286. 
+--WARN-- [lin003w] The process `fwupd' is listening on socket 30864 (REG on 
+         30864 interface) is run by root. 
+--WARN-- [lin003w] The process `sshd' is listening on socket TCP (0t0 on TCP 
+         interface) is run by root. 
+--WARN-- [lin003w] The process `systemd-r' is listening on socket TCP (0t0 on 
+         TCP interface) is run by systemd-resolve. 
+--WARN-- [lin003w] The process `systemd-r' is listening on socket UDP (0t0 on 
+         UDP interface) is run by systemd-resolve. 
+
+# Checking sshd_config configuration files...
+--WARN-- [ssh004w] The PasswordAuthentication directive in 
+         /etc/ssh/sshd_config is set to the unapproved defult value: yes. 
+
+# Performing common access checks for root...
+--FAIL-- [netw020f] There is no /etc/ftpusers file. 
+--ERROR-- [misc025e] The ./scripts/check_ntp will not be run since it is not executable
+--ERROR-- [init004e] `./systems/default/getdisks' is not executable (command GETDISKS).
+
+# Performing check of embedded pathnames...
+--ERROR-- [init001e] Don't have required command STRINGS.
+21:13> Security report completed for user-VirtualBox.

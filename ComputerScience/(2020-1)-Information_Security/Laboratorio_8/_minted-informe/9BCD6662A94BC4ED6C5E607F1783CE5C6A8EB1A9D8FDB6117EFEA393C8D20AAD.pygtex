@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	wget https://downloads.cisofy.com/lynis/lynis\PYGZhy{}3.0.0.tar.gz \PYGZhy{}\PYGZhy{}no\PYGZhy{}check\PYGZhy{}certificate
+
+	\PYG{c+c1}{\PYGZsh{} our ubuntu box}
+	scp \PYGZhy{}q ./lynis\PYGZhy{}3.0.0.tar.gz  user@192.168.0.138:\PYGZti{}/tmp\PYGZhy{}lynis\PYGZhy{}remote.tgz
+    ssh user@192.168.0.138 \PYG{l+s+s2}{\PYGZdq{}mkdir \PYGZhy{}p \PYGZti{}/tmp\PYGZhy{}lynis \PYGZam{}\PYGZam{} cd \PYGZti{}/tmp\PYGZhy{}lynis \PYGZam{}\PYGZam{} tar xzf ../tmp\PYGZhy{}lynis\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} rm ../tmp\PYGZhy{}lynis\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} sudo \PYGZhy{}S chown \PYGZhy{}R root:root \PYGZti{}/tmp\PYGZhy{}lynis \PYGZam{}\PYGZam{} cd lynis \PYGZam{}\PYGZam{} sudo \PYGZhy{}S ./lynis audit system \PYGZgt{} /home/user/tmp\PYGZhy{}lynis/lynis\PYGZhy{}stdout.log \PYGZam{}\PYGZam{} sudo \PYGZhy{}S chown \PYGZhy{}R user:user \PYGZti{}/tmp\PYGZhy{}lynis\PYGZdq{}}
+    ssh user@192.168.0.138 \PYG{l+s+s2}{\PYGZdq{}rm \PYGZhy{}rf \PYGZti{}/tmp\PYGZhy{}lynis\PYGZdq{}}
+    scp \PYGZhy{}q user@192.168.0.138:/home/user/lynis.log ./user@192.168.0.138\PYGZhy{}lynis.log
+	scp \PYGZhy{}q user@192.168.0.138:/home/user/lynis\PYGZhy{}report.dat ./user@192.168.0.138\PYGZhy{}lynis\PYGZhy{}report.dat
+	scp \PYGZhy{}q user@192.168.0.138:/home/user/tmp\PYGZhy{}lynis/lynis\PYGZhy{}stdout.log ./user@192.168.0.138\PYGZhy{}lynis\PYGZhy{}stdout.log
+	ssh user@192.168.0.138 \PYG{l+s+s2}{\PYGZdq{}rm /home/user/lynis.log /home/user/lynis\PYGZhy{}report.dat /home/user/tmp\PYGZhy{}lynis/lynis\PYGZhy{}stdout.log\PYGZdq{}}
+	
+	\PYG{c+c1}{\PYGZsh{} our msf box}
+	scp \PYGZhy{}q ./lynis\PYGZhy{}3.0.0.tar.gz  msfadmin@192.168.0.184:\PYGZti{}/tmp\PYGZhy{}lynis\PYGZhy{}remote.tgz
+    ssh msfadmin@192.168.0.184 \PYG{l+s+s2}{\PYGZdq{}mkdir \PYGZhy{}p \PYGZti{}/tmp\PYGZhy{}lynis \PYGZam{}\PYGZam{} cd \PYGZti{}/tmp\PYGZhy{}lynis \PYGZam{}\PYGZam{} tar xzf ../tmp\PYGZhy{}lynis\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} rm ../tmp\PYGZhy{}lynis\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} sudo \PYGZhy{}S chown \PYGZhy{}R root:root \PYGZti{}/tmp\PYGZhy{}lynis \PYGZam{}\PYGZam{} cd lynis \PYGZam{}\PYGZam{} sudo \PYGZhy{}S ./lynis audit system \PYGZgt{} /home/user/tmp\PYGZhy{}lynis/lynis\PYGZhy{}stdout.log \PYGZam{}\PYGZam{} sudo \PYGZhy{}S chown \PYGZhy{}R user:user \PYGZti{}/tmp\PYGZhy{}lynis\PYGZdq{}}
+    ssh msfadmin@192.168.0.184 \PYG{l+s+s2}{\PYGZdq{}rm \PYGZhy{}rf \PYGZti{}/tmp\PYGZhy{}lynis\PYGZdq{}}
+    scp \PYGZhy{}q msfadmin@192.168.0.184:/home/msfadmin/lynis.log ./msfadmin@192.168.0.184\PYGZhy{}lynis.log
+    scp \PYGZhy{}q msfadmin@192.168.0.184:/home/msfadmin/lynis\PYGZhy{}report.dat ./msfadmin@192.168.0.184\PYGZhy{}lynis\PYGZhy{}report.dat
+    scp \PYGZhy{}q msfadmin@192.168.0.184:/home/user/tmp\PYGZhy{}lynis/lynis\PYGZhy{}stdout.log ./msfadmin@192.168.0.184\PYGZhy{}lynis\PYGZhy{}stdout.log
+    ssh msfadmin@192.168.0.184 \PYG{l+s+s2}{\PYGZdq{}rm /home/msfadmin/lynis.log /home/msfadmin/lynis\PYGZhy{}report.dat /home/user/tmp\PYGZhy{}lynis/lynis\PYGZhy{}stdout.log\PYGZdq{}}
+\end{Verbatim}
