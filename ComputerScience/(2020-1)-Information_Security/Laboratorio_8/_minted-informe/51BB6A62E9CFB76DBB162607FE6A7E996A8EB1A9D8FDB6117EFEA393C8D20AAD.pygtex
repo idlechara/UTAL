@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	wget https://download.savannah.gnu.org/releases/tiger/tiger\PYGZus{}3.2.4rc1.tar.gz \PYGZhy{}\PYGZhy{}no\PYGZhy{}check\PYGZhy{}certificate
+
+	\PYG{c+c1}{\PYGZsh{} for ubuntu}
+	scp \PYGZhy{}q ./tiger\PYGZus{}3.2.4rc1.tar.gz  user@192.168.0.138:\PYGZti{}/tmp\PYGZhy{}tiger\PYGZhy{}remote.tgz
+	ssh user@192.168.0.138 \PYG{l+s+s2}{\PYGZdq{}sudo \PYGZhy{}S rm \PYGZhy{}rfv \PYGZti{}/tmp\PYGZhy{}tiger \PYGZam{}\PYGZam{} mkdir \PYGZhy{}p \PYGZti{}/tmp\PYGZhy{}tiger \PYGZam{}\PYGZam{} cd \PYGZti{}/tmp\PYGZhy{}tiger \PYGZam{}\PYGZam{} tar xzf ../tmp\PYGZhy{}tiger\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} rm ../tmp\PYGZhy{}tiger\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} cd tiger\PYGZhy{}3.2.4rc1 \PYGZam{}\PYGZam{} mkdir \PYGZhy{}p log \PYGZam{}\PYGZam{} sudo \PYGZhy{}S chown \PYGZhy{}R root:root . \PYGZam{}\PYGZam{}  sudo \PYGZhy{}S ./tiger \PYGZam{}\PYGZam{} sudo \PYGZhy{}S chown \PYGZhy{}R user:user .\PYGZdq{}}
+	scp \PYGZhy{}r \PYGZhy{}q user@192.168.0.138:/home/user/tmp\PYGZhy{}tiger/tiger\PYGZhy{}3.2.4rc1/log ./tiger\PYGZus{}log\PYGZus{}user@192.168.0.138
+
+	\PYG{c+c1}{\PYGZsh{} for msf}
+	scp \PYGZhy{}q ./tiger\PYGZus{}3.2.4rc1.tar.gz  msfadmin@192.168.0.184:\PYGZti{}/tmp\PYGZhy{}tiger\PYGZhy{}remote.tgz
+	ssh msfadmin@192.168.0.184 \PYG{l+s+s2}{\PYGZdq{}sudo \PYGZhy{}S rm \PYGZhy{}rfv \PYGZti{}/tmp\PYGZhy{}tiger \PYGZam{}\PYGZam{} mkdir \PYGZhy{}p \PYGZti{}/tmp\PYGZhy{}tiger \PYGZam{}\PYGZam{} cd \PYGZti{}/tmp\PYGZhy{}tiger \PYGZam{}\PYGZam{} tar xzf ../tmp\PYGZhy{}tiger\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} rm ../tmp\PYGZhy{}tiger\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} cd tiger\PYGZhy{}3.2.4rc1 \PYGZam{}\PYGZam{} mkdir \PYGZhy{}p log \PYGZam{}\PYGZam{} sudo \PYGZhy{}S chown \PYGZhy{}R root:root . \PYGZam{}\PYGZam{}  sudo \PYGZhy{}S ./tiger \PYGZam{}\PYGZam{} sudo \PYGZhy{}S chown \PYGZhy{}R msfadmin:msfadmin .\PYGZdq{}}
+	scp \PYGZhy{}r \PYGZhy{}q msfadmin@192.168.0.184:/home/msfadmin/tmp\PYGZhy{}tiger/tiger\PYGZhy{}3.2.4rc1/log ./tiger\PYGZus{}log\PYGZus{}msfadmin@192.168.0.184
+\end{Verbatim}

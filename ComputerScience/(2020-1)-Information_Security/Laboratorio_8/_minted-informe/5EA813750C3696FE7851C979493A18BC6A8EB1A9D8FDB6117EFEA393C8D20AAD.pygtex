@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	wget \PYGZhy{}\PYGZhy{}output\PYGZhy{}document\PYG{o}{=}rkhunter.tar.gz https://downloads.sourceforge.net/project/rkhunter/rkhunter/1.4.6/rkhunter\PYGZhy{}1.4.6.tar.gz \PYGZhy{}\PYGZhy{}no\PYGZhy{}check\PYGZhy{}certificate
+
+	\PYG{c+c1}{\PYGZsh{} for ubuntu}
+	scp \PYGZhy{}q ./rkhunter.tar.gz  user@192.168.0.138:\PYGZti{}/tmp\PYGZhy{}rkhunter\PYGZhy{}remote.tgz
+	ssh user@192.168.0.138 \PYG{l+s+s2}{\PYGZdq{}sudo \PYGZhy{}S rm \PYGZhy{}rfv \PYGZti{}/tmp\PYGZhy{}rkhunter \PYGZam{}\PYGZam{} mkdir \PYGZhy{}p \PYGZti{}/tmp\PYGZhy{}rkhunter \PYGZam{}\PYGZam{} cd \PYGZti{}/tmp\PYGZhy{}rkhunter \PYGZam{}\PYGZam{} tar xzf ../tmp\PYGZhy{}rkhunter\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} rm ../tmp\PYGZhy{}rkhunter\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} cd rkhunter\PYGZhy{}1.4.6/ \PYGZam{}\PYGZam{}  sudo \PYGZhy{}S ./installer.sh \PYGZhy{}\PYGZhy{}install \PYGZam{}\PYGZam{} sudo \PYGZhy{}S rkhunter \PYGZhy{}\PYGZhy{}propupd \PYGZam{}\PYGZam{} sudo \PYGZhy{}S rkhunter \PYGZhy{}\PYGZhy{}check \PYGZhy{}\PYGZhy{}sk \PYGZam{}\PYGZam{} sudo \PYGZhy{}S cp /var/log/rkhunter.log \PYGZti{}/rkhunter.log \PYGZam{}\PYGZam{} sudo \PYGZhy{}S chown \PYGZhy{}R user:user \PYGZti{}/rkhunter.log\PYGZdq{}}
+	scp \PYGZhy{}r \PYGZhy{}q user@192.168.0.138:/home/user/rkhunter.log ./rkhunter\PYGZus{}log\PYGZus{}user@192.168.0.138
+
+	\PYG{c+c1}{\PYGZsh{} for msf}
+	scp \PYGZhy{}q ./rkhunter.tar.gz  msfadmin@192.168.0.184:\PYGZti{}/tmp\PYGZhy{}rkhunter\PYGZhy{}remote.tgz
+	ssh msfadmin@192.168.0.184 \PYG{l+s+s2}{\PYGZdq{}sudo \PYGZhy{}S rm \PYGZhy{}rfv \PYGZti{}/tmp\PYGZhy{}rkhunter \PYGZam{}\PYGZam{} mkdir \PYGZhy{}p \PYGZti{}/tmp\PYGZhy{}rkhunter \PYGZam{}\PYGZam{} cd \PYGZti{}/tmp\PYGZhy{}rkhunter \PYGZam{}\PYGZam{} tar xzf ../tmp\PYGZhy{}rkhunter\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} rm ../tmp\PYGZhy{}rkhunter\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} cd rkhunter\PYGZhy{}1.4.6/ \PYGZam{}\PYGZam{}  sudo \PYGZhy{}S ./installer.sh \PYGZhy{}\PYGZhy{}install \PYGZam{}\PYGZam{} sudo \PYGZhy{}S rkhunter \PYGZhy{}\PYGZhy{}propupd \PYGZam{}\PYGZam{} sudo \PYGZhy{}S rkhunter \PYGZhy{}\PYGZhy{}check \PYGZhy{}\PYGZhy{}sk \PYGZam{}\PYGZam{} sudo \PYGZhy{}S cp /var/log/rkhunter.log \PYGZti{}/rkhunter.log \PYGZam{}\PYGZam{} sudo \PYGZhy{}S chown \PYGZhy{}R msfadmin:msfadmin \PYGZti{}/rkhunter.log\PYGZdq{}}
+	scp \PYGZhy{}r \PYGZhy{}q msfadmin@192.168.0.184:/home/msfadmin/rkhunter.log ./rkhunter\PYGZus{}log\PYGZus{}msfadmin@192.168.0.184
+\end{Verbatim}

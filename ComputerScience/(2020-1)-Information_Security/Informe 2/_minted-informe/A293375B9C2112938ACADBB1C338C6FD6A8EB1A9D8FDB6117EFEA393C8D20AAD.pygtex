@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+nmap \PYGZhy{}oX outputfile.xml  \PYGZhy{}p\PYGZhy{} \PYGZhy{}sV \PYGZhy{}\PYGZhy{}version\PYGZhy{}intensity \PYG{l+m}{5} \PYG{l+m}{192}.168.0.233
+Starting Nmap \PYG{l+m}{7}.80 \PYG{o}{(} https://nmap.org \PYG{o}{)} at \PYG{l+m}{2020}\PYGZhy{}08\PYGZhy{}05 \PYG{l+m}{21}:30 \PYGZhy{}04
+Nmap scan report \PYG{k}{for} DESKTOP\PYGZhy{}AKI7L48.lan \PYG{o}{(}\PYG{l+m}{192}.168.0.233\PYG{o}{)}
+Host is up \PYG{o}{(}\PYG{l+m}{0}.0014s latency\PYG{o}{)}.
+Not shown: \PYG{l+m}{65532} filtered ports
+PORT     STATE SERVICE  VERSION
+\PYG{l+m}{80}/tcp   open  http     Apache httpd \PYG{l+m}{2}.4.43 \PYG{o}{((}Win64\PYG{o}{)} OpenSSL/1.1.1g PHP/7.4.8\PYG{o}{)}
+\PYG{l+m}{443}/tcp  open  ssl/http Apache httpd \PYG{l+m}{2}.4.43 \PYG{o}{((}Win64\PYG{o}{)} OpenSSL/1.1.1g PHP/7.4.8\PYG{o}{)}
+\PYG{l+m}{3306}/tcp open  mysql?
+\PYG{l+m}{1} service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi\PYGZhy{}bin/submit.cgi?new\PYGZhy{}service :
+SF\PYGZhy{}Port3306\PYGZhy{}TCP:V\PYG{o}{=}\PYG{l+m}{7}.80\PYGZpc{}I\PYG{o}{=}\PYG{l+m}{5}\PYGZpc{}D\PYG{o}{=}\PYG{l+m}{8}/5\PYGZpc{}Time\PYG{o}{=}5F2B5DAD\PYGZpc{}P\PYG{o}{=}x86\PYGZus{}64\PYGZhy{}pc\PYGZhy{}linux\PYGZhy{}gnu\PYGZpc{}r\PYG{o}{(}NUL
+SF:L,4D,\PYG{l+s+s2}{\PYGZdq{}I\PYGZbs{}0\PYGZbs{}0\PYGZbs{}x01\PYGZbs{}xffj\PYGZbs{}x04Host\PYGZbs{}x20\PYGZsq{}fu\PYGZhy{}no\PYGZhy{}isan\PYGZbs{}.lan\PYGZsq{}\PYGZbs{}x20is\PYGZbs{}x20not\PYGZbs{}x20allow}
+\PYG{l+s+s2}{SF:ed\PYGZbs{}x20to\PYGZbs{}x20connect\PYGZbs{}x20to\PYGZbs{}x20this\PYGZbs{}x20MariaDB\PYGZbs{}x20server\PYGZdq{}}\PYG{o}{)}\PYG{p}{;}
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap \PYG{k}{done}: \PYG{l+m}{1} IP address \PYG{o}{(}\PYG{l+m}{1} host up\PYG{o}{)} scanned in \PYG{l+m}{151}.59 seconds
+\end{Verbatim}

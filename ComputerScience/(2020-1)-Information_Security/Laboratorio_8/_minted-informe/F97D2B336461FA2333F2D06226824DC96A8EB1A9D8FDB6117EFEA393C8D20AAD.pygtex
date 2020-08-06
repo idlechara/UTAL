@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+use auxiliary/scanner/ftp/anonymous
+\PYG{n+nb}{set} rhosts \PYG{l+m}{192}.168.0.184
+exploit
+\end{Verbatim}

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	wget \PYGZhy{}\PYGZhy{}output\PYGZhy{}document\PYG{o}{=}lmd.zip https://codeload.github.com/rfxn/linux\PYGZhy{}malware\PYGZhy{}detect/zip/master \PYGZhy{}\PYGZhy{}no\PYGZhy{}check\PYGZhy{}certificate
+
+	\PYG{c+c1}{\PYGZsh{} for ubuntu}
+	scp \PYGZhy{}q ./lmd.zip  user@192.168.0.138:\PYGZti{}/tmp\PYGZhy{}lmd\PYGZhy{}remote.zip
+	ssh user@192.168.0.138 \PYG{l+s+s2}{\PYGZdq{}sudo \PYGZhy{}S rm \PYGZhy{}rfv \PYGZti{}/tmp\PYGZhy{}lmd \PYGZam{}\PYGZam{} mkdir \PYGZhy{}p \PYGZti{}/tmp\PYGZhy{}lmd \PYGZam{}\PYGZam{} cd \PYGZti{}/tmp\PYGZhy{}lmd \PYGZam{}\PYGZam{} unzip ../tmp\PYGZhy{}lmd\PYGZhy{}remote.zip \PYGZam{}\PYGZam{} rm ../tmp\PYGZhy{}lmd\PYGZhy{}remote.tgz \PYGZam{}\PYGZam{} cd linux\PYGZhy{}malware\PYGZhy{}detect\PYGZhy{}master \PYGZam{}\PYGZam{}  sudo \PYGZhy{}S ./install.sh \PYGZhy{}\PYGZhy{}install \PYGZam{}\PYGZam{} sudo \PYGZhy{}S maldet \PYGZhy{}a /\PYGZdq{}}
+\end{Verbatim}

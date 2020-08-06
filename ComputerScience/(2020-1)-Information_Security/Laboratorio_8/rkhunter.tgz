@@ -1,0 +1,27 @@
+The name is too long, 275 chars total.
+Trying to shorten...
+New name is rkhunter-1.4.6.tar.gz?r=https:%2F%2Fsourceforge.net%2Fprojects%2Frkhunter%2Ffiles%2Frkhunter%2F1.4.6%2Frkhunter-1.4.6.tar.gz%2Fdownload?use_mirror=razaoinfo&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Frkhunter%2Ffiles%2Frkhunter%2F1.4..
+--2020-08-02 16:57:40--  https://downloads.sourceforge.net/project/rkhunter/rkhunter/1.4.6/rkhunter-1.4.6.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Frkhunter%2Ffiles%2Frkhunter%2F1.4.6%2Frkhunter-1.4.6.tar.gz%2Fdownload%3Fuse_mirror%3Drazaoinfo%26r%3Dhttps%253A%252F%252Fsourceforge.net%252Fprojects%252Frkhunter%252Ffiles%252Frkhunter%252F1.4.6%252F%26use_mirror%3Drazaoinfo&ts=1596401727
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... 216.105.38.13
+Connecting to downloads.sourceforge.net (downloads.sourceforge.net)|216.105.38.13|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://razaoinfo.dl.sourceforge.net/project/rkhunter/rkhunter/1.4.6/rkhunter-1.4.6.tar.gz [following]
+The name is too long, 275 chars total.
+Trying to shorten...
+New name is rkhunter-1.4.6.tar.gz?r=https:%2F%2Fsourceforge.net%2Fprojects%2Frkhunter%2Ffiles%2Frkhunter%2F1.4.6%2Frkhunter-1.4.6.tar.gz%2Fdownload?use_mirror=razaoinfo&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Frkhunter%2Ffiles%2Frkhunter%2F1.4..
+--2020-08-02 16:57:40--  https://razaoinfo.dl.sourceforge.net/project/rkhunter/rkhunter/1.4.6/rkhunter-1.4.6.tar.gz
+Resolving razaoinfo.dl.sourceforge.net (razaoinfo.dl.sourceforge.net)... 177.67.224.12
+Connecting to razaoinfo.dl.sourceforge.net (razaoinfo.dl.sourceforge.net)|177.67.224.12|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 302137 (295K) [application/x-gzip]
+Saving to: ‘rkhunter-1.4.6.tar.gz?r=https:%2F%2Fsourceforge.net%2Fprojects%2Frkhunter%2Ffiles%2Frkhunter%2F1.4.6%2Frkhunter-1.4.6.tar.gz%2Fdownload?use_mirror=razaoinfo&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Frkhunter%2Ffiles%2Frkhunter%2F1.4.’
+
+     0K .......... .......... .......... .......... .......... 16%  130K 2s
+    50K .......... .......... .......... .......... .......... 33% 12.9M 1s
+   100K .......... .......... .......... .......... .......... 50%  259K 1s
+   150K .......... .......... .......... .......... .......... 67% 9.59M 0s
+   200K .......... .......... .......... .......... .......... 84%  272K 0s
+   250K .......... .......... .......... .......... .....     100% 6.43M=0.8s
+
+2020-08-02 16:57:42 (380 KB/s) - ‘rkhunter-1.4.6.tar.gz?r=https:%2F%2Fsourceforge.net%2Fprojects%2Frkhunter%2Ffiles%2Frkhunter%2F1.4.6%2Frkhunter-1.4.6.tar.gz%2Fdownload?use_mirror=razaoinfo&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Frkhunter%2Ffiles%2Frkhunter%2F1.4.’ saved [302137/302137]
+

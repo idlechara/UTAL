@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	sudo apt install xsltproc nmap
+	nmap \PYGZhy{}oX outputfile.xml  \PYGZhy{}p\PYGZhy{} \PYGZhy{}sV \PYGZhy{}\PYGZhy{}version\PYGZhy{}intensity \PYG{l+m}{5} \PYG{l+m}{192}.168.0.184
+	xsltproc outputfile.xml \PYGZhy{}o outputfile.html
+	xdg\PYGZhy{}open outputfile.html
+\end{Verbatim}

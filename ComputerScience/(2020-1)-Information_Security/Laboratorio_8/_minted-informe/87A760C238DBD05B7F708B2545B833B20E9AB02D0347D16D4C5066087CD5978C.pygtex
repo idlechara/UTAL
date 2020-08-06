@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+HOST:      user\PYGZhy{}VirtualBox
+SCAN ID:   200802\PYGZhy{}1753.203176
+STARTED:   Aug  2 2020 17:53:57 \PYGZhy{}0400
+COMPLETED: Aug  2 2020 18:02:32 \PYGZhy{}0400
+ELAPSED:   515s [find: 10s]
+
+PATH:          /
+TOTAL FILES:   5492
+TOTAL HITS:    2
+TOTAL CLEANED: 0
+
+WARNING: Automatic quarantine is currently disabled, detected threats are still accessible to users!
+To enable, set quarantine\PYGZus{}hits=1 and/or to quarantine hits from this scan run:
+/usr/local/sbin/maldet \PYGZhy{}q 200802\PYGZhy{}1753.203176
+
+FILE HIT LIST:
+\PYGZob{}HEX\PYGZcb{}php.gzbase64.inject.452 : /home/user/tmp\PYGZhy{}lmd/linux\PYGZhy{}malware\PYGZhy{}detect\PYGZhy{}master/files/clean/gzbase64.inject.unclassed
+\PYGZob{}HEX\PYGZcb{}php.cmdshell.iTSecTeam.286 : [confidencial]
+===============================================
+Linux Malware Detect v1.6.4 \PYGZlt{} proj@rfxn.com \PYGZgt{}
+\end{Verbatim}

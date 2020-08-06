@@ -1,0 +1,79 @@
+\section{Análisis}
+
+La aplicación a analizar será la versión beta de lo que ahora se conoce como ThinkAgro. Esta aplicación fue desarrollada durante el año 2018 como parte de las actividades del módulo "Taller de desarrollo de software".
+
+\subsection{Contexto}
+
+Durante esa instancia, la profesora del módulo (Carolina Flores), además del manejo del curso estaba jugando un rol activo durante el desarrollo de la plataforma ThinkAgro para Kipus (organización de la universidad). Debido a esto, hubo una imposición de desarrollar el software para dicha plataforma, sin embargo la metodología de desarrollo estaba a completa discresión del curso.
+
+Durante las sesiones iniciales del módulo, la deliberación de sus participantes fue utilizar una metodología ágil basada en scrum. Para la implementación de esto y en pos de una simulación mas filedigna de un equipo de desarrollo en el mundo real, el equipo fue dispuesto de la siguiente manera:
+
+\begin{itemize}
+    \item Un Product Owner, encargado de ser la cara de frente al cliente. Su trabajo principal es ser el puente de conexión entre el cliente y el resto del equipo técnico. Las historias de usuario son generados a este nivel.
+    \item Un Technical Lead (yo), encargado del liderazgo técnico de los equipos. Como tal el líder técnico no se involucra directamente en el desarrollo excepto en piezas críticas, presentando un enfoque más a la coordinación del equipo, aterrizaje de los requerimientos traidos por el product owner, coordinar entrega de artefactos y articulaciones de la metodología y de ser necesario, entregar apoyo a los equipos de desarrollo. Adicionalmente todos los trabajos de investigación quedan a este nivel de modo de que no exista fricción entre el desarrollador y la tecnología a usar.
+    \item Un DevOps, cuyo rol es coordinar los despliegues de la aplicación, mantener la salud de los repositorios y mantener consistencia entre los cambios empujados constantemente por los equipos de desarrollo.
+    \item 3 equipos de desarrollos consistentes de 4 personas cada uno con un líder de equipo. El líder de equipo es el punto de conexión hacia el resto de las personas, y la transformación de las historias de usuario en requisitos funcionales es ejecutada a este nivel. Esto es, porque cada equipo se concentra en funcionalidades diferentes durante cada sprint.
+    \item Un equipo de diseño consistente de dos personas.
+\end{itemize}
+
+Debido a que mi participación dentro del equipo fue líder técnico, este informe condensará mi visión respecto al proceso desde los elementos que me tocó manipular y/o controlar. También cabe aclarar que estuve encargado de la organización general de los equipos de trabajo, por lo que durante el desarrollo de este informe habrán comentarios al respecto.
+
+\subsection{Propósito general de la aplicación}
+La idea de la aplicación era modelar un proceso llevado a cabo por Kipus en el cual se tomaba la información proviniente de una entidad evaluadora y transformarlo en un flujo digital de información. Ahora, esto en la práctica significaba tomar una cantidad no menor de planillas, encuestas, gráficos y resultados y modelar su estructura para luego materializarla en forma de mantenedores, visualizadores y sistemas de autenticación y autorización para los usuarios finales. Adicionalmente, si bien la existencia de la plataforma y sus módulos es algo de conocimiento público, el contenido de la base de datos no tiene que serlo ya que contiene evaluaciones de cada una de las entidades participantes junto con información sensible a estos.
+
+Los usuarios de esta plataforma durante el desarrollo de esta fueron acotados en dos categorías principalmente:
+
+\begin{itemize}
+    \item Evaluadores, quienes son los principales encargados de ingresar información por medio de formularios.
+    \item Administradores, los cuales administran todos los aspectos de la aplicación.
+    \item Gerentes, quienes revisan los resultados ingresados constantemente.
+\end{itemize}
+
+Los módulos trabajados durante el desarrollo del proyecto fueron los siguientes:
+
+\begin{itemize}
+    \item Reporting
+    \item Mantenedores
+    \item Usuarios y autenticación
+    \item Integración externa
+\end{itemize}
+
+\subsection{Requerimientos de seguridad de la aplicación}
+
+A continuación listaremos los requisitos de seguridad considerados para esta aplicación. 
+
+\subsubsection{Consideraciones generales}
+\begin{enumerate}
+    \item Solo los usuarios registrados pueden ingresar a la aplicación o revisar detalles de esta.
+    \item Todas las contraseñas deben estar cifradas.
+    \item La base de datos no puede estar disponible hacia el exterior, esta solo debe ser visible para la aplicación.
+\end{enumerate}
+
+\subsubsection{Consideraciones de Usuarios}
+\begin{enumerate}
+    \item Los usuarios evaluadores solo pueden ingresar datos nuevos en las planillas.
+    \item Los evaluadores no pueden ejecutar cambios sobre las métricas directamente.
+    \item Los gerentes solo pueden leer datos de la plataforma en forma de indicadores, no pudiendo ejecutar cambios sobre esta pero si pueden editar los indicadores y generar reportes.
+    \item Un administrador no puede acceder a la información cifrada de otro usuario (como por ejemplo una contraseña).
+    \item Solo un administrador puede cambiar las métricas o las estructuras de las evaluaciones.
+\end{enumerate}
+
+\subsection{Nota del tech lead}
+
+Estos fueron los requisitos declarados previamente dada las primeras reuniones con el cliente al momento de iniciar el desarrollo y estos requisitos quedaron escritos de manera inamovible durante todo el proyecto. Sin embargo, esto tiene un motivo: Nadie del equipo tenía experiencia real desarrollando aplicaciones.
+
+La decisión de ser tech lead la verdad fue algo que hice a regañadientes, ya que si bien me gusta explorar esas áreas, no considero tener lo que se requiere para ejecutar dicho cargo. Sin embargo, acá el desafío venía por tres aristas.
+
+El primero es cómo lograr que todos los integrantes del equipo logren trabajar de manera uniforme. Esto, que puede ser un aspecto poco regulado o poco importante para muchos desde la seguridad informática, es extemadamente vital. Mientras mas roces tiene un equipo con otro, más complicada la integración se vuelve. 
+
+Por otro lado, si existe demasiada fricción entre los desarrolladores y la tecnología a ocupar, esto puede llevar a un mal uso, por tanto a vulnerabilidades. Siendo que esta sería una aplicación que sería utilizada desde fuera, no era un riesgo aceptable. 
+
+El segundo desafío era la diferencia entre niveles. Si bien nadie tenía experiencia con aplicaciones reales de larga escala, existía una brecha técnica bastante grande. Esto es un problema en equipos ágiles ya que para su correcto funcionamiento necesitas que todos los miembros tengan un nivel similar.
+
+Finalmente el último desafío era como lograr el desarrollo de un software en un ambiente relativamente seguro. Debido a esto fue necesaria la creación de un rol de DevOps para poder coordinar estos efectos, con una persona ciento por ciento dedicada a este trabajo a la cual le daba asistencia directa de ser necesario. De hecho este era el único rol por el cual me tenía permitido abandonar mis funciones para ir a suplir, ya que al ser solo una persona, el integrar la base de código es crítica.
+
+De igual manera, este rol compartido tiene la responsabilidad de mantener la infraestructura, abstrayendo a los desarrolladores de la necesidad de trabajar con infraestructura remota. Esto fue crucial durante la elección del stack tecnológico y tuvo un impacto directo por sobre las capacitaciones que fueron necesarias al equipo antes de comenzar.
+
+Esto, terminó dejando requisitos de seguridad implícitos, desde el punto de vista de las prácticas de desarrollo, como también generó durante el tiempo consideraciones de implementación las cuales me tocó ir adaptando a estos requerimientos.
+
+Los detalles sobre el enfoque en las herramientas, prácticas y el equipo de trabajo se verá en la sección de desarrollo y de despliegue.

@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	sudo apt\PYGZhy{}key adv \PYGZhy{}\PYGZhy{}keyserver keyserver.ubuntu.com \PYGZhy{}\PYGZhy{}recv\PYGZhy{}keys C80E383C3DE9F082E01391A0366C67DE91CA5D5F
+	sudo apt install apt\PYGZhy{}transport\PYGZhy{}https
+	\PYG{n+nb}{echo} \PYG{l+s+s1}{\PYGZsq{}Acquire::Languages \PYGZdq{}none\PYGZdq{};\PYGZsq{}} \PYG{p}{|} sudo tee /etc/apt/apt.conf.d/99disable\PYGZhy{}translations
+	\PYG{n+nb}{echo} \PYG{l+s+s2}{\PYGZdq{}deb https://packages.cisofy.com/community/lynis/deb/ stable main\PYGZdq{}} \PYG{p}{|} sudo tee /etc/apt/sources.list.d/cisofy\PYGZhy{}lynis.list
+	sudo apt update
+	sudo apt install lynis
+	lynis audit system user@192.168.0.138
+\end{Verbatim}

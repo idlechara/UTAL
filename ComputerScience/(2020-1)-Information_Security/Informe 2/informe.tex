@@ -1,0 +1,79 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{listings}
+% \usepackage{placeins}
+\usepackage[section]{placeins}
+\usepackage[stable]{footmisc}
+\usepackage{minted}
+\usepackage{multicol}
+
+\usepackage{csquotes}
+\title{{\bf Seguridad Informática}\\ Proyecto 2}
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\input{fragments/introduction.tex}
+\input{fragments/01analysis.tex}
+\input{fragments/02design.tex}
+\input{fragments/03development.tex}
+\input{fragments/04testing.tex}
+\input{fragments/05deployment.tex}
+\input{fragments/conclusiones.tex}
+
+
+\begin{thebibliography}{9}
+
+	\bibitem{REF:sqlmap}
+	Documentación de burp
+	\textit{burp homepage}.
+	https://portswigger.net/burp
+
+	\bibitem{REF:docker}
+	Documentación de docker
+	\textit{Docker.io homepage}.
+	https://docs.docker.com/
+
+	\bibitem{REF:OWASP ZAP}
+	Introducción a docker
+	\textit{SAKURA.Internet}.
+	https://knowledge.sakura.ad.jp/13265/
+
+
+	\bibitem{REF:sonar}
+	SonarCloud
+	\textit{Documentación de SonarQube}.
+	https://docs.sonarqube.org/latest/
+
+
+	\bibitem{REF:ebs}
+	Setting up AWS Web Application Firewall (WAF) with Elastic Beanstalk
+	\textit{Medium, Alfred Yang}.
+	https://medium.com/finnovate-io/setting-up-aws-web-application-firewall-waf-with-elastic-beanstalk-6243dc7755ea
+
+
+	\bibitem{REF:td}
+	OWASP ThreatDragon
+	\textit{OWASP ThreatDragon Project Homepage}.
+	https://owasp.org/www-project-threat-dragon/
+
+\end{thebibliography}
+
+\end{document}

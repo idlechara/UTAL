@@ -1,0 +1,38 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{n+nt}{version}\PYG{p}{:} \PYG{l+s}{\PYGZdq{}3\PYGZdq{}}
+    \PYG{n+nt}{services}\PYG{p}{:}
+      \PYG{n+nt}{database}\PYG{p}{:}
+        \PYG{n+nt}{image}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{mcr.microsoft.com/mssql/server:2017\PYGZhy{}CU8\PYGZhy{}ubuntu}
+        \PYG{n+nt}{container\PYGZus{}name}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}database\PYGZsq{}}
+        \PYG{n+nt}{environment}\PYG{p}{:}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{SA\PYGZus{}PASSWORD=Password21}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{ACCEPT\PYGZus{}EULA=Y}
+        \PYG{n+nt}{volumes}\PYG{p}{:}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{db\PYGZhy{}data:/var/opt/mssql}
+        \PYG{n+nt}{ports}\PYG{p}{:}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+s}{\PYGZsq{}1433:1433\PYGZsq{}}
+        \PYG{n+nt}{expose}\PYG{p}{:}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{1433}
+
+      \PYG{n+nt}{base}\PYG{p}{:}
+        \PYG{n+nt}{build}\PYG{p}{:}
+          \PYG{n+nt}{context}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{./core}
+          \PYG{n+nt}{dockerfile}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{Dockerfile}
+        \PYG{n+nt}{depends\PYGZus{}on}\PYG{p}{:}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{database}
+        \PYG{n+nt}{links}\PYG{p}{:}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{database}
+        \PYG{n+nt}{environment}\PYG{p}{:}
+          \PYG{c+c1}{\PYGZsh{} \PYGZhy{} ASPNETCORE\PYGZus{}Environment=Development}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{MSSQL\PYGZus{}SERVER=database,1433}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{MSSQL\PYGZus{}DB=thinkagro}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{MSSQL\PYGZus{}USER=sa}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{MSSQL\PYGZus{}PASSWORD=Password21}
+        \PYG{n+nt}{volumes}\PYG{p}{:}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{./core:/app}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{./storage:/storage}
+        \PYG{n+nt}{ports}\PYG{p}{:}
+          \PYG{p+pIndicator}{\PYGZhy{}} \PYG{l+lScalar+lScalarPlain}{8081:8081}
+    \PYG{n+nt}{volumes}\PYG{p}{:}
+      \PYG{n+nt}{db\PYGZhy{}data}\PYG{p}{:}
+\end{Verbatim}

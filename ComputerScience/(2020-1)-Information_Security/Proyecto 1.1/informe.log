@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.19)  22 JUN 2020 05:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.19)  22 JUN 2020 11:41
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -613,7 +613,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<utalca.pdf, id=192, 41.15375pt x 40.15pt>
+<utalca.pdf, id=172, 41.15375pt x 40.15pt>
 File: utalca.pdf Graphic file (type pdf)
 <use utalca.pdf>
 Package pdftex.def Info: utalca.pdf  used on input line 43.
@@ -643,7 +643,7 @@ LaTeX Info: Redefining \% on input line 1.
 \openout6 = `informe.toc'.
 
  [3] (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/00resumen.tex) [4] (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/00introduction.tex) [5] (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure.tex
-<fragments/01structure/organigramaMunicipalidad.pdf, id=271, 794.97pt x 614.295pt>
+<fragments/01structure/organigramaMunicipalidad.pdf, id=246, 794.97pt x 614.295pt>
 File: fragments/01structure/organigramaMunicipalidad.pdf Graphic file (type pdf)
 <use fragments/01structure/organigramaMunicipalidad.pdf>
 Package pdftex.def Info: fragments/01structure/organigramaMunicipalidad.pdf  used on input line 6.
@@ -652,22 +652,22 @@ Package pdftex.def Info: fragments/01structure/organigramaMunicipalidad.pdf  use
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.18 			\item O
-               ficina de partes alcaldía </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure/organigramaMunicipalidad.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+aer on input line 18.
-LaTeX Font Info:    No file TS1aer.fd. on input line 18.
-
-
-LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
-(Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textbullet' on input line 18.
-
-) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing.tex
+l.21 	\item {
+              </home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/01structure/organigramaMunicipalidad.pdf>]) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\@ifnextchar' on input line 2.
 
-(/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing/01context.tex [7] [8] [9] [10]) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing/02generalPurpose.tex
+(/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing/01context.tex [7] [8]
+LaTeX Font Info:    Trying to load font information for TS1+aer on input line 47.
+LaTeX Font Info:    No file TS1aer.fd. on input line 47.
+
+
+LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textbullet' on input line 47.
+
+[9]) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing/02generalPurpose.tex
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 18--19
 [][]
  []
@@ -677,7 +677,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-
+[10]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 35--36
 [][]
  []
@@ -687,7 +687,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-[11]
+
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 52--53
 [][]
  []
@@ -697,7 +697,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
-
+[11]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 68--69
 [][]
  []
@@ -707,7 +707,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
-[12]
+
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 88--89
 [][]
  []
@@ -717,7 +717,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
-
+[12]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 115--116
 [][]
  []
@@ -918,656 +918,116 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--12
  []
 
 [21] (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/02resourceListing/03specificPurpose.tex
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--4
-[][] 
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
+[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 [22]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--4
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--4
-[][]
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
+[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 [23]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--4
-[][] 
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
+[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--4
-[][] 
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
+[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 [24]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--4
-[][]
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
+[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--4
-[][]
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
+[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 [25]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--4
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--4
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--4
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--4
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 [26]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 4--5
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--7
-[][] 
+Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
+[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--7
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
 
  []
 
 [27]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--7
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--7
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
-
- []
-
-[28]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--7
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--7
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
-
- []
-
-[29]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--7
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--7
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
-
- []
-
-[30]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--7
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--7
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 7--8
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-[31]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--10
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--10
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-
- []
-
-[32]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--10
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--10
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-
- []
-
-[33]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--10
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--10
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-
- []
-
-[34]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--10
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--10
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-
- []
-
-[35]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--10
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--10
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 10--11
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-[36]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--13
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--13
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-
- []
-
-[37]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--13
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--13
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-
- []
-
-[38]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--13
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--13
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-
- []
-
-[39]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--13
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--13
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-
- []
-
-[40]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--13
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--13
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 13--14
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--16
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-
- []
-
-[41]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--16
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--16
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-
- []
-
-[42]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--16
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--16
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-
- []
-
-[43]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--16
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--16
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-
- []
-
-[44]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--16
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--16
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--16
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-
- []
-
-[45]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 16--17
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-[46]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-[47]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-[48]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-[49]
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-[50]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
 [][]
  []
@@ -1588,16 +1048,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--19
  []
 
 
-Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--19
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-
- []
-
-[51]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 19--20
 [][]
  []
@@ -1607,7 +1057,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-
+[28]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 22--22
 [][]
  []
@@ -1627,7 +1077,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--22
 
  []
 
-[52]
+[29]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 22--22
 [][] 
  []
@@ -1647,7 +1097,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--22
 
  []
 
-[53]
+[30]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 22--22
 [][]
  []
@@ -1667,7 +1117,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--22
 
  []
 
-[54]
+[31]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 22--22
 [][] 
  []
@@ -1687,7 +1137,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--22
 
  []
 
-[55]
+[32]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 22--22
 [][]
  []
@@ -1707,7 +1157,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--22
 
  []
 
-[56]
+[33]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 22--22
 [][]
  []
@@ -1737,7 +1187,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--22
 
  []
 
-[57]
+[34]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 22--23
 [][]
  []
@@ -1767,7 +1217,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--25
 
  []
 
-[58]
+[35]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 25--25
 [][] 
  []
@@ -1797,7 +1247,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--25
 
  []
 
-[59]
+[36]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 25--25
 [][] 
  []
@@ -1817,7 +1267,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--25
 
  []
 
-[60]
+[37]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 25--25
 [][]
  []
@@ -1837,7 +1287,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--25
 
  []
 
-[61]
+[38]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 25--25
 [][]
  []
@@ -1857,7 +1307,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--25
 
  []
 
-[62]
+[39]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 25--25
 [][]
  []
@@ -1887,7 +1337,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-[63]
+[40]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 28--28
 [][]
  []
@@ -1907,7 +1357,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
 
  []
 
-[64]
+[41]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 28--28
 [][] 
  []
@@ -1927,7 +1377,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
 
  []
 
-[65]
+[42]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 28--28
 [][]
  []
@@ -1947,7 +1397,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
 
  []
 
-[66]
+[43]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 28--28
 [][] 
  []
@@ -1967,7 +1417,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
 
  []
 
-[67]
+[44]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 28--28
 [][]
  []
@@ -1987,7 +1437,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
 
  []
 
-[68]
+[45]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 28--28
 [][]
  []
@@ -2007,7 +1457,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
 
  []
 
-[69]
+[46]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 28--28
 [][]
  []
@@ -2037,7 +1487,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--31
 
  []
 
-[70]
+[47]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 31--31
 [][] 
  []
@@ -2057,7 +1507,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--31
 
  []
 
-[71]
+[48]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 31--31
 [][]
  []
@@ -2077,7 +1527,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--31
 
  []
 
-[72]
+[49]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 31--31
 [][] 
  []
@@ -2097,7 +1547,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--31
 
  []
 
-[73]
+[50]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 31--31
 [][]
  []
@@ -2117,7 +1567,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--31
 
  []
 
-[74]
+[51]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 31--31
 [][]
  []
@@ -2137,7 +1587,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--31
 
  []
 
-[75]
+[52]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 31--31
 [][]
  []
@@ -2167,7 +1617,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-[76]
+[53]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 34--34
 [][]
  []
@@ -2187,7 +1637,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 
  []
 
-[77]
+[54]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 34--34
 [][] 
  []
@@ -2207,7 +1657,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 
  []
 
-[78]
+[55]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 34--34
 [][]
  []
@@ -2227,7 +1677,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 
  []
 
-[79]
+[56]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 34--34
 [][] 
  []
@@ -2247,7 +1697,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 
  []
 
-[80]
+[57]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 34--34
 [][]
  []
@@ -2267,7 +1717,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 
  []
 
-[81]
+[58]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 34--34
 [][]
  []
@@ -2297,7 +1747,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 
  []
 
-[82]
+[59]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 34--35
 [][]
  []
@@ -2327,7 +1777,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--37
 
  []
 
-[83]
+[60]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 37--37
 [][] 
  []
@@ -2347,7 +1797,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--37
 
  []
 
-[84]
+[61]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 37--37
 [][]
  []
@@ -2367,7 +1817,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--37
 
  []
 
-[85]
+[62]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 37--37
 [][] 
  []
@@ -2387,7 +1837,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--37
 
  []
 
-[86]
+[63]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 37--37
 [][]
  []
@@ -2407,7 +1857,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--37
 
  []
 
-[87]
+[64]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 37--37
 [][]
  []
@@ -2437,7 +1887,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--37
 
  []
 
-[88]))
+[65]))
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 37--61
 [][]
  []
@@ -2457,7 +1907,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-[89]
+[66]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 126--127
 [][]
  []
@@ -2477,7 +1927,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--181
 
  []
 
-[90]
+[67]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 181--204
 [][]
  []
@@ -2487,7 +1937,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--204
 
  []
 
-[91]
+[68]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 204--227
 [][]
  []
@@ -2497,7 +1947,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 204--227
 
  []
 
-[92]
+[69]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 227--235
 [][]
  []
@@ -2517,7 +1967,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
-[93]
+[70]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 301--302
 [][]
  []
@@ -2527,7 +1977,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 301--302
 
  []
 
-[94]
+[71]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 324--325
 [][]
  []
@@ -2547,7 +1997,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 347--348
 
  []
 
-[95]
+[72]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 370--371
 [][]
  []
@@ -2567,7 +2017,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 395--396
 
  []
 
-[96]
+[73]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 421--422
 [][]
  []
@@ -2577,7 +2027,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
 
-[97]
+[74]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 448--449
 [][]
  []
@@ -2597,7 +2047,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 475--476
 
  []
 
-[98]
+[75]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 500--501
 [][]
  []
@@ -2617,7 +2067,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 523--524
 
  []
 
-[99]
+[76]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 552--553
 [][]
  []
@@ -2627,7 +2077,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
 
-[100]
+[77]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 577--578
 [][]
  []
@@ -2637,7 +2087,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 577--578
 
  []
 
-[101]
+[78]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 601--602
 [][]
  []
@@ -2657,7 +2107,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 626--627
 
  []
 
-[102]
+[79]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 665--666
 [][]
  []
@@ -2667,7 +2117,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 665--666
 
  []
 
-[103]
+[80]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 691--692
 [][]
  []
@@ -2677,7 +2127,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 691--692
 
  []
 
-[104]
+[81]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 723--724
 [][]
  []
@@ -2687,7 +2137,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 723--724
 
  []
 
-[105]
+[82]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 747--748
 [][]
  []
@@ -2697,7 +2147,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 747--748
 
  []
 
-[106]
+[83]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 771--772
 [][]
  []
@@ -2707,7 +2157,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 771--772
 
  []
 
-[107]
+[84]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 800--801
 [][]
  []
@@ -2717,7 +2167,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 800--801
 
  []
 
-[108]
+[85]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 826--827
 [][]
  []
@@ -2727,7 +2177,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 826--827
 
  []
 
-[109]
+[86]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 853--854
 [][]
  []
@@ -2737,7 +2187,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 853--854
 
  []
 
-[110]
+[87]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 880--881
 [][]
  []
@@ -2747,7 +2197,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 880--881
 
  []
 
-[111]
+[88]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 908--909
 [][]
  []
@@ -2757,7 +2207,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 908--909
 
  []
 
-[112]
+[89]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 935--936
 [][]
  []
@@ -2767,7 +2217,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 935--936
 
  []
 
-[113]
+[90]
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 960--961
 [][]
  []
@@ -2787,7 +2237,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 986--987
 
  []
 
-[114]))
+[91]))
 Overfull \hbox (22.76219pt too wide) in paragraph at lines 1013--65
 [][]
  []
@@ -2797,12 +2247,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1013--65
 
  []
 
-[115] (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/04riskMatrix.tex) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/05policies.tex [116] [117] [118]) [119] [120]
+[92] (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/04riskMatrix.tex) (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/fragments/05policies.tex [93] [94] [95]) [96] [97]
 
 LaTeX Warning: Empty `thebibliography' environment on input line 104.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
-[121]
+[98]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
  (/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.aux
 LaTeX Info: Redefining \. on input line 26.
@@ -2811,7 +2261,7 @@ LaTeX Info: Redefining \% on input line 26.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
 Package rerunfilecheck Info: File `informe.out' has not changed.
-(rerunfilecheck)             Checksum: B69625F9505B6F3FD2E3685031C8DAE9;4208.
+(rerunfilecheck)             Checksum: 4785F956740FC50DDBEB6C4200CD9F09;3735.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2819,23 +2269,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
  ) 
 Here is how much of TeX's memory you used:
- 13611 strings out of 481239
- 226255 string characters out of 5920377
- 567044 words of memory out of 5000000
- 28236 multiletter control sequences out of 15000+600000
+ 13573 strings out of 481239
+ 225806 string characters out of 5920377
+ 568038 words of memory out of 5000000
+ 28231 multiletter control sequences out of 15000+600000
  577306 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,13n,43p,1046b,692s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.46} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.45} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.44} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.43} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.42} has been referenced but does not exist, replaced by a fixed one
-
 pdfTeX warning (dest): name{Hfootnote.41} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.40} has been referenced but does not exist, replaced by a fixed one
@@ -2919,10 +2359,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on "/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.pdf" (121 pages, 753833 bytes).
+Output written on "/home/kuky_nekoi/Documents/Sources/Utalca/UTAL/ComputerScience/(2020-1)-Information_Security/Proyecto 1.1/informe.pdf" (98 pages, 703337 bytes).
 PDF statistics:
- 1045 PDF objects out of 1200 (max. 8388607)
- 811 compressed objects within 9 object streams
- 218 named destinations out of 1000 (max. 500000)
- 387 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 892 PDF objects out of 1000 (max. 8388607)
+ 693 compressed objects within 7 object streams
+ 185 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 
